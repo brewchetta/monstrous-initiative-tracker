@@ -13,8 +13,10 @@ const url = {
 
 const parseJSON = res => res.json()
 
+const parseIndex = index => index.toLowerCase().replace(' ', '-')
+
 const getResource = url => {
-  return (index) => fetch(url + index).then(parseJson)
+  return (index) => fetch(url + parseIndex(index)).then(parseJSON)
 }
 
 // FETCHES //
