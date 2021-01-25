@@ -1,5 +1,7 @@
 import '../styles/App.css';
-import InitiativeList from `./InitiativeList`
+import InitiativeList from `./initiative-list/InitiativeList`
+import CharacterViewContainer from `./character-view/CharacterViewContainer`
+import MonsterSearchContainer from `./monster-search/MonsterSearchContainer`
 
 function App() {
   return (
