@@ -11,7 +11,7 @@ export default function DetailContainer(props) {
   }
 
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} />
+    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} clearDetail={clearDetail} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : null)
   }

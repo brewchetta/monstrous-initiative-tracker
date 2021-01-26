@@ -1,8 +1,10 @@
 import { useState } from "react"
 
-export default function CharacterDetailCard({character}) {
+export default function CharacterDetailCard({character, clearDetail}) {
 
-  const [formInputs, setFormInputs] = useState({...character})
+  // STATE //
+
+  const [formInputs, setFormInputs] = useState(character)
 
   // EVENT HANDLERS
 
@@ -12,6 +14,7 @@ export default function CharacterDetailCard({character}) {
 
   const handleSubmit = e => {
     e.preventDefault()
+    clearDetail()
     console.log(formInputs)
   }
 
