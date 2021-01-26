@@ -1,6 +1,6 @@
 import React from 'react'
 import InitiativeCard from '../components/initiative-list/InitiativeCard'
-import DetailCard from '../components/character-view/DetailCard'
+import CharacterDetailCard from '../components/character-view/CharacterDetailCard'
 
 export default class Character {
 
@@ -31,8 +31,8 @@ export default class Character {
 
   // RENDER METHODS //
 
-  renderInitiativeCard = () => <InitiativeCard character={this} />
+  renderCard = () => <InitiativeCard character={this} />
 
-  renderDetailCard = () => <DetailCard character={this} />
+  renderDetail = () => <CharacterDetailCard character={this} />
 
 }

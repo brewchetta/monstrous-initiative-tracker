@@ -1,7 +1,6 @@
-import { useState } from 'react'
 import '../styles/App.css';
 import InitiativeList from './initiative-list/InitiativeList'
-import DetailContainer from './character-detail/DetailContainer'
+import DetailContainer from './detail-modal/DetailContainer'
 import SearchContainer from './monster-search/SearchContainer'
 
 function App() {
@@ -10,6 +9,8 @@ function App() {
     <div className="App">
 
       <InitiativeList />
+      <DetailContainer />
+      <SearchContainer />
 
     </div>
   );
