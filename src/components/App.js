@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import '../styles/App.css';
 import InitiativeList from './initiative-list/InitiativeList'
-import CharacterViewContainer from './character-view/CharacterViewContainer'
-import MonsterSearchContainer from './monster-search/MonsterSearchContainer'
+import DetailContainer from './character-detail/DetailContainer'
+import SearchContainer from './monster-search/SearchContainer'
 
 function App() {
 

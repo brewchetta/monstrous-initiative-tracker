@@ -1,4 +1,4 @@
-export default function MonsterSearchForm(props) {
+export default function SearchForm(props) {
 
   return (
     <p>I am the monster search form</p>
