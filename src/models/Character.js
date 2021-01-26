@@ -7,11 +7,9 @@ export default class Character {
   static internalKey = 0
 
   constructor(data) {
-    // assign internalKey
     this._key = this.constructor.internalKey
     this.constructor.internalKey++
 
-    // assign all attributes
     Object.keys(data).forEach(key => {
       this[key] = data[key]
     })
@@ -77,5 +75,7 @@ export default class Character {
     this.initiative = this.dex + Math.ceil(Math.random() * 20)
     return this.initative
   }
+
+  // END //
 
 }
