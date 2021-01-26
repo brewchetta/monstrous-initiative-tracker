@@ -21,7 +21,7 @@ export default function InitiativeList(props) {
   }, [characters])
 
   const renderListedCharacters = () => {
-    return characters.map(c => c.renderCard())
+    return [...characters].sort((a,b) => (b.initiative || b.rollInitiative()) - (a.initiative || a.rollInitiative())).map((character, index) => character.renderCard(index))
   }
 
   return (

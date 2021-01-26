@@ -65,15 +65,15 @@ export default class Character {
 
   // RENDER METHODS //
 
-  renderCard = () => <InitiativeCard key={this._key} character={this} />
+  renderCard = index => <InitiativeCard key={this._key} character={this} index={index} />
 
   renderDetail = () => <CharacterDetailCard character={this} />
 
   // ACTIONS //
 
-  rollInitative = () => {
+  rollInitiative = () => {
     this.initiative = this.dex + Math.ceil(Math.random() * 20)
-    return this.initative
+    return this.initiative
   }
 
   // END //

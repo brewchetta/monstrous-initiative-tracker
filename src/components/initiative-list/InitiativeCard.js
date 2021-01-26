@@ -1,7 +1,19 @@
-export default function InitiativeCard({character}) {
+import { useState } from 'react'
+
+export default function InitiativeCard({character, index}) {
+
+  const [initiative, setInitiative] = useState(character.initiative)
+
+  const changeInitiative = () => {
+    setInitiative(character.rollInitiative())
+  }
 
   return (
-    <p>{character.name} \|/ {character.armor_class} AC \|/ {character.initiative || character.rollInitative()}</p>
+    <div className="initiative-card"
+    style={{top: `${index * 50}px`}}
+    onClick={changeInitiative}>
+      {character.name} \|/ {character.armor_class} AC \|/ {initiative}
+    </div>
   )
 
 }
