@@ -18,6 +18,7 @@ export default function InitiativeList(props) {
 
   useEffect(getMonsterFromList, [characters])
 
+  // list and card doesn't update when character updates... 
   const renderListedCharacters = () => {
     return [...characters].sort((a,b) => (b.initiative || b.rollInitiative()) - (a.initiative || a.rollInitiative())).map((character, index) => character.renderCard(index))
   }
