@@ -6,7 +6,7 @@ import InitiativeList from './initiative-list/InitiativeList'
 import DetailContainer from './detail-modal/DetailContainer'
 import SearchContainer from './monster-search/SearchContainer'
 // CONTEXT //
-import CharactersProvider from "../context/characters-context"
+import { CharactersProvider } from "../context/characters-context"
 
 function App() {
 
