@@ -1,7 +1,7 @@
-export default function InitiativeCard(props) {
+export default function InitiativeCard({character}) {
 
   return (
-    <p>I am a character initiative card</p>
+    <p>{character.name} \|/ {character.armor_class} AC \|/ {character.initiative || character.rollInitative()}</p>
   )
 
 }
