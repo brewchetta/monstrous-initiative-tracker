@@ -71,7 +71,7 @@ export default class Character {
 
   renderDetail = () => <CharacterDetailCard character={this} />
 
-  // ALTER CHARACTER PROPERTIES //
+  // ACTIONS //
 
   rollInitative = () => {
     this.initiative = this.dex + Math.ceil(Math.random() * 20)
