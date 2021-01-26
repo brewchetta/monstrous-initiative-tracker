@@ -17,6 +17,7 @@ export default function DetailContainer(props) {
 
   return (
     <div id="detail-modal">
+      <div id="close-detail-modal"></div>
       {renderDetail()}
     </div>
   )
