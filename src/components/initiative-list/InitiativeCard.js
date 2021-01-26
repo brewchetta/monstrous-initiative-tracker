@@ -3,7 +3,7 @@ import { CharactersContext } from '../../context/characters-context'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
 
-  const handleClick = () => {
+  const handleRollInitiative = () => {
     character.rollInitiative()
     updateCharacter(character)
   }
@@ -11,8 +11,11 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   return (
     <div className="initiative-card"
     style={{top: `${index * 50}px`}}
-    onClick={handleClick}>
-      {character.name} \|/ {character.armor_class} AC \|/ {character.initiative || "⚅ Roll for "} Initiative
+    onClick={console.log}>
+      {character.name} \|/ {character.armor_class} AC \|/ <span
+      onClick={handleRollInitiative}>
+        {character.initiative || "⚅ Roll for "} Initiative
+      </span>
     </div>
   )
 
