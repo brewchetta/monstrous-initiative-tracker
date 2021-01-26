@@ -18,8 +18,6 @@ export default class Character {
 
     this.remapActionAttributes()
     this.remapProficiencies()
-
-    console.log(this)
   }
 
   // CONSTRUCTOR HELPERS //
@@ -44,7 +42,7 @@ export default class Character {
   // ATTRIBUTE MODIFIERS //
 
   get str() {
-    return Math.floor((this.dexterity - 10) / 2)
+    return Math.floor((this.strength - 10) / 2)
   }
 
   get dex() {
@@ -52,19 +50,19 @@ export default class Character {
   }
 
   get con() {
-    return Math.floor((this.dexterity - 10) / 2)
+    return Math.floor((this.constitution - 10) / 2)
   }
 
   get wis() {
-    return Math.floor((this.dexterity - 10) / 2)
+    return Math.floor((this.wisdom - 10) / 2)
   }
 
   get int() {
-    return Math.floor((this.dexterity - 10) / 2)
+    return Math.floor((this.intelligence - 10) / 2)
   }
 
   get cha() {
-    return Math.floor((this.dexterity - 10) / 2)
+    return Math.floor((this.charisma - 10) / 2)
   }
 
   // RENDER METHODS //
