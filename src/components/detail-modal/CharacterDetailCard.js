@@ -53,6 +53,8 @@ export default function CharacterDetailCard({character}) {
       <span>INT {renderNumberField("intelligence")}({modifier("intelligence")})</span>
       <span>CHA {renderNumberField("charisma")}({modifier("charisma")})</span>
 
+      <input type="submit" value="Save"/>
+
     </form>
   )
 
