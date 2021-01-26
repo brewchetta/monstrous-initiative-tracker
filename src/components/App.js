@@ -14,9 +14,9 @@ function App() {
     <div className="App">
       <ContextProvider>
 
-        <InitiativeList />
-        <DetailContainer />
         <SearchContainer />
+        <DetailContainer />
+        <InitiativeList />
 
       </ContextProvider>
     </div>
