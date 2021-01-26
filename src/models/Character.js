@@ -65,9 +65,9 @@ export default class Character {
 
   // RENDER METHODS //
 
-  renderCard = index => <InitiativeCard key={this._key} character={this} index={index} />
+  renderCard = (index, updateCharacter) => <InitiativeCard key={this._key} character={this} index={index} updateCharacter={updateCharacter} />
 
-  renderDetail = () => <CharacterDetailCard character={this} />
+  renderDetail = updateCharacter => <CharacterDetailCard character={this} updateCharacter={updateCharacter} />
 
   // ACTIONS //
 
