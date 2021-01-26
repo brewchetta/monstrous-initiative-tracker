@@ -19,7 +19,7 @@ const CharactersProvider = ({children}) => {
   return (
     <CharactersContext.Provider value={[characters, dispatch]}>
       {children}
-    </CharactersReducer.Provider>
+    </CharactersContext.Provider>
   )
 }
 
