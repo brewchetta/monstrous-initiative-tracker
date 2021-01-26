@@ -1,0 +1,15 @@
+.initiative-card {
+  animation: fade-in 1s;
+  background: black;
+  color: white;
+  margin-left: 5em;
+  padding: 0.5em;
+  position: absolute;
+  top: 0;
+  transition: top 1s;
+}
+
+@keyframes fade-in {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
