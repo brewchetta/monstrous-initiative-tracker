@@ -1,17 +1,25 @@
 import { useContext } from "react"
 import { DetailContext } from "../../context/detail-context"
+import { CharactersContext } from "../../context/characters-context"
 import CharacterDetailCard from "./CharacterDetailCard"
 
 export default function DetailContainer(props) {
 
-  const [detail, dispatch] = useContext(DetailContext)
+  // CONTEXT //
+  const [detail, dispatchDetail] = useContext(DetailContext)
+  const [characters, dispatchCharacters] = useContext(CharactersContext)
 
-  const clearDetail = () => {
-    dispatch({type: "CLEAR_DETAIL"})
+  // EVENT HANDLERS //
+
+  const updateCharacter = character => {
+    dispatchCharacters({type: "UPDATE_CHARACTER", payload: character})
+    dispatchDetail({type: "CLEAR_DETAIL"})
   }
 
+  const clearDetail = () => dispatchDetail({type: "CLEAR_DETAIL"})
+
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} clearDetail={clearDetail} />
+    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : null)
   }

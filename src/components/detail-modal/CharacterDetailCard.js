@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function CharacterDetailCard({character, clearDetail}) {
+export default function CharacterDetailCard({character, updateCharacter}) {
 
   // STATE //
 
@@ -14,8 +14,7 @@ export default function CharacterDetailCard({character, clearDetail}) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    clearDetail()
-    console.log(formInputs)
+    updateCharacter(formInputs)
   }
 
   // HELPERS //
