@@ -16,9 +16,7 @@ export default function InitiativeList(props) {
     }
   }
 
-  useEffect(() => {
-    getMonsterFromList()
-  }, [characters])
+  useEffect(getMonsterFromList, [characters])
 
   const renderListedCharacters = () => {
     return [...characters].sort((a,b) => (b.initiative || b.rollInitiative()) - (a.initiative || a.rollInitiative())).map((character, index) => character.renderCard(index))
