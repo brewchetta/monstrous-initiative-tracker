@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { DetailContext } from "../../context/detail-context"
+import CharacterDetailCard from "./CharacterDetailCard"
 
 export default function DetailContainer(props) {
 
@@ -10,14 +11,14 @@ export default function DetailContainer(props) {
   }
 
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <p>Detail is currently a character</p>
-    : detail && detail.type === "spell" ? <p>Detail is currently a spell</p>
-    : <p>No detail currently</p>)
+    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} />
+    : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
+    : null)
   }
 
   return (
     <div id="detail-modal">
-      <div id="close-detail-modal"></div>
+      <div id="close-detail-modal" onClick={clearDetail}></div>
       {renderDetail()}
     </div>
   )
