@@ -1,7 +1,3 @@
-import React from 'react'
-import InitiativeCard from '../components/initiative-list/InitiativeCard'
-import CharacterDetailCard from '../components/detail-modal/CharacterDetailCard'
-
 export default class Character {
 
   static internalKey = 0
@@ -62,12 +58,6 @@ export default class Character {
   get cha() {
     return Math.floor((this.charisma - 10) / 2)
   }
-
-  // RENDER METHODS //
-
-  renderCard = (index, updateCharacter) => <InitiativeCard key={this._key} character={this} index={index} updateCharacter={updateCharacter} />
-
-  renderDetail = updateCharacter => <CharacterDetailCard character={this} updateCharacter={updateCharacter} />
 
   // ACTIONS //
 
