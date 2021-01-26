@@ -1,9 +1,10 @@
 import { useEffect, useContext } from 'react'
 import { getMonster } from '../../services/dnd-5e-api'
 import Character from '../../models/Character'
+import InitiativeCard from './InitiativeCard'
 import { CharactersContext } from '../../context/characters-context'
 
-const monsterNames = ["vampire", "goblin", "merfolk", "cat", "duergar", "aboleth", "bat", "merfolk"]
+const monsterNames = ["vampire", "goblin", "merfolk"]
 
 export default function InitiativeList(props) {
 
@@ -22,7 +23,7 @@ export default function InitiativeList(props) {
 
   // list and card doesn't update when character updates...
   const renderListedCharacters = () => {
-    return characters.map((character, index) => character.renderCard(index, updateCharacter))
+    return characters.map((c, index) => <InitiativeCard key={c._key} character={c} index={index} updateCharacter={updateCharacter} />)
   }
 
   return (
