@@ -11,12 +11,18 @@ const url = {
 
 // HELPERS //
 
-const parseJSON = res => res.json()
+const parseJSON = res => {
+  switch (res.status) {
+    case 200: return res.json()
+    case 404: return { error: "Unable to find resource" }
+    default: throw new Error("Server unavailable")
+  }
+}
 
 const parseIndex = index => index.toLowerCase().replace(' ', '-')
 
 const getResource = url => {
-  return (index) => fetch(url + parseIndex(index)).then(parseJSON)
+  return (index) => fetch(url + parseIndex(index)).then(parseJSON).catch(console.warn)
 }
 
 // FETCHES //
