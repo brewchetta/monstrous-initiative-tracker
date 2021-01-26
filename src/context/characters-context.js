@@ -6,10 +6,10 @@ const charactersReducer = (state, action) => {
   switch (action.type) {
     case "ADD_CHARACTER":
       return [...state, action.payload]
-    case "REPLACE_CHARACTER":
+    case "UPDATE_CHARACTER":
       return state.map(character => character._key === action.payload._key ? action.payload : character)
     default:
-      throw new Error("Incorrect use of character reducer")
+      throw new Error(`Incorrect use of character reducer: ${action.type}`)
   }
 }
 
