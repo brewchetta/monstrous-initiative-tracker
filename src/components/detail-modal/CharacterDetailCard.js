@@ -1,17 +1,59 @@
+import { useState } from "react"
+
 export default function CharacterDetailCard({character}) {
 
+  const [formInputs, setFormInputs] = useState({...character})
+
+  // EVENT HANDLERS
+
+  const handleChange = event => {
+    setFormInputs({...formInputs, ...{[event.target.name]: event.target.value}})
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    console.log(formInputs)
+  }
+
+  // HELPERS //
+
+  const modifier = attribute => Math.floor((formInputs[attribute] - 10) / 2)
+
+  // RENDER METHODS //
+
+  const renderInputField = (name) => {
+    return (
+      <input type="text"
+      onChange={handleChange}
+      name={name}
+      value={formInputs[name]}
+      placeholder={name.replace("_"," ")}/>
+    )
+  }
+
+  const renderNumberField = (name) => {
+    return (
+      <input type="number"
+      onChange={handleChange}
+      name={name}
+      value={formInputs[name]}
+      placeholder={name.replace("_"," ")}/>
+    )
+  }
+
   return (
-    <>
-      <p>{character.name}</p>
-      <p>{character.armor_class} AC</p>
-      {character.initiative ? <p>{character.initiative} Initiative</p> : null}
-      <p>STR {character.strength}({character.str})</p>
-      <p>DEX {character.dexterity}({character.dex})</p>
-      <p>CON {character.constitution}({character.con})</p>
-      <p>WIS {character.wisdom}({character.wis})</p>
-      <p>INT {character.intelligence}({character.int})</p>
-      <p>CHA {character.charisma}({character.cha})</p>
-    </>
+    <form id="character-detail-form" onSubmit={handleSubmit}>
+      <span>{renderInputField("name")}</span>
+      <span>{renderInputField("armor_class")}</span>
+      <span>{renderInputField("initiative")}</span>
+      <span>STR {renderNumberField("strength")}({modifier("strength")})</span>
+      <span>DEX {renderNumberField("dexterity")}({modifier("dexterity")})</span>
+      <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span>
+      <span>WIS {renderNumberField("wisdom")}({modifier("wisdom")})</span>
+      <span>INT {renderNumberField("intelligence")}({modifier("intelligence")})</span>
+      <span>CHA {renderNumberField("charisma")}({modifier("charisma")})</span>
+
+    </form>
   )
 
 }
