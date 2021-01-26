@@ -12,7 +12,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     <div className="initiative-card"
     style={{top: `${index * 50}px`}}
     onClick={handleClick}>
-      {character.name} \|/ {character.armor_class} AC \|/ {character.initiative} Initiative
+      {character.name} \|/ {character.armor_class} AC \|/ {character.initiative || "⚅ Roll for "} Initiative
     </div>
   )
 
