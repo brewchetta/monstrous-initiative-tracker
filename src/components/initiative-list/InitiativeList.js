@@ -1,26 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useContext } from 'react'
 import { getMonster } from '../../services/dnd-5e-api'
 import Character from '../../models/Character'
+import { CharactersContext } from '../../context/characters-context'
 
 const monsterNames = ["vampire", "goblin", "merfolk", "cat", "duergar", "aboleth", "bat", "merfolk"]
 
 export default function InitiativeList(props) {
 
-  const [characters, setCharacters] = useState([])
+  // CONTEXT //
+  const [characters, dispatch] = useContext(CharactersContext)
+  const addCharacter = character => dispatch({type: "ADD_CHARACTER", payload: character})
+  const updateCharacter = character => dispatch({type: "UPDATE_CHARACTER", payload: character})
 
+  // TESTING //
   const getMonsterFromList = () => {
     if (monsterNames.length) {
-      getMonster(monsterNames.pop()).then(monster => {
-        setCharacters([...characters, new Character(monster)])
-      })
+      getMonster(monsterNames.pop()).then(monster => addCharacter(new Character(monster)))
     }
   }
-
   useEffect(getMonsterFromList, [characters])
 
-  // list and card doesn't update when character updates... 
+  // list and card doesn't update when character updates...
   const renderListedCharacters = () => {
-    return [...characters].sort((a,b) => (b.initiative || b.rollInitiative()) - (a.initiative || a.rollInitiative())).map((character, index) => character.renderCard(index))
+    return characters.map((character, index) => character.renderCard(index, updateCharacter))
   }
 
   return (
