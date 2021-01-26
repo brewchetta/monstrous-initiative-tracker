@@ -24,5 +24,5 @@ const getResource = url => {
 export const getEquipment = getResource(url.equipment)
 export const getMagicItem = getResource(url.magicItems)
 export const getSpell = getResource(url.spells)
-export const getMonsters = getResource(url.monsters)
-export const getConditions = getResource(url.conditions)
+export const getMonster = getResource(url.monsters)
+export const getCondition = getResource(url.conditions)
