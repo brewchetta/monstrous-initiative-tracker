@@ -1,4 +1,5 @@
 import '../styles/App.css';
+import '../styles/InitiativeCard.css';
 import InitiativeList from './initiative-list/InitiativeList'
 import DetailContainer from './detail-modal/DetailContainer'
 import SearchContainer from './monster-search/SearchContainer'
