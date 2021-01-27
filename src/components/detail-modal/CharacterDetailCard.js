@@ -81,7 +81,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
-  console.log(localMonsters())
+  console.log(JSON.parse(localMonsters()))
   // console.log("TODO: Double check alignments from API")
 
   return (
