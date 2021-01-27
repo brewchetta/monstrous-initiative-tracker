@@ -4,7 +4,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## MVP:
 
-- A user can build a stat block with a monster's attributes, saves, health, AC, and initiative
+- COMPLETED: A user can build a stat block with a monster's attributes, saves, health, AC, and initiative
 
 - COMPLETED: Users can change a stat block to have different stats
 
