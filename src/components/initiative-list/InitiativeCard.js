@@ -29,7 +29,9 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     if (character.initiative > -5) {
       setInitiativeOpen(true)
     } else {
-      setInitiativeInput(character.rollInitiative())
+      const init = character.rollInitiative()
+      character.initiative = init
+      setInitiativeInput(init)
       updateCharacter(character)
     }
   }
