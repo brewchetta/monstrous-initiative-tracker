@@ -21,3 +21,7 @@
   border: solid white 1px;
   border-radius: 5px;
 }
+
+#character-detail-form input[type=text] {
+  width: 11em;
+}
