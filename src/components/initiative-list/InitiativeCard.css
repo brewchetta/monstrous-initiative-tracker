@@ -7,3 +7,10 @@
   top: 0;
   transition: top 1s;
 }
+
+input[type=number] {
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: solid white 1px;
+}
