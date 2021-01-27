@@ -110,7 +110,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   return (
     <div className="initiative-card"
     style={{top: `${index * 50}px`}}>
-      {character.name} | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
+      <span onClick={handleOpenDetail}>{character.name}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
   )
 
