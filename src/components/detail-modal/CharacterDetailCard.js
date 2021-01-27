@@ -61,7 +61,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
-  console.log(character)
   console.log("TODO: Double check alignments from API")
 
 
@@ -71,7 +70,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
       <span>Initiative: {renderNumberField("initiative")}</span>
-      <span>Max Hit Points: {renderNumberField("hit_points")}</span><br/>
+      <span>Max Hit Points: {renderNumberField("hit_points")}</span>
+      <span>Temporary Hit Points: {renderNumberField("tempHP")}</span><br/>
 
       <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
       <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
