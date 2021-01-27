@@ -48,7 +48,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     <form id="character-detail-form" onSubmit={handleSubmit}>
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
-      <span>Initiative: {renderNumberField("initiative")}</span><br/>
+      <span>Initiative: {renderNumberField("initiative")}</span>
+      <span>Max Hit Points: {renderNumberField("hit_points")}</span><br/>
       <span>STR {renderNumberField("strength")}({modifier("strength")})</span>
       <span>DEX {renderNumberField("dexterity")}({modifier("dexterity")})</span>
       <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span><br/>
