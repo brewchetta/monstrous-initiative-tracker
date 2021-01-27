@@ -22,8 +22,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const modifier = attribute => {
     let mod = Math.floor((formInputs[attribute] - 10) / 2)
-    if (mod > 10) {
-      mod = `+${mod}`
+    if (mod > 0) {
+      return `+${mod}`
     }
     return mod
   }
