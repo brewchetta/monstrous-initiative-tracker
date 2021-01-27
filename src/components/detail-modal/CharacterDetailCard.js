@@ -20,7 +20,13 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   // HELPERS //
 
-  const modifier = attribute => Math.floor((formInputs[attribute] - 10) / 2)
+  const modifier = attribute => {
+    let mod = Math.floor((formInputs[attribute] - 10) / 2)
+    if (mod > 10) {
+      mod = `+${mod}`
+    }
+    return mod
+  }
 
   // RENDER METHODS //
 
@@ -44,18 +50,41 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
+  const renderSelectField = (name, ...options) => {
+    return (
+      <select onChange={handleChange}
+      name={name}
+      value={formInputs[name]}>
+        {options.map(name => <option key={name} value={name}>{name}</option>)}
+      </select>
+    )
+  }
+
+  console.log(character)
+  console.log("TODO: Double check alignments from API")
+
+
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
+
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
       <span>Initiative: {renderNumberField("initiative")}</span>
       <span>Max Hit Points: {renderNumberField("hit_points")}</span><br/>
-      <span>STR {renderNumberField("strength")}({modifier("strength")})</span>
-      <span>DEX {renderNumberField("dexterity")}({modifier("dexterity")})</span>
-      <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span><br/>
-      <span>WIS {renderNumberField("wisdom")}({modifier("wisdom")})</span>
-      <span>INT {renderNumberField("intelligence")}({modifier("intelligence")})</span>
-      <span>CHA {renderNumberField("charisma")}({modifier("charisma")})</span><br/>
+
+      <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
+      <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
+      <span>CON({modifier("constitution")}) {renderNumberField("constitution")}</span><br/>
+      <span>WIS({modifier("wisdom")}) {renderNumberField("wisdom")}</span>
+      <span>INT({modifier("intelligence")}) {renderNumberField("intelligence")}</span>
+      <span>CHA({modifier("charisma")}) {renderNumberField("charisma")}</span><br/>
+
+      <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
+      <span>Subtype: {renderInputField("subtype")}</span>
+      <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span><br/>
+      <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span>
+
+      <span>Challenge Rating: {renderInputField("challenge_rating")}</span>
 
       <input type="submit" value="Save"/>
 
