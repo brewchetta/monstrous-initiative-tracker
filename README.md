@@ -8,9 +8,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Users can change a stat block to have different stats
 
-- COMPLETED: Initiative determines the order that all monsters / characters are displayed
-
-- (automatically determining ties based on DEX)
+- COMPLETED: Initiative determines the order that all monsters / characters are displayed (automatically determining ties based on DEX)
 
 - COMPLETED: The list only shows important stats (monster name, initiative, and AC) and any monster / character can be expanded to see and change their stats
 
