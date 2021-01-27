@@ -1,17 +1,37 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useRef, useEffect } from 'react'
 import { DetailContext } from '../../context/detail-context'
 import { CharactersContext } from '../../context/characters-context'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
 
+  // STATE //
+
   const [detail, dispatchDetail] = useContext(DetailContext)
-  const [characters, dispatchCharacters] = useContext(CharactersContext)
+  const dispatchCharacters = useContext(CharactersContext)[1]
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
   const [currentHitPoints, setCurrentHitPoints] = useState(character.hit_points)
+  const [initiativeOpen, setInitiativeOpen] = useState(false)
+  const [initiativeInput, setInitiativeInput] = useState(0)
+
+  // REF //
+
+  const focusedInput = useRef(null)
+
+  useEffect(() => {
+    if (hitPointsOpen || initiativeOpen) {
+      focusedInput.current.focus();
+    }
+  }, [hitPointsOpen, initiativeOpen]);
+
+  // EVENT HANDLERS //
 
   const handleRollInitiative = () => {
-    character.rollInitiative()
-    updateCharacter(character)
+    if (character.initiative > -5) {
+      setInitiativeOpen(true)
+    } else {
+      setInitiativeInput(character.rollInitiative())
+      updateCharacter(character)
+    }
   }
 
   const handleOpenDetail = () => {
@@ -24,14 +44,19 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     dispatchCharacters({type: "REMOVE_CHARACTER", payload: character})
   }
 
-  const handleSetHitPoints = e => {
-    const newHP = parseInt(e.target.value)
-    if (newHP > 0) {
-      setCurrentHitPoints(newHP)
-    } else {
-      console.log("remove character")
+  const handleCloseHitPoints = () => {
+    setHitPointsOpen(false)
+    if (currentHitPoints <= 0) {
+      console.log("remove character?");
     }
   }
+
+  const handleCloseInitiative = () => {
+    setInitiativeOpen(false)
+    // TODO: update character initiative
+  }
+
+  // RENDERS //
 
   const renderHitPoints = () => {
     if (hitPointsOpen) {
@@ -39,9 +64,12 @@ export default function InitiativeCard({character, index, updateCharacter}) {
         <span>
           <input type="number"
           onChange={e => setCurrentHitPoints(e.target.value)}
-          onBlur={() => setHitPointsOpen(false)}
+          onBlur={handleCloseHitPoints}
           value={currentHitPoints}
           placeholder={"hit points"}
+          onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
+          min={0}
+          ref={focusedInput}
           />
           /{character.hit_points}
         </span>
@@ -49,16 +77,35 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     } else {
       return (<span onClick={() => setHitPointsOpen(true)}>{`${currentHitPoints}/${character.hit_points} ♡`}</span>)
     }
-    console.log(currentHitPoints)
+  }
+
+  const renderInitiative = () => {
+    if (initiativeOpen) {
+      return (
+        <span>
+          <input type="number"
+          onChange={e => setInitiativeInput(e.target.value)}
+          onBlur={handleCloseInitiative}
+          value={initiativeInput}
+          placeholder={"initiative"}
+          onKeyUp={e => e.keyCode === 13 ? handleCloseInitiative() : null}
+          min={-4}
+          ref={focusedInput}
+          /> Initiative
+        </span>
+      )
+    } else {
+      return (<span
+      onClick={handleRollInitiative}>
+        {character.initiative >= -5 ? character.initiative : "⚅ Roll for "} Initiative
+      </span>)
+    }
   }
 
   return (
     <div className="initiative-card"
     style={{top: `${index * 50}px`}}>
-      {character.name} | {character.armor_class} 🛡️ | <span
-      onClick={handleRollInitiative}>
-        {character.initiative >= -4 ? character.initiative : "⚅ Roll for "} Initiative
-      </span> | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
+      {character.name} | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
   )
 
