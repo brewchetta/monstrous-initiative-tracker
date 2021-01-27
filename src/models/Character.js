@@ -6,13 +6,15 @@ export default class Character {
 
   static createTemplate = () => new Character(template)
 
-  constructor(data) {
+  constructor(data, playerCharacter = false) {
     this._key = this.constructor.internalKey
     this.constructor.internalKey++
 
     Object.keys(data).forEach(key => {
       this[key] = data[key]
     })
+
+    this.playerCharacter = playerCharacter
 
     this.remapActionAttributes()
     this.remapProficiencies()
