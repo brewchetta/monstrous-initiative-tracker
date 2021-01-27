@@ -80,7 +80,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
         </span>
       )
     } else {
-      return (<span onClick={() => setHitPointsOpen(true)}>{`${currentHitPoints}/${character.hit_points}${character.tempHP && ` + ${character.tempHP}`} ♡`}</span>)
+      return (<span onClick={() => setHitPointsOpen(true)}>{`${currentHitPoints}/${character.hit_points}${character.tempHP ? ` + ${character.tempHP}` : ''} ♡`}</span>)
     }
   }
 
