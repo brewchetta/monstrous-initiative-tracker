@@ -1,9 +1,11 @@
 import { useContext } from 'react'
 import { DetailContext } from '../../context/detail-context'
+import { CharactersContext } from '../../context/characters-context'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
 
   const [detail, dispatchDetail] = useContext(DetailContext)
+  const [characters, dispatchCharacters] = useContext(CharactersContext)
 
   const handleRollInitiative = () => {
     character.rollInitiative()
@@ -17,7 +19,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   }
 
   const handleRemove = () => {
-    dispatchDetail({type: "REMOVE_CHARACTER", payload: character})
+    dispatchCharacters({type: "REMOVE_CHARACTER", payload: character})
   }
 
   return (
