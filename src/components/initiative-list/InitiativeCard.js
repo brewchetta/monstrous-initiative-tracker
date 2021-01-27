@@ -16,13 +16,17 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     }
   }
 
+  const handleRemove = () => {
+    dispatchDetail({type: "REMOVE_CHARACTER", payload: character})
+  }
+
   return (
     <div className="initiative-card"
     style={{top: `${index * 50}px`}}>
       {character.name} | {character.armor_class} 🛡️ | <span
       onClick={handleRollInitiative}>
         {character.initiative >= -4 ? character.initiative : "⚅ Roll for "} Initiative
-      </span> | <span onClick={handleOpenDetail}>📖 More</span>
+      </span> | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
   )
 
