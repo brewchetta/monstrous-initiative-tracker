@@ -10,7 +10,10 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // EVENT HANDLERS
 
   const handleChange = event => {
-    const value = event.target.type === "number" ? parseInt(event.target.value) : event.target.value
+    const {target} = event
+    const value = target.type === "number" ? parseInt(target.value)
+    : target.type === "checkbox" ? target.checked
+    : target.value
     setFormInputs({...formInputs, ...{[event.target.name]: value}})
   }
 
@@ -60,13 +63,12 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       </select>
     )
   }
-
+  console.log(formInputs.player);
   console.log("TODO: Double check alignments from API")
-
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
-      <span>Player? <input type="checkbox" value={formInputs.player} onChange={handleChange} /></span><br/>
+      <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span><br/>
 
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
