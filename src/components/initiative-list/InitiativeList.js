@@ -4,6 +4,7 @@ import Character from '../../models/Character'
 import InitiativeCard from './InitiativeCard'
 import { CharactersContext } from '../../context/characters-context'
 
+// TODO: TEST WITH NON-EXISTENT MONSTERS
 const monsterNames = ["vampire", "goblin", "merfolk", "duergar", "cat"]
 
 export default function InitiativeList(props) {
