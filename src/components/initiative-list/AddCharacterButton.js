@@ -6,7 +6,7 @@ import Character from '../../models/Character'
 export default function AddCharacterButton(props) {
 
   const dispatchDetail = useContext(DetailContext)[1]
-  const dispatchCharacte = useContext(CharactersContext)[1]
+  const dispatchCharacter = useContext(CharactersContext)[1]
 
   const handleClick = () => {
     const newChar = Character.createTemplate()
