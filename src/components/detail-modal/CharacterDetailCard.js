@@ -11,7 +11,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // EVENT HANDLERS
 
   const handleChange = event => {
-    setFormInputs({...formInputs, ...{[event.target.name]: event.target.value}})
+    const value = event.target.type === "number" ? parseInt(event.target.value) : event.target.value
+    setFormInputs({...formInputs, ...{[event.target.name]: value}})
   }
 
   const handleSubmit = e => {
@@ -48,8 +49,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
       <span>{renderInputField("name")}</span>
-      <span>{renderInputField("armor_class")}</span>
-      <span>{renderInputField("initiative")}</span>
+      <span>{renderNumberField("armor_class")}</span>
+      <span>{renderNumberField("initiative")}</span>
       <span>STR {renderNumberField("strength")}({modifier("strength")})</span>
       <span>DEX {renderNumberField("dexterity")}({modifier("dexterity")})</span>
       <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span>
