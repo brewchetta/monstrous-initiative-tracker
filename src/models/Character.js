@@ -1,6 +1,10 @@
+import { template } from "./character-template"
+
 export default class Character {
 
   static internalKey = 0
+
+  static createTemplateCharacter = () => new Character(template)
 
   constructor(data) {
     this._key = this.constructor.internalKey
