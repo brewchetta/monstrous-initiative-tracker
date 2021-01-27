@@ -4,7 +4,7 @@ import Character from '../../models/Character'
 import InitiativeCard from './InitiativeCard'
 import { CharactersContext } from '../../context/characters-context'
 
-const monsterNames = ["vampire", "goblin", "merfolk"]
+const monsterNames = ["vampire", "goblin", "merfolk", "duergar", "cat"]
 
 export default function InitiativeList(props) {
 
