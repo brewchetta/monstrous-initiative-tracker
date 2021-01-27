@@ -3,6 +3,7 @@ import { getMonster } from '../../services/dnd-5e-api'
 import Character from '../../models/Character'
 import InitiativeCard from './InitiativeCard'
 import AddCharacterButton from './AddCharacterButton'
+import SearchButton from './SearchButton'
 import { CharactersContext } from '../../context/characters-context'
 
 // TODO: TEST WITH NON-EXISTENT MONSTERS
@@ -32,6 +33,7 @@ export default function InitiativeList(props) {
     <div id="initative-list">
 
       <AddCharacterButton />
+      <SearchButton />
 
       {renderListedCharacters()}
 

@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { DetailContext } from "../../context/detail-context"
 import { CharactersContext } from "../../context/characters-context"
 import CharacterDetailCard from "./CharacterDetailCard"
+import SearchForm from "./SearchForm"
 
 export default function DetailContainer(props) {
 
@@ -20,6 +21,7 @@ export default function DetailContainer(props) {
 
   const renderDetail = () => {
     return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
+    : detail && detail.type === "search" ? <SearchForm />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : null)
   }

@@ -9,7 +9,7 @@ export default function SearchForm() {
   const [message, setMessage] = useState("")
   const [characters, dispatch] = useContext(CharactersContext)
 
-  // TODO: add mode select for spells
+  // TODO: add mode search for spells
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -32,10 +32,10 @@ export default function SearchForm() {
       <input type="text"
       onChange={(e) => setInput(e.target.value)}
       value={input}
-      placeholder={search here}/>
+      placeholder={"search here"}/>
 
       <input type="submit"
-      value={Search}/>
+      value={"Search"}/>
 
     </form>
   )

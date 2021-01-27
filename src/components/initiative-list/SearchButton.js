@@ -10,9 +10,9 @@ export default function AddCharacterButton(props) {
   }
 
   return (
-    <button style={{position: "absolute", left: 0}}
+    <button style={{position: "absolute", left: 0, top: "2em"}}
     onClick={handleClick}>
-      Create New Character
+      Search
     </button>
   )
 
