@@ -8,7 +8,7 @@ export default function DetailContainer(props) {
 
   // CONTEXT //
   const [detail, dispatchDetail] = useContext(DetailContext)
-  const [characters, dispatchCharacters] = useContext(CharactersContext)
+  const dispatchCharacters = useContext(CharactersContext)[1]
 
   // EVENT HANDLERS //
 

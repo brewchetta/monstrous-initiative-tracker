@@ -6,9 +6,9 @@ import { getMonster } from "../../services/dnd-5e-api"
 export default function SearchForm() {
 
   const [input, setInput] = useState("")
-  const [mode, setMode] = useState("Monster")
+  const [mode] = useState("Monster")
   const [message, setMessage] = useState("")
-  const [characters, dispatch] = useContext(CharactersContext)
+  const dispatch = useContext(CharactersContext)[1]
 
   // TODO: add mode search for spells
 

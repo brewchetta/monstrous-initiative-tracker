@@ -3,7 +3,7 @@ import { DetailContext } from "../../context/detail-context"
 
 export default function AddCharacterButton(props) {
 
-  const [detail, dispatchDetail] = useContext(DetailContext)
+  const dispatchDetail = useContext(DetailContext)[1]
 
   const handleClick = () => {
     dispatchDetail({type: "SEARCH"})
