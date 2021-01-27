@@ -2,6 +2,7 @@ import { useEffect, useContext } from 'react'
 import { getMonster } from '../../services/dnd-5e-api'
 import Character from '../../models/Character'
 import InitiativeCard from './InitiativeCard'
+import AddCharacterButton from './AddCharacterButton'
 import { CharactersContext } from '../../context/characters-context'
 
 // TODO: TEST WITH NON-EXISTENT MONSTERS
@@ -29,6 +30,8 @@ export default function InitiativeList(props) {
 
   return (
     <div id="initative-list">
+
+      <AddCharacterButton />
 
       {renderListedCharacters()}
 
