@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import Character from '../../models/Character.js'
 import { CharactersContext } from "../../context/characters-context"
+import { getMonster } from "../../services/dnd-5e-api"
 
 export default function SearchForm() {
 
@@ -13,10 +14,9 @@ export default function SearchForm() {
 
   const handleSubmit = e => {
     e.preventDefault()
-    Character.search(input).then(character => {
-      if (character) {
-        dispatch({type: "ADD_CHARACTER", payload: character})
-        setInput("")
+    getMonster(input).then(data => {
+      if (!data.error) {
+        dispatch({type: "ADD_CHARACTER", payload: new Character(data)})
       } else {
         setMessage("Couldn't find that in the monster manual")
       }

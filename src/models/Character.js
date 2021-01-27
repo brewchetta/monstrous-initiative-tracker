@@ -1,5 +1,4 @@
 import { template } from "./character-template"
-import { getMonster } from "../services/dnd-5e-api"
 
 export default class Character {
 
@@ -71,14 +70,6 @@ export default class Character {
   rollInitiative = () => {
     this.initiative = this.dex + Math.ceil(Math.random() * 20)
     return this.initiative
-  }
-
-  // ASYNC //
-
-  static search = (searchTerm) => {
-    getMonster(searchTerm).then(data => {
-      return data.name && new Character(data)
-    })
   }
 
   // END //
