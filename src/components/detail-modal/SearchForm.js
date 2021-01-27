@@ -16,6 +16,7 @@ export default function SearchForm() {
     Character.search(input).then(character => {
       if (character) {
         dispatch({type: "ADD_CHARACTER", payload: character})
+        setInput("")
       } else {
         setMessage("Couldn't find that in the monster manual")
       }
