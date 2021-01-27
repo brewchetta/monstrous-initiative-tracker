@@ -28,6 +28,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - When building template, can toggle box to designate player character
 
+- Automatically builds a url link to the D&D beyond page for that monster
+
 ## Issues
 
 - Clicking on a monster's name doesn't bring up the modal (for some reason I keep trying to do that)
