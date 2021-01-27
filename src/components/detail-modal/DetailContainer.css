@@ -1,5 +1,6 @@
 #detail-modal {
-  background: green;
+  background: white;
+  border: solid black 2px;
   padding: 1em;
   position: fixed;
   right: 0;

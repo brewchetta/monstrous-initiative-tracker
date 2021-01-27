@@ -1,3 +1,23 @@
 #character-detail-form {
   background: black;
+  color: white;
+  padding: 1em;
+}
+
+#character-detail-form input {
+  background: none;
+  border: none;
+  border-bottom: solid white 1px;
+  color: white;
+}
+
+#character-detail-form input[type=submit] {
+  border: solid white 2px;
+}
+
+#character-detail-form select {
+  background: black;
+  color: white;
+  border: solid white 1px;
+  border-radius: 5px;
 }
