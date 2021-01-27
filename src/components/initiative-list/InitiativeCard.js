@@ -21,7 +21,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     style={{top: `${index * 50}px`}}>
       {character.name} \|/ {character.armor_class} AC \|/ <span
       onClick={handleRollInitiative}>
-        {character.initiative || "⚅ Roll for "} Initiative
+        {character.initiative >= -4 ? character.initiative : "⚅ Roll for "} Initiative
       </span> \|/ <span onClick={handleOpenDetail}>Open Detail View</span>
     </div>
   )
