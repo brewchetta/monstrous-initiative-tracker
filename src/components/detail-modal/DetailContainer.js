@@ -1,4 +1,5 @@
 import { useContext } from "react"
+import "./DetailContainer.css"
 import { DetailContext } from "../../context/detail-context"
 import { CharactersContext } from "../../context/characters-context"
 import CharacterDetailCard from "./CharacterDetailCard"

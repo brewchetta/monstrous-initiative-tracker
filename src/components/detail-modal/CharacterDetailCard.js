@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
 

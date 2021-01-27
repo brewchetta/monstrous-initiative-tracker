@@ -1,7 +1,5 @@
 // STYLES //
-import '../styles/App.css';
-import '../styles/InitiativeCard.css';
-import '../styles/DetailModal.css';
+import './App.css';
 // COMPONENTS //
 import InitiativeList from './initiative-list/InitiativeList'
 import DetailContainer from './detail-modal/DetailContainer'
