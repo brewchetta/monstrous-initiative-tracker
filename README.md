@@ -26,14 +26,16 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Each initiative card has a background determined by monster / player type
 
-- WORKING: When building template, can toggle box to designate player character
+- COMPLETED: When building template, can toggle box to designate player character
+
+- Player characters have specific styling to denote them
+
+- Player characters have a class property
+
+- Player character initiative card background is determined by class
 
 - Automatically builds a url link to the D&D beyond page for that monster
 
 ## Issues
 
 - Clicking on a monster's name doesn't bring up the modal (for some reason I keep trying to do that)
-
-- Initiative needs to automatically pull in DEX modifier for a calculated initiative
-
-- Can't add hit points in detail modal
