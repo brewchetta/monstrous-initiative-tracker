@@ -10,23 +10,26 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Initiative determines the order that all monsters / characters are displayed (automatically determining ties based on DEX)
 
-- COMPLETED: The list only shows important stats (monster name, initiative, and AC) and any monster / character can be expanded to see and change their stats
+- COMPLETED: The list only shows important stats (monster name, initiative, hitpoints, and AC) and any monster / character can be expanded to see and change their stats
 
 ## Stretch
 
 - COMPLETED: Integration with http://www.dnd5eapi.co/ so users can immediately pull in monster stats and possibly append them as needed
 
+- COMPLETED: When building template, can toggle box to designate player character
+
 - WORKING: Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
-- Users are able to save custom monster / character blocks to local storage
+- WORKING: Users are able to save custom monster / character blocks to local storage
 
-- If a monster drops to 0 hit points, the user is asked whether they'd like to be removed from the list
+- Users are able to open a monster's spells for quick reference
+
+- If a character drops to 0 hit points, they're styled differently
 
 - Users can assign icons to monsters / characters to show different statuses
 
 - Each initiative card has a background determined by monster / player type
 
-- COMPLETED: When building template, can toggle box to designate player character
 
 - Player characters have specific styling to denote them
 
@@ -34,8 +37,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Player character initiative card background is determined by class
 
-- Automatically builds a url link to the D&D beyond page for that monster
+- Automatically builds a url link to the D&D beyond page for that monster (using index rather than name)
+
+- Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
 ## Issues
 
-- Clicking on a monster's name doesn't bring up the modal (for some reason I keep trying to do that)
+- Detail modal cannot be clicked out of to exit
