@@ -82,9 +82,12 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
       <span>Subtype: {renderInputField("subtype")}</span>
       <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span><br/>
-      <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span>
+      <span>Languages: {renderInputField("languages")}</span>
+      <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
 
+      <span>Hit Dice: {renderInputField("hit_dice")}</span>
       <span>Challenge Rating: {renderInputField("challenge_rating")}</span>
+      <span>XP: {renderInputField("xp")}</span>
 
       <input type="submit" value="Save"/>
 
