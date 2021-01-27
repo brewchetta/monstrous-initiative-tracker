@@ -14,7 +14,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Stretch
 
-- WORKING: Integration with http://www.dnd5eapi.co/ so users can immediately pull in monster stats and possibly append them as needed
+- COMPLETED: Integration with http://www.dnd5eapi.co/ so users can immediately pull in monster stats and possibly append them as needed
 
 - Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
