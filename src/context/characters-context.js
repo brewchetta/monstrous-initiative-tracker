@@ -1,8 +1,7 @@
 import {createContext, useReducer} from "react"
 
 const CharactersContext = createContext()
-// TODO: have dex break ties
-const byInitiative = (a,b) => (b.initiative || -10) - (a.initiative || -10)
+const byInitiative = (a,b) => (b.initiative + (b.dexterity * 0.01) || -10) - (a.initiative + (a.dexterity * 0.01) || -10)
 
 
 const charactersReducer = (state, action) => {
