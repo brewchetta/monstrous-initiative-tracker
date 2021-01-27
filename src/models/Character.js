@@ -17,7 +17,7 @@ export default class Character {
     this.remapActionAttributes()
     this.remapProficiencies()
 
-    this.currentHitPoints = hit_points
+    this.currentHitPoints = this.hit_points
     this.initiative = -10
   }
 

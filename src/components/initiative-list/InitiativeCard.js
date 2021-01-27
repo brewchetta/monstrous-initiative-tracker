@@ -28,7 +28,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
       {character.name} | {character.armor_class} 🛡️ | <span
       onClick={handleRollInitiative}>
         {character.initiative >= -4 ? character.initiative : "⚅ Roll for "} Initiative
-      </span> | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
+      </span> | {character.currentHitPoints}/{character.hit_points} ♡ | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
   )
 
