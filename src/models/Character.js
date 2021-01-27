@@ -12,6 +12,8 @@ export default class Character {
 
     this.remapActionAttributes()
     this.remapProficiencies()
+
+    this.initiative = -10
   }
 
   // CONSTRUCTOR HELPERS //

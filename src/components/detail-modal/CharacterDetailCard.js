@@ -6,6 +6,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const [formInputs, setFormInputs] = useState(character)
 
+  console.log(character.initiative);
+
   // EVENT HANDLERS
 
   const handleChange = event => {
