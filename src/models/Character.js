@@ -19,6 +19,7 @@ export default class Character {
 
     this.currentHitPoints = this.hit_points
     this.initiative = -10
+    this.tempHP = 0
   }
 
   // CONSTRUCTOR HELPERS //
