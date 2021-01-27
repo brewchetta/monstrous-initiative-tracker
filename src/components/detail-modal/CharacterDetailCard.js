@@ -68,7 +68,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
-      <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span><br/>
+      <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span>
+      <span>{renderSelectField("char_class","","Artificer","Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Rogue","Ranger","Sorcerer","Warlock","Wizard")}</span><br/>
 
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
