@@ -63,7 +63,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       </select>
     )
   }
-  console.log(formInputs.player);
+
   console.log("TODO: Double check alignments from API")
 
   return (
