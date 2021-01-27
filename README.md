@@ -18,6 +18,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
+- Initiative automatically pulls in DEX modifier for a calculated initiative
+
+- Able to add hit points in detail modal
+
 - Users are able to save custom monster / character blocks to local storage
 
 - If a monster drops to 0 hit points, the user is asked whether they'd like to be removed from the list
