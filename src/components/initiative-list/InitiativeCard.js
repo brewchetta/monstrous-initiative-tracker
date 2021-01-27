@@ -76,7 +76,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
           min={0}
           ref={focusedInput}
           />
-          /{character.hit_points}
+          /{character.hit_points} ♡
         </span>
       )
     } else {
