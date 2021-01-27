@@ -6,11 +6,13 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - A user can build a stat block with a monster's attributes, saves, health, AC, and initiative
 
-- Users can change a stat block to have different stats
+- COMPLETED: Users can change a stat block to have different stats
 
-- Initiative determines the order that all monsters / characters are displayed (automatically determining ties based on DEX)
+- COMPLETED: Initiative determines the order that all monsters / characters are displayed
 
-- The list only shows important stats (monster name, initiative, and AC) and any monster / character can be expanded to see and change their stats
+- (automatically determining ties based on DEX)
+
+- COMPLETED: The list only shows important stats (monster name, initiative, and AC) and any monster / character can be expanded to see and change their stats
 
 ## Stretch
 
