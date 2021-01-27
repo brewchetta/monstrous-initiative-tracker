@@ -12,7 +12,6 @@ const charactersReducer = (state, action) => {
     case "UPDATE_CHARACTER":
       return state.map(character => character._key === action.payload._key ? action.payload : character).sort(byInitiative)
     case "REMOVE_CHARACTER":
-      console.log("firing")
       return state.filter(character => character._key !== action.payload._key)
     default:
       throw new Error(`Incorrect use of character reducer: ${action.type}`)
