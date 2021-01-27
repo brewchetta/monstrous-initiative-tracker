@@ -23,3 +23,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - If a monster drops to 0 hit points, the user is asked whether they'd like to be removed from the list
 
 - Users can assign icons to monsters / characters to show different statuses
+
+- Each initiative card has a background determined by monster / player type
+
+- When building template, can toggle box to designate player character
