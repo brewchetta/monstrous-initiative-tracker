@@ -66,6 +66,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
+      <span>Player? <input type="checkbox" value={formInputs.player} onChange={handleChange} /></span><br/>
 
       <span>Name: {renderInputField("name")}</span>
       <span>AC: {renderNumberField("armor_class")}</span>
