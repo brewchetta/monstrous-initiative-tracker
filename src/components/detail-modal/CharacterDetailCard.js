@@ -46,15 +46,15 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
-      <span>{renderInputField("name")}</span>
-      <span>{renderNumberField("armor_class")}</span>
-      <span>{renderNumberField("initiative")}</span>
+      <span>Name: {renderInputField("name")}</span>
+      <span>AC: {renderNumberField("armor_class")}</span>
+      <span>Initiative: {renderNumberField("initiative")}</span><br/>
       <span>STR {renderNumberField("strength")}({modifier("strength")})</span>
       <span>DEX {renderNumberField("dexterity")}({modifier("dexterity")})</span>
-      <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span>
+      <span>CON {renderNumberField("constitution")}({modifier("constitution")})</span><br/>
       <span>WIS {renderNumberField("wisdom")}({modifier("wisdom")})</span>
       <span>INT {renderNumberField("intelligence")}({modifier("intelligence")})</span>
-      <span>CHA {renderNumberField("charisma")}({modifier("charisma")})</span>
+      <span>CHA {renderNumberField("charisma")}({modifier("charisma")})</span><br/>
 
       <input type="submit" value="Save"/>
 
