@@ -74,7 +74,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
       <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
-      <span>CON({modifier("constitution")}) {renderNumberField("constitution")}</span><br/>
+      <span>CON({modifier("constitution")}) {renderNumberField("constitution")}</span>
       <span>WIS({modifier("wisdom")}) {renderNumberField("wisdom")}</span>
       <span>INT({modifier("intelligence")}) {renderNumberField("intelligence")}</span>
       <span>CHA({modifier("charisma")}) {renderNumberField("charisma")}</span><br/>
