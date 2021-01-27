@@ -22,6 +22,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     updateCharacter(formInputs)
   }
 
+  const handleSaveToStorage = () => saveLocalMonster(formInputs)
+
   // HELPERS //
 
   const modifier = attribute => {
@@ -30,6 +32,21 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       return `+${mod}`
     }
     return mod
+  }
+
+  const localMonsters = () => localStorage.getItem("monstrous-characters")
+
+  // const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
+
+  const saveLocalMonster = () => {
+    let locals
+    if (localMonsters()) {
+      locals = JSON.parse(localMonsters())
+      locals.push(formInputs)
+    } else {
+      locals = [formInputs]
+    }
+    localStorage.setItem("monstrous-characters", JSON.stringify(locals))
   }
 
   // RENDER METHODS //
@@ -64,7 +81,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
-  console.log("TODO: Double check alignments from API")
+  console.log(localMonsters())
+  // console.log("TODO: Double check alignments from API")
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
@@ -97,6 +115,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Challenge Rating: {renderInputField("challenge_rating")}</span>
       <span>XP: {renderInputField("xp")}</span>
 
+      <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
       <input type="submit" value="Save"/>
 
     </form>
