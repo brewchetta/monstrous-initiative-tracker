@@ -14,7 +14,7 @@ export default class Character {
       this[key] = data[key]
     })
 
-    this.playerCharacter = playerCharacter
+    this.player = player
 
     this.remapActionAttributes()
     this.remapProficiencies()
