@@ -9,6 +9,16 @@ export default function SelectLocalMonstersForm() {
   const [locals, setLocals] = useState([])
   const dispatch = useContext(CharactersContext)[1]
 
+  const initializeLocals = () => {
+    setLocals(localMonsters())
+  }
+
+  useEffect(initializeLocals, [])
+
+  const addCharacter = character => {
+    dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
+  }
+
   // LOCAL STORAGE //
 
   const removeLocalMonster = monster => {
@@ -20,27 +30,18 @@ export default function SelectLocalMonstersForm() {
 
   const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
 
-  const saveLocalMonster = () => {
-    let locals
-    if (localMonsters()) {
-      locals = localMonsters()
-      locals.push(formInputs)
-    } else {
-      locals = [formInputs]
-    }
-    localStorage.setItem("monstrous-characters", JSON.stringify(locals))
-  }
-
   // RENDER //
 
   const renderLocalMonsters = () => {
-    locals.map(char => <SelectLocalMonstersCard character={char} />)
+    locals.map(char => <SelectLocalMonstersCard character={char} removeLocalMonster={removeLocalMonster} addCharacter={addCharacter} />)
   }
 
   return (
-    <div>
+    <div id="local-character-selection">
 
       {renderLocalMonsters()}
+
+      <button onClick={clearLocalMonsters}>Remove All</button>
 
     </div>
   )

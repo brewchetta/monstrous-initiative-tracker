@@ -1,13 +1,14 @@
-function SelectLocalMonstersCard({character}) {
+function SelectLocalMonstersCard({character, removeLocalMonster, addCharacter}) {
 
-  const handleClick = () => {
-    console.log(character)
+  const handleAddMonster = () => {
+    addCharacter(character)
   }
 
   return (
     <div class="local-character-card"
-    onClick={handleClick}>
+    onClick={handleAddMonster}>
       {character.name}{character.char_class ? ` the ${character.char_class}` : ""}
+      <button onClick={() => removeLocalMonster(character)}>Remove</button>
     </div>
   )
 }
