@@ -16,7 +16,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Integration with http://www.dnd5eapi.co/ so users can immediately pull in monster stats and possibly append them as needed
 
-- Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
+- WORKING: Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
 - Users are able to save custom monster / character blocks to local storage
 
@@ -26,7 +26,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Each initiative card has a background determined by monster / player type
 
-- When building template, can toggle box to designate player character
+- WORKING: When building template, can toggle box to designate player character
 
 - Automatically builds a url link to the D&D beyond page for that monster
 
