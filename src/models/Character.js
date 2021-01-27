@@ -6,7 +6,7 @@ export default class Character {
 
   static createTemplate = () => new Character(template)
 
-  constructor(data, playerCharacter = false) {
+  constructor(data, player = false) {
     this._key = this.constructor.internalKey
     this.constructor.internalKey++
 
