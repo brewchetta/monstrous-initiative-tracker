@@ -1,7 +1,10 @@
 import { useState } from "react"
+import CharacterDetailProficiencies from './CharacterDetailProficiencies'
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
+
+  console.log(character)
 
   // STATE //
 
@@ -117,6 +120,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
       <input type="submit" value="Save"/>
+
+      <CharacterDetailProficiencies proficiencies={character.proficiencies} />
 
     </form>
   )
