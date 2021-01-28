@@ -20,6 +20,8 @@ export default class Character {
     this.remapActionAttributes()
     this.remapProficiencies()
 
+    this.subtype = this.subtype ? this.subtype : ""
+
     this.currentHitPoints = this.hit_points
     this.initiative = -10
     this.tempHP = 0
@@ -30,18 +32,18 @@ export default class Character {
   remapActionAttributes = () => {
     this.actions.forEach(action => {
       action.damage.forEach(d => {
-        if (d.damage_type) {
+        if (d.damage_type && d.damage_type.name) {
           d.damage_type = d.damage_type.name
         }
       })
-      if (action.dc) {
+      if (action.dc && action.dc.dc_type) {
         action.dc.dc_type = action.dc.dc_type.name
       }
     })
   }
 
   remapProficiencies = () => {
-    this.proficiencies = this.proficiencies.map(p => p.proficiency.name)
+    this.proficiencies = this.proficiencies.map(p => p.proficiency && p.proficiency.name)
   }
 
   // ATTRIBUTE MODIFIERS //
