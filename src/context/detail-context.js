@@ -11,6 +11,8 @@ const detailReducer = (state, action) => {
       return {type: "character", content: action.payload}
     case "SEARCH":
       return {type: "search"}
+    case "LOCAL_CHARACTERS":
+      return {type: "locals"}
     case "INSPECT_SPELL":
       return {type: "spell", content: action.payload}
     default:
