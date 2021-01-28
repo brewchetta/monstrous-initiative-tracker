@@ -1,18 +1,18 @@
 import { useContext } from "react"
 import { DetailContext } from "../../context/detail-context"
 
-export default function LocalCharactersButton() {
+export default function AddCharacterButton(props) {
 
   const dispatchDetail = useContext(DetailContext)[1]
 
   const handleClick = () => {
-    dispatchDetail({type: "LOCAL_CHARACTERS"})
+    dispatchDetail({type: "SEARCH"})
   }
 
   return (
     <button style={{position: "absolute", left: 0, top: "2em"}}
     onClick={handleClick}>
-      Saved Characters
+      Search
     </button>
   )
 
