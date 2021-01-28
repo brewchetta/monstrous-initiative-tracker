@@ -1,6 +1,6 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { CharactersContext } from "../../context/characters-context"
-// import Character from '../../models/Character.js'
+import Character from '../../models/Character.js'
 import SelectLocalMonstersCard from './SelectLocalMonstersCard'
 
 export default function SelectLocalMonstersForm() {
@@ -26,14 +26,19 @@ export default function SelectLocalMonstersForm() {
     console.log("do stuff")
   }
 
+
   const localMonsters = () => JSON.parse(localStorage.getItem("monstrous-characters"))
 
   const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
+  console.log(locals);
 
   // RENDER //
 
   const renderLocalMonsters = () => {
-    locals.map(char => <SelectLocalMonstersCard character={char} removeLocalMonster={removeLocalMonster} addCharacter={addCharacter} />)
+    return locals.map((char, i) => <SelectLocalMonstersCard key={i}
+      character={char}
+      removeLocalMonster={removeLocalMonster}
+      addCharacter={addCharacter} />)
   }
 
   return (

@@ -25,7 +25,7 @@ export default function DetailContainer(props) {
     return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
     : detail && detail.type === "search" ? <SearchForm />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
-    : detail && detail.type === "spell" ? <SelectLocalMonstersForm />
+    : detail && detail.type === "locals" ? <SelectLocalMonstersForm />
     : null)
   }
 
