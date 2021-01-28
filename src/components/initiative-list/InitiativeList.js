@@ -2,6 +2,7 @@ import { useContext } from 'react'
 import InitiativeCard from './InitiativeCard'
 import AddCharacterButton from './AddCharacterButton'
 import SearchButton from './SearchButton'
+import LocalCharactersButton from './LocalCharactersButton'
 import { CharactersContext } from '../../context/characters-context'
 
 export default function InitiativeList(props) {

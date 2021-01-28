@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { DetailContext } from "../../context/detail-context"
 
-export default function AddCharacterButton(props) {
+export default function LocalCharactersButton(props) {
 
   const dispatchDetail = useContext(DetailContext)[1]
 
