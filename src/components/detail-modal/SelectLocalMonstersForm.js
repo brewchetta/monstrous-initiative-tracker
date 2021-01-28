@@ -22,8 +22,9 @@ export default function SelectLocalMonstersForm() {
   // LOCAL STORAGE //
 
   const removeLocalMonster = monster => {
-    // TODO: STUFF HERE
-    console.log("do stuff")
+    const newLocals = locals.filter(m => m !== monster)
+    localStorage.setItem("monstrous-characters", JSON.stringify(newLocals))
+    setLocals(newLocals)
   }
 
 
