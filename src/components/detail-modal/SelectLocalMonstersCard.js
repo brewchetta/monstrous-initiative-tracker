@@ -1,4 +1,4 @@
-function SelectLocalMonstersCard({character, removeLocalMonster, addCharacter}) {
+export default function SelectLocalMonstersCard({character, removeLocalMonster, addCharacter}) {
 
   const handleAddMonster = () => {
     addCharacter(character)
