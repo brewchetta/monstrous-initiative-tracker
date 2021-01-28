@@ -7,6 +7,8 @@ export default class Character {
   static createTemplate = () => new Character(template)
 
   constructor(data, player = false, char_class = "") {
+
+    console.log(data);
     Object.keys(data).forEach(key => {
       this[key] = data[key]
     })
@@ -43,7 +45,7 @@ export default class Character {
   }
 
   remapProficiencies = () => {
-    this.proficiencies = this.proficiencies.map(p => p.proficiency && p.proficiency.name)
+    this.proficiencies = this.proficiencies.map(p => (p.proficiency && `${p.proficiency.name} + ${p.value}`) || p)
   }
 
   // ATTRIBUTE MODIFIERS //
