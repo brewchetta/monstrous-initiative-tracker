@@ -31,7 +31,6 @@ export default function SelectLocalMonstersForm() {
   const localMonsters = () => JSON.parse(localStorage.getItem("monstrous-characters"))
 
   const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
-  console.log(locals);
 
   // RENDER //
 

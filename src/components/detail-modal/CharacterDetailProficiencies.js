@@ -1,6 +1,8 @@
+import { useState } from 'react'
+
 export default function CharacterDetailProficiencies({proficiencies}) {
 
-  console.log(proficiencies);
+  const [profs, setProfs] = useState(proficiencies)
 
   return (
       <p>{JSON.stringify(proficiencies)}</p>

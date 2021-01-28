@@ -4,7 +4,7 @@ import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
 
-  console.log(character)
+  // console.log(character)
 
   // STATE //
 
@@ -84,8 +84,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
-  console.log(JSON.parse(localMonsters()))
-  // console.log("TODO: Double check alignments from API")
+  console.log("TODO: Double check alignments from API")
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
