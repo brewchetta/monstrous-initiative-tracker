@@ -7,12 +7,12 @@ export default class Character {
   static createTemplate = () => new Character(template)
 
   constructor(data, player = false, char_class = "") {
-    this._key = this.constructor.internalKey
-    this.constructor.internalKey++
-
     Object.keys(data).forEach(key => {
       this[key] = data[key]
     })
+
+    this._key = this.constructor.internalKey
+    this.constructor.internalKey++
 
     this.player = player
     this.char_class = char_class
