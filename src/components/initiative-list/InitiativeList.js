@@ -21,6 +21,7 @@ export default function InitiativeList(props) {
 
       <AddCharacterButton />
       <SearchButton />
+      <LocalCharactersButton />
 
       {renderListedCharacters()}
 
