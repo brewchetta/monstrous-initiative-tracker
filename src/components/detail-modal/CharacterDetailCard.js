@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
 import CharacterDetailProficiencies from './CharacterDetailProficiencies'
 import CharacterDetailActions from './CharacterDetailActions'
@@ -9,6 +9,10 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
+
+  useEffect(() => {
+    console.log(character)
+  }, [character])
 
   // EVENT HANDLERS
 
