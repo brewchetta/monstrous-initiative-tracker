@@ -21,6 +21,9 @@ export default class Character {
 
     this.remapActionAttributes()
     this.remapProficiencies()
+    this.remapArrayProperty("damage_immunities")
+    this.remapArrayProperty("damage_resistances")
+    this.remapArrayProperty("damage_vulnerabilities")
 
     this.subtype = this.subtype ? this.subtype : ""
 
@@ -30,6 +33,10 @@ export default class Character {
   }
 
   // CONSTRUCTOR HELPERS //
+
+  remapArrayProperty = property => {
+    this[property] = this[property].constructor === Array ? this[property].join(",") : this[property]
+  }
 
   remapActionAttributes = () => {
     this.actions.forEach(action => {
