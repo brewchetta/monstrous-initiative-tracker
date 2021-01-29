@@ -8,7 +8,6 @@ export default class Character {
 
   constructor(data, player = false, char_class = "") {
 
-    console.log(data);
     Object.keys(data).forEach(key => {
       this[key] = data[key]
     })
