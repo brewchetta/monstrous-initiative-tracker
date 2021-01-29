@@ -26,7 +26,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Users are able to save custom monster / character blocks to local storage and delete them
 
-- Add localStorage service module
+- COMPLETED: Add localStorage service module
 
 - Users are able to open a monster's spells for quick reference
 
