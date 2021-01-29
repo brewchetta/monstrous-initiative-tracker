@@ -6,8 +6,6 @@ import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
 
-  console.log(character)
-
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
