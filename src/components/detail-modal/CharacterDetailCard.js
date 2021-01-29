@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { saveMonster } from '../../services/localstorage'
 import CharacterDetailProficiencies from './CharacterDetailProficiencies'
 import "./CharacterDetailCard.css"
 
@@ -25,7 +26,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     updateCharacter(formInputs)
   }
 
-  const handleSaveToStorage = () => saveLocalMonster(formInputs)
+  const handleSaveToStorage = () => saveMonster(formInputs)
 
   // HELPERS //
 
@@ -35,21 +36,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       return `+${mod}`
     }
     return mod
-  }
-
-  const localMonsters = () => localStorage.getItem("monstrous-characters")
-
-  // const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
-
-  const saveLocalMonster = () => {
-    let locals
-    if (localMonsters()) {
-      locals = JSON.parse(localMonsters())
-      locals.push(formInputs)
-    } else {
-      locals = [formInputs]
-    }
-    localStorage.setItem("monstrous-characters", JSON.stringify(locals))
   }
 
   // RENDER METHODS //
