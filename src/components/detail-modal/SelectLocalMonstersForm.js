@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react"
+import { getMonsters, setMonsters, clearMonsters } from "../../services/localstorage"
 import { CharactersContext } from "../../context/characters-context"
 import Character from '../../models/Character.js'
 import SelectLocalMonstersCard from './SelectLocalMonstersCard'
@@ -9,11 +10,7 @@ export default function SelectLocalMonstersForm() {
   const [locals, setLocals] = useState([])
   const dispatch = useContext(CharactersContext)[1]
 
-  const initializeLocals = () => {
-    setLocals(localMonsters())
-  }
-
-  useEffect(initializeLocals, [])
+  useEffect(() => { setLocals(getMonsters()) }, [])
 
   const addCharacter = character => {
     dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
@@ -23,14 +20,9 @@ export default function SelectLocalMonstersForm() {
 
   const removeLocalMonster = monster => {
     const newLocals = locals.filter(m => m !== monster)
-    localStorage.setItem("monstrous-characters", JSON.stringify(newLocals))
+    setMonsters(newLocals)
     setLocals(newLocals)
   }
-
-
-  const localMonsters = () => JSON.parse(localStorage.getItem("monstrous-characters"))
-
-  const clearLocalMonsters = () => localStorage.removeItem("monstrous-characters")
 
   // RENDER //
 
@@ -46,7 +38,7 @@ export default function SelectLocalMonstersForm() {
 
       {renderLocalMonsters()}
 
-      <button onClick={clearLocalMonsters}>Remove All</button>
+      <button onClick={clearMonsters}>Remove All</button>
 
     </div>
   )
