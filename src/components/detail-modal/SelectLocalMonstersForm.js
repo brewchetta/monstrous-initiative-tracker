@@ -10,7 +10,7 @@ export default function SelectLocalMonstersForm() {
   const [locals, setLocals] = useState([])
   const dispatch = useContext(CharactersContext)[1]
 
-  useEffect(() => { setLocals(getMonsters()) }, [])
+  useEffect(() => { setLocals(getMonsters() || []) }, [])
 
   const addCharacter = character => {
     dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
