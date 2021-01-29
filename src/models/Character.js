@@ -61,7 +61,9 @@ export default class Character {
   }
 
   remapProficiencies = () => {
-    this.proficiencies = this.proficiencies.map(p => (p.proficiency && `${p.proficiency.name} + ${p.value}`) || p)
+    if (this.proficiencies.constructor === Array) {
+      this.proficiencies = this.proficiencies.map(p => `${p.proficiency.name} + ${p.value}`).join(' | ')
+    }
   }
 
   // ATTRIBUTE MODIFIERS //
