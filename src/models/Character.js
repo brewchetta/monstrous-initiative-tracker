@@ -24,6 +24,9 @@ export default class Character {
     this.remapArrayProperty("damage_immunities")
     this.remapArrayProperty("damage_resistances")
     this.remapArrayProperty("damage_vulnerabilities")
+    this.remapArrayProperty("condition_immunities")
+    this.remapObjectProperty("senses")
+    this.remapObjectProperty("speed")
 
     this.subtype = this.subtype ? this.subtype : ""
 
@@ -34,8 +37,14 @@ export default class Character {
 
   // CONSTRUCTOR HELPERS //
 
+  remapObjectProperty = property => {
+    if (this[property].constructor === Object) {
+      this[property] = Object.keys(this[property]).map(k => `${k}: ${this[property][k]}`).join(" | ")
+    }
+  }
+
   remapArrayProperty = property => {
-    this[property] = this[property].constructor === Array ? this[property].join(",") : this[property]
+    this[property] = this[property].constructor === Array ? this[property].join(" | ") : this[property]
   }
 
   remapActionAttributes = () => {

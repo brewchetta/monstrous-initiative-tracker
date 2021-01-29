@@ -47,6 +47,12 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
+- Search ought to be a datalist of known monsters / spells
+
 ## Issues
 
 - Detail modal cannot be clicked out of to exit
+
+- Remove All button for local storage doesn't clear locals on front end
+
+- Need dictionary for certain monster entries with obscure names (example: Incubus should lead to Succubus/Incubus and Red Dragon should lead to Adult Red Dragon)
