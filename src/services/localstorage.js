@@ -2,6 +2,6 @@ export const getMonsters = () => JSON.parse(localStorage.getItem("monstrous-char
 export const setMonsters = locals => localStorage.setItem("monstrous-characters", JSON.stringify(locals))
 export const clearMonsters = () => localStorage.removeItem("monstrous-characters")
 export const saveMonster = local => {
-    locals = getLocals() ? getLocals().push(local) : [local]
-    setLocals(locals)
+    const locals = getMonsters() ? getMonsters().push(local) : [local]
+    setMonsters(locals)
 }
