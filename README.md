@@ -20,9 +20,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - WORKING: Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
-  - Can amend proficiencies
-  - Can amend actions
+  - WORKING: Can amend proficiencies
+  - WORKING: Can amend actions
   - Can amend legendary actions
+  - Can assign spells
 
 - COMPLETED: Users are able to save custom monster / character blocks to local storage and delete them
 
@@ -35,7 +36,6 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Users can assign icons to monsters / characters to show different statuses
 
 - Each initiative card has a background determined by monster / player type
-
 
 - Player characters have specific styling to denote them
 

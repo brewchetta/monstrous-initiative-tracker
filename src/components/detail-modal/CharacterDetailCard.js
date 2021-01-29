@@ -1,11 +1,12 @@
 import { useState } from "react"
 import { saveMonster } from '../../services/localstorage'
 import CharacterDetailProficiencies from './CharacterDetailProficiencies'
+import CharacterDetailActions from './CharacterDetailActions'
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
 
-  // console.log(character)
+  console.log(character)
 
   // STATE //
 
@@ -107,6 +108,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <input type="submit" value="Save"/>
 
       <CharacterDetailProficiencies proficiencies={character.proficiencies} />
+      <CharacterDetailActions actions={character.actions} />
 
     </form>
   )
