@@ -32,3 +32,6 @@ export const getMagicItem = getResource(url.magicItems)
 export const getSpell = getResource(url.spells)
 export const getMonster = getResource(url.monsters)
 export const getCondition = getResource(url.conditions)
+
+export const getAllMonsters = () => fetch(url.monsters).then(parseJSON).catch(console.warn)
+export const getAllSpells = () => fetch(url.spells).then(parseJSON).catch(console.warn)

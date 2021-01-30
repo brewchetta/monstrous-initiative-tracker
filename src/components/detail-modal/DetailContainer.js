@@ -1,12 +1,28 @@
-import { useContext } from "react"
+// REACT //
+import { useContext, useState, useEffect } from "react"
+// STYLE //
 import "./DetailContainer.css"
+// CONEXT //
 import { DetailContext } from "../../context/detail-context"
 import { CharactersContext } from "../../context/characters-context"
+// COMPONENTS //
 import CharacterDetailCard from "./CharacterDetailCard"
 import SearchForm from "./SearchForm"
 import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
+// SERVICES //
+import { getAllSpells, getAllMonsters } from "../../services/dnd-5e-api"
 
 export default function DetailContainer(props) {
+
+  // STATE //
+
+  const [apiMonsters, setApiMonsters] = useState([])
+  const [apiSpells, setApiSpells] = useState([])
+
+  useEffect(() => {
+    getAllMonsters().then(({results}) => setApiMonsters(results.map(m => m.name)))
+    getAllSpells().then(({results}) => setApiSpells(results.map(s => s.name)))
+  }, [])
 
   // CONTEXT //
   const [detail, dispatchDetail] = useContext(DetailContext)
