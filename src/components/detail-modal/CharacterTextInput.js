@@ -22,7 +22,7 @@ export default function CharacterTextInput({name, value, handleChange, width}) {
   // onBlur={() => setFocused(!focused)}
 
   return <span onClick={handleClick} style={{width}} className="character-detail-field text-input">
-    {focused ? renderArea() : (value || `add ${name}`)}
+    {focused ? renderArea() : (value || `+`)}
   </span>
 
 }
