@@ -100,10 +100,10 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         )
       case "actions":
         console.log("switching to actions mode")
-        return <CharacterDetailActions actions={character.actions} />
+        return <CharacterDetailActions key="actions mode" actions={character.actions} />
       case "specials":
         console.log("switching to special actions mode")
-        return <CharacterDetailActions actions={character.special_abilities} />
+        return <CharacterDetailActions key="special abilities mode" actions={character.special_abilities} />
       case "spells":
         console.log("switching to spells mode")
         break;
