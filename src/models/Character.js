@@ -30,6 +30,7 @@ export default class Character {
     this.subtype = this.subtype ? this.subtype : ""
 
     this.currentHitPoints = this.hit_points
+    this.special_abilities = data.special_abilities || []
     this.initiative = -10
     this.tempHP = 0
   }
