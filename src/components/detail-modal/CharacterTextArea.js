@@ -9,11 +9,9 @@ export default function CharacterTextArea({name, value, handleChange, width, hei
     focused && focusedInput.current.focus()
   }, [focused]);
 
-  const handleClick = () => {
-    if (!focused) {
-      setFocused(true)
-    }
-  }
+  const handleClick = () => !focused && setFocused(true)
+
+  const handleKeyPress = ({key}) => key === "Enter" && setFocused(false)
 
   const renderArea = () => (
     <textarea onChange={handleChange}
@@ -25,6 +23,9 @@ export default function CharacterTextArea({name, value, handleChange, width, hei
     placeholder={name.replace("_"," ")}/>
   )
 
-  return <span onClick={handleClick}>{focused ? renderArea() : (value || "Add Proficiencies")}</span>
+  return <span onClick={handleClick}
+  onKeyUp={handleKeyPress}>
+    {focused ? renderArea() : (value || `add ${name}`)}
+  </span>
 
 }
