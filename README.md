@@ -29,6 +29,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Add localStorage service module
 
+- COMPLETED: Search ought to be a datalist of known monsters / spells
+
 - Users are able to open a monster's spells for quick reference
 
 - If a character drops to 0 hit points, they're styled differently
@@ -47,12 +49,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
-- Search ought to be a datalist of known monsters / spells
-
 ## Issues
 
-- Need dictionary for certain monster entries with obscure names (example: Incubus should lead to Succubus/Incubus and Red Dragon should lead to Adult Red Dragon)
-
-- Certain monsters not available in api (beholder and death tyrant!). Dictionary ought to point to custom built entry for that monster
+- Certain monsters not available in api (beholder and death tyrant! some gnolls, etc). Ought to supplement those monsters will dictionary
 
 - Cannot amend temporary hit points from initiative card
