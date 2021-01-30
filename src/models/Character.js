@@ -27,6 +27,7 @@ export default class Character {
     this.remapObjectProperty("senses")
     this.remapObjectProperty("speed")
     this.remapSpells()
+    // add remap special abilities & abilities & legendary abilities
 
     this.subtype = this.subtype ? this.subtype : ""
 
