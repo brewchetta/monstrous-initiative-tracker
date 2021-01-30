@@ -16,12 +16,12 @@ export default function DetailContainer(props) {
 
   // STATE //
 
-  const [apiMonsters, setApiMonsters] = useState([])
-  const [apiSpells, setApiSpells] = useState([])
+  const [monsterNames, setMonsterNames] = useState([])
+  const [spellNames, setSpellNames] = useState([])
 
   useEffect(() => {
-    getAllMonsters().then(({results}) => setApiMonsters(results.map(m => m.name)))
-    getAllSpells().then(({results}) => setApiSpells(results.map(s => s.name)))
+    getAllMonsters().then(({results}) => setMonsterNames(results.map(m => m.name)))
+    getAllSpells().then(({results}) => setSpellNames(results.map(s => s.name)))
   }, [])
 
   // CONTEXT //
@@ -38,7 +38,7 @@ export default function DetailContainer(props) {
 
   const renderDetail = () => {
     return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
-    : detail && detail.type === "search" ? <SearchForm />
+    : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : detail && detail.type === "locals" ? <SelectLocalMonstersForm />
     : null)
