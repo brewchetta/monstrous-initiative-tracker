@@ -63,23 +63,40 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       case "more":
         console.log("switching to more mode");
         return (
+          <>
+            <div className="detail-sub-container">
+
+              <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
+              Hit Dice: <CharacterTextInput name="hit_dice"
+                value={formInputs.hit_dice}
+                handleChange={handleChange}
+                width="4em" />
+              Challenge Rating: <CharacterTextInput name="challenge_rating"
+                value={formInputs.challenge_rating}
+                handleChange={handleChange}
+                width="3em" />
+              XP: <CharacterTextInput name="xp"
+                value={formInputs.xp}
+                handleChange={handleChange}
+                width="6em" />
+
+            </div>
+
           <div className="detail-sub-container">
 
-            <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
-            Hit Dice: <CharacterTextInput name="hit_dice"
-              value={formInputs.hit_dice}
+            <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
+            Subtype: <CharacterTextInput name="subtype"
+              value={formInputs.subtype}
               handleChange={handleChange}
-              width="4em" />
-            Challenge Rating: <CharacterTextInput name="challenge_rating"
-              value={formInputs.challenge_rating}
+              width="10em" />
+            <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span>
+            Languages: <CharacterTextInput name="languages"
+              value={formInputs.languages}
               handleChange={handleChange}
-              width="3em" />
-            XP: <CharacterTextInput name="xp"
-              value={formInputs.xp}
-              handleChange={handleChange}
-              width="6em" />
+              width="20em" />
 
           </div>
+        </>
         )
       case "actions":
         console.log("switching to actions mode")
@@ -164,28 +181,13 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       </div>
 
-      <div className="detail-sub-container">
-
-        <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
-        Subtype: <CharacterTextInput name="subtype"
-          value={formInputs.subtype}
-          handleChange={handleChange}
-          width="10em" />
-        <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span>
-        Languages: <CharacterTextInput name="languages"
-          value={formInputs.languages}
-          handleChange={handleChange}
-          width="20em" />
-
-      </div>
-
-      {renderDetailMode()}
-
       <input type="button" value={"More Details"} name="more" onClick={handleChangeDetailMode} />
       <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
       <input type="button" value={"Special Abilities"} name="specials" onClick={handleChangeDetailMode} />
       <input type="button" value={"Spells"} name="spells" onClick={handleChangeDetailMode} />
       <input type="button" value={"Legendary Actions"} name="legendary" onClick={handleChangeDetailMode} />
+
+      {renderDetailMode()}
 
     </form>
   )
