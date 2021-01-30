@@ -112,7 +112,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         return <CharacterDetailSpellsList key="spells mode"
           spells={formInputs.spells}
           spell_dc={formInputs.spell_dc}
-          spell_modifier={formInputs.spell_modifier} />
+          spell_modifier={formInputs.spell_modifier}
+          spell_slots={formInputs.spell_slots} />
       case "legendary":
         console.log("switching to legendary mode")
         break;

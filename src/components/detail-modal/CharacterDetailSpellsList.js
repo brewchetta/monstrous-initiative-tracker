@@ -1,4 +1,4 @@
-export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier}) {
+export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier, spell_slots}) {
 
   const renderSpellsByLevel = () => {
     const levelsArray = []
@@ -8,9 +8,9 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
         .filter(sp => sp.level === i)
         .map(sp => <span key={sp.name}>{sp.name}</span>)
 
-      levelsArray.push(
+      levelSpells.length && levelsArray.push(
         <div key={`level${i}spells`}>
-          <p>{i ? `Level ${i}` : 'Cantrips'}</p>
+          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots ? ` | Slots: ${spell_slots[i]}` : null}</p>
           {levelSpells}
         </div>
       )
