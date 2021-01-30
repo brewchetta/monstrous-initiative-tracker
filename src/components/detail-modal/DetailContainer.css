@@ -5,6 +5,16 @@
   position: fixed;
   right: 0;
   top: 0;
+  z-index: 2;
+}
+
+#modal-mask {
+  background: #8E7A6655;
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
   z-index: 1;
 }
 

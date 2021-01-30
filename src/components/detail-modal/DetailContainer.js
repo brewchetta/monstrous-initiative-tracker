@@ -30,10 +30,13 @@ export default function DetailContainer(props) {
   }
 
   return detail && detail.type ? (
-    <div id="detail-modal">
-      <div id="close-detail-modal" onClick={clearDetail}/>
-      {renderDetail()}
-    </div>
+    <>
+      <div id="modal-mask" onClick={clearDetail} />
+      <div id="detail-modal">
+        <div id="close-detail-modal" onClick={clearDetail}/>
+        {renderDetail()}
+      </div>
+    </>
   ) : null
 
 }
