@@ -19,12 +19,12 @@ export default function CharacterTextArea({name, value, handleChange, width, hei
     name={name}
     value={value}
     ref={focusedInput}
+    onKeyUp={handleKeyPress}
     onBlur={() => setFocused(!focused)}
     placeholder={name.replace("_"," ")}/>
   )
 
-  return <span onClick={handleClick}
-  onKeyUp={handleKeyPress}>
+  return <span onClick={handleClick}>
     {focused ? renderArea() : (value || `add ${name}`)}
   </span>
 
