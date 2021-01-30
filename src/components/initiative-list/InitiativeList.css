@@ -1,12 +1,14 @@
 #initiative-list {
   position: relative;
+  height: 90vh;
   border: solid black 2px;
+  overflow-x: auto;
 }
 
 .initiative-card {
   background: black;
   color: white;
-  margin-left: 5em;
+  margin-left: 0.5em;
   padding: 0.5em;
   position: absolute;
   top: 0;
