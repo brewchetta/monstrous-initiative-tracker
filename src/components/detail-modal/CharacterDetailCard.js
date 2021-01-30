@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
 import CharacterDetailActions from './CharacterDetailActions'
 import CharacterTextArea from './CharacterTextArea'
+import CharacterNumberField from './CharacterNumberField'
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
@@ -84,10 +85,18 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         : null}<br/>
 
       <span>Name: {renderInputField("name")}</span>
-      <span>AC: {renderNumberField("armor_class")}</span>
-      <span>Initiative: {renderNumberField("initiative")}</span>
-      <span>Max Hit Points: {renderNumberField("hit_points")}</span>
-      <span>Temporary Hit Points: {renderNumberField("tempHP")}</span><br/>
+      AC: <CharacterNumberField name="armor_class"
+        value={formInputs.armor_class}
+        handleChange={handleChange} />
+      Initiative: <CharacterNumberField name="initiative"
+        value={formInputs.initiative}
+        handleChange={handleChange} />
+      Max HP: <CharacterNumberField name="hit_points"
+        value={formInputs.hit_points}
+        handleChange={handleChange} />
+      Max HP: <CharacterNumberField name="tempHP"
+        value={formInputs.tempHP}
+        handleChange={handleChange} />
 
       <CharacterTextArea name={"proficiencies"}
       value={formInputs.proficiencies}
