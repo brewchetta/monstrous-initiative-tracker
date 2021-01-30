@@ -22,8 +22,8 @@ export default function CharacterNumberField({name, value, handleChange}) {
   )
 
   return (
-    <span onClick={handleClick}>
-      {focused ? renderInput() : (value || `add ${name}`)}
+    <span onClick={handleClick} className="character-detail-field number-field">
+      {focused ? renderInput() : (value || 0)}
     </span>
   )
 

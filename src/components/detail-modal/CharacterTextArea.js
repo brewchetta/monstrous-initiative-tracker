@@ -24,7 +24,7 @@ export default function CharacterTextArea({name, value, handleChange, width, hei
     placeholder={name.replace("_"," ")}/>
   )
 
-  return <span onClick={handleClick}>
+  return <span onClick={handleClick} className="character-detail-field text-area-field">
     {focused ? renderArea() : (value || `add ${name}`)}
   </span>
 

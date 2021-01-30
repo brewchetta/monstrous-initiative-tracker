@@ -94,7 +94,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       Max HP: <CharacterNumberField name="hit_points"
         value={formInputs.hit_points}
         handleChange={handleChange} />
-      Max HP: <CharacterNumberField name="tempHP"
+      Temporary HP: <CharacterNumberField name="tempHP"
         value={formInputs.tempHP}
         handleChange={handleChange} />
 

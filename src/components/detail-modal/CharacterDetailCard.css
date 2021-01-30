@@ -13,6 +13,14 @@
   color: white;
 }
 
+
+.character-detail-form, .number-field {
+  margin-right: 0.5em;
+  border: solid white 1px;
+  width: 3em;
+  display: inline-block;
+}
+
 #character-detail-form textarea {
   background: none;
   border: none;
