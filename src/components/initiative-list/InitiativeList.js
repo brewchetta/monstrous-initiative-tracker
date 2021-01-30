@@ -5,6 +5,7 @@ import SearchButton from './SearchButton'
 import LocalCharactersButton from './LocalCharactersButton'
 import ResetInitiativesButton from './ResetInitiativesButton'
 import RollInitiativesButton from './RollInitiativesButton'
+import ClearCharactersButton from './ClearCharactersButton'
 import { CharactersContext } from '../../context/characters-context'
 
 export default function InitiativeList(props) {
@@ -26,6 +27,7 @@ export default function InitiativeList(props) {
       <ResetInitiativesButton />
       <LocalCharactersButton />
       <RollInitiativesButton />
+      <ClearCharactersButton />
 
       {renderListedCharacters()}
 
