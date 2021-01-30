@@ -160,6 +160,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           </div>
 
           <CharacterDetailActions actions={character.actions} />
+
+          <CharacterDetailActions actions={character.special_abilities} />
         </>
       ) : (
 
