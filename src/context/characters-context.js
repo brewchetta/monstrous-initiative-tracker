@@ -14,10 +14,9 @@ const charactersReducer = (state, action) => {
     case "REMOVE_CHARACTER":
       return state.filter(character => character._key !== action.payload._key)
     case "ROLL_UNROLLED_INITIATIVES":
-      const rolledCharacters = [...state].forEach(character => character.initiative < -4 && character.rollInitiative())
-      return rolledCharacters.sort(byInitiative)
+      return state.sort(byInitiative)
     case "RESET_INITIATIVES":
-      const characters = [...state].forEach(character => character.initiative = -10)
+      const characters = state.map(character => Object.assign(character, {initiative: -10}))
       return characters.sort(byInitiative)
     default:
       throw new Error(`Incorrect use of character reducer: ${action.type}`)
