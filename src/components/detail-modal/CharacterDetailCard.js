@@ -52,6 +52,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   const renderSelectField = (name, ...options) => {
     return (
       <select onChange={handleChange}
+      className="character-detail-select-field"
       name={name}
       value={formInputs[name]}>
         {options.map(name => <option key={name} value={name}>{name}</option>)}
