@@ -17,12 +17,19 @@
 .character-detail-form, .number-field {
   display: inline-block;
   border: solid white 1px;
+  margin-right: 1em;
   width: 3em;
 }
 
 .character-detail-form, .text-input {
   border: solid white 1px;
   display: inline-block;
+  margin-right: 1em;
+}
+
+.character-detail-form, .text-area-field {
+  border: solid white 1px;
+  padding: 1em;
 }
 
 .detail-sub-container {
@@ -33,7 +40,6 @@
 #character-detail-form textarea {
   background: none;
   border: none;
-  border-bottom: solid white 1px;
   color: white;
   text-align: center;
 }

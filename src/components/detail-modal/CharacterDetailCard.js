@@ -85,6 +85,9 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         <span>{renderSelectField("char_class","","Artificer","Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Rogue","Ranger","Sorcerer","Warlock","Wizard")}</span>
         : null}
 
+      <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
+      <input type="submit" value="Save"/>
+
       <br/>
 
       <div className="detail-sub-container">
@@ -155,6 +158,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       </div>
 
+      /* Add conditional here */
+
       <div className="detail-sub-container">
 
         <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
@@ -170,9 +175,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           value={formInputs.xp}
           handleChange={handleChange}
           width="6em" />
-
-        <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
-        <input type="submit" value="Save"/>
 
       </div>
 
