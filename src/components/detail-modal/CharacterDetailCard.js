@@ -169,7 +169,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       )}
 
-      <button onClick={handleToggleExpanded}>{detailsExpanded ? "Less" : "More"}</button>
+      <input type="button" value={detailsExpanded ? "Less" : "More"} onClick={handleToggleExpanded} />
 
     </form>
   )
