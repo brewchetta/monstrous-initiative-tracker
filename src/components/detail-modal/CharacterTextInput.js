@@ -17,9 +17,9 @@ export default function CharacterTextInput({name, value, handleChange, width}) {
     name={name}
     value={value}
     ref={focusedInput}
-    onBlur={() => setFocused(!focused)}
     placeholder={name.replace("_"," ")}/>
   )
+  // onBlur={() => setFocused(!focused)}
 
   return <span onClick={handleClick} style={{width}} className="character-detail-field text-input">
     {focused ? renderArea() : (value || `add ${name}`)}

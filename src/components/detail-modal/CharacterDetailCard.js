@@ -161,7 +161,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         Hit Dice: <CharacterTextInput name="hit_dice"
           value={formInputs.hit_dice}
           handleChange={handleChange}
-          width="6em" />
+          width="4em" />
         Challenge Rating: <CharacterTextInput name="challenge_rating"
           value={formInputs.challenge_rating}
           handleChange={handleChange}

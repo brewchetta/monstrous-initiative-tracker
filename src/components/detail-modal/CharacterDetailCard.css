@@ -17,15 +17,17 @@
 .character-detail-form, .number-field {
   display: inline-block;
   border: solid white 1px;
-  margin-right: 0.5em;
   width: 3em;
 }
 
 .character-detail-form, .text-input {
-  margin-right: 0.5em;
   border: solid white 1px;
-  width: 3em;
   display: inline-block;
+}
+
+.detail-sub-container {
+  padding: 0.5em;
+  margin: 0.5em;
 }
 
 #character-detail-form textarea {
@@ -48,5 +50,5 @@
 }
 
 #character-detail-form input[type=text] {
-  width: 11em;
+  width: 100%;
 }
