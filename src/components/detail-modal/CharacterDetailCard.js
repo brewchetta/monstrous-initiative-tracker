@@ -11,6 +11,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
+  const [detailsExpanded, setDetailsExpanded] = useState(false)
 
   useEffect(() => {
     console.log(character)
@@ -32,6 +33,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   }
 
   const handleSaveToStorage = () => saveMonster(formInputs)
+
+  const handleToggleExpanded = () => setDetailsExpanded(!detailsExpanded)
 
   // HELPERS //
 
@@ -158,27 +161,35 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       </div>
 
-      /* Add conditional here */
+      {detailsExpanded ? (
+        <>
+          <div className="detail-sub-container">
 
-      <div className="detail-sub-container">
+            <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
+            Hit Dice: <CharacterTextInput name="hit_dice"
+              value={formInputs.hit_dice}
+              handleChange={handleChange}
+              width="4em" />
+            Challenge Rating: <CharacterTextInput name="challenge_rating"
+              value={formInputs.challenge_rating}
+              handleChange={handleChange}
+              width="3em" />
+            XP: <CharacterTextInput name="xp"
+              value={formInputs.xp}
+              handleChange={handleChange}
+              width="6em" />
 
-        <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
-        Hit Dice: <CharacterTextInput name="hit_dice"
-          value={formInputs.hit_dice}
-          handleChange={handleChange}
-          width="4em" />
-        Challenge Rating: <CharacterTextInput name="challenge_rating"
-          value={formInputs.challenge_rating}
-          handleChange={handleChange}
-          width="3em" />
-        XP: <CharacterTextInput name="xp"
-          value={formInputs.xp}
-          handleChange={handleChange}
-          width="6em" />
+          </div>
 
-      </div>
+          <CharacterDetailActions actions={character.actions} />
+        </>
+      ) : (
 
-      <CharacterDetailActions actions={character.actions} />
+        null
+
+      )}
+
+      <button onClick={handleToggleExpanded}>{detailsExpanded ? "Less" : "More"}</button>
 
     </form>
   )
