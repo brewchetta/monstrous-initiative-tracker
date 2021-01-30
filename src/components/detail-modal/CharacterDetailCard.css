@@ -17,29 +17,36 @@
 
 .character-detail-form, .number-field {
   display: inline-block;
-  border: solid white 1px;
+  border-bottom: solid white 1px;
   margin-right: 1em;
+  text-align: center;
   width: 3em;
 }
 
 .character-detail-form, .text-input {
-  border: solid white 1px;
+  border-bottom: solid white 1px;
   display: inline-block;
   margin-right: 1em;
+  text-align: center;
 }
 
 .character-detail-form, .text-area-field {
   border: solid white 1px;
-  padding: 1em;
+  padding: 0.3em;
 }
 
 .character-detail-select-field {
+  -webkit-appearance: none;
+  -moz-appearance: none;
   margin-right: 1em;
+  text-indent: 1px;
+  text-overflow: '';
 }
 
 .detail-sub-container {
-  padding: 0.5em;
   margin: 0.5em;
+  padding: 0.5em;
+  text-align: left;
 }
 
 #character-detail-form textarea {
@@ -55,9 +62,11 @@
 
 #character-detail-form select {
   background: black;
+  border: none;
+  border-bottom: solid white 1px;
+  border-radius: 0;
   color: white;
-  border: solid white 1px;
-  border-radius: 5px;
+  text-align: center;
 }
 
 #character-detail-form input[type=text] {

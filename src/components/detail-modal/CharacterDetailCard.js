@@ -120,7 +120,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
             </div>
             <div className="detail-sub-container">
 
-              <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
+              <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span>
               Hit Dice: <CharacterTextInput name="hit_dice"
                 value={formInputs.hit_dice}
                 handleChange={handleChange}
