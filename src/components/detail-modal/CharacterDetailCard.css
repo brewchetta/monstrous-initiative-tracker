@@ -9,12 +9,19 @@
 #character-detail-form input {
   background: none;
   border: none;
-  border-bottom: solid white 1px;
   color: white;
+  text-align: center;
 }
 
 
 .character-detail-form, .number-field {
+  display: inline-block;
+  border: solid white 1px;
+  margin-right: 0.5em;
+  width: 3em;
+}
+
+.character-detail-form, .text-input {
   margin-right: 0.5em;
   border: solid white 1px;
   width: 3em;

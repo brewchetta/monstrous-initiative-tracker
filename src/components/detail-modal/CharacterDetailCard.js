@@ -3,6 +3,7 @@ import { saveMonster } from '../../services/localstorage'
 import CharacterDetailActions from './CharacterDetailActions'
 import CharacterTextArea from './CharacterTextArea'
 import CharacterNumberField from './CharacterNumberField'
+import CharacterTextInput from './CharacterTextInput'
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
@@ -82,46 +83,98 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       {formInputs.player ?
         <span>{renderSelectField("char_class","","Artificer","Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Rogue","Ranger","Sorcerer","Warlock","Wizard")}</span>
-        : null}<br/>
+        : null}
 
-      <span>Name: {renderInputField("name")}</span>
-      AC: <CharacterNumberField name="armor_class"
-        value={formInputs.armor_class}
-        handleChange={handleChange} />
-      Initiative: <CharacterNumberField name="initiative"
-        value={formInputs.initiative}
-        handleChange={handleChange} />
-      Max HP: <CharacterNumberField name="hit_points"
-        value={formInputs.hit_points}
-        handleChange={handleChange} />
-      Temporary HP: <CharacterNumberField name="tempHP"
-        value={formInputs.tempHP}
-        handleChange={handleChange} />
+      <br/>
 
-      <CharacterTextArea name={"proficiencies"}
-      value={formInputs.proficiencies}
-      handleChange={handleChange}
-      width={"80%"} height={"1.5em"} /><br/>
+      <div className="detail-sub-container">
 
-      <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
-      <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
-      <span>CON({modifier("constitution")}) {renderNumberField("constitution")}</span>
-      <span>WIS({modifier("wisdom")}) {renderNumberField("wisdom")}</span>
-      <span>INT({modifier("intelligence")}) {renderNumberField("intelligence")}</span>
-      <span>CHA({modifier("charisma")}) {renderNumberField("charisma")}</span><br/>
+        Name: <CharacterTextInput name="name"
+          value={formInputs.name}
+          handleChange={handleChange}
+          width="20em" />
+        AC: <CharacterNumberField name="armor_class"
+          value={formInputs.armor_class}
+          handleChange={handleChange} />
+        Initiative: <CharacterNumberField name="initiative"
+          value={formInputs.initiative}
+          handleChange={handleChange} />
+        Max HP: <CharacterNumberField name="hit_points"
+          value={formInputs.hit_points}
+          handleChange={handleChange} />
+        Temporary HP: <CharacterNumberField name="tempHP"
+          value={formInputs.tempHP}
+          handleChange={handleChange} />
 
-      <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
-      <span>Subtype: {renderInputField("subtype")}</span>
-      <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span><br/>
-      <span>Languages: {renderInputField("languages")}</span>
-      <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
+      </div>
 
-      <span>Hit Dice: {renderInputField("hit_dice")}</span>
-      <span>Challenge Rating: {renderInputField("challenge_rating")}</span>
-      <span>XP: {renderInputField("xp")}</span>
+      <div className="detail-sub-container">
 
-      <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
-      <input type="submit" value="Save"/>
+        <CharacterTextArea name={"proficiencies"}
+        value={formInputs.proficiencies}
+        handleChange={handleChange}
+        width={"80%"} height={"1.5em"} />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        STR({modifier("strength")}) <CharacterNumberField name="strength"
+          value={formInputs.strength}
+          handleChange={handleChange} />
+        DEX({modifier("dexterity")}) <CharacterNumberField name="dexterity"
+          value={formInputs.dexterity}
+          handleChange={handleChange} />
+        CON({modifier("constitution")}) <CharacterNumberField name="constitution"
+          value={formInputs.constitution}
+          handleChange={handleChange} />
+        WIS({modifier("wisdom")}) <CharacterNumberField name="wisdom"
+          value={formInputs.wisdom}
+          handleChange={handleChange} />
+        INT({modifier("intelligence")}) <CharacterNumberField name="intelligence"
+          value={formInputs.intelligence}
+          handleChange={handleChange} />
+        CHA({modifier("charisma")}) <CharacterNumberField name="charisma"
+          value={formInputs.charisma}
+          handleChange={handleChange} />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        <span>Type: {renderSelectField("type", "aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead")}</span>
+        Subtype: <CharacterTextInput name="subtype"
+          value={formInputs.subtype}
+          handleChange={handleChange}
+          width="10em" />
+        <span>Size: {renderSelectField("size", "Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan")}</span>
+        Languages: <CharacterTextInput name="languages"
+          value={formInputs.languages}
+          handleChange={handleChange}
+          width="20em" />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "evil", "unaligned", "good", "chaotic evil", "chaotic neutral", "chaotic good")}</span><br/>
+        Hit Dice: <CharacterTextInput name="hit_dice"
+          value={formInputs.hit_dice}
+          handleChange={handleChange}
+          width="6em" />
+        Challenge Rating: <CharacterTextInput name="challenge_rating"
+          value={formInputs.challenge_rating}
+          handleChange={handleChange}
+          width="3em" />
+        XP: <CharacterTextInput name="xp"
+          value={formInputs.xp}
+          handleChange={handleChange}
+          width="6em" />
+
+        <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
+        <input type="submit" value="Save"/>
+
+      </div>
 
       <CharacterDetailActions actions={character.actions} />
 
