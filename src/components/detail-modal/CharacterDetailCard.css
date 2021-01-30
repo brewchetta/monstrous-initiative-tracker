@@ -1,6 +1,8 @@
 #character-detail-form {
   background: black;
   color: white;
+  max-height: 80vh;
+  overflow-x: auto;
   padding: 1em;
 }
 

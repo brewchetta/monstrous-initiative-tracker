@@ -20,10 +20,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - WORKING: Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
-  - WORKING: Can amend proficiencies
+  - COMPLETED: Can amend proficiencies
   - WORKING: Can amend actions
   - Can amend legendary actions
-  - Can assign spells
+  - Can assign / remove spells
 
 - COMPLETED: Users are able to save custom monster / character blocks to local storage and delete them
 
@@ -54,3 +54,5 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Need dictionary for certain monster entries with obscure names (example: Incubus should lead to Succubus/Incubus and Red Dragon should lead to Adult Red Dragon)
 
 - Certain monsters not available in api (beholder and death tyrant!). Dictionary ought to point to custom built entry for that monster
+
+- Cannot amend temporary hit points from initiative card
