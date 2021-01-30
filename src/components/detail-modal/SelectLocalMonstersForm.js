@@ -16,6 +16,11 @@ export default function SelectLocalMonstersForm() {
     dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
   }
 
+  const clearLocals = () => {
+    clearMonsters()
+    setLocals([])
+  }
+
   // LOCAL STORAGE //
 
   const removeLocalMonster = monster => {
@@ -38,7 +43,7 @@ export default function SelectLocalMonstersForm() {
 
       {renderLocalMonsters()}
 
-      <button onClick={clearMonsters}>Remove All</button>
+      <button onClick={clearLocals}>Remove All</button>
 
     </div>
   )
