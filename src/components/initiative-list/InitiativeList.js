@@ -25,22 +25,22 @@ export default function InitiativeList(props) {
 
       <div id="context-buttons">
 
-        <AddCharacterButton />
         <ContextActionButton context={DetailContext}
           text={"Search Monster Manual"}
           type={"SEARCH"} />
-        <ContextActionButton context={CharactersContext}
-          text={"Clear All Initiatives"}
-          type={"RESET_INITIATIVES"} />
+        <AddCharacterButton />
         <ContextActionButton context={DetailContext}
           text={"Saved Characters"}
           type={"LOCAL_CHARACTERS"} />
         <ContextActionButton context={CharactersContext}
+          text={"Clear Characters"}
+          type={"CLEAR_CHARACTERS"} />
+        <ContextActionButton context={CharactersContext}
           text={"Roll Unrolled Initiatives"}
           type={"ROLL_UNROLLED_INITIATIVES"} />
         <ContextActionButton context={CharactersContext}
-          text={"Clear Characters"}
-          type={"CLEAR_CHARACTERS"} />
+          text={"Clear All Initiatives"}
+          type={"RESET_INITIATIVES"} />
 
       </div>
 
