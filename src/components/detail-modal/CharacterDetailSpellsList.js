@@ -1,11 +1,22 @@
 export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier}) {
 
-  const renderSpells = () => {
-    return (
-      spells
-      .sort((a,b) => a.level - b.level)
-      .map(sp => <><span key={sp.name}>{sp.name} | Level {sp.level}</span><br/></>)
-    )
+  const renderSpellsByLevel = () => {
+    const levelsArray = []
+    for (var i = 0; i <= 9; i++) {
+
+      const levelSpells = spells
+        .filter(sp => sp.level === i)
+        .map(sp => <span key={sp.name}>{sp.name}</span>)
+
+      levelsArray.push(
+        <div key={`level${i}spells`}>
+          <p>{i ? `Level ${i}` : 'Cantrips'}</p>
+          {levelSpells}
+        </div>
+      )
+
+    }
+    return levelsArray
   }
 
   return (
@@ -15,7 +26,7 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
 
       <br/>
 
-      {renderSpells()}
+      {renderSpellsByLevel()}
 
     </div>
   )
