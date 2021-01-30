@@ -111,7 +111,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         console.log("switching to spells mode")
         return <CharacterDetailSpellsList key="spells mode"
           spells={formInputs.spells}
-          spell_dc={formInputs.spell_dc} 
+          spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier} />
       case "legendary":
         console.log("switching to legendary mode")
@@ -190,7 +190,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <input type="button" value={"More Details"} name="more" onClick={handleChangeDetailMode} />
       <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
       <input type="button" value={"Special Abilities"} name="specials" onClick={handleChangeDetailMode} />
-      <input type="button" value={"Spells"} name="spells" onClick={handleChangeDetailMode} />
+      <input type="button" value={"Spells"} name="spells" style={formInputs.spells.length ? {} : {color: "grey", borderColor: "grey"}} onClick={handleChangeDetailMode} />
       <input type="button" value={"Legendary Actions"} name="legendary" onClick={handleChangeDetailMode} />
 
       {renderDetailMode()}
