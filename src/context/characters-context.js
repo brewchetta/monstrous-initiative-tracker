@@ -19,6 +19,8 @@ const charactersReducer = (state, action) => {
     case "RESET_INITIATIVES":
       const characters = state.map(character => Object.assign(character, {initiative: -10}))
       return characters.sort(byInitiative)
+    case "CLEAR_CHARACTERS":
+      return []
     default:
       throw new Error(`Incorrect use of character reducer: ${action.type}`)
   }
