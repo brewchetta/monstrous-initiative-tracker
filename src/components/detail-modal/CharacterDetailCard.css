@@ -58,3 +58,7 @@
 #character-detail-form input[type=text] {
   width: 100%;
 }
+
+#character-detail-form input[type=button] {
+  border: solid white 2px;
+}
