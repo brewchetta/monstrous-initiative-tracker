@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
 import CharacterDetailActions from './CharacterDetailActions'
+import CharacterTextArea from './CharacterTextArea'
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
@@ -52,16 +53,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
-  const renderTextArea = (name, width = "auto", height="auto") => {
-    return (
-      <textarea onChange={handleChange}
-      style={{width, height}}
-      name={name}
-      value={formInputs[name]}
-      placeholder={name.replace("_"," ")}/>
-    )
-  }
-
   const renderNumberField = (name) => {
     return (
       <input type="number"
@@ -98,7 +89,10 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Max Hit Points: {renderNumberField("hit_points")}</span>
       <span>Temporary Hit Points: {renderNumberField("tempHP")}</span><br/>
 
-      <span>{renderTextArea("proficiencies", "80%", "1.5em")}</span><br/>
+      <CharacterTextArea name={"proficiencies"}
+      value={formInputs.proficiencies}
+      handleChange={handleChange}
+      width={"80%"} height={"1.5em"} /><br/>
 
       <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
       <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
