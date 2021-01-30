@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
-import CharacterDetailProficiencies from './CharacterDetailProficiencies'
 import CharacterDetailActions from './CharacterDetailActions'
 import "./CharacterDetailCard.css"
 
@@ -53,6 +52,16 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     )
   }
 
+  const renderTextArea = (name, width = "auto", height="auto") => {
+    return (
+      <textarea onChange={handleChange}
+      style={{width, height}}
+      name={name}
+      value={formInputs[name]}
+      placeholder={name.replace("_"," ")}/>
+    )
+  }
+
   const renderNumberField = (name) => {
     return (
       <input type="number"
@@ -89,6 +98,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Max Hit Points: {renderNumberField("hit_points")}</span>
       <span>Temporary Hit Points: {renderNumberField("tempHP")}</span><br/>
 
+      <span>{renderTextArea("proficiencies", "80%", "1.5em")}</span><br/>
+
       <span>STR({modifier("strength")}) {renderNumberField("strength")}</span>
       <span>DEX({modifier("dexterity")}) {renderNumberField("dexterity")}</span>
       <span>CON({modifier("constitution")}) {renderNumberField("constitution")}</span>
@@ -109,7 +120,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
       <input type="submit" value="Save"/>
 
-      <CharacterDetailProficiencies proficiencies={character.proficiencies} />
       <CharacterDetailActions actions={character.actions} />
 
     </form>

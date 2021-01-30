@@ -11,6 +11,14 @@
   color: white;
 }
 
+#character-detail-form textarea {
+  background: none;
+  border: none;
+  border-bottom: solid white 1px;
+  color: white;
+  text-align: center;
+}
+
 #character-detail-form input[type=submit] {
   border: solid white 2px;
 }
