@@ -1,11 +1,14 @@
-import { useState } from 'react'
-
 export default function CharacterDetailProficiencies({actions}) {
 
-  const [acts, setActs] = useState(actions)
+  const renderActions = () => {
+    return actions.map((a, i) => (
+      <div className="action-card" key={a.name + i.toString()}>
+        <span>{a.name}: </span>
+        <span>{a.desc}</span>
+      </div>
+    ))
+  }
 
-  return (
-      <p>{JSON.stringify(acts)} Okay yay!</p>
-  )
+  return renderActions()
 
 }

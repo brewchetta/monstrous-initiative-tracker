@@ -62,3 +62,8 @@
 #character-detail-form input[type=button] {
   border: solid white 2px;
 }
+
+.action-card {
+  background: #111;
+  margin: 1em;
+}

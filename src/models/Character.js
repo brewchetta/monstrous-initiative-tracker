@@ -26,6 +26,8 @@ export default class Character {
     this.remapArrayProperty("condition_immunities")
     this.remapObjectProperty("senses")
     this.remapObjectProperty("speed")
+    this.spell_dc = 0
+    this.spell_modifier = 0
     this.remapSpells()
     // add remap special abilities & abilities & legendary abilities
 
