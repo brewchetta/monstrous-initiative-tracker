@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
 import CharacterDetailActions from './CharacterDetailActions'
+import CharacterDetailSpellsList from './CharacterDetailSpellsList'
 import CharacterTextArea from './CharacterTextArea'
 import CharacterNumberField from './CharacterNumberField'
 import CharacterTextInput from './CharacterTextInput'
@@ -100,13 +101,18 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         )
       case "actions":
         console.log("switching to actions mode")
-        return <CharacterDetailActions key="actions mode" actions={character.actions} />
+        return (<CharacterDetailActions key="actions mode"
+          actions={character.actions} />)
       case "specials":
         console.log("switching to special actions mode")
-        return <CharacterDetailActions key="special abilities mode" actions={character.special_abilities} />
+        return (<CharacterDetailActions key="special abilities mode"
+          actions={character.special_abilities} />)
       case "spells":
         console.log("switching to spells mode")
-        break;
+        return <CharacterDetailSpellsList key="spells mode"
+          spells={formInputs.spells}
+          spell_dc={formInputs.spell_dc} 
+          spell_modifier={formInputs.spell_modifier} />
       case "legendary":
         console.log("switching to legendary mode")
         break;
