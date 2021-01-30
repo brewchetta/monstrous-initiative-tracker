@@ -28,6 +28,7 @@ export default class Character {
     this.remapObjectProperty("speed")
     this.spell_dc = 0
     this.spell_modifier = 0
+    this.legendary_actions = this.legendary_actions || []
     this.remapSpells()
     // add remap special abilities & abilities & legendary abilities
 

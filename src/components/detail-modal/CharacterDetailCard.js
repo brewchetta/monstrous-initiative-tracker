@@ -12,7 +12,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
-  const [detailMode, setDetailMode] = useState(false)
+  const [detailMode, setDetailMode] = useState("general")
 
   useEffect(() => {
     console.log(character)
@@ -62,10 +62,62 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const renderDetailMode = () => {
     switch (detailMode) {
-      case "more":
-        console.log("switching to more mode");
+      case "general":
+        console.log("switching to general mode");
         return (
           <>
+            <div className="detail-sub-container">
+
+              Name: <CharacterTextInput name="name"
+                value={formInputs.name}
+                handleChange={handleChange}
+                width="20em" />
+              AC: <CharacterNumberField name="armor_class"
+                value={formInputs.armor_class}
+                handleChange={handleChange} />
+              Initiative: <CharacterNumberField name="initiative"
+                value={formInputs.initiative}
+                handleChange={handleChange} />
+              Max HP: <CharacterNumberField name="hit_points"
+                value={formInputs.hit_points}
+                handleChange={handleChange} />
+              Temporary HP: <CharacterNumberField name="tempHP"
+                value={formInputs.tempHP}
+                handleChange={handleChange} />
+
+            </div>
+
+            <div className="detail-sub-container">
+
+              <CharacterTextArea name={"proficiencies"}
+              value={formInputs.proficiencies}
+              handleChange={handleChange}
+              width={"80%"} height={"1.5em"} />
+
+            </div>
+
+            <div className="detail-sub-container">
+
+              STR({modifier("strength")}) <CharacterNumberField name="strength"
+                value={formInputs.strength}
+                handleChange={handleChange} />
+              DEX({modifier("dexterity")}) <CharacterNumberField name="dexterity"
+                value={formInputs.dexterity}
+                handleChange={handleChange} />
+              CON({modifier("constitution")}) <CharacterNumberField name="constitution"
+                value={formInputs.constitution}
+                handleChange={handleChange} />
+              WIS({modifier("wisdom")}) <CharacterNumberField name="wisdom"
+                value={formInputs.wisdom}
+                handleChange={handleChange} />
+              INT({modifier("intelligence")}) <CharacterNumberField name="intelligence"
+                value={formInputs.intelligence}
+                handleChange={handleChange} />
+              CHA({modifier("charisma")}) <CharacterNumberField name="charisma"
+                value={formInputs.charisma}
+                handleChange={handleChange} />
+
+            </div>
             <div className="detail-sub-container">
 
               <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
@@ -134,71 +186,17 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
       <input type="submit" value="Save"/>
 
-      <br/>
-
-      <div className="detail-sub-container">
-
-        Name: <CharacterTextInput name="name"
-          value={formInputs.name}
-          handleChange={handleChange}
-          width="20em" />
-        AC: <CharacterNumberField name="armor_class"
-          value={formInputs.armor_class}
-          handleChange={handleChange} />
-        Initiative: <CharacterNumberField name="initiative"
-          value={formInputs.initiative}
-          handleChange={handleChange} />
-        Max HP: <CharacterNumberField name="hit_points"
-          value={formInputs.hit_points}
-          handleChange={handleChange} />
-        Temporary HP: <CharacterNumberField name="tempHP"
-          value={formInputs.tempHP}
-          handleChange={handleChange} />
-
-      </div>
-
-      <div className="detail-sub-container">
-
-        <CharacterTextArea name={"proficiencies"}
-        value={formInputs.proficiencies}
-        handleChange={handleChange}
-        width={"80%"} height={"1.5em"} />
-
-      </div>
-
-      <div className="detail-sub-container">
-
-        STR({modifier("strength")}) <CharacterNumberField name="strength"
-          value={formInputs.strength}
-          handleChange={handleChange} />
-        DEX({modifier("dexterity")}) <CharacterNumberField name="dexterity"
-          value={formInputs.dexterity}
-          handleChange={handleChange} />
-        CON({modifier("constitution")}) <CharacterNumberField name="constitution"
-          value={formInputs.constitution}
-          handleChange={handleChange} />
-        WIS({modifier("wisdom")}) <CharacterNumberField name="wisdom"
-          value={formInputs.wisdom}
-          handleChange={handleChange} />
-        INT({modifier("intelligence")}) <CharacterNumberField name="intelligence"
-          value={formInputs.intelligence}
-          handleChange={handleChange} />
-        CHA({modifier("charisma")}) <CharacterNumberField name="charisma"
-          value={formInputs.charisma}
-          handleChange={handleChange} />
-
-      </div>
-
       <div id="detail-mode-tab">
 
-        <input type="button" value={"More Details"} name="more" onClick={handleChangeDetailMode} />
+        <input type="button" value={"General"} name="general" onClick={handleChangeDetailMode} />
         <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
         <input type="button" value={"Special Abilities"} name="specials" onClick={handleChangeDetailMode} />
         <input type="button" value={"Spells"} name="spells" style={formInputs.spells.length ? {} : {color: "grey", borderColor: "grey"}} onClick={handleChangeDetailMode} />
-        <input type="button" value={"Legendary Actions"} name="legendary" onClick={handleChangeDetailMode} />
+        <input type="button" value={"Legendary Actions"} name="legendary" style={formInputs.legendary_actions.length ? {} : {color: "grey", borderColor: "grey"}} onClick={handleChangeDetailMode} />
 
       </div>
 
+      <br/>
 
       {renderDetailMode()}
 
