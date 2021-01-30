@@ -102,12 +102,12 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         console.log("switching to actions mode")
         return <CharacterDetailActions actions={character.actions} />
       case "specials":
-        console.log("switching to actions mode")
+        console.log("switching to special actions mode")
         return <CharacterDetailActions actions={character.special_abilities} />
       case "spells":
         console.log("switching to spells mode")
         break;
-      case "legendary actions":
+      case "legendary":
         console.log("switching to legendary mode")
         break;
       default:
