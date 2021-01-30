@@ -1,6 +1,6 @@
 import { useContext } from "react"
 
-export default function LocalCharactersButton({context, text, type}) {
+export default function ContextActionButton({context, text, type}) {
 
   const dispatch = useContext(context)[1]
 

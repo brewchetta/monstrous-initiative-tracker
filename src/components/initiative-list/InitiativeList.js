@@ -1,12 +1,12 @@
+// CONTEXT
 import { useContext } from 'react'
+import { CharactersContext } from '../../context/characters-context'
+import { DetailContext } from '../../context/detail-context'
+// COMPONENTS //
 import InitiativeCard from './InitiativeCard'
 import AddCharacterButton from './AddCharacterButton'
-import SearchButton from './SearchButton'
-import LocalCharactersButton from './LocalCharactersButton'
-import ResetInitiativesButton from './ResetInitiativesButton'
-import RollInitiativesButton from './RollInitiativesButton'
-import ClearCharactersButton from './ClearCharactersButton'
-import { CharactersContext } from '../../context/characters-context'
+import ContextActionButton from "./ContextActionButton"
+// STYLE //
 import "./InitiativeList.css"
 
 export default function InitiativeList(props) {
@@ -26,11 +26,21 @@ export default function InitiativeList(props) {
       <div id="context-buttons">
 
         <AddCharacterButton />
-        <SearchButton />
-        <ResetInitiativesButton />
-        <LocalCharactersButton />
-        <RollInitiativesButton />
-        <ClearCharactersButton />
+        <ContextActionButton context={DetailContext}
+          text={"Search Monster Manual"}
+          type={"SEARCH"} />
+        <ContextActionButton context={CharactersContext}
+          text={"Clear All Initiatives"}
+          type={"RESET_INITIATIVES"} />
+        <ContextActionButton context={DetailContext}
+          text={"Saved Characters"}
+          type={"LOCAL_CHARACTERS"} />
+        <ContextActionButton context={CharactersContext}
+          text={"Roll Unrolled Initiatives"}
+          type={"ROLL_UNROLLED_INITIATIVES"} />
+        <ContextActionButton context={CharactersContext}
+          text={"Clear Characters"}
+          type={"CLEAR_CHARACTERS"} />
 
       </div>
 
