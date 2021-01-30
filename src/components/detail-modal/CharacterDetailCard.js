@@ -48,26 +48,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   // RENDER METHODS //
 
-  const renderInputField = (name) => {
-    return (
-      <input type="text"
-      onChange={handleChange}
-      name={name}
-      value={formInputs[name]}
-      placeholder={name.replace("_"," ")}/>
-    )
-  }
-
-  const renderNumberField = (name) => {
-    return (
-      <input type="number"
-      onChange={handleChange}
-      name={name}
-      value={formInputs[name]}
-      placeholder={name.replace("_"," ")}/>
-    )
-  }
-
   const renderSelectField = (name, ...options) => {
     return (
       <select onChange={handleChange}
@@ -77,8 +57,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       </select>
     )
   }
-
-  console.log("TODO: Double check alignments from API")
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
