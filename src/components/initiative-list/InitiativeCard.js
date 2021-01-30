@@ -1,5 +1,4 @@
 import { useContext, useState, useRef, useEffect } from 'react'
-import "./InitiativeCard.css"
 import { DetailContext } from '../../context/detail-context'
 import { CharactersContext } from '../../context/characters-context'
 

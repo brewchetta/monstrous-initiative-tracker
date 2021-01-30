@@ -15,8 +15,7 @@ export default function AddCharacterButton(props) {
   }
 
   return (
-    <button style={{position: "absolute", left: 0}}
-    onClick={handleClick}>
+    <button onClick={handleClick}>
       Create New Character
     </button>
   )

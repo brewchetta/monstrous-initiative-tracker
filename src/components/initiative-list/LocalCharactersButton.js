@@ -10,8 +10,7 @@ export default function LocalCharactersButton(props) {
   }
 
   return (
-    <button style={{position: "absolute", left: 0, top: "4em"}}
-    onClick={handleClick}>
+    <button onClick={handleClick}>
       Search
     </button>
   )

@@ -10,8 +10,7 @@ export default function LocalCharactersButton() {
   }
 
   return (
-    <button style={{position: "absolute", left: 0, top: "2em"}}
-    onClick={handleClick}>
+    <button onClick={handleClick}>
       Saved Characters
     </button>
   )

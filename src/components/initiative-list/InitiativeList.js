@@ -7,6 +7,7 @@ import ResetInitiativesButton from './ResetInitiativesButton'
 import RollInitiativesButton from './RollInitiativesButton'
 import ClearCharactersButton from './ClearCharactersButton'
 import { CharactersContext } from '../../context/characters-context'
+import "./InitiativeList.css"
 
 export default function InitiativeList(props) {
 
@@ -20,18 +21,26 @@ export default function InitiativeList(props) {
   }
 
   return (
-    <div id="initative-list">
+    <>
 
-      <AddCharacterButton />
-      <SearchButton />
-      <ResetInitiativesButton />
-      <LocalCharactersButton />
-      <RollInitiativesButton />
-      <ClearCharactersButton />
+      <div id="context-buttons">
 
-      {renderListedCharacters()}
+        <AddCharacterButton />
+        <SearchButton />
+        <ResetInitiativesButton />
+        <LocalCharactersButton />
+        <RollInitiativesButton />
+        <ClearCharactersButton />
 
-    </div>
+      </div>
+
+      <div id="initiative-list">
+
+        {renderListedCharacters()}
+
+      </div>
+
+    </>
   )
 
 }

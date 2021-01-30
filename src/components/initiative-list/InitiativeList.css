@@ -1,3 +1,8 @@
+#initiative-list {
+  position: relative;
+  border: solid black 2px;
+}
+
 .initiative-card {
   background: black;
   color: white;
