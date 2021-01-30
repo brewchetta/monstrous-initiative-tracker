@@ -16,7 +16,6 @@ export default function DetailContainer(props) {
 
   const updateCharacter = character => {
     dispatchCharacters({type: "UPDATE_CHARACTER", payload: character})
-    dispatchDetail({type: "CLEAR_DETAIL"})
   }
 
   const clearDetail = () => dispatchDetail({type: "CLEAR_DETAIL"})
