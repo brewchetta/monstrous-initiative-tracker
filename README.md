@@ -51,8 +51,6 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Issues
 
-- Detail modal cannot be clicked out of to exit
-
 - Remove All button for local storage doesn't clear locals on front end
 
 - Need dictionary for certain monster entries with obscure names (example: Incubus should lead to Succubus/Incubus and Red Dragon should lead to Adult Red Dragon)
