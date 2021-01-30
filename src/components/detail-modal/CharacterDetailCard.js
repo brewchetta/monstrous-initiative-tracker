@@ -11,7 +11,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
-  const [detailsExpanded, setDetailsExpanded] = useState(false)
+  const [detailMode, setDetailMode] = useState(false)
 
   useEffect(() => {
     console.log(character)
@@ -34,7 +34,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const handleSaveToStorage = () => saveMonster(formInputs)
 
-  const handleToggleExpanded = () => setDetailsExpanded(!detailsExpanded)
+  const handleChangeDetailMode = e => setDetailMode(e.target.name)
 
   // HELPERS //
 
@@ -56,6 +56,46 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         {options.map(name => <option key={name} value={name}>{name}</option>)}
       </select>
     )
+  }
+
+  const renderDetailMode = () => {
+    switch (detailMode) {
+      case "more":
+        console.log("switching to more mode");
+        return (
+          <div className="detail-sub-container">
+
+            <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
+            Hit Dice: <CharacterTextInput name="hit_dice"
+              value={formInputs.hit_dice}
+              handleChange={handleChange}
+              width="4em" />
+            Challenge Rating: <CharacterTextInput name="challenge_rating"
+              value={formInputs.challenge_rating}
+              handleChange={handleChange}
+              width="3em" />
+            XP: <CharacterTextInput name="xp"
+              value={formInputs.xp}
+              handleChange={handleChange}
+              width="6em" />
+
+          </div>
+        )
+      case "actions":
+        console.log("switching to actions mode")
+        return <CharacterDetailActions actions={character.actions} />
+      case "specials":
+        console.log("switching to actions mode")
+        return <CharacterDetailActions actions={character.special_abilities} />
+      case "spells":
+        console.log("switching to spells mode")
+        break;
+      case "legendary actions":
+        console.log("switching to legendary mode")
+        break;
+      default:
+        console.log("rendering nothing")
+    }
   }
 
   return (
@@ -139,37 +179,13 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
       </div>
 
-      {detailsExpanded ? (
-        <>
-          <div className="detail-sub-container">
+      {renderDetailMode()}
 
-            <span>Alignment: {renderSelectField("alignment", "lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned")}</span><br/>
-            Hit Dice: <CharacterTextInput name="hit_dice"
-              value={formInputs.hit_dice}
-              handleChange={handleChange}
-              width="4em" />
-            Challenge Rating: <CharacterTextInput name="challenge_rating"
-              value={formInputs.challenge_rating}
-              handleChange={handleChange}
-              width="3em" />
-            XP: <CharacterTextInput name="xp"
-              value={formInputs.xp}
-              handleChange={handleChange}
-              width="6em" />
-
-          </div>
-
-          <CharacterDetailActions actions={character.actions} />
-
-          <CharacterDetailActions actions={character.special_abilities} />
-        </>
-      ) : (
-
-        null
-
-      )}
-
-      <input type="button" value={detailsExpanded ? "Less" : "More"} onClick={handleToggleExpanded} />
+      <input type="button" value={"More Details"} name="more" onClick={handleChangeDetailMode} />
+      <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
+      <input type="button" value={"Special Abilities"} name="specials" onClick={handleChangeDetailMode} />
+      <input type="button" value={"Spells"} name="spells" onClick={handleChangeDetailMode} />
+      <input type="button" value={"Legendary Actions"} name="legendary" onClick={handleChangeDetailMode} />
 
     </form>
   )
