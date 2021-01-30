@@ -1,11 +1,10 @@
 #detail-modal {
   background: white;
   border: solid black 2px;
-  margin-left: 1em;
-  padding: 1em;
   position: fixed;
-  right: 1em;
+  right: 3vw;
   top: 1em;
+  width: 94vw;
   z-index: 2;
 }
 

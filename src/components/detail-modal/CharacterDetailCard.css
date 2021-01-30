@@ -4,6 +4,7 @@
   max-height: 80vh;
   overflow-x: auto;
   padding: 1em;
+  width: 100%;
 }
 
 #character-detail-form input {
@@ -70,4 +71,10 @@
 .action-card {
   background: #111;
   margin: 1em;
+}
+
+#detail-mode-tab {
+  border: solid white 2px;
+  border-left: none;
+  border-right: none;
 }
