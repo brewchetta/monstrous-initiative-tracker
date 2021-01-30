@@ -47,12 +47,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     dispatchCharacters({type: "REMOVE_CHARACTER", payload: character})
   }
 
-  const handleCloseHitPoints = () => {
-    setHitPointsOpen(false)
-    if (currentHitPoints <= 0) {
-      console.log("remove character?");
-    }
-  }
+  const handleCloseHitPoints = () => setHitPointsOpen(false)
 
   const handleCloseInitiative = () => {
     setInitiativeOpen(false)
