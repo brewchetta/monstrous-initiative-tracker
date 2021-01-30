@@ -3,7 +3,7 @@ import Character from '../../models/Character.js'
 import { CharactersContext } from "../../context/characters-context"
 import { getMonster } from "../../services/dnd-5e-api"
 
-export default function SearchForm() {
+export default function SearchForm({monsterNames, spellNames}) {
 
   const [input, setInput] = useState("")
   const [mode] = useState("Monster")
@@ -23,6 +23,8 @@ export default function SearchForm() {
     })
   }
 
+  const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
+
   return (
     <form id="search-form" onSubmit={handleSubmit}>
 
@@ -30,9 +32,14 @@ export default function SearchForm() {
 
       <label>Find a {mode}</label>
       <input type="text"
+      list="monster-names"
       onChange={(e) => setInput(e.target.value)}
       value={input}
       placeholder={"search here"}/>
+
+      <datalist id="monster-names">
+        {renderDatalistOptions()}
+      </datalist>
 
       <input type="submit"
       value={"Search"}/>
