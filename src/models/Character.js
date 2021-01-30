@@ -26,6 +26,7 @@ export default class Character {
     this.remapArrayProperty("condition_immunities")
     this.remapObjectProperty("senses")
     this.remapObjectProperty("speed")
+    this.remapSpells()
 
     this.subtype = this.subtype ? this.subtype : ""
 
@@ -63,6 +64,21 @@ export default class Character {
   remapProficiencies = () => {
     if (this.proficiencies.constructor === Array) {
       this.proficiencies = this.proficiencies.map(p => `${p.proficiency.name} + ${p.value}`).join(' | ')
+    }
+  }
+
+  remapSpells = () => {
+    this.spells = []
+    if (this.special_abilities) {
+      this.special_abilities.forEach(ability => {
+        if (ability.spellcasting) {
+          this.spells = ability.spellcasting.spells.map(s => ({name: s.name, level: s.level}))
+          this.spell_slots = ability.spellcasting.slots
+          this.spell_dc = ability.spellcasting.dc
+          this.spell_level = ability.spellcasting.level
+          this.spell_modifier = ability.spellcasting.modifier
+        }
+      })
     }
   }
 
