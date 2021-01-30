@@ -7,13 +7,13 @@
 
 .initiative-card {
   background: #9e5b40;
-  color: white;
+  color: black;
   font-weight: bold;
   margin-left: 0.5em;
   padding: 0.5em;
   position: absolute;
   top: 0;
-  transition: top 1s, background-color 1s;
+  transition: top 1s, background-color 1s, color 1s;
 }
 
 .dead-character {
@@ -21,7 +21,6 @@
   background-image: url("https://assets.stickpng.com/images/580b585b2edbce24c47b294f.png");
   background-position: center;
   background-size: cover;
-  color: black;
 }
 
 input[type=number] {
