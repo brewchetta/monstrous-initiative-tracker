@@ -109,7 +109,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   const renderName = () => `${character.name}${character.char_class ? ` the ${character.char_class}` : ""}`
 
   return (
-    <div className="initiative-card"
+    <div className={currentHitPoints > 0 ? "initiative-card" : "initiative-card dead-character"}
     style={{top: `${index * 50}px`}}>
       <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
