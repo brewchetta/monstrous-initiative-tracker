@@ -22,7 +22,7 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
   return (
     <div>
 
-      <span>Spell Modifier: {spell_modifier > 0 ? `+${spell_modifier}` : spell_modifier}</span> <span>Spell DC: {spell_dc}</span>
+      <span>{spell_modifier ? `Spell Modifier: +${spell_modifier}` : null}</span> <span>{spell_dc ? `Spell DC: ${spell_dc}` : null}</span>
 
       <br/>
 
