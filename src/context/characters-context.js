@@ -14,7 +14,8 @@ const charactersReducer = (state, action) => {
     case "REMOVE_CHARACTER":
       return state.filter(character => character._key !== action.payload._key)
     case "ROLL_UNROLLED_INITIATIVES":
-      return state.sort(byInitiative)
+      const rolledCharacters = state.map(character => character.initiative > -5 ? character : Object.assign(character, {initiative: character.rollInitiative()}))
+      return rolledCharacters.sort(byInitiative)
     case "RESET_INITIATIVES":
       const characters = state.map(character => Object.assign(character, {initiative: -10}))
       return characters.sort(byInitiative)
