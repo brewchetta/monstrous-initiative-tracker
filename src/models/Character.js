@@ -18,7 +18,11 @@ export default class Character {
     this.player = player
     this.char_class = char_class
 
+    this.legendary_actions = this.legendary_actions || []
+    this.special_abilities = this.special_abilities || []
+
     this.remapActionAttributes()
+    this.remapSpecialAbilities()
     this.remapProficiencies()
     this.remapArrayProperty("damage_immunities")
     this.remapArrayProperty("damage_resistances")
@@ -28,7 +32,6 @@ export default class Character {
     this.remapObjectProperty("speed")
     this.spell_dc = 0
     this.spell_modifier = 0
-    this.legendary_actions = this.legendary_actions || []
     this.remapSpells()
     // add remap special abilities & abilities & legendary abilities
 
@@ -50,6 +53,13 @@ export default class Character {
 
   remapArrayProperty = property => {
     this[property] = this[property].constructor === Array ? this[property].join(" | ") : this[property]
+  }
+
+  remapSpecialAbilities = () => {
+    this.special_abilities.forEach(ability => {
+      ability.full_description = `${ability.name}: ${ability.desc}`
+    });
+
   }
 
   remapActionAttributes = () => {

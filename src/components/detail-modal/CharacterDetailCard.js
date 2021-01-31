@@ -50,6 +50,19 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     setFormInputs(Object.assign(formInputs, actions))
   }
 
+  const handleSubmitSpecialAbility = (description, index) => {
+    const special_abilities = {
+      special_abilities: formInputs.special_abilities.map((s, i) => {
+        if (i === index) {
+          return ({...s, full_description: description})
+        } else {
+          return s
+        }
+      })
+    }
+    setFormInputs(Object.assign(formInputs, special_abilities))
+  }
+
   // HELPERS //
 
   const modifier = attribute => {
@@ -171,7 +184,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           handleSubmit={handleSubmitAction} />)
       case "specials":
         return (<CharacterDetailActionsList key="special abilities mode"
-          actions={character.special_abilities} />)
+          actions={character.special_abilities}
+          handleSubmit={handleSubmitSpecialAbility} />)
       case "spells":
         return <CharacterDetailSpellsList key="spells mode"
           spells={formInputs.spells}
