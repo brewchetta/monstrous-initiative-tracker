@@ -23,7 +23,7 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
   // RENDER //
 
   const renderInput = () => (
-    <textarea className="action-input-textarea" 
+    <textarea className="action-input-textarea"
       onChange={handleChange}
       onBlur={handleBlur}
       value={input}
@@ -31,7 +31,7 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
       ref={focusedInput} />
     )
 
-  const renderSpan = () => <span onClick={() => setFocused(true)}>{action.full_description}</span>
+  const renderSpan = () => <span onClick={() => setFocused(true)}>{input}</span>
 
   return (
     focused ? renderInput() : renderSpan()
