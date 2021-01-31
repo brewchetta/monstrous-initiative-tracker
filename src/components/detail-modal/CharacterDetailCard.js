@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
-import CharacterDetailActions from './CharacterDetailActions'
+import CharacterDetailActionsList from './CharacterDetailActionsList'
 import CharacterDetailSpellsList from './CharacterDetailSpellsList'
 import CharacterTextArea from './CharacterTextArea'
 import CharacterNumberField from './CharacterNumberField'
@@ -36,6 +36,19 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   const handleSaveToStorage = () => saveMonster(formInputs)
 
   const handleChangeDetailMode = e => setDetailMode(e.target.name)
+
+  const handleSubmitAction = (description, index) => {
+    const actions = {
+      actions: formInputs.actions.map((a, i) => {
+        if (i === index) {
+          return ({...a, full_description: description})
+        } else {
+          return a
+        }
+      })
+    }
+    setFormInputs(Object.assign(formInputs, actions))
+  }
 
   // HELPERS //
 
@@ -153,22 +166,19 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         </>
         )
       case "actions":
-        console.log("switching to actions mode")
-        return (<CharacterDetailActions key="actions mode"
-          actions={character.actions} />)
+        return (<CharacterDetailActionsList key="actions mode"
+          actions={character.actions}
+          handleSubmit={handleSubmitAction} />)
       case "specials":
-        console.log("switching to special actions mode")
-        return (<CharacterDetailActions key="special abilities mode"
+        return (<CharacterDetailActionsList key="special abilities mode"
           actions={character.special_abilities} />)
       case "spells":
-        console.log("switching to spells mode")
         return <CharacterDetailSpellsList key="spells mode"
           spells={formInputs.spells}
           spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier}
           spell_slots={formInputs.spell_slots} />
       case "legendary":
-        console.log("switching to legendary mode")
         break;
       default:
         console.log("rendering nothing")
