@@ -21,9 +21,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - WORKING: Users can amend a monster stat block, for example, adding or removing weapons from goblins or giving monsters different abilities
 
   - COMPLETED: Can amend proficiencies
-  - WORKING: Can amend actions
-  - Can amend legendary actions
-  - Can assign / remove spells
+  - COMPLETED: Can amend actions
+  - COMPLETED: Can amend legendary actions
+  - WORKING: Can assign / remove spells
+  - Can add / remove actions/abilities/legendary actions
 
 - COMPLETED: Users are able to save custom monster / character blocks to local storage and delete them
 
@@ -31,9 +32,11 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Search ought to be a datalist of known monsters / spells
 
-- Users are able to open a monster's spells for quick reference
+- COMPLETED: If a character drops to 0 hit points, they're styled differently
 
-- If a character drops to 0 hit points, they're styled differently
+- COMPLETED: Player characters have a character class property
+
+- Users are able to open a monster's spells for quick reference
 
 - Users can assign icons to monsters / characters to show different statuses
 
@@ -41,13 +44,11 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Player characters have specific styling to denote them
 
-- Player characters have a class property
-
 - Player character initiative card background is determined by class
 
 - Automatically builds a url link to the D&D beyond page for that monster (using index rather than name)
 
-- Styling styling styling... maybe pixel art? Alternately, arcane designs?
+- WORKING: Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
 ## Issues
 
