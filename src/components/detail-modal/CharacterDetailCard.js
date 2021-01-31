@@ -63,6 +63,19 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     setFormInputs(Object.assign(formInputs, special_abilities))
   }
 
+  const handleSubmitLegendaryAction = (description, index) => {
+    const legendary_actions = {
+      legendary_actions: formInputs.legendary_actions.map((a, i) => {
+        if (i === index) {
+          return ({...a, full_description: description})
+        } else {
+          return a
+        }
+      })
+    }
+    setFormInputs(Object.assign(formInputs, legendary_actions))
+  }
+
   // HELPERS //
 
   const modifier = attribute => {
@@ -89,7 +102,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   const renderDetailMode = () => {
     switch (detailMode) {
       case "general":
-        console.log("switching to general mode");
         return (
           <>
             <div className="detail-sub-container">
@@ -187,13 +199,15 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           actions={character.special_abilities}
           handleSubmit={handleSubmitSpecialAbility} />)
       case "spells":
-        return <CharacterDetailSpellsList key="spells mode"
+        return (<CharacterDetailSpellsList key="spells mode"
           spells={formInputs.spells}
           spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier}
-          spell_slots={formInputs.spell_slots} />
+          spell_slots={formInputs.spell_slots} />)
       case "legendary":
-        break;
+        return (<CharacterDetailActionsList key="legendary actions mode"
+          actions={character.legendary_actions}
+          handleSubmit={handleSubmitLegendaryAction} />)
       default:
         console.log("rendering nothing")
     }

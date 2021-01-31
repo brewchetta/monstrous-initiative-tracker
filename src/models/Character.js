@@ -23,6 +23,7 @@ export default class Character {
 
     this.remapActionAttributes()
     this.remapSpecialAbilities()
+    this.remapLegendaryActions()
     this.remapProficiencies()
     this.remapArrayProperty("damage_immunities")
     this.remapArrayProperty("damage_resistances")
@@ -56,10 +57,15 @@ export default class Character {
   }
 
   remapSpecialAbilities = () => {
-    this.special_abilities.forEach(ability => {
-      ability.full_description = `${ability.name}: ${ability.desc}`
+    this.special_abilities.forEach(a => {
+      a.full_description = `${a.name}: ${a.desc}`
     });
+  }
 
+  remapLegendaryActions = () => {
+    this.legendary_actions.forEach(a => {
+      a.full_description = `${a.name}: ${a.desc}`
+    });
   }
 
   remapActionAttributes = () => {
