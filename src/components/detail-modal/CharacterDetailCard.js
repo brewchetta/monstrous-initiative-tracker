@@ -94,6 +94,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       className="character-detail-select-field"
       name={name}
       value={formInputs[name]}>
+        <option disabled value="">---</option>
         {options.map(name => <option key={name} value={name}>{name}</option>)}
       </select>
     )
@@ -218,7 +219,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span>
 
       {formInputs.player ?
-        <span>{renderSelectField("char_class","","Artificer","Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Rogue","Ranger","Sorcerer","Warlock","Wizard")}</span>
+        <span>Class: {renderSelectField("char_class","Artificer","Barbarian","Bard","Cleric","Druid","Fighter","Monk","Paladin","Rogue","Ranger","Sorcerer","Warlock","Wizard")}</span>
         : null}
 
       <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
