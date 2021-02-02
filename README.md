@@ -52,6 +52,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Issues
 
-- Certain monsters not available in api (beholder and death tyrant! some gnolls, etc). Ought to supplement those monsters will dictionary
+- WORKING: Certain monsters not available in api (beholder and death tyrant! some gnolls, etc). Ought to supplement those monsters with dictionary
 
 - Cannot amend temporary hit points from initiative card
+
+- Condition immunities are not mapped or rendered
