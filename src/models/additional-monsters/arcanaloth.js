@@ -44,9 +44,9 @@ export const arcanaloth = {
   ],
   spells: [
     {name: "Fire Bolt", level: 0}
-    {name: "Mage Hand", level: 0}
-    {name: "Minor Illusion", level: 0}
-    {name: "Prestidigitation", level: 0}
+    {name: "Mage Hand", level: 0},
+    {name: "Minor Illusion", level: 0},
+    {name: "Prestidigitation", level: 0},
     {name: "Alter Self", level: 2},
     {name: "Darkness", level: 2},
     {name: "Heat Metal", level: 2},
