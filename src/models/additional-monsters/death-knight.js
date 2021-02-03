@@ -35,23 +35,29 @@ export const deathKnight = {
     },
     {
       name: "Spellcasting",
-      desc: "The death knight is a 19th-level spellcaster. Its spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). It has the following paladin spells prepared:
-
-      1st level (4 slots): command, compelled duel, searing smite
-
-      2nd level (3 slots): hold person, magic weapon
-
-      3rd level (3 slots): dispel magic, elemental weapon
-
-      4th level (3 slots): banishment, staggering smite
-
-      5th level (2 slots): destructive wave (necrotic)"
+      desc: "The death knight is a 19th-level spellcaster. Its spellcasting ability is Charisma (spell save DC 18, +10 to hit with spell attacks). It has the following paladin spells prepared:\n1st level (4 slots): command, compelled duel, searing smite\n2nd level (3 slots): hold person, magic weapon\n3rd level (3 slots): dispel magic, elemental weapon\n4th level (3 slots): banishment, staggering smite\n5th level (2 slots): destructive wave (necrotic)"
     },
     {
       name: "Parry (Reaction)",
       desc: "The death knight adds 6 to its AC against one melee attack that would hit it. To do so, the death knight must see the attacker and be wielding a melee weapon."
     }
   ],
+  spells: [
+    {name: "Command", level: 1},
+    {name: "Compelled Duel", level: 1},
+    {name: "Searing Smite", level: 1},
+    {name: "Hold Person", level: 2},
+    {name: "Magic Weapon", level: 2},
+    {name: "Dispel Magic", level: 3},
+    {name: "Elemental Weapon", level: 3},
+    {name: "Banishment", level: 4},
+    {name: "Staggering Smite", level: 4},
+    {name: "Destructive Wave", level: 5}
+  ],
+  spell_dc: 18,
+  spell_modifier: 10,
+  spell_level: 19,
+  spell_slots: { 1: 4, 2: 3, 3: 3, 4: 3, 5: 2 },
   actions: [
     {
       name: "Multiattack",
