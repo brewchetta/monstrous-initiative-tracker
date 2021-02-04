@@ -28,14 +28,16 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* IMAGES */
+
+.celtic-corner-knot {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100px;
 }
+
+/* INPUTS */
 
 input {
   margin-right: 1em;

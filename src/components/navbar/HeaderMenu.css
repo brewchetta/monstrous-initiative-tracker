@@ -1,0 +1,10 @@
+#context-buttons {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+#context-buttons button {
+  background: none;
+  border: none;
+}

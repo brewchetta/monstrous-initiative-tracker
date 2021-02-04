@@ -5,6 +5,8 @@ import { DetailContext } from '../../context/detail-context'
 // COMPONENTS
 import ContextActionButton from "./ContextActionButton"
 import AddCharacterButton from "./AddCharacterButton"
+// STYLE
+import "./HeaderMenu.css"
 
 export default function name() {
 
