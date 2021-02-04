@@ -8,7 +8,9 @@
 .initiative-card {
   background: #9e5b40;
   border-bottom: solid 3px;
+  border-right: solid 3px;
   border-bottom-color: blue;
+  border-right-color: blue;
   color: black;
   font-weight: bold;
   margin-left: 0.5em;
@@ -28,6 +30,7 @@
 
 .initiative-card.bloodied-character {
   border-bottom-color: purple;
+  border-right-color: purple;
 }
 
 .initiative-card.dead-character {
@@ -36,6 +39,7 @@
   background-position: center;
   background-size: cover;
   border-bottom-color: red;
+  border-right-color: red;
 }
 
 input[type=number] {
