@@ -1,7 +1,16 @@
 #context-buttons {
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  z-index: 1;
+}
+
+#context-buttons-left {
+  text-align: left;
+}
+
+#context-buttons-right {
+  text-align: right;
 }
 
 #context-buttons button {
