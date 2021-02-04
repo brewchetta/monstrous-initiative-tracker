@@ -31,8 +31,8 @@ export default class Character {
     this.remapArrayProperty("condition_immunities")
     this.remapObjectProperty("senses")
     this.remapObjectProperty("speed")
-    this.spell_dc = 0
-    this.spell_modifier = 0
+    this.spell_dc = this.spell_dc || 0
+    this.spell_modifier = this.spell_modifier || 0
     this.remapSpells()
     // add remap special abilities & abilities & legendary abilities
 
@@ -89,7 +89,7 @@ export default class Character {
   }
 
   remapSpells = () => {
-    this.spells = []
+    this.spells = this.spells || []
     if (this.special_abilities) {
       this.special_abilities.forEach(ability => {
         if (ability.spellcasting) {
