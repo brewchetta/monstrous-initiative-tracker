@@ -52,7 +52,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Issues
 
-- WORKING: Certain monsters not available in api (beholder and death tyrant! some gnolls, etc). Ought to supplement those monsters with dictionary
+- Certain JSON files are missing spells due to bad scrape
 
 - Cannot amend temporary hit points from initiative card
 
