@@ -11,6 +11,8 @@ import SearchForm from "./SearchForm"
 import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
 // SERVICES //
 import { getAllSpells, getAllMonsters } from "../../services/dnd-5e-api"
+// ADDITIONAL DATA //
+import * as additionalMonsters from '../../models/additional-monsters'
 
 export default function DetailContainer(props) {
 
@@ -20,7 +22,8 @@ export default function DetailContainer(props) {
   const [spellNames, setSpellNames] = useState([])
 
   useEffect(() => {
-    getAllMonsters().then(({results}) => setMonsterNames(results.map(m => m.name)))
+    const mNames = Object.values(additionalMonsters).map(m => m.name)
+    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...mNames]))
     getAllSpells().then(({results}) => setSpellNames(results.map(s => s.name)))
   }, [])
 
@@ -38,7 +41,7 @@ export default function DetailContainer(props) {
 
   const renderDetail = () => {
     return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
-    : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} />
+    : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} additionalMonsters={additionalMonsters} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : detail && detail.type === "locals" ? <SelectLocalMonstersForm />
     : null)

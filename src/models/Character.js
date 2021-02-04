@@ -53,7 +53,7 @@ export default class Character {
   }
 
   remapArrayProperty = property => {
-    this[property] = this[property].constructor === Array ? this[property].join(" | ") : this[property]
+    this[property] = this[property] && this[property].constructor === Array ? this[property].join(" | ") : this[property]
   }
 
   remapSpecialAbilities = () => {
@@ -71,7 +71,7 @@ export default class Character {
   remapActionAttributes = () => {
     this.actions.forEach(action => {
       action.full_description = `${action.name}: ${action.desc}`
-      action.damage.forEach(d => {
+      action.damage && action.damage.forEach(d => {
         if (d.damage_type && d.damage_type.name) {
           d.damage_type = d.damage_type.name
         }

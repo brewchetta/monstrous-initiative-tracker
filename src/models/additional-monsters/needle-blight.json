@@ -1,0 +1,37 @@
+{
+  "index": "needle-blight",
+  "name": "Needle Blight",
+  "size": "Medium",
+  "type": "plant",
+  "subtype": "",
+  "alignment": "neutral evil",
+  "armor_class": 12,
+  "hit_points": 11,
+  "hit_dice": "2d8",
+  "speed": {"walk": "30 ft."},
+  "strength": 12,
+  "dexterity": 12,
+  "constitution": 13,
+  "intelligence": 4,
+  "wisdom": 8,
+  "charisma": 3,
+  "proficiencies": "",
+  "damage_resistances": [],
+  "damage_immunities": [],
+  "damage_vulnerabilities": [],
+  "condition_immunities": ["Blinded", "Deafened"],
+  "senses": {"blindsight": "60 ft. (blind beyond this radius)", "passive_perception": 10},
+  "languages": "understands Common but can't speak",
+  "challenge_rating": "1/4",
+  "xp": 50,
+  "actions": [
+    {
+      "name": "Claw",
+      "desc": "Melee Weapon Attack: +3 to hit, reach 5 ft., one target. Hit: 6 (2d4 + 1) piercing damage."
+    },
+    {
+      "name": "Needles",
+      "desc": "Ranged Weapon Attack: +3 to hit, range 30/60 ft., one target. Hit: 8 (2d6 + 1) piercing damage."
+    }
+  ]
+}

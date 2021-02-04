@@ -3,7 +3,7 @@ import Character from '../../models/Character.js'
 import { CharactersContext } from "../../context/characters-context"
 import { getMonster } from "../../services/dnd-5e-api"
 
-export default function SearchForm({monsterNames, spellNames}) {
+export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {
 
   const [input, setInput] = useState("")
   const [mode] = useState("Monster")
@@ -14,7 +14,9 @@ export default function SearchForm({monsterNames, spellNames}) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    getMonster(input).then(data => {
+    const foundMonster = Object.values(additionalMonsters).find(m => m.name === input)
+    foundMonster && dispatch({type: "ADD_CHARACTER", payload: new Character(foundMonster)})
+    !foundMonster && getMonster(input).then(data => {
       if (!data.error) {
         dispatch({type: "ADD_CHARACTER", payload: new Character(data)})
       } else {
