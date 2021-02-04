@@ -15,7 +15,10 @@ function App() {
     <div className="App">
       <ContextProvider>
 
-        <img className="celtic-corner-knot" src={knotcorner} alt={"knot"} />
+        <img className="celtic-corner-knot" src={knotcorner} alt={"knot"} style={{top: "0", right: "0"}} />
+        <img className="celtic-corner-knot" src={knotcorner} alt={"knot"} style={{top: "0", left: "0", transform: "rotateY(180deg)"}} />
+        <img className="celtic-corner-knot" src={knotcorner} alt={"knot"} style={{bottom: "0", right: "0", transform: "rotateX(180deg)"}} />
+        <img className="celtic-corner-knot" src={knotcorner} alt={"knot"} style={{bottom: "0", left: "0", transform: "rotateX(180deg) rotateY(180deg)"}} />
 
         <HeaderMenu />
         <DetailContainer />
