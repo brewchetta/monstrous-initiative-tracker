@@ -3,6 +3,8 @@
   height: 90vh;
   border: solid black 2px;
   overflow-x: auto;
+  overflow-y: visible;
+  width: 60%;
 }
 
 .initiative-card {
@@ -13,8 +15,8 @@
   border-right-color: blue;
   color: black;
   font-weight: bold;
-  margin-left: 0.5em;
   padding: 0.5em;
+  padding-left: 1em;
   position: absolute;
   top: 0;
   transition: top 1s, background-color 1s, color 1s, border-color 1s;
@@ -47,4 +49,11 @@ input[type=number] {
   color: white;
   border: none;
   border-bottom: solid white 1px;
+}
+
+#dragon-fight {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  width: 40%;
 }

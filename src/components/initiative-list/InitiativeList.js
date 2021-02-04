@@ -8,6 +8,7 @@ import AddCharacterButton from './AddCharacterButton'
 import ContextActionButton from "./ContextActionButton"
 // STYLE //
 import "./InitiativeList.css"
+import dragonfight from "../../images/dragon-fight-woodcut.png"
 
 export default function InitiativeList(props) {
 
@@ -47,6 +48,8 @@ export default function InitiativeList(props) {
       <div id="initiative-list">
 
         {renderListedCharacters()}
+
+        <img id="dragon-fight" src={dragonfight} alt={"dragons fighting"} />
 
       </div>
 
