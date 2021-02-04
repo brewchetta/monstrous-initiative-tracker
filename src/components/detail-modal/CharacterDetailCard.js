@@ -80,7 +80,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   const renderDetailMode = () => {
     switch (detailMode) {
       case "general":
-        console.log("add general tab");
         return <CharacterDetailGeneral formInputs={formInputs} handleChange={handleChange} />
       case "actions":
         return (<CharacterDetailActionsList key="actions mode"
