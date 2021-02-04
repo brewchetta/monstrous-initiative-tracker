@@ -87,3 +87,7 @@
   border-left: none;
   border-right: none;
 }
+
+.spell-span {
+  margin-right: 1em;
+}

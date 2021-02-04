@@ -6,7 +6,7 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <span key={sp.name}>{sp.name}</span>)
+        .map(sp => <span className="spell-span" key={sp.name}>{sp.name}</span>)
 
       levelSpells.length && levelsArray.push(
         <div key={`level${i}spells`}>
