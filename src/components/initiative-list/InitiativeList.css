@@ -1,7 +1,6 @@
 #initiative-list {
   position: relative;
   height: 90vh;
-  border: solid black 2px;
   overflow-x: auto;
   overflow-y: visible;
   width: 60%;
