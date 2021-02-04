@@ -7,13 +7,15 @@
 
 .initiative-card {
   background: #9e5b40;
+  border-bottom: solid 3px;
+  border-bottom-color: blue;
   color: black;
   font-weight: bold;
   margin-left: 0.5em;
   padding: 0.5em;
   position: absolute;
   top: 0;
-  transition: top 1s, background-color 1s, color 1s;
+  transition: top 1s, background-color 1s, color 1s, border-color 1s;
 }
 
 .initiative-card input[type=number] {
@@ -24,11 +26,16 @@
   margin: none;
 }
 
-.dead-character {
+.initiative-card.bloodied-character {
+  border-bottom-color: purple;
+}
+
+.initiative-card.dead-character {
   background-color: #70421477;
   background-image: url("https://assets.stickpng.com/images/580b585b2edbce24c47b294f.png");
   background-position: center;
   background-size: cover;
+  border-bottom-color: red;
 }
 
 input[type=number] {
