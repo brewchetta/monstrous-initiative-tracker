@@ -36,6 +36,14 @@
   width: 100px;
 }
 
+#dragon-fight {
+  bottom: 7%;
+  left: 2%;
+  opacity: 0.5;
+  position: absolute;
+  width: 300px;
+}
+
 /* INPUTS */
 
 input {

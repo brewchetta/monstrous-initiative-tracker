@@ -50,10 +50,3 @@ input[type=number] {
   border: none;
   border-bottom: solid white 1px;
 }
-
-#dragon-fight {
-  position: absolute;
-  bottom: 5%;
-  left: 2%;
-  width: 40%;
-}
