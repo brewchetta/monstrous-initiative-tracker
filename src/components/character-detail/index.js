@@ -1,9 +1,13 @@
+// REACT //
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
+// COMPONENTS //
 import CharacterDetailActionsList from './CharacterDetailActionsList'
 import CharacterDetailSpellsList from './CharacterDetailSpellsList'
 import CharacterDetailGeneral from './CharacterDetailGeneral'
 import CharacterSelectField from './CharacterSelectField'
+import CharacterDetailImage from './CharacterDetailImage'
+// STYLE //
 import "./CharacterDetailCard.css"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
@@ -106,6 +110,9 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
+
+      <CharacterDetailImage charType={formInputs.type} />
+
       <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span>
 
       {formInputs.player ?

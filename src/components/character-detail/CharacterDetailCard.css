@@ -116,3 +116,11 @@
   position: relative;
   text-align: left;
 }
+
+#character-detail-image {
+  position: absolute;
+  opacity: 0.5;
+  left: 0.5em;
+  bottom: 0.5em;
+  width: 100px;
+}
