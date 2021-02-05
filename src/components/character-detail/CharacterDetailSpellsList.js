@@ -9,7 +9,9 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
 
   // EVENT HANDLERS //
 
-  const handleMouseEnter = spellName => dispatch({type: "INSPECT_SPELL", payload: spellName})
+  const handleMouseEnter = (e, spellName) => {
+    dispatch({type: "INSPECT_SPELL", payload: {spellName, x: e.clientX, y: e.clientY}})
+  }
 
   const handleMouseLeave = () => dispatch({type: "CLEAR_TOOLTIP"})
 
@@ -21,7 +23,7 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <span className="spell-span" onMouseEnter={() => handleMouseEnter(sp.name)} onMouseLeave={handleMouseLeave} key={sp.name}>{sp.name}</span>)
+        .map(sp => <span className="spell-span" onMouseEnter={event => handleMouseEnter(event, sp.name)} onMouseLeave={handleMouseLeave} key={sp.name}>{sp.name}</span>)
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>

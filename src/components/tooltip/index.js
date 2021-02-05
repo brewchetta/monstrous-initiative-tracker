@@ -7,10 +7,12 @@ export default function Tooltip() {
   const [tooltip] = useContext(TooltipContext)
 
   if (tooltip.type === "spell") {
+    console.log(tooltip.position.x);
     return (
-      <div id="spell-tooltip">
+      <div id="spell-tooltip"
+        style={{top: `${tooltip.position.y + 10}px`, left: `${tooltip.position.x + 10}px`}}>
 
-        <p>{tooltip.content}</p>
+        <p>{tooltip.content} {tooltip.position.x}</p>
 
       </div>
     )

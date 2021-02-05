@@ -8,7 +8,7 @@ const tooltipReducer = (state, action) => {
     case "CLEAR_TOOLTIP":
       return {type: null}
     case "INSPECT_SPELL":
-      return {type: "spell", content: action.payload}
+      return {type: "spell", content: action.payload.spellName, position: {x: action.payload.x, y: action.payload.y}}
     default:
       throw new Error(`Incorrect use of tooltip reducer: ${action.type}`)
   }
