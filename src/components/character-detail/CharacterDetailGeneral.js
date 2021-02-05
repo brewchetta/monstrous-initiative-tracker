@@ -19,6 +19,18 @@ export default function CharacterDetailGeneral({formInputs, handleChange}) {
 
   return (
     <>
+
+      <div className="detail-sub-container">
+
+        Max HP: <CharacterNumberField name="hit_points"
+          value={formInputs.hit_points}
+          handleChange={handleChange} />
+        Temporary HP: <CharacterNumberField name="tempHP"
+          value={formInputs.tempHP}
+          handleChange={handleChange} />
+
+      </div>
+
       <div className="detail-sub-container">
 
         Name: <CharacterTextInput name="name"
@@ -30,17 +42,6 @@ export default function CharacterDetailGeneral({formInputs, handleChange}) {
           handleChange={handleChange} />
         Initiative: <CharacterNumberField name="initiative"
           value={formInputs.initiative}
-          handleChange={handleChange} />
-
-      </div>
-
-      <div className="detail-sub-container">
-
-        Max HP: <CharacterNumberField name="hit_points"
-          value={formInputs.hit_points}
-          handleChange={handleChange} />
-        Temporary HP: <CharacterNumberField name="tempHP"
-          value={formInputs.tempHP}
           handleChange={handleChange} />
 
       </div>
