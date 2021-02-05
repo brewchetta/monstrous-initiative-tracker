@@ -3,7 +3,7 @@ import './App.css';
 // COMPONENTS //
 import InitiativeList from './initiative-list/InitiativeList'
 import DetailContainer from './detail-modal/DetailContainer'
-import HeaderMenu from "./navbar/HeaderMenu"
+import HeaderMenu from "./header-menu"
 // CONTEXT //
 import ContextProvider from "../context/main-context"
 // IMGS //
