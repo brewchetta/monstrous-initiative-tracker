@@ -1,37 +1,38 @@
 #character-detail-form {
-  background: black;
-  color: white;
+  /* background: black; */
+  /* color: black; */
   max-height: 80vh;
   overflow-x: auto;
   padding: 1em;
   width: 100%;
+  border: solid black 2px;
 }
 
 #character-detail-form input {
   background: none;
   border: none;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 
 .character-detail-form, .number-field {
   display: inline-block;
-  border-bottom: solid white 1px;
+  border-bottom: solid black 1px;
   margin-right: 1em;
   text-align: center;
   width: 3em;
 }
 
 .character-detail-form, .text-input {
-  border-bottom: solid white 1px;
+  border-bottom: solid black 1px;
   display: inline-block;
   margin-right: 1em;
   text-align: center;
 }
 
 .character-detail-form, .text-area-field {
-  border: solid white 1px;
+  border: solid black 1px;
   padding: 0.3em;
 }
 
@@ -46,35 +47,43 @@
 .detail-sub-container {
   margin: 0.5em;
   padding: 0.5em;
-  text-align: left;
+  text-align: center;
 }
 
 #character-detail-form textarea {
   background: none;
   border: none;
-  color: white;
+  color: black;
+  outline: none;
   text-align: center;
 }
 
 #character-detail-form input[type=submit] {
-  border: solid white 2px;
+  border: solid black 2px;
+  outline: none;
 }
 
 #character-detail-form select {
-  background: black;
+  background: none;
   border: none;
-  border-bottom: solid white 1px;
+  border-bottom: solid black 1px;
   border-radius: 0;
-  color: white;
+  color: black;
   text-align: center;
 }
 
 #character-detail-form input[type=text] {
+  outline: none;
   width: 100%;
 }
 
+#character-detail-form input[type=number] {
+  outline: none;
+}
+
 #character-detail-form input[type=button] {
-  border: solid white 2px;
+  margin-right: 2em;
+  outline: none;
 }
 
 .action-card {
@@ -83,9 +92,10 @@
 }
 
 #detail-mode-tab {
-  border: solid white 2px;
+  border: solid black 2px;
   border-left: none;
   border-right: none;
+  text-align: center;
 }
 
 .spell-span {
