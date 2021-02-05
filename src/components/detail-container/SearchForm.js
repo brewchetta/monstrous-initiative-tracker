@@ -30,8 +30,6 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
   return (
     <form id="search-form" onSubmit={handleSubmit}>
 
-      <p>{message}</p>
-
       <label>Find a {mode}</label>
       <input type="text"
       list="monster-names"
@@ -45,6 +43,8 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
 
       <input type="submit"
       value={"Search"}/>
+
+      <p>{message}</p>
 
     </form>
   )
