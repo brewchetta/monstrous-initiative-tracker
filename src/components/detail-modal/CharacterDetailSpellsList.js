@@ -9,8 +9,8 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
         .map(sp => <span className="spell-span" key={sp.name}>{sp.name}</span>)
 
       levelSpells.length && levelsArray.push(
-        <div key={`level${i}spells`}>
-          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots ? ` | Slots: ${spell_slots[i]}` : null}</p>
+        <div className="spell-level-container" key={`level${i}spells`}>
+          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots ? ` | Slots ${spell_slots[i]}` : null}</p>
           {levelSpells}
         </div>
       )
@@ -27,6 +27,8 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
       <br/>
 
       {renderSpellsByLevel()}
+
+      <br/>
 
     </div>
   )
