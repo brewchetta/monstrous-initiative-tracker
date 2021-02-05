@@ -16,9 +16,11 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
     e.preventDefault()
     const foundMonster = Object.values(additionalMonsters).find(m => m.name.toLowerCase() === input.toLowerCase())
     foundMonster && dispatch({type: "ADD_CHARACTER", payload: new Character(foundMonster)})
+    foundMonster && setMessage(`Added ${foundMonster.name}`)
     !foundMonster && getMonster(input).then(data => {
       if (!data.error) {
         dispatch({type: "ADD_CHARACTER", payload: new Character(data)})
+        setMessage(`Added ${data.name}!`)
       } else {
         setMessage("Couldn't find that in the monster manual")
       }
