@@ -51,7 +51,6 @@ export default function DetailContainer(props) {
     <>
       <div id="modal-mask" onClick={clearDetail} />
       <div id="detail-modal">
-        <div id="close-detail-modal" onClick={clearDetail}/>
         {renderDetail()}
       </div>
     </>

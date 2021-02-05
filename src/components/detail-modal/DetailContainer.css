@@ -1,6 +1,6 @@
 #detail-modal {
-  background: #8E7A66;
-  border: solid black 2px;
+  /* background: #8E7A66; */
+  /* border: solid black 2px; */
   position: fixed;
   right: 0;
   top: 1.3em;
@@ -18,14 +18,4 @@
   top: 0;
   width: 100vw;
   z-index: 1;
-}
-
-#close-detail-modal {
-  background: red;
-  border: solid black 2px;
-  height: 10px;
-  position: absolute;
-  right: 0.2em;
-  top: 0.2em;
-  width: 10px;
 }

@@ -8,12 +8,16 @@ import AddCharacterButton from "./AddCharacterButton"
 // STYLE
 import "./HeaderMenu.css"
 
-export default function name() {
+export default function HeaderMenu() {
+
+  const [characters] = useContext(CharactersContext)
+
+  const determineOpacity = () => characters.length ? ({opacity: 1}) : ({opacity: 0})
 
   return (
     <div id="context-buttons">
 
-      <div id="context-buttons-left">
+      <div id="context-buttons-left" style={determineOpacity()}>
 
         <ContextActionButton context={CharactersContext}
         text={"Clear Characters"}
