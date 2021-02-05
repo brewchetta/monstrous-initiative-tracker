@@ -4,6 +4,7 @@ import './App.css';
 import InitiativeList from './initiative-list'
 import DetailContainer from './detail-container'
 import HeaderMenu from "./header-menu"
+import Tooltip from "./tooltip"
 // CONTEXT //
 import ContextProvider from "../context/main-context"
 // IMGS //
@@ -26,6 +27,7 @@ function App() {
         <HeaderMenu />
         <DetailContainer />
         <InitiativeList />
+        <Tooltip />
 
       </ContextProvider>
     </div>

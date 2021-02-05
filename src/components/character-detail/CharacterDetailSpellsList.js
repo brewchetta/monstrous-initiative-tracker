@@ -1,4 +1,19 @@
+import {useContext} from "react"
+import { TooltipContext } from "../../context/tooltip-context"
+
 export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier, spell_slots}) {
+
+  // STATE //
+
+  const dispatch = useContext(TooltipContext)[1]
+
+  // EVENT HANDLERS //
+
+  const handleMouseEnter = spellName => dispatch({type: "INSPECT_SPELL", payload: spellName})
+
+  const handleMouseLeave = () => dispatch({type: "CLEAR_TOOLTIP"})
+
+  // RENDER //
 
   const renderSpellsByLevel = () => {
     const levelsArray = []
@@ -6,7 +21,7 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <span className="spell-span" key={sp.name}>{sp.name}</span>)
+        .map(sp => <span className="spell-span" onMouseEnter={() => handleMouseEnter(sp.name)} onMouseLeave={handleMouseLeave} key={sp.name}>{sp.name}</span>)
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>
