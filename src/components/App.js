@@ -2,7 +2,7 @@
 import './App.css';
 // COMPONENTS //
 import InitiativeList from './initiative-list'
-import DetailContainer from './detail-modal/DetailContainer'
+import DetailContainer from './detail-container'
 import HeaderMenu from "./header-menu"
 // CONTEXT //
 import ContextProvider from "../context/main-context"
