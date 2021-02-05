@@ -3,7 +3,7 @@
   /* border: solid black 2px; */
   position: fixed;
   right: 2.5em;
-  height: 90vh;
+  max-height: 90vh;
   max-width: 60%;
   top: 1.3em;
   z-index: 2;
