@@ -2,6 +2,10 @@
   font-family: 'Crimson Text', serif;
 }
 
+span, div {
+  cursor: default;
+}
+
 body {
   background-color: #cab49b;
   margin: 0;
