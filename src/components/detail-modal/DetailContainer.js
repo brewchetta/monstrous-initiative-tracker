@@ -6,7 +6,7 @@ import "./DetailContainer.css"
 import { DetailContext } from "../../context/detail-context"
 import { CharactersContext } from "../../context/characters-context"
 // COMPONENTS //
-import CharacterDetailCard from "./CharacterDetailCard"
+import CharacterDetailCard from "../character-detail"
 import SearchForm from "./SearchForm"
 import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
 // SERVICES //
