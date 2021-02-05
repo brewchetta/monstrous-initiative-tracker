@@ -1,17 +1,19 @@
 #detail-modal {
-  background: white;
+  background: #8E7A66;
   border: solid black 2px;
   position: fixed;
-  right: 3vw;
-  top: 1em;
-  width: 94vw;
+  right: 0;
+  top: 1.3em;
+  height: 90vh;
+  max-width: 60%;
   z-index: 2;
 }
 
 #modal-mask {
-  background: #8E7A6655;
+  background: #8E7A66;
   height: 100vh;
   left: 0;
+  opacity: 0.3;
   position: absolute;
   top: 0;
   width: 100vw;
