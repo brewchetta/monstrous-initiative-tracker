@@ -68,6 +68,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
           placeholder={"hit points"}
           onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
           min={0}
+          max={character.hit_points}
           ref={focusedInput}
           />
           /{character.hit_points} ♡
