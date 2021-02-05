@@ -101,7 +101,9 @@
   border-left: none;
   border-right: none;
   margin-top: 1em;
+  position: relative;
   text-align: center;
+  z-index: 1;
 }
 
 .spell-span {
@@ -119,7 +121,7 @@
 
 #character-detail-image {
   position: absolute;
-  opacity: 0.5;
+  opacity: 0.3;
   left: 0.5em;
   bottom: 0.5em;
   width: 100px;
