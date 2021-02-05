@@ -1,7 +1,7 @@
 // STYLES //
 import './App.css';
 // COMPONENTS //
-import InitiativeList from './initiative-list/InitiativeList'
+import InitiativeList from './initiative-list'
 import DetailContainer from './detail-modal/DetailContainer'
 import HeaderMenu from "./header-menu"
 // CONTEXT //
