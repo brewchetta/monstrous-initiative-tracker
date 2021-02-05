@@ -31,6 +31,11 @@ export default function CharacterDetailGeneral({formInputs, handleChange}) {
         Initiative: <CharacterNumberField name="initiative"
           value={formInputs.initiative}
           handleChange={handleChange} />
+
+      </div>
+
+      <div className="detail-sub-container">
+
         Max HP: <CharacterNumberField name="hit_points"
           value={formInputs.hit_points}
           handleChange={handleChange} />
@@ -111,6 +116,10 @@ export default function CharacterDetailGeneral({formInputs, handleChange}) {
         handleChange={handleChange}
         currentInput={formInputs.size} />
       </span>
+
+    </div>
+
+    <div className="detail-sub-container">
 
       Languages: <CharacterTextInput name="languages"
         value={formInputs.languages}
