@@ -1,6 +1,5 @@
 #character-detail-form {
-  /* background: black; */
-  /* color: black; */
+  background-color: #B8A38B;
   max-height: 80vh;
   overflow-x: auto;
   padding: 1em;
@@ -32,8 +31,10 @@
 }
 
 .character-detail-form, .text-area-field {
-  border: solid black 1px;
-  padding: 0.3em;
+  /* padding: 0.3em; */
+}
+.text-area-field:focus {
+  border: solid black 2px;
 }
 
 .character-detail-select-field {
@@ -95,6 +96,7 @@
   border: solid black 2px;
   border-left: none;
   border-right: none;
+  margin-top: 1em;
   text-align: center;
 }
 
