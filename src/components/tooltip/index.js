@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { TooltipContext } from "../../context/tooltip-context"
+import "./style.css"
 
 export default function Tooltip() {
 
