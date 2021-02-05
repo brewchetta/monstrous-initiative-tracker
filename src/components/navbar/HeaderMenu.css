@@ -10,10 +10,14 @@
 }
 
 #context-buttons-right {
+  /* border-bottom: solid black 2px; */
   text-align: right;
 }
 
 #context-buttons button {
   background: none;
   border: none;
+  border-bottom: solid black 2px;
+  color: black;
+  font-size: 1em;
 }

@@ -50,6 +50,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - WORKING: Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
+- Filter by monster type in search
+
 ## Issues
 
 - Certain JSON files are missing spells due to bad scrape

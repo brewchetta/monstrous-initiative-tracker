@@ -7,11 +7,12 @@
 }
 
 .initiative-card {
-  background: #9e5b40;
-  border-bottom: solid 3px;
-  border-right: solid 3px;
-  border-bottom-color: blue;
-  border-right-color: blue;
+  background-color: #cab49b77;
+  border-bottom: solid 5px;
+  /* border-right: solid 3px; */
+  border-bottom-color: green;
+  border-radius: 0 0 5px 0;
+  /* border-right-color: blue; */
   color: black;
   font-weight: bold;
   padding: 0.5em;
@@ -19,6 +20,7 @@
   position: absolute;
   top: 0;
   transition: top 1s, background-color 1s, color 1s, border-color 1s;
+  /* box-shadow: 5px 5px black; */
 }
 
 .initiative-card input[type=number] {
@@ -30,17 +32,18 @@
 }
 
 .initiative-card.bloodied-character {
-  border-bottom-color: purple;
-  border-right-color: purple;
+  border-bottom-color: orange;
+  /* border-right-color: orange; */
 }
 
 .initiative-card.dead-character {
-  background-color: #70421477;
+  /* background-color: #70421477; */
+  background-color: #cab49b77;
   background-image: url("https://assets.stickpng.com/images/580b585b2edbce24c47b294f.png");
   background-position: center;
   background-size: cover;
   border-bottom-color: red;
-  border-right-color: red;
+  /* border-right-color: red; */
 }
 
 input[type=number] {
