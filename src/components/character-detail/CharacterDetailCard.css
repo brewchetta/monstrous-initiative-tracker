@@ -1,10 +1,11 @@
 #character-detail-form {
-  background-color: #B8A38B;
+  /* background-color: #B8A38B; */
+  background-color: #D2C4A7;
+  border: solid black 2px;
   max-height: 80vh;
   overflow-x: auto;
   padding: 1em;
   width: 100%;
-  border: solid black 2px;
 }
 
 #character-detail-form input {
@@ -54,9 +55,12 @@
 #character-detail-form textarea {
   background: none;
   border: none;
-  color: black;
+  border-bottom: solid black 1px;
+  font-size: 1em;
   outline: none;
+  resize: none;
   text-align: center;
+  width: 100%;
 }
 
 #character-detail-form input[type=submit] {
@@ -88,7 +92,7 @@
 }
 
 .action-card {
-  background: #111;
+  font-size: 0.8em;
   margin: 1em;
 }
 

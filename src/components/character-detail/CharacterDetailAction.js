@@ -6,15 +6,21 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
 
   const [input, setInput] = useState(action.full_description)
   const [focused, setFocused] = useState(false)
+  const [height, setHeight] = useState("5px")
   const focusedInput = useRef(null)
 
   useEffect(() => {
     focused && focusedInput.current.focus()
+    focused && setHeight(focusedInput.current.scrollHeight + "px")
   }, [focused])
 
   // EVENT HANDLERS //
 
-  const handleChange = e => setInput(e.target.value)
+  const handleChange = e => {
+    setInput(e.target.value)
+    setHeight(focusedInput.current.scrollHeight + "px")
+  }
+
   const handleBlur = e => {
     handleSubmit(input, index)
     setFocused(false)
@@ -24,6 +30,7 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
 
   const renderInput = () => (
     <textarea className="action-input-textarea"
+      style={{height}}
       onChange={handleChange}
       onBlur={handleBlur}
       value={input}
