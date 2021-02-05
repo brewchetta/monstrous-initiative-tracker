@@ -5,6 +5,8 @@ import lion from "../../images/woodcut-lion.png"
 import skeleton from "../../images/woodcut-skeleton.png"
 import squid from "../../images/woodcut-squid.png"
 import moon from "../../images/woodcut-style-man-moon.png"
+import fire from "../../images/woodcut-fire.png"
+import gear from "../../images/woodcut-gear.png"
 
 export default function CharacterDetailImage({charType}) {
 
@@ -14,6 +16,8 @@ export default function CharacterDetailImage({charType}) {
   : charType === "fiend" ? imp
   : charType === "undead" ? skeleton
   : charType === "beast" ? boar
+  : charType === "construct" ? gear
+  : charType === "elemental" ? fire
   : charType === "celestial" || charType === "fey" || charType === "plant" ? moon
   : knight
 
