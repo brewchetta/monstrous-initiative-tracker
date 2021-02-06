@@ -10,8 +10,13 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
   const focusedInput = useRef(null)
 
   useEffect(() => {
-    focused && focusedInput.current.focus()
-    focused && setHeight(focusedInput.current.scrollHeight + "px")
+    if (focused){
+      focusedInput.current.focus()
+      setHeight(focusedInput.current.scrollHeight + "px")
+      // setInput(input.replace("\u00a0","\n"))
+    } else {
+      // setInput(input.replace("\n", "\u00a0"))
+    }
   }, [focused])
 
   // EVENT HANDLERS //
@@ -22,7 +27,7 @@ export default function CharacterDetailAction({action, index, handleSubmit}) {
   }
 
   const handleBlur = e => {
-    handleSubmit(input, index)
+    handleSubmit(input.replace(/"\n","&nbsp"/), index)
     setFocused(false)
   }
 

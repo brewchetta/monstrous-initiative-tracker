@@ -6,6 +6,10 @@ span, div {
   cursor: default;
 }
 
+span, p, div {
+  white-space: pre-wrap;
+}
+
 body {
   background-color: #cab49b;
   margin: 0;
