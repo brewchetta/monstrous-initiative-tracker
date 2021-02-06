@@ -32,7 +32,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   }
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e && e.preventDefault()
     updateCharacter(formInputs)
   }
 
@@ -50,7 +50,9 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         }
       })
     }
+    // debugger
     setFormInputs(Object.assign(formInputs, actions))
+    handleSubmit()
   }
 
   const handleSubmitSpecialAbility = (description, index) => {
