@@ -43,7 +43,7 @@ export default function SelectLocalMonstersForm() {
 
       {renderLocalMonsters()}
 
-      <button onClick={clearLocals}>Remove All</button>
+      <button id="remove-all-locals" onClick={clearLocals}>Clear All</button>
 
     </div>
   )

@@ -6,9 +6,8 @@ export default function SelectLocalMonstersCard({character, removeLocalMonster, 
 
   return (
     <div className="local-character-card">
-      <button onClick={handleAddMonster}>+</button>
-      <button onClick={() => removeLocalMonster(character)}>Remove</button>
-      {character.name}{character.char_class ? ` the ${character.char_class}` : ""}
+      <button onClick={handleAddMonster}>{character.name}{character.char_class ? ` the ${character.char_class}` : ""}</button>
+      <button onClick={() => removeLocalMonster(character)}>Delete</button>
     </div>
   )
 }
