@@ -126,3 +126,27 @@
   bottom: 0.5em;
   width: 100px;
 }
+
+#add-spell-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 5%;
+  grid-column-gap: 2%;
+}
+
+#add-spell-form input[type=text] {
+  border-bottom: solid black 1px;
+  text-align: left;
+}
+
+#add-spell-form input[type=button] {
+  border: solid black 1px;
+}
+
+#add-spell-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin-right: 1em;
+  text-indent: 1px;
+  text-overflow: '';
+  text-align: left;
+}

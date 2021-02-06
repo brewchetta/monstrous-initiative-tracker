@@ -22,15 +22,13 @@ export default function AddSpellForm({handleSubmit}) {
 
   return (
     <>
-
-      <label>Spell Name: </label>
+    <div id="add-spell-form">
       <input type="text"
       onChange={handleNameChange}
       value={nameInput}
       placeholder={"spell name..."}
       />
 
-      <label>Spell Level: </label>
       <select onChange={handleLevelChange} value={levelInput}>
         <option value={0}>Cantrip</option>
         <option value={1}>1</option>
@@ -47,6 +45,7 @@ export default function AddSpellForm({handleSubmit}) {
       <input type="button"
       value={"Add Spell"}
       onClick={handleSubmitForm}/>
+    </div>
     </>
   )
 
