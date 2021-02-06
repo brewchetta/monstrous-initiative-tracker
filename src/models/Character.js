@@ -59,26 +59,28 @@ export default class Character {
   remapSpecialAbilities = () => {
     this.special_abilities.forEach(a => {
       a.full_description = `${a.name}: ${a.desc}`
+      delete a.desc
+      delete a.name
     });
   }
 
   remapLegendaryActions = () => {
     this.legendary_actions.forEach(a => {
       a.full_description = `${a.name}: ${a.desc}`
+      delete a.desc
+      delete a.name
     });
   }
 
   remapActionAttributes = () => {
-    this.actions.forEach(action => {
-      action.full_description = `${action.name}: ${action.desc}`
-      action.damage && action.damage.forEach(d => {
-        if (d.damage_type && d.damage_type.name) {
-          d.damage_type = d.damage_type.name
-        }
-      })
-      if (action.dc && action.dc.dc_type) {
-        action.dc.dc_type = action.dc.dc_type.name
-      }
+    this.actions.forEach(a => {
+      a.full_description = `${a.name}: ${a.desc}`
+      delete a.desc
+      delete a.name
+      delete a.damage
+      delete a.attack_bonus
+      delete a.dc
+      delete a.usage
     })
   }
 
