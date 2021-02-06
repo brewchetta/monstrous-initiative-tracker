@@ -30,7 +30,7 @@ export default function Tooltip() {
         {spellDetails.error ? <p>"Unable to fetch that spell, sorry!"</p> : null}
         {spellDetails.name ? <p>{spellDetails.name}</p> : null}
         <p>
-          {spellDetails.level ? <span>Level {spellDetails.level}</span> : null}{spellDetails.casting_time ? <span>  |  Casting Time: {spellDetails.casting_time}</span> : null}{spellDetails.duration ? <span>  |  Duration: {spellDetails.duration}</span> : null}
+          {<span>{spellDetails.level ? `Level ${spellDetails.level}` : "Cantrip"}</span>}{spellDetails.casting_time ? <span>  |  Casting Time: {spellDetails.casting_time}</span> : null}{spellDetails.duration ? <span>  |  Duration: {spellDetails.duration}</span> : null}
         </p>
         <p>{spellDetails.concentration ? <span>Concentration</span> : null}</p>
         <p>
