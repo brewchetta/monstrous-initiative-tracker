@@ -13,7 +13,7 @@ export default function AddSpellForm({handleSubmit}) {
   const handleLevelChange = e => setLevelInput(e.target.value)
 
   const handleSubmitForm = e => {
-    handleSubmit({name: nameInput, level: levelInput})
+    handleSubmit({name: nameInput, level: parseInt(levelInput)})
     setNameInput("")
     setLevelInput(0)
   }
@@ -32,7 +32,7 @@ export default function AddSpellForm({handleSubmit}) {
 
       <label>Spell Level: </label>
       <select onChange={handleLevelChange} value={levelInput}>
-        <option value={0}>0</option>
+        <option value={0}>Cantrip</option>
         <option value={1}>1</option>
         <option value={2}>2</option>
         <option value={3}>3</option>

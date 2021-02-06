@@ -14,8 +14,6 @@ export default function Tooltip() {
     !tooltip.content && setSpellDetails({})
   } ,[tooltip])
 
-  console.log(spellDetails);
-
   if (tooltip.type === "spell") {
 
     const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
