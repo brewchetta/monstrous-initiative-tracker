@@ -8,7 +8,7 @@ import moon from "../../images/woodcut-style-man-moon.png"
 import fire from "../../images/woodcut-fire.png"
 import gear from "../../images/woodcut-gear.png"
 
-export default function CharacterDetailImage({charType}) {
+export default function DetailImage({charType}) {
 
   let source = charType === "aberration" ? squid
   : charType === "monstrosity" ? lion

@@ -2,11 +2,11 @@
 import { useState, useEffect } from "react"
 import { saveMonster } from '../../services/localstorage'
 // COMPONENTS //
-import CharacterDetailActionsList from './CharacterDetailActionsList'
-import CharacterDetailSpellsList from './CharacterDetailSpellsList'
-import CharacterDetailGeneral from './CharacterDetailGeneral'
+import ActionsList from './ActionsList'
+import SpellsList from './SpellsList'
+import GeneralInfo from './GeneralInfo'
 import CharacterSelectField from './CharacterSelectField'
-import CharacterDetailImage from './CharacterDetailImage'
+import DetailImage from './DetailImage'
 // STYLE //
 import "./CharacterDetailCard.css"
 
@@ -90,24 +90,24 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   const renderDetailMode = () => {
     switch (detailMode) {
       case "general":
-        return <CharacterDetailGeneral formInputs={formInputs} handleChange={handleChange} />
+        return <GeneralInfo formInputs={formInputs} handleChange={handleChange} />
       case "actions":
-        return (<CharacterDetailActionsList key="actions mode"
+        return (<ActionsList key="actions mode"
           actions={character.actions}
           handleSubmit={handleSubmitAction} />)
       case "specials":
-        return (<CharacterDetailActionsList key="special abilities mode"
+        return (<ActionsList key="special abilities mode"
           actions={character.special_abilities}
           handleSubmit={handleSubmitSpecialAbility} />)
       case "spells":
-        return (<CharacterDetailSpellsList key="spells mode"
+        return (<SpellsList key="spells mode"
           spells={formInputs.spells}
           spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier}
           spell_slots={formInputs.spell_slots}
           handleNewSpell={handleNewSpell} />)
       case "legendary":
-        return (<CharacterDetailActionsList key="legendary actions mode"
+        return (<ActionsList key="legendary actions mode"
           actions={character.legendary_actions}
           handleSubmit={handleSubmitLegendaryAction} />)
       default:
@@ -118,7 +118,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   return (
     <form id="character-detail-form" onSubmit={handleSubmit}>
 
-      <CharacterDetailImage charType={formInputs.type} />
+      <DetailImage charType={formInputs.type} />
 
       <span>Player? <input type="checkbox" name="player" onChange={handleChange} checked={formInputs.player} /></span>
 

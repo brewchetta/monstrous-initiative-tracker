@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-export default function CharacterDetailAction({action, index, handleSubmit}) {
+export default function Action({action, index, handleSubmit}) {
 
   // STATE //
 

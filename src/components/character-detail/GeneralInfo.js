@@ -3,7 +3,7 @@ import CharacterTextInput from "./CharacterTextInput"
 import CharacterTextArea from "./CharacterTextArea"
 import CharacterSelectField from "./CharacterSelectField"
 
-export default function CharacterDetailGeneral({formInputs, handleChange}) {
+export default function GeneralInfo({formInputs, handleChange}) {
 
   // HELPERS //
 
