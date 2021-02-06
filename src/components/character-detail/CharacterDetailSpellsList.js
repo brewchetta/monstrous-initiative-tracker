@@ -1,7 +1,8 @@
 import {useContext} from "react"
 import { TooltipContext } from "../../context/tooltip-context"
+import AddSpellForm from "./AddSpellForm"
 
-export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier, spell_slots}) {
+export default function CharacterDetailSpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell}) {
 
   // STATE //
 
@@ -40,6 +41,10 @@ export default function CharacterDetailSpellsList({spells, spell_dc, spell_modif
     <div>
 
       <span>{spell_modifier ? `Spell Modifier: +${spell_modifier}` : null}</span> <span>{spell_dc ? `Spell DC: ${spell_dc}` : null}</span>
+
+      <br/>
+
+      <AddSpellForm handleSubmit={handleNewSpell} />
 
       <br/>
 

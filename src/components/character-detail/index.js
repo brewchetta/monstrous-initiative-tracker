@@ -31,6 +31,11 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     setFormInputs({...formInputs, ...{[event.target.name]: value}})
   }
 
+  const handleNewSpell = newSpell => {
+    setFormInputs(Object.assign(formInputs, { spells: [...formInputs.spells, newSpell] }))
+    handleSubmit()
+  }
+
   const handleSubmit = e => {
     e && e.preventDefault()
     updateCharacter(formInputs)
@@ -50,7 +55,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         }
       })
     }
-    // debugger
     setFormInputs(Object.assign(formInputs, actions))
     handleSubmit()
   }
@@ -100,7 +104,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           spells={formInputs.spells}
           spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier}
-          spell_slots={formInputs.spell_slots} />)
+          spell_slots={formInputs.spell_slots}
+          handleNewSpell={handleNewSpell} />)
       case "legendary":
         return (<CharacterDetailActionsList key="legendary actions mode"
           actions={character.legendary_actions}
