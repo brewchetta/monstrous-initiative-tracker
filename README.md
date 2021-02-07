@@ -23,8 +23,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
   - COMPLETED: Can amend proficiencies
   - COMPLETED: Can amend actions
   - COMPLETED: Can amend legendary actions
-  - WORKING: Can assign / remove spells
-  - Can add / remove actions/abilities/legendary actions
+  - COMPLETED: Can assign / remove spells
+  - TODO: Can add / remove actions/abilities/legendary actions
 
 - COMPLETED: Users are able to save custom monster / character blocks to local storage and delete them
 
@@ -36,11 +36,11 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - COMPLETED: Player characters have a character class property
 
-- Users are able to open a monster's spells for quick reference
+- COMPLETED: Users are able to open a monster's spells for quick reference
 
 - Users can assign icons to monsters / characters to show different statuses
 
-- Each initiative card has a background determined by monster / player type
+- COMPLETED: Each initiative card has a background determined by monster / player type
 
 - Player characters have specific styling to denote them
 
@@ -48,14 +48,12 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Automatically builds a url link to the D&D beyond page for that monster (using index rather than name)
 
-- WORKING: Styling styling styling... maybe pixel art? Alternately, arcane designs?
+- COMPLETED: Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
 - Filter by monster type in search
 
 ## Issues
 
-- Certain JSON files are missing spells due to bad scrape
-
 - Cannot amend temporary hit points from initiative card
 
-- Condition immunities are not mapped or rendered
+- Immunities / resistances / vulnerabilities are not mapped or rendered
