@@ -48,15 +48,6 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
       <div className="detail-sub-container">
 
-        <CharacterTextArea name={"proficiencies"}
-        value={formInputs.proficiencies}
-        handleChange={handleChange}
-        width={"80%"} height={"1.5em"} />
-
-      </div>
-
-      <div className="detail-sub-container">
-
         STR({modifier("strength")}) <CharacterNumberField name="strength"
           value={formInputs.strength}
           handleChange={handleChange} />
@@ -77,6 +68,17 @@ export default function GeneralInfo({formInputs, handleChange}) {
           handleChange={handleChange} />
 
       </div>
+
+      <div className="detail-sub-container">
+
+        <CharacterTextArea name={"proficiencies"}
+        value={formInputs.proficiencies}
+        handleChange={handleChange}
+        width={"80%"} height={"1.5em"} />
+
+      </div>
+
+
       <div className="detail-sub-container">
 
         <span>Alignment: <CharacterSelectField name="alignment"
@@ -126,6 +128,42 @@ export default function GeneralInfo({formInputs, handleChange}) {
         value={formInputs.languages}
         handleChange={handleChange}
         width="20em" />
+
+    </div>
+
+    <div className="detail-sub-container">
+
+      <CharacterTextArea name={"damage_immunities"}
+      value={formInputs.damage_immunities}
+      handleChange={handleChange}
+      width={"80%"} height={"1.5em"} />
+
+    </div>
+
+    <div className="detail-sub-container">
+
+      <CharacterTextArea name={"damage_resistances"}
+      value={formInputs.damage_resistances}
+      handleChange={handleChange}
+      width={"80%"} height={"1.5em"} />
+
+    </div>
+
+    <div className="detail-sub-container">
+
+      <CharacterTextArea name={"damage_vulnerabilities"}
+      value={formInputs.damage_vulnerabilities}
+      handleChange={handleChange}
+      width={"80%"} height={"1.5em"} />
+
+    </div>
+
+    <div className="detail-sub-container">
+
+      <CharacterTextArea name={"condition_immunities"}
+      value={formInputs.condition_immunities}
+      handleChange={handleChange}
+      width={"80%"} height={"1.5em"} />
 
     </div>
   </>
