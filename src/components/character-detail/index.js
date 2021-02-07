@@ -1,5 +1,5 @@
 // REACT //
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { saveMonster } from '../../services/localstorage'
 // COMPONENTS //
 import ActionsList from './ActionsList'
@@ -16,6 +16,12 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const [formInputs, setFormInputs] = useState(character)
   const [detailMode, setDetailMode] = useState("general")
+
+  const memoizedSubmit = useCallback(handleSubmit, [formInputs])
+
+  useEffect(() => {
+    memoizedSubmit()
+  }, [memoizedSubmit,formInputs])
 
   useEffect(() => {
     console.log(character)
@@ -36,7 +42,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     handleSubmit()
   }
 
-  const handleSubmit = e => {
+  function handleSubmit(e) {
     e && e.preventDefault()
     updateCharacter(formInputs)
   }
