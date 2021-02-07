@@ -131,6 +131,10 @@ export default class Character {
     return Math.floor((this.charisma - 10) / 2)
   }
 
+  get formatted_index() {
+    return this.name.toLowerCase().replace(/[-()']*/g,"-")
+  }
+
   // ACTIONS //
 
   rollInitiative = () => {
