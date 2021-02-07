@@ -7,6 +7,7 @@ import squid from "../../images/woodcut-squid.png"
 import moon from "../../images/woodcut-style-man-moon.png"
 import fire from "../../images/woodcut-fire.png"
 import gear from "../../images/woodcut-gear.png"
+import butterfly from "../../images/woodcut-butterfly.png"
 
 export default function DetailImage({charType}) {
 
@@ -18,7 +19,8 @@ export default function DetailImage({charType}) {
   : charType === "beast" ? boar
   : charType === "construct" ? gear
   : charType === "elemental" ? fire
-  : charType === "celestial" || charType === "fey" || charType === "plant" ? moon
+  : charType === "fey" ? butterfly
+  : charType === "celestial" || charType === "plant" ? moon
   : knight
 
   return (
