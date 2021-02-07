@@ -42,6 +42,7 @@ export default class Character {
     this.special_abilities = data.special_abilities || []
     this.initiative = -10
     this.tempHP = 0
+    this.type = this.type.replace(/[,]/g, "")
   }
 
   // CONSTRUCTOR HELPERS //
