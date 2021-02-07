@@ -152,3 +152,7 @@
   text-overflow: '';
   text-align: left;
 }
+
+#character-detail-form #save-local-character-button {
+  border: solid black 2px;
+}

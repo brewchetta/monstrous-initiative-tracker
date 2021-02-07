@@ -137,8 +137,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         </span>
         : null}
 
-      <input type="button" value="Save to Storage" onClick={handleSaveToStorage} />
-      <input type="submit" value="Save"/>
 
       <div id="detail-mode-tab">
 
@@ -153,6 +151,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       <br/>
 
       {renderDetailMode()}
+
+      <input id="save-local-character-button" type="button" value="Save to Storage" onClick={handleSaveToStorage} />
 
     </form>
   )
