@@ -15,8 +15,8 @@ export default class Character {
     this._key = this.constructor.internalKey
     this.constructor.internalKey++
 
-    this.player = player
-    this.char_class = char_class
+    this.player = data.player || player
+    this.char_class = data.char_class || char_class
 
     this.legendary_actions = this.legendary_actions || []
     this.special_abilities = this.special_abilities || []
