@@ -50,6 +50,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Users can assign icons to monsters / characters to show different statuses
 
+- Option to use derived hit points or standard hit points
+
 ## Issues
 
 - Cannot amend temporary hit points from initiative card

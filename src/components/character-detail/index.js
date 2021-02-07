@@ -25,7 +25,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   }, [memoizedSubmit,formInputs])
 
   useEffect(() => {
-    console.log(character.derivedHitPoints)
+    console.log(character)
   }, [character])
 
   // EVENT HANDLERS
@@ -59,7 +59,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const handleSubmitAction = (description, index) => {
     const actions = {
-      actions: formInputs.actions.map((a, i) => {
+      actions: formInputs[detailMode].map((a, i) => {
         if (i === index) {
           return ({...a, full_description: description})
         } else {
@@ -69,32 +69,6 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     }
     setFormInputs(Object.assign(formInputs, actions))
     handleSubmit()
-  }
-
-  const handleSubmitSpecialAbility = (description, index) => {
-    const special_abilities = {
-      special_abilities: formInputs.special_abilities.map((s, i) => {
-        if (i === index) {
-          return ({...s, full_description: description})
-        } else {
-          return s
-        }
-      })
-    }
-    setFormInputs(Object.assign(formInputs, special_abilities))
-  }
-
-  const handleSubmitLegendaryAction = (description, index) => {
-    const legendary_actions = {
-      legendary_actions: formInputs.legendary_actions.map((a, i) => {
-        if (i === index) {
-          return ({...a, full_description: description})
-        } else {
-          return a
-        }
-      }).filter(a => a.full_description)
-    }
-    setFormInputs(Object.assign(formInputs, legendary_actions))
   }
 
   // RENDER METHODS //
@@ -111,7 +85,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       case "special_abilities":
         return (<ActionsList key="special abilities mode"
           actions={character.special_abilities}
-          handleSubmit={handleSubmitSpecialAbility}
+          handleSubmit={handleSubmitAction}
           handleAdd={handleAddAction} />)
       case "spells":
         return (<SpellsList key="spells mode"
@@ -123,7 +97,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       case "legendary_actions":
         return (<ActionsList key="legendary actions mode"
           actions={character.legendary_actions}
-          handleSubmit={handleSubmitLegendaryAction}
+          handleSubmit={handleSubmitAction}
           handleAdd={handleAddAction} />)
       default:
         console.log("rendering nothing")
