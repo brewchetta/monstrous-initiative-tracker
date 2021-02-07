@@ -65,7 +65,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         } else {
           return a
         }
-      })
+      }).filter(a => a.full_description)
     }
     setFormInputs(Object.assign(formInputs, actions))
     handleSubmit()
@@ -92,7 +92,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         } else {
           return a
         }
-      })
+      }).filter(a => a.full_description)
     }
     setFormInputs(Object.assign(formInputs, legendary_actions))
   }

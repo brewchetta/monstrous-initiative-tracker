@@ -14,8 +14,6 @@ export default function Action({action, index, handleSubmit}) {
       focusedInput.current.focus()
       setHeight(focusedInput.current.scrollHeight + "px")
       // setInput(input.replace("\u00a0","\n"))
-    } else {
-      // setInput(input.replace("\n", "\u00a0"))
     }
   }, [focused])
 
@@ -43,7 +41,7 @@ export default function Action({action, index, handleSubmit}) {
       ref={focusedInput} />
     )
 
-  const renderSpan = () => <span onClick={() => setFocused(true)}>{input}</span>
+  const renderSpan = () => <span onClick={() => setFocused(true)}>{input || "+"}</span>
 
   return (
     focused ? renderInput() : renderSpan()
