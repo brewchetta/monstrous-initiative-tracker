@@ -131,6 +131,8 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr) 5%;
   grid-column-gap: 2%;
+  position: relative;
+  z-index: 1;
 }
 
 #add-spell-form input[type=text] {
