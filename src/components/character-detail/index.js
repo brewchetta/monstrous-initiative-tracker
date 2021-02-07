@@ -43,6 +43,11 @@ export default function CharacterDetailCard({character, updateCharacter}) {
     handleSubmit()
   }
 
+  const handleAddAction = () => {
+    setFormInputs(Object.assign(formInputs, { [detailMode]: [...formInputs[detailMode], {full_description: ""}] }))
+    handleSubmit()
+  }
+
   function handleSubmit(e) {
     e && e.preventDefault()
     updateCharacter(formInputs)
@@ -101,11 +106,13 @@ export default function CharacterDetailCard({character, updateCharacter}) {
       case "actions":
         return (<ActionsList key="actions mode"
           actions={character.actions}
-          handleSubmit={handleSubmitAction} />)
-      case "specials":
+          handleSubmit={handleSubmitAction}
+          handleAdd={handleAddAction} />)
+      case "special_abilities":
         return (<ActionsList key="special abilities mode"
           actions={character.special_abilities}
-          handleSubmit={handleSubmitSpecialAbility} />)
+          handleSubmit={handleSubmitSpecialAbility}
+          handleAdd={handleAddAction} />)
       case "spells":
         return (<SpellsList key="spells mode"
           spells={formInputs.spells}
@@ -113,10 +120,11 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           spell_modifier={formInputs.spell_modifier}
           spell_slots={formInputs.spell_slots}
           handleNewSpell={handleNewSpell} />)
-      case "legendary":
+      case "legendary_actions":
         return (<ActionsList key="legendary actions mode"
           actions={character.legendary_actions}
-          handleSubmit={handleSubmitLegendaryAction} />)
+          handleSubmit={handleSubmitLegendaryAction}
+          handleAdd={handleAddAction} />)
       default:
         console.log("rendering nothing")
     }
@@ -143,9 +151,9 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
         <input type="button" value={"General"} name="general" onClick={handleChangeDetailMode} />
         <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
-        <input type="button" value={"Special Abilities"} name="specials" onClick={handleChangeDetailMode} />
+        <input type="button" value={"Special Abilities"} name="special_abilities" onClick={handleChangeDetailMode} />
         <input type="button" value={"Spells"} name="spells" style={formInputs.spells.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
-        <input type="button" value={"Legendary Actions"} name="legendary" style={formInputs.legendary_actions.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
+        <input type="button" value={"Legendary Actions"} name="legendary_actions" style={formInputs.legendary_actions.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
 
       </div>
 
