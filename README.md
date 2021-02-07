@@ -55,5 +55,3 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 ## Issues
 
 - Cannot amend temporary hit points from initiative card
-
-- Immunities / resistances / vulnerabilities are not mapped or rendered

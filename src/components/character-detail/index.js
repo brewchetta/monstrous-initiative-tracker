@@ -9,6 +9,7 @@ import CharacterSelectField from './CharacterSelectField'
 import DetailImage from './DetailImage'
 // STYLE //
 import "./CharacterDetailCard.css"
+import beyondIcon from "../../images/beyond-icon.png"
 
 export default function CharacterDetailCard({character, updateCharacter}) {
 
@@ -135,7 +136,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           handleChange={handleChange}
           currentInput={formInputs["char_class"]} />
         </span>
-        : null}
+        : <a href={`https://www.dndbeyond.com/monsters/${character.formatted_index}`} target="_blank"><img id="beyond-icon" src={beyondIcon} alt="DnD Beyond" /></a> }
 
 
       <div id="detail-mode-tab">

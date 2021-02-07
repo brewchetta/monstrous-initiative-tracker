@@ -156,3 +156,8 @@
 #character-detail-form #save-local-character-button {
   border: solid black 2px;
 }
+
+#beyond-icon {
+  padding-left: 4em;
+  width: 1em;
+}
