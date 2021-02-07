@@ -25,7 +25,7 @@ export default function CharacterTextArea({name, value, handleChange, width, hei
   )
 
   return <span style={{width: "100%"}} onClick={handleClick} className="character-detail-field text-area-field">
-    {focused ? renderArea() : (value || `add ${name}`)}
+    {focused ? renderArea() : (value || `+add`)}
   </span>
 
 }
