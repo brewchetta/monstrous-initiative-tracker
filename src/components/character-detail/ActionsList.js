@@ -14,7 +14,9 @@ export default function ActionsList({actions, handleSubmit, handleAdd}) {
 
       {actionCards}
 
-      <button onClick={handleAdd}>Add Things</button>
+      <input type="button" onClick={handleAdd} value="Add" />
+
+      <br/><br/>
 
     </>
   )
