@@ -46,7 +46,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Player character initiative card background is determined by class
 
-- Automatically builds a url link to the D&D beyond page for that monster (using index rather than name)
+- COMPLETED: Automatically builds a url link to the D&D beyond page for that monster (using index rather than name)
 
 - COMPLETED: Styling styling styling... maybe pixel art? Alternately, arcane designs?
 
