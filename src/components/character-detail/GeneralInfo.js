@@ -71,6 +71,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
       <div className="detail-sub-container">
 
+        <label>Proficiencies: </label>
         <CharacterTextArea name={"proficiencies"}
         value={formInputs.proficiencies}
         handleChange={handleChange}
@@ -133,6 +134,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
     <div className="detail-sub-container">
 
+      <label>Damage Immunities: </label>
       <CharacterTextArea name={"damage_immunities"}
       value={formInputs.damage_immunities}
       handleChange={handleChange}
@@ -142,6 +144,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
     <div className="detail-sub-container">
 
+      <label>Damage Resistances: </label>
       <CharacterTextArea name={"damage_resistances"}
       value={formInputs.damage_resistances}
       handleChange={handleChange}
@@ -151,6 +154,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
     <div className="detail-sub-container">
 
+      <label>Damage Vulnerabilities: </label>
       <CharacterTextArea name={"damage_vulnerabilities"}
       value={formInputs.damage_vulnerabilities}
       handleChange={handleChange}
@@ -160,6 +164,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
 
     <div className="detail-sub-container">
 
+      <label>Condition Immunities: </label>
       <CharacterTextArea name={"condition_immunities"}
       value={formInputs.condition_immunities}
       handleChange={handleChange}
