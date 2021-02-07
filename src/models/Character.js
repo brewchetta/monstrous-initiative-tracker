@@ -38,6 +38,7 @@ export default class Character {
 
     this.subtype = this.subtype ? this.subtype : ""
 
+    this.hit_points = this.derivedHitPoints
     this.currentHitPoints = this.hit_points
     this.special_abilities = data.special_abilities || []
     this.initiative = -10
@@ -134,6 +135,15 @@ export default class Character {
 
   get formatted_index() {
     return this.name.toLowerCase().replace(/ /g,"-").replace(/[()']/g, "")
+  }
+
+  get derivedHitPoints() {
+    const [diceRolled, diceSize] = this.hit_dice.split("d").map(i => parseInt(i))
+    let total = 0
+    for (var i = 0; i < diceRolled; i++) {
+      total += Math.ceil(Math.random() * diceSize)
+    }
+    return total + (this.con * diceRolled) >= 1 ? total + (this.con * diceRolled) : 1
   }
 
   // ACTIONS //

@@ -25,7 +25,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   }, [memoizedSubmit,formInputs])
 
   useEffect(() => {
-    console.log(character)
+    console.log(character.derivedHitPoints)
   }, [character])
 
   // EVENT HANDLERS
