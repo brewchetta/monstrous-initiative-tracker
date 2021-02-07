@@ -44,7 +44,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
   }
 
   const handleAddAction = () => {
-    setFormInputs(Object.assign(formInputs, { [detailMode]: [...formInputs[detailMode], {full_description: ""}] }))
+    setFormInputs(Object.assign(formInputs, { [detailMode]: [...formInputs[detailMode], {full_description: `Name: Description Here`}] }))
     handleSubmit()
   }
 
