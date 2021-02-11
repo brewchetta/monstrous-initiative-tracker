@@ -61,26 +61,30 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
   return (
     <form id="search-form" onSubmit={handleSubmit}>
 
-      <label>Find a {mode}</label>
-      <input type="text"
-      list="monster-names"
-      onChange={(e) => setInput(e.target.value)}
-      value={input}
-      placeholder={"search here"}/>
+      <div id="search-inputs">
+      
+        <label>Find a {mode}</label>
+        <input type="text"
+        list="monster-names"
+        onChange={(e) => setInput(e.target.value)}
+        value={input}
+        placeholder={"search here"}/>
 
-      <datalist id="monster-names">
-        {renderDatalistOptions()}
-      </datalist>
+        <datalist id="monster-names">
+          {renderDatalistOptions()}
+        </datalist>
 
-      <label>Search Spells?</label>
-      <input type="checkbox"
-      name="mode-select"
-      onChange={handleChangeMode}
-      checked={mode === "Spell"}
-      />
+        <label>Search Spells?</label>
+        <input type="checkbox"
+        name="mode-select"
+        onChange={handleChangeMode}
+        checked={mode === "Spell"}
+        />
 
-      <input type="submit"
-      value={"Search"}/>
+        <input type="submit"
+        value={"Search"}/>
+
+      </div>
 
       {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
 
