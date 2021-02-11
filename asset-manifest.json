@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/monstrous-initiative-tracker/static/css/main.efc6c483.chunk.css",
+    "main.js": "/monstrous-initiative-tracker/static/js/main.f0698fc2.chunk.js",
+    "main.js.map": "/monstrous-initiative-tracker/static/js/main.f0698fc2.chunk.js.map",
+    "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js",
+    "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js.map",
+    "static/js/2.14eb6934.chunk.js": "/monstrous-initiative-tracker/static/js/2.14eb6934.chunk.js",
+    "static/js/2.14eb6934.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.14eb6934.chunk.js.map",
+    "index.html": "/monstrous-initiative-tracker/index.html",
+    "static/css/main.efc6c483.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.efc6c483.chunk.css.map",
+    "static/js/2.14eb6934.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.14eb6934.chunk.js.LICENSE.txt",
+    "static/media/dragon-fight-woodcut.d1deab1e.png": "/monstrous-initiative-tracker/static/media/dragon-fight-woodcut.d1deab1e.png",
+    "static/media/knot-flourish.c17aea77.png": "/monstrous-initiative-tracker/static/media/knot-flourish.c17aea77.png",
+    "static/media/woodcut-boar.625e13a9.png": "/monstrous-initiative-tracker/static/media/woodcut-boar.625e13a9.png",
+    "static/media/woodcut-butterfly.a5f13a57.png": "/monstrous-initiative-tracker/static/media/woodcut-butterfly.a5f13a57.png",
+    "static/media/woodcut-fire.3ef0340e.png": "/monstrous-initiative-tracker/static/media/woodcut-fire.3ef0340e.png",
+    "static/media/woodcut-gear.2be8c06f.png": "/monstrous-initiative-tracker/static/media/woodcut-gear.2be8c06f.png",
+    "static/media/woodcut-imp.4d7fea7a.png": "/monstrous-initiative-tracker/static/media/woodcut-imp.4d7fea7a.png",
+    "static/media/woodcut-knight.c1bc6436.png": "/monstrous-initiative-tracker/static/media/woodcut-knight.c1bc6436.png",
+    "static/media/woodcut-lion.78fe398d.png": "/monstrous-initiative-tracker/static/media/woodcut-lion.78fe398d.png",
+    "static/media/woodcut-skeleton.9318abd0.png": "/monstrous-initiative-tracker/static/media/woodcut-skeleton.9318abd0.png",
+    "static/media/woodcut-squid.c0c869de.png": "/monstrous-initiative-tracker/static/media/woodcut-squid.c0c869de.png",
+    "static/media/woodcut-style-man-moon.921588da.png": "/monstrous-initiative-tracker/static/media/woodcut-style-man-moon.921588da.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.db5b7061.js",
+    "static/js/2.14eb6934.chunk.js",
+    "static/css/main.efc6c483.chunk.css",
+    "static/js/main.f0698fc2.chunk.js"
+  ]
+}
