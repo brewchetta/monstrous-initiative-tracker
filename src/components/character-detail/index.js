@@ -118,7 +118,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           handleChange={handleChange}
           currentInput={formInputs["char_class"]} />
         </span>
-        : <a href={`https://www.dndbeyond.com/monsters/${character.formatted_index}`} target="_blank"><img id="beyond-icon" src={beyondIcon} alt="DnD Beyond" /></a> }
+        : <a href={`https://www.dndbeyond.com/monsters/${character.formatted_index}`} rel="noreferrer" target="_blank"><img id="beyond-icon" src={beyondIcon} alt="DnD Beyond" /></a> }
 
 
       <div id="detail-mode-tab">
