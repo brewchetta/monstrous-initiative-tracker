@@ -6,7 +6,7 @@ import { getMonster } from "../../services/dnd-5e-api"
 export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {
 
   const [input, setInput] = useState("")
-  const [mode] = useState("Monster")
+  const [mode, setMode] = useState("Monster")
   const [message, setMessage] = useState("")
   const dispatch = useContext(CharactersContext)[1]
 
@@ -27,6 +27,10 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
     })
   }
 
+  const handleChangeMode = e => {
+    setMode(mode === "Monster" ? "Spell" : "Monster")
+  }
+
   const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
 
   return (
@@ -42,6 +46,13 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
       <datalist id="monster-names">
         {renderDatalistOptions()}
       </datalist>
+
+      <label>Search Spells?</label>
+      <input type="checkbox"
+      name="mode-select"
+      onChange={handleChangeMode}
+      checked={mode === "Spell"}
+      />
 
       <input type="submit"
       value={"Search"}/>
