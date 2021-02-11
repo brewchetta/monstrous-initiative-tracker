@@ -102,7 +102,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     }
   }
 
-  const renderName = () => `${character.name}${character.char_class ? ` the ${character.char_class}` : ""}`
+  const renderName = () => `${character.name || "Unknown"}${character.char_class ? ` the ${character.char_class}` : ""}`
 
   const renderClass = () => (
     currentHitPoints > character.hit_points / 2 ? "initiative-card"
