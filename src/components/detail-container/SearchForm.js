@@ -1,18 +1,18 @@
 import { useState, useContext } from "react"
 import Character from '../../models/Character.js'
 import { CharactersContext } from "../../context/characters-context"
-import { getMonster } from "../../services/dnd-5e-api"
+import { getMonster, getSpell } from "../../services/dnd-5e-api"
+import SpellDetailsView from '../tooltip/SpellDetailsView'
 
 export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {
 
   const [input, setInput] = useState("")
   const [mode, setMode] = useState("Monster")
   const [message, setMessage] = useState("")
+  const [spellDetails, setSpellDetails] = useState({})
   const dispatch = useContext(CharactersContext)[1]
 
-  // TODO: add mode search for spells
-
-  const handleSubmit = e => {
+  const handleSubmitMonster = e => {
     e.preventDefault()
     const foundMonster = Object.values(additionalMonsters).find(m => m.name.toLowerCase() === input.toLowerCase())
     foundMonster && dispatch({type: "ADD_CHARACTER", payload: new Character(foundMonster)})
@@ -27,11 +27,36 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
     })
   }
 
+  const handleSubmitSpell = e => {
+    e.preventDefault()
+    getSpell(input.toLowerCase().replace(/['-]/g,"")).then(data => {
+      if (!data.error) {
+        setMessage("")
+        setSpellDetails(data)
+      } else {
+        setMessage("Couldn't retrieve that spell")
+      }
+    })
+  }
+
+  const handleSubmit = e => {
+    if (mode === "Monster") {
+      handleSubmitMonster(e)
+    } else {
+      handleSubmitSpell(e)
+    }
+  }
+
   const handleChangeMode = e => {
+    setSpellDetails({})
+    setMessage("")
     setMode(mode === "Monster" ? "Spell" : "Monster")
   }
 
-  const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
+  const renderDatalistOptions = () => (
+    mode === "Spell" ? spellNames.map(s => <option key={s} value={s} />)
+    : monsterNames.map(n => <option key={n} value={n} />)
+  )
 
   return (
     <form id="search-form" onSubmit={handleSubmit}>
@@ -57,7 +82,7 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
       <input type="submit"
       value={"Search"}/>
 
-      <p>{message}</p>
+      {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
 
     </form>
   )
