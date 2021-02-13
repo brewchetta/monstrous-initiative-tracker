@@ -34,6 +34,7 @@ export default function DetailContainer(props) {
   // EVENT HANDLERS //
 
   const updateCharacter = character => {
+    console.log({character});
     dispatchCharacters({type: "UPDATE_CHARACTER", payload: character})
   }
 

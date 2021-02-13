@@ -67,7 +67,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         }
       }).filter(a => a.full_description)
     }
-    setFormInputs(Object.assign(formInputs, actions))
+    setFormInputs({...formInputs, ...actions})
     handleSubmit()
   }
 
