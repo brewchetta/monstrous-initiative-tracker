@@ -7,6 +7,7 @@ export default class Character {
   static createTemplate = () => new Character(template)
 
   constructor(data, player = false, char_class = "") {
+    console.log(data)
 
     Object.keys(data).forEach(key => {
       this[key] = data[key]
@@ -23,7 +24,6 @@ export default class Character {
 
     this.remapActionAttributes()
     this.remapSpecialAbilities()
-    this.remapLegendaryActions()
     this.remapProficiencies()
     this.remapArrayProperty("damage_immunities")
     this.remapArrayProperty("damage_resistances")
@@ -44,6 +44,7 @@ export default class Character {
     this.initiative = -10
     this.tempHP = 0
     this.type = this.type.replace(/[,]/g, "")
+    console.log(this)
   }
 
   // CONSTRUCTOR HELPERS //
@@ -61,28 +62,28 @@ export default class Character {
   remapSpecialAbilities = () => {
     this.special_abilities.forEach(a => {
       a.full_description = `${a.name}: ${a.desc}`
-      delete a.desc
-      delete a.name
+      // delete a.desc
+      // delete a.name
     });
   }
 
   remapLegendaryActions = () => {
     this.legendary_actions.forEach(a => {
       a.full_description = `${a.name}: ${a.desc}`
-      delete a.desc
-      delete a.name
+      // delete a.desc
+      // delete a.name
     });
   }
 
   remapActionAttributes = () => {
     this.actions.forEach(a => {
       a.full_description = `${a.name}: ${a.desc}`
-      delete a.desc
-      delete a.name
-      delete a.damage
-      delete a.attack_bonus
-      delete a.dc
-      delete a.usage
+      // delete a.desc
+      // delete a.name
+      // delete a.damage
+      // delete a.attack_bonus
+      // delete a.dc
+      // delete a.usage
     })
   }
 
