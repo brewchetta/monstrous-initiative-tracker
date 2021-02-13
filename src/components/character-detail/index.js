@@ -59,7 +59,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
 
   const handleSubmitAction = (description, index) => {
     const actions = {
-      actions: formInputs[detailMode].map((a, i) => {
+      [detailMode]: formInputs[detailMode].map((a, i) => {
         if (i === index) {
           return ({...a, full_description: description})
         } else {
