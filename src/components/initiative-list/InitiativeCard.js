@@ -9,7 +9,9 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   const [detail, dispatchDetail] = useContext(DetailContext)
   const dispatchCharacters = useContext(CharactersContext)[1]
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
+  const [tempHitPointsOpen, setTempHitPointsOpen] = useState(false)
   const [currentHitPoints, setCurrentHitPoints] = useState(character.hit_points)
+  const [currentTempHP, setCurrentTempHP] = useState(character.tempHP)
   const [initiativeOpen, setInitiativeOpen] = useState(false)
   const [initiativeInput, setInitiativeInput] = useState(0)
 
@@ -18,10 +20,14 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   const focusedInput = useRef(null)
 
   useEffect(() => {
-    if (hitPointsOpen || initiativeOpen) {
+    if (hitPointsOpen || initiativeOpen || tempHitPointsOpen) {
       focusedInput.current.focus();
     }
-  }, [hitPointsOpen, initiativeOpen]);
+  }, [hitPointsOpen, initiativeOpen, tempHitPointsOpen]);
+
+  useEffect(() => {
+    setCurrentTempHP(character.tempHP)
+  }, [character]);
 
   // EVENT HANDLERS //
 
@@ -48,6 +54,11 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   }
 
   const handleCloseHitPoints = () => setHitPointsOpen(false)
+  const handleCloseTempHitPoints = () => {
+    setTempHitPointsOpen(false)
+    character.tempHP = parseInt(currentTempHP)
+    updateCharacter(character)
+  }
 
   const handleCloseInitiative = () => {
     setInitiativeOpen(false)
@@ -62,20 +73,39 @@ export default function InitiativeCard({character, index, updateCharacter}) {
       return (
         <span>
           <input type="number"
-          onChange={e => setCurrentHitPoints(e.target.value)}
+          onChange={e => setCurrentTempHP(e.target.value)}
           onBlur={handleCloseHitPoints}
           value={currentHitPoints}
           placeholder={"hit points"}
-          onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
+          onKeyUp={e => e.keyCode === 13 ? handleCloseTempHitPoints() : null}
           min={0}
           max={character.hit_points}
           ref={focusedInput}
           />
-          /{character.hit_points} ♡
+          /{character.hit_points}
         </span>
       )
     } else {
-      return (<span onClick={() => setHitPointsOpen(true)}>{`${currentHitPoints}/${character.hit_points}${character.tempHP ? ` + ${character.tempHP}` : ''} ♡`}</span>)
+      return (<span onClick={() => setHitPointsOpen(true)}>{currentHitPoints}/{character.hit_points}</span>)
+    }
+  }
+
+  const renderTemporaryHitpoints = () => {
+    if (tempHitPointsOpen) {
+      return (
+        <span> + <input type="number"
+          onChange={e => setCurrentTempHP(e.target.value)}
+          onBlur={handleCloseTempHitPoints}
+          value={currentTempHP}
+          placeholder={"hit points"}
+          onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
+          min={0}
+          ref={focusedInput}
+          />
+        </span>
+      )
+    } else {
+      return (<span onClick={() => setTempHitPointsOpen(true)}>{character.tempHP ? ` + ${character.tempHP}` : null}</span>)
     }
   }
 
@@ -113,7 +143,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   return (
     <div className={renderClass()}
     style={{top: `${index * 50}px`}}>
-      <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()} | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
+      <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()}{renderTemporaryHitpoints()}♡ | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
     </div>
   )
 
