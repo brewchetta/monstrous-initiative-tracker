@@ -73,11 +73,11 @@ export default function InitiativeCard({character, index, updateCharacter}) {
       return (
         <span>
           <input type="number"
-          onChange={e => setCurrentTempHP(e.target.value)}
+          onChange={e => setCurrentHitPoints(e.target.value)}
           onBlur={handleCloseHitPoints}
           value={currentHitPoints}
           placeholder={"hit points"}
-          onKeyUp={e => e.keyCode === 13 ? handleCloseTempHitPoints() : null}
+          onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
           min={0}
           max={character.hit_points}
           ref={focusedInput}
