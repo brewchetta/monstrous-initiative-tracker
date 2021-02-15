@@ -7,6 +7,7 @@ export default class Character {
   static createTemplate = () => new Character(template)
 
   constructor(data, player = false, char_class = "") {
+    console.log(data);
 
     Object.keys(data).forEach(key => {
       this[key] = data[key]
@@ -27,7 +28,7 @@ export default class Character {
     this.remapArrayProperty("damage_immunities")
     this.remapArrayProperty("damage_resistances")
     this.remapArrayProperty("damage_vulnerabilities")
-    this.remapArrayProperty("condition_immunities")
+    this.remapArrayOfObjectsProperty("condition_immunities")
     this.remapObjectProperty("senses")
     this.remapObjectProperty("speed")
     this.spell_dc = this.spell_dc || 0
@@ -56,6 +57,10 @@ export default class Character {
 
   remapArrayProperty = property => {
     this[property] = this[property] && this[property].constructor === Array ? this[property].join(" | ") : this[property]
+  }
+
+  remapArrayOfObjectsProperty = property => {
+    this[property] = this[property] && this[property].constructor === Array ? this[property].map(p => p.name).join(" | ") : this[property]
   }
 
   remapSpecialAbilities = () => {
