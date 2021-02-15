@@ -79,12 +79,12 @@ export default function CharacterDetailCard({character, updateCharacter}) {
         return <GeneralInfo formInputs={formInputs} handleChange={handleChange} />
       case "actions":
         return (<ActionsList key="actions mode"
-          actions={character.actions}
+          actions={formInputs.actions}
           handleSubmit={handleSubmitAction}
           handleAdd={handleAddAction} />)
       case "special_abilities":
         return (<ActionsList key="special abilities mode"
-          actions={character.special_abilities}
+          actions={formInputs.special_abilities}
           handleSubmit={handleSubmitAction}
           handleAdd={handleAddAction} />)
       case "spells":
@@ -96,7 +96,7 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           handleNewSpell={handleNewSpell} />)
       case "legendary_actions":
         return (<ActionsList key="legendary actions mode"
-          actions={character.legendary_actions}
+          actions={formInputs.legendary_actions}
           handleSubmit={handleSubmitAction}
           handleAdd={handleAddAction} />)
       default:
