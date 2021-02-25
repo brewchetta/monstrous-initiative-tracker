@@ -15,21 +15,14 @@ export default function Tooltip() {
     !tooltip.content && setSpellDetails({})
   } ,[tooltip])
 
-  if (tooltip.type === "spell") {
-
     return (
       <div id="spell-tooltip"
-        style={{
-          left: `${spellDetails.name || spellDetails.error ? '0' : '-40'}vw`,
-        }}>
+        style={{left: `${spellDetails.name || spellDetails.error ? '0' : '-40'}vw`}}>
 
         <SpellDetailsView spellDetails={spellDetails} />
 
       </div>
     )
-  } else {
-    return null
-  }
 
 
 }
