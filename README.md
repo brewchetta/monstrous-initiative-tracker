@@ -24,7 +24,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - The special abilities tab is greyed out for characters who have just aren't special yet
 - Cannot add duplicate spells to a character
 - TODO: Spell tooltip is better formatted for the screen
-- TODO: Hitting enter when adding a spell properly adds the spell
+- Hitting enter when adding a spell properly adds the spell / restructured form tags
 
 1.0.4
 - Users can now alter temporary hit points directly from the initiative list
