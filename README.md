@@ -20,9 +20,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Searching for spells in the character detail now uses a datalist to see available spell names
 - Adding a spell no longer resets the form for spell levels
 - TODO: Can change a character's spell DC and spell attack
-- TODO: Can delete a spell from the list
+- Can delete a spell from the list
 - The special abilities tab is greyed out for characters who have just aren't special yet
 - TODO: Cannot add duplicate spells to a character
+- TODO: Spell tooltip is better formatted for the screen
 
 1.0.4
 - Users can now alter temporary hit points directly from the initiative list
