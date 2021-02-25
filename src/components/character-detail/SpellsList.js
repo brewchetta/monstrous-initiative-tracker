@@ -3,12 +3,6 @@ import AddSpellForm from "./AddSpellForm"
 
 function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, spellNames}) {
 
-  // EVENT HANDLERS //
-
-  const removeSpell = spell => {
-    handleRemoveSpell(spell)
-  }
-
   // RENDER //
 
   const renderSpellsByLevel = () => {
@@ -17,7 +11,7 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <Spell spell={sp} key={sp.name} removeSpell={removeSpell} />)
+        .map(sp => <Spell spell={sp} key={sp.name} removeSpell={handleRemoveSpell} />)
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>

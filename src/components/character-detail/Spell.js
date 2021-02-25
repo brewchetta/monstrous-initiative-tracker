@@ -9,6 +9,11 @@ export default function Spell({spell, removeSpell}) {
 
   const dispatch = useContext(TooltipContext)[1]
 
+  const handleRemoveSpell = () => {
+    removeSpell(spell)
+    dispatch({type: "CLEAR_TOOLTIP"})
+  }
+
   // EVENT HANDLERS //
 
   const handleMouseEnter = (e, spellName) => {
@@ -22,7 +27,7 @@ export default function Spell({spell, removeSpell}) {
   }
 
   const button = (
-    <button className="remove-spell-button" onClick={() => removeSpell(spell)}>
+    <button className="remove-spell-button" onClick={handleRemoveSpell}>
       {hovered ? 'X' : ''}
     </button>
   )
