@@ -16,7 +16,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Changelog
 
-1.0.5
+1.1.0
 - Searching for spells in the character detail now uses a datalist to see available spell names
 - Adding a spell no longer resets the form for spell levels
 - TODO: Can change a character's spell DC and spell attack
