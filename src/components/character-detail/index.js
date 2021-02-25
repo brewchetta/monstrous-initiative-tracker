@@ -126,7 +126,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
 
         <input type="button" value={"General"} name="general" onClick={handleChangeDetailMode} />
         <input type="button" value={"Actions"} name="actions" onClick={handleChangeDetailMode} />
-        <input type="button" value={"Special Abilities"} name="special_abilities" onClick={handleChangeDetailMode} />
+        <input type="button" value={"Special Abilities"} name="special_abilities" style={formInputs.special_abilities.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
         <input type="button" value={"Spells"} name="spells" style={formInputs.spells.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
         <input type="button" value={"Legendary Actions"} name="legendary_actions" style={formInputs.legendary_actions.length ? {} : {opacity: 0.5}} onClick={handleChangeDetailMode} />
 

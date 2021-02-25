@@ -18,8 +18,9 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 1.0.5
 - Searching for spells in the character detail now uses a datalist to see available spell names
-- TODO: Adding a spell no longer resets the form for spell levels
+- Adding a spell no longer resets the form for spell levels
 - TODO: Can change a character's spell DC and spell attack
+- TODO: Can delete a spell from the list
 - TODO: The special abilities tab is greyed out for characters who have just aren't special yet
 
 1.0.4
