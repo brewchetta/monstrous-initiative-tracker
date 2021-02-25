@@ -17,9 +17,10 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 ## Changelog
 
 1.0.5
-- TODO: Searching for spells in the character detail now uses a datalist
-- TODO: adding a spell no longer resets the spell level to cantrip
+- Searching for spells in the character detail now uses a datalist to see available spell names
+- TODO: Adding a spell no longer resets the form for spell levels
 - TODO: Can change a character's spell DC and spell attack
+- TODO: The special abilities tab is greyed out for characters who have just aren't special yet
 
 1.0.4
 - Users can now alter temporary hit points directly from the initiative list

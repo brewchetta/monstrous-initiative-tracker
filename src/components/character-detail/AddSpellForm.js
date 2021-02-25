@@ -19,7 +19,6 @@ export default function AddSpellForm({handleSubmit, spellNames}) {
   const handleSubmitForm = e => {
     handleSubmit({name: nameInput, level: parseInt(levelInput)})
     setNameInput("")
-    setLevelInput(0)
   }
 
   // RENDER //
