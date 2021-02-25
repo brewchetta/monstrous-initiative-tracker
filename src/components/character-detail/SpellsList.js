@@ -1,20 +1,7 @@
-import {useContext} from "react"
-import { TooltipContext } from "../../context/tooltip-context"
+import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 
 export default function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, spellNames}) {
-
-  // STATE //
-
-  const dispatch = useContext(TooltipContext)[1]
-
-  // EVENT HANDLERS //
-
-  const handleMouseEnter = (e, spellName) => {
-    dispatch({type: "INSPECT_SPELL", payload: {spellName, x: e.clientX, y: e.clientY}})
-  }
-
-  const handleMouseLeave = () => dispatch({type: "CLEAR_TOOLTIP"})
 
   // RENDER //
 
@@ -24,7 +11,7 @@ export default function SpellsList({spells, spell_dc, spell_modifier, spell_slot
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <span className="spell-span" onMouseEnter={event => handleMouseEnter(event, sp.name)} onMouseLeave={handleMouseLeave} key={sp.name}>{sp.name}</span>)
+        .map(sp => <Spell spell={sp} key={sp.name} />)
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>
