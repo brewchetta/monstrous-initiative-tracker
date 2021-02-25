@@ -17,15 +17,10 @@ export default function Tooltip() {
 
   if (tooltip.type === "spell") {
 
-    const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth
-    const height = window.innerHeight|| document.documentElement.clientHeight|| document.body.clientHeight
-
     return (
       <div id="spell-tooltip"
         style={{
-          bottom: `${height - tooltip.position.y - 100 > 0 ? height - tooltip.position.y - 100 : 0}px`,
-          right: `${width - tooltip.position.x + 10}px`,
-          display: spellDetails.name || spellDetails.error ? "block" : "none"
+          left: `${spellDetails.name || spellDetails.error ? '0' : '-40'}vw`,
         }}>
 
         <SpellDetailsView spellDetails={spellDetails} />

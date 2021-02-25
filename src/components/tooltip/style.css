@@ -2,7 +2,11 @@
   background-color: #cab49b;
   border: solid black 2px;
   box-shadow: 1px 2px black;
+  height: 90vh;
   padding: 0.5em;
-  position: absolute;
+  position: fixed;
+  top: 3vh;
+  transition: left 1s;
   z-index: 2;
+  width: 30vw;
 }
