@@ -81,7 +81,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   const renderDetailMode = () => {
     switch (detailMode) {
       case "general":
-        return <GeneralInfo formInputs={formInputs} handleChange={handleChange} />
+        return <GeneralInfo formInputs={formInputs} handleChange={handleChange} handleSubmit={handleSubmit} />
       case "actions":
         return (<ActionsList key="actions mode"
           actions={formInputs.actions}
@@ -112,7 +112,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   }
 
   return (
-    <form id="character-detail-form" onSubmit={handleSubmit}>
+    <div id="character-detail-form">
 
       <DetailImage charType={formInputs.type} />
 
@@ -144,7 +144,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
 
       <input id="save-local-character-button" type="button" value="Save to Storage" onClick={handleSaveToStorage} />
 
-    </form>
+    </div>
   )
 
 }

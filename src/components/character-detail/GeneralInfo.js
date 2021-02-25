@@ -3,7 +3,7 @@ import CharacterTextInput from "./CharacterTextInput"
 import CharacterTextArea from "./CharacterTextArea"
 import CharacterSelectField from "./CharacterSelectField"
 
-export default function GeneralInfo({formInputs, handleChange}) {
+export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
   // HELPERS //
 
@@ -18,7 +18,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
   // RENDER //
 
   return (
-    <>
+    <form onSubmit={handleSubmit}>
 
       <div className="detail-sub-container">
 
@@ -171,7 +171,7 @@ export default function GeneralInfo({formInputs, handleChange}) {
       width={"80%"} height={"1.5em"} />
 
     </div>
-  </>
+  </form>
   )
 
 }

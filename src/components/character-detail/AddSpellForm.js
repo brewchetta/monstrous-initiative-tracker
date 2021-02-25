@@ -17,6 +17,7 @@ export default function AddSpellForm({handleSubmit, spellNames, spells}) {
   const handleLevelChange = e => setLevelInput(e.target.value)
 
   const handleSubmitForm = e => {
+    console.log("Doing stuff")
     if (!spells.find(sp => sp.name.toLowerCase() === nameInput.toLowerCase())) {
       handleSubmit({name: nameInput, level: parseInt(levelInput)})
       setNameInput("")
@@ -27,7 +28,7 @@ export default function AddSpellForm({handleSubmit, spellNames, spells}) {
 
   return (
     <>
-    <div id="add-spell-form">
+    <div id="add-spell-form" onSubmit={handleSubmitForm}>
       <input type="text"
       list="spell-names"
       onChange={handleNameChange}
@@ -53,8 +54,7 @@ export default function AddSpellForm({handleSubmit, spellNames, spells}) {
       </select>
 
       <input type="button"
-      value={"Add Spell"}
-      onClick={handleSubmitForm}/>
+      value={"Add Spell"}/>
     </div>
     </>
   )
