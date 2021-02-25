@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function AddSpellForm({handleSubmit, spellNames}) {
+export default function AddSpellForm({handleSubmit, spellNames, spells}) {
 
   // STATE //
 
@@ -17,8 +17,10 @@ export default function AddSpellForm({handleSubmit, spellNames}) {
   const handleLevelChange = e => setLevelInput(e.target.value)
 
   const handleSubmitForm = e => {
-    handleSubmit({name: nameInput, level: parseInt(levelInput)})
-    setNameInput("")
+    if (!spells.find(sp => sp.name.toLowerCase() === nameInput.toLowerCase())) {
+      handleSubmit({name: nameInput, level: parseInt(levelInput)})
+      setNameInput("")
+    }
   }
 
   // RENDER //
