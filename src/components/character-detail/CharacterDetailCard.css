@@ -161,3 +161,16 @@
   padding-left: 4em;
   width: 1em;
 }
+
+.remove-spell-button {
+  background: none;
+  border: none;
+  color: red;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  width: 1em;
+}
+
+.remove-spell-button:hover {
+  opacity: 1;
+}
