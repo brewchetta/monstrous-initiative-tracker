@@ -1,7 +1,13 @@
 import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 
-export default function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, spellNames}) {
+export default function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, spellNames}) {
+
+  // EVENT HANDLERS //
+
+  const removeSpell = spell => {
+    handleRemoveSpell(spell)
+  }
 
   // RENDER //
 
@@ -11,7 +17,7 @@ export default function SpellsList({spells, spell_dc, spell_modifier, spell_slot
 
       const levelSpells = spells
         .filter(sp => sp.level === i)
-        .map(sp => <Spell spell={sp} key={sp.name} />)
+        .map(sp => <Spell spell={sp} key={sp.name} removeSpell={removeSpell} />)
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>

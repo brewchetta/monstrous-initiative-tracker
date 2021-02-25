@@ -1,7 +1,7 @@
 import { useContext, useState } from 'react'
 import { TooltipContext } from "../../context/tooltip-context"
 
-export default function Spell({spell}) {
+export default function Spell({spell, removeSpell}) {
 
   // STATE //
 
@@ -21,9 +21,11 @@ export default function Spell({spell}) {
     setHovered(false)
   }
 
-  const button = <button className="remove-spell-button" onClick={() => console.log("remove spell")}>
-                  {hovered ? 'X' : ''}
-                </button>
+  const button = (
+    <button className="remove-spell-button" onClick={() => removeSpell(spell)}>
+      {hovered ? 'X' : ''}
+    </button>
+  )
 
   // RENDER //
 
