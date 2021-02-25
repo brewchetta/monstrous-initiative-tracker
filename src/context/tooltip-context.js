@@ -6,7 +6,7 @@ const tooltipReducer = (state, action) => {
 
   switch (action.type) {
     case "CLEAR_TOOLTIP":
-      return {type: null}
+      return {...state, type: null}
     case "INSPECT_SPELL":
       return {type: "spell", content: action.payload.spellName, position: {x: action.payload.x, y: action.payload.y}}
     default:

@@ -17,7 +17,7 @@ export default function Tooltip() {
 
     return (
       <div id="spell-tooltip"
-        style={{left: `${spellDetails.name || spellDetails.error ? '0' : '-40'}vw`}}>
+        style={{left: `${tooltip.type ? '0' : '-40'}vw`}}>
 
         <SpellDetailsView spellDetails={spellDetails} />
 
