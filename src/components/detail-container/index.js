@@ -41,7 +41,7 @@ export default function DetailContainer(props) {
   const clearDetail = () => dispatchDetail({type: "CLEAR_DETAIL"})
 
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} />
+    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} spellNames={spellNames} />
     : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} additionalMonsters={additionalMonsters} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : detail && detail.type === "locals" ? <SelectLocalMonstersForm />

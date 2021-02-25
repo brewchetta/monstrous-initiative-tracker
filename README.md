@@ -8,17 +8,18 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Player characters have specific styling to denote them
 
-- Player character initiative card background is determined by class
+- Player character initiative card styling is determined by class
 
 - Users can assign icons to monsters / characters to show different statuses
 
-- Option to use derived hit points or standard hit points
+- Option to use calculated hit points or standard hit points
 
 ## Changelog
 
 1.0.5
-- Searching for spells in the character detail now uses a datalist
-- adding a spell no longer resets the spell level to cantrip
+- TODO: Searching for spells in the character detail now uses a datalist
+- TODO: adding a spell no longer resets the spell level to cantrip
+- TODO: Can change a character's spell DC and spell attack
 
 1.0.4
 - Users can now alter temporary hit points directly from the initiative list

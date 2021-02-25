@@ -11,7 +11,7 @@ import DetailImage from './DetailImage'
 import "./CharacterDetailCard.css"
 import beyondIcon from "../../images/beyond-icon.png"
 
-export default function CharacterDetailCard({character, updateCharacter}) {
+export default function CharacterDetailCard({character, updateCharacter, spellNames}) {
 
   // STATE //
 
@@ -93,7 +93,8 @@ export default function CharacterDetailCard({character, updateCharacter}) {
           spell_dc={formInputs.spell_dc}
           spell_modifier={formInputs.spell_modifier}
           spell_slots={formInputs.spell_slots}
-          handleNewSpell={handleNewSpell} />)
+          handleNewSpell={handleNewSpell}
+          spellNames={spellNames} />)
       case "legendary_actions":
         return (<ActionsList key="legendary actions mode"
           actions={formInputs.legendary_actions}

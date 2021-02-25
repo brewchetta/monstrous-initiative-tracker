@@ -1,11 +1,15 @@
 import { useState } from "react"
 
-export default function AddSpellForm({handleSubmit}) {
+export default function AddSpellForm({handleSubmit, spellNames}) {
 
   // STATE //
 
   const [nameInput, setNameInput] = useState("")
   const [levelInput, setLevelInput] = useState(0)
+
+  const renderDatalistOptions = () => (
+    spellNames.map(s => <option key={s} value={s} />)
+  )
 
   // EVENT HANDLERS //
 
@@ -24,10 +28,15 @@ export default function AddSpellForm({handleSubmit}) {
     <>
     <div id="add-spell-form">
       <input type="text"
+      list="spell-names"
       onChange={handleNameChange}
       value={nameInput}
       placeholder={"spell name..."}
       />
+
+      <datalist id="spell-names">
+        {renderDatalistOptions()}
+      </datalist>
 
       <select onChange={handleLevelChange} value={levelInput}>
         <option value={0}>Cantrip</option>
