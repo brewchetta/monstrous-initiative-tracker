@@ -1,7 +1,7 @@
 import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 
-export default function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, spellNames}) {
+function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, spellNames}) {
 
   // EVENT HANDLERS //
 
@@ -49,3 +49,5 @@ export default function SpellsList({spells, spell_dc, spell_modifier, spell_slot
   )
 
 }
+
+export default SpellsList
