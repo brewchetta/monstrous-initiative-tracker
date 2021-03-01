@@ -100,6 +100,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
           spell_slots={formInputs.spell_slots}
           handleNewSpell={handleNewSpell}
           handleRemoveSpell={handleRemoveSpell}
+          handleChange={handleChange}
           spellNames={spellNames} />)
       case "legendary_actions":
         return (<ActionsList key="legendary actions mode"

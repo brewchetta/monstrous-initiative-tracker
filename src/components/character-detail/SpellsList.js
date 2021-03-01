@@ -1,7 +1,8 @@
 import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
+import CharacterNumberField from './CharacterNumberField'
 
-function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, spellNames}) {
+function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, handleChange, spellNames}) {
 
   // RENDER //
 
@@ -27,7 +28,16 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
   return (
     <div>
 
-      <span>{spell_modifier ? `Spell Modifier: +${spell_modifier}` : null}</span> <span>{spell_dc ? `Spell DC: ${spell_dc}` : null}</span>
+      <span>
+      Spell Modifier: <CharacterNumberField name="spell_dc"
+        value={spell_dc}
+        handleChange={handleChange} />
+
+      Spell DC: <CharacterNumberField name="spell_modifier"
+        value={spell_modifier}
+        handleChange={handleChange} />
+
+      {/* spell_modifier ? `Spell Modifier: +${spell_modifier}` : null}</span> <span>{spell_dc ? `Spell DC: ${spell_dc}` : null */}</span>
 
       <br/>
 
