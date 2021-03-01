@@ -44,7 +44,6 @@ export default class Character {
     this.initiative = -10
     this.tempHP = 0
     this.type = this.type.replace(/[,]/g, "")
-    console.log(this);
   }
 
   // CONSTRUCTOR HELPERS //
@@ -103,10 +102,10 @@ export default class Character {
       this.special_abilities.forEach(ability => {
         if (ability.spellcasting) {
           this.spells = ability.spellcasting.spells.map(s => ({name: s.name, level: s.level}))
-          this.spell_slots = ability.spellcasting.slots
-          this.spell_dc = ability.spellcasting.dc
-          this.spell_level = ability.spellcasting.level
-          this.spell_modifier = ability.spellcasting.modifier
+          this.spell_slots = this.spell_slots || ability.spellcasting.slots
+          this.spell_dc = this.spell_dc || ability.spellcasting.dc
+          this.spell_level = this.spell_level || ability.spellcasting.level
+          this.spell_modifier = this.spell_modifier || ability.spellcasting.modifier
         }
       })
     }
