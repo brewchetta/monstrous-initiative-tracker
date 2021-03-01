@@ -22,7 +22,8 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
 
   useEffect(() => {
     memoizedSubmit()
-  }, [memoizedSubmit,formInputs])
+    return memoizedSubmit()
+  }, [memoizedSubmit])
 
   useEffect(() => {
     console.log(character)

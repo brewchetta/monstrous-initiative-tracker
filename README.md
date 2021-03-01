@@ -26,6 +26,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Spell tooltip is better formatted for the screen
 - TODO: Spell tooltip now has a background image
 - Hitting enter to submit a new character spell now properly works
+- Spell data is cached to avoid repeated fetches
 
 1.0.4
 - Users can now alter temporary hit points directly from the initiative list

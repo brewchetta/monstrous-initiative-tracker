@@ -44,7 +44,7 @@ export default class Character {
     this.initiative = -10
     this.tempHP = 0
     this.type = this.type.replace(/[,]/g, "")
-    console.log(this)
+    console.log(this);
   }
 
   // CONSTRUCTOR HELPERS //
