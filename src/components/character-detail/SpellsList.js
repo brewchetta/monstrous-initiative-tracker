@@ -36,8 +36,7 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
       Spell DC: <CharacterNumberField name="spell_modifier"
         value={spell_modifier}
         handleChange={handleChange} />
-
-      {/* spell_modifier ? `Spell Modifier: +${spell_modifier}` : null}</span> <span>{spell_dc ? `Spell DC: ${spell_dc}` : null */}</span>
+      </span>
 
       <br/>
 
