@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/monstrous-initiative-tracker/static/css/main.efc6c483.chunk.css",
-    "main.js": "/monstrous-initiative-tracker/static/js/main.f3e8edd0.chunk.js",
-    "main.js.map": "/monstrous-initiative-tracker/static/js/main.f3e8edd0.chunk.js.map",
+    "main.css": "/monstrous-initiative-tracker/static/css/main.45e24e21.chunk.css",
+    "main.js": "/monstrous-initiative-tracker/static/js/main.c36885a6.chunk.js",
+    "main.js.map": "/monstrous-initiative-tracker/static/js/main.c36885a6.chunk.js.map",
     "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js",
     "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js.map",
-    "static/js/2.3469e565.chunk.js": "/monstrous-initiative-tracker/static/js/2.3469e565.chunk.js",
-    "static/js/2.3469e565.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.3469e565.chunk.js.map",
+    "static/js/2.9dbd976c.chunk.js": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js",
+    "static/js/2.9dbd976c.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js.map",
     "index.html": "/monstrous-initiative-tracker/index.html",
-    "static/css/main.efc6c483.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.efc6c483.chunk.css.map",
-    "static/js/2.3469e565.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.3469e565.chunk.js.LICENSE.txt",
+    "static/css/main.45e24e21.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.45e24e21.chunk.css.map",
+    "static/js/2.9dbd976c.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js.LICENSE.txt",
     "static/media/dragon-fight-woodcut.d1deab1e.png": "/monstrous-initiative-tracker/static/media/dragon-fight-woodcut.d1deab1e.png",
     "static/media/knot-flourish.c17aea77.png": "/monstrous-initiative-tracker/static/media/knot-flourish.c17aea77.png",
+    "static/media/thorn-image.51c14e50.png": "/monstrous-initiative-tracker/static/media/thorn-image.51c14e50.png",
     "static/media/woodcut-boar.625e13a9.png": "/monstrous-initiative-tracker/static/media/woodcut-boar.625e13a9.png",
     "static/media/woodcut-butterfly.a5f13a57.png": "/monstrous-initiative-tracker/static/media/woodcut-butterfly.a5f13a57.png",
     "static/media/woodcut-fire.3ef0340e.png": "/monstrous-initiative-tracker/static/media/woodcut-fire.3ef0340e.png",
@@ -25,8 +26,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.db5b7061.js",
-    "static/js/2.3469e565.chunk.js",
-    "static/css/main.efc6c483.chunk.css",
-    "static/js/main.f3e8edd0.chunk.js"
+    "static/js/2.9dbd976c.chunk.js",
+    "static/css/main.45e24e21.chunk.css",
+    "static/js/main.c36885a6.chunk.js"
   ]
 }
