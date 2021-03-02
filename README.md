@@ -16,6 +16,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 - Styling to allow users to read large spell descriptions
 
+- Can alter a character's spell slots
+
 ## Changelog
 
 1.1.0
@@ -27,7 +29,6 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Cannot add duplicate spells to a character
 - Spell tooltip is better formatted for the screen
 - Clicking a spell now goes to its page on D&D Beyond
-- TODO: Spell tooltip now has a background image
 - Hitting enter to submit a new character spell now properly works
 - Spell data is cached to avoid repeated fetches
 

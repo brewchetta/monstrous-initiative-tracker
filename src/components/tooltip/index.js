@@ -3,6 +3,7 @@ import { getSpell } from "../../services/dnd-5e-api"
 import SpellDetailsView from "./SpellDetailsView"
 import { TooltipContext } from "../../context/tooltip-context"
 import { SpellsContext } from "../../context/spells-context"
+import spellMoon from "../../images/thorn-image.png"
 import "./style.css"
 
 export default function Tooltip() {
@@ -27,6 +28,8 @@ export default function Tooltip() {
     return (
       <div id="spell-tooltip"
         style={{left: `${tooltip.type ? '0' : '-40'}vw`}}>
+
+        <img id="spell-background-image" src={spellMoon} alt={""} />
 
         <SpellDetailsView spellDetails={spellDetails} />
 

@@ -10,3 +10,11 @@
   z-index: 2;
   width: 30vw;
 }
+
+#spell-background-image {
+  left: 0;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
