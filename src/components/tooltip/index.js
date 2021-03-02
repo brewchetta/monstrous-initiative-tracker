@@ -22,7 +22,7 @@ export default function Tooltip() {
       })
       !tooltip.content && setSpellDetails({})
     }
-  } ,[tooltip])
+  } ,[tooltip, spellsList, dispatchSpells])
 
     return (
       <div id="spell-tooltip"
