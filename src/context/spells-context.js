@@ -8,7 +8,7 @@ const spellsReducer = (state, action) => {
     case "CLEAR_SPELLS":
       return null
     case "ADD_SPELL":
-      return ({ ...state, action.payload })
+      return ({ ...state, [action.payload.name.toLowerCase()]: action.payload })
     default:
       throw new Error(`Incorrect use of detail reducer: ${action.type}`)
   }
