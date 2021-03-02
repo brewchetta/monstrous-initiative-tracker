@@ -39,6 +39,7 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
       </span>
 
       <br/>
+      <br/>
 
       <AddSpellForm handleSubmit={handleNewSpell} spellNames={spellNames} spells={spells} />
 
