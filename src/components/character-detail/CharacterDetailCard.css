@@ -174,3 +174,8 @@
 .remove-spell-button:hover {
   opacity: 1;
 }
+
+.spell-link {
+  color: black;
+  text-decoration: none;
+}

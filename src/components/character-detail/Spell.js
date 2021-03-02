@@ -38,7 +38,7 @@ export default function Spell({spell, removeSpell}) {
     <span className="spell-span"
     onMouseEnter={event => handleMouseEnter(event, spell.name)}
     onMouseLeave={handleMouseLeave}
-    key={spell.name}>{spell.name} {button}</span>
+    key={spell.name}><a className="spell-link" href={`https://www.dndbeyond.com/spells/${spell.name.toLowerCase().replaceAll(' ','-').replace(/[']/g, "")}`} target="_blank">{spell.name}</a> {button}</span>
   )
 
 }
