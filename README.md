@@ -22,6 +22,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 1.1.1
 - Added some additional security for spell links
+- TODO: blindness/deafness no longer crashes the spell detail area
 
 1.1.0
 - Searching for spells in the character detail now uses a datalist to see available spell names

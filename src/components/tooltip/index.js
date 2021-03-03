@@ -16,9 +16,9 @@ export default function Tooltip() {
     if (tooltip.content && spellsList[tooltip.content.toLowerCase()]) {
       setSpellDetails(spellsList[tooltip.content.toLowerCase()])
     } else {
-      tooltip.content && getSpell(tooltip.content.toLowerCase().replace(/['-]/g,""))
+      tooltip.content && getSpell(tooltip.content.toLowerCase().replace(/['-/]/g,""))
       .then(spell => {
-        dispatchSpells({type: "ADD_SPELL", payload: spell})
+        !spell.error && dispatchSpells({type: "ADD_SPELL", payload: spell})
         setSpellDetails(spell)
       })
       !tooltip.content && setSpellDetails({})
