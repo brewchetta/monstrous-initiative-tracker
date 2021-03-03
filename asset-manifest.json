@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/monstrous-initiative-tracker/static/css/main.45e24e21.chunk.css",
-    "main.js": "/monstrous-initiative-tracker/static/js/main.c36885a6.chunk.js",
-    "main.js.map": "/monstrous-initiative-tracker/static/js/main.c36885a6.chunk.js.map",
+    "main.js": "/monstrous-initiative-tracker/static/js/main.1f361d08.chunk.js",
+    "main.js.map": "/monstrous-initiative-tracker/static/js/main.1f361d08.chunk.js.map",
     "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js",
     "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js.map",
     "static/js/2.9dbd976c.chunk.js": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js",
@@ -28,6 +28,6 @@
     "static/js/runtime-main.db5b7061.js",
     "static/js/2.9dbd976c.chunk.js",
     "static/css/main.45e24e21.chunk.css",
-    "static/js/main.c36885a6.chunk.js"
+    "static/js/main.1f361d08.chunk.js"
   ]
 }
