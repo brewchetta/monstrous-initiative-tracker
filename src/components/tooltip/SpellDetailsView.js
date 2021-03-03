@@ -1,7 +1,5 @@
 export default function SpellDetailsView({spellDetails}) {
 
-  console.log(spellDetails)
-
   return (
     <>
 
