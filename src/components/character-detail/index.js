@@ -1,6 +1,6 @@
 // REACT //
 import { useState, useEffect, useCallback } from "react"
-import { saveMonster } from '../../services/localstorage'
+import useLocalStorageList from '../../services/localstorage'
 // COMPONENTS //
 import ActionsList from './ActionsList'
 import SpellsList from './SpellsList'
@@ -18,7 +18,9 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   const [formInputs, setFormInputs] = useState(character)
   const [detailMode, setDetailMode] = useState("general")
 
-  const memoizedSubmit = useCallback(handleSubmit, [formInputs])
+  const saveMonster = useLocalStorageList('monstrous-characters')[3]
+
+  const memoizedSubmit = useCallback(handleSubmit, [formInputs, updateCharacter])
 
   useEffect(() => {
     memoizedSubmit()

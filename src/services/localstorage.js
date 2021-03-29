@@ -1,10 +1,19 @@
-export const getMonsters = () => JSON.parse(localStorage.getItem("monstrous-characters"))
-export const setMonsters = locals => localStorage.setItem("monstrous-characters", JSON.stringify(locals))
-export const clearMonsters = () => localStorage.removeItem("monstrous-characters")
-export const saveMonster = local => {
-    let locals = getMonsters() ? getMonsters().map(m => m.name === local.name ? local : m) : [local]
-    if (!locals.find(m => m.name === local.name)) {
-      locals = [...locals, local]
+export default function useLocalStorageList(key) {
+
+  const getItems = () =>  JSON.parse(localStorage.getItem(key))
+
+  const setItems = value => localStorage.setItem(key, JSON.stringify(value))
+
+  const clearItems = () => localStorage.removeItem(key)
+
+  const addItem = item => {
+    let locals = getItems() ? getItems().map(m => m.name === item.name ? item : m) : [item]
+    if (!locals.find(m => m.name === item.name)) {
+      locals = [...locals, item]
     }
-    setMonsters(locals)
+    setItems(locals)
+  }
+
+  return [getItems, setItems, clearItems, addItem]
+
 }
