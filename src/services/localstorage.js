@@ -17,3 +17,5 @@ export default function useLocalStorageList(key) {
   return [getItems, setItems, clearItems, addItem]
 
 }
+
+// const [getMonsters, setMonster, clearMonsters, addMonster] = useLocalStorageList('monstrous-characters')
