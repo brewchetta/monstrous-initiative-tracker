@@ -38,7 +38,9 @@ export default class Character {
 
     this.subtype = this.subtype ? this.subtype : ""
 
-    this.hit_points = this.derivedHitPoints
+    this.hit_points_static = false
+    this.static_hitpoints = this.hit_points
+    this.hit_points = this.hit_points_static ? this.hit_points : this.derivedHitPoints
     this.currentHitPoints = this.hit_points
     this.special_abilities = data.special_abilities || []
     this.initiative = -10
