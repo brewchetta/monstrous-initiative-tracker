@@ -20,7 +20,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
 
   const saveMonster = useLocalStorageList('monstrous-characters')[3]
 
-  const memoizedSubmit = useCallback(handleSubmit, [formInputs, updateCharacter])
+  const memoizedSubmit = useCallback(handleSubmit, [formInputs])
 
   useEffect(() => {
     memoizedSubmit()
