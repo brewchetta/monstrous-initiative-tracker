@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/monstrous-initiative-tracker/static/css/main.45e24e21.chunk.css",
-    "main.js": "/monstrous-initiative-tracker/static/js/main.1f361d08.chunk.js",
-    "main.js.map": "/monstrous-initiative-tracker/static/js/main.1f361d08.chunk.js.map",
+    "main.css": "/monstrous-initiative-tracker/static/css/main.9392d08c.chunk.css",
+    "main.js": "/monstrous-initiative-tracker/static/js/main.0d8d23f5.chunk.js",
+    "main.js.map": "/monstrous-initiative-tracker/static/js/main.0d8d23f5.chunk.js.map",
     "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js",
     "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js.map",
     "static/js/2.9dbd976c.chunk.js": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js",
     "static/js/2.9dbd976c.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js.map",
     "index.html": "/monstrous-initiative-tracker/index.html",
-    "static/css/main.45e24e21.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.45e24e21.chunk.css.map",
+    "static/css/main.9392d08c.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.9392d08c.chunk.css.map",
     "static/js/2.9dbd976c.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.9dbd976c.chunk.js.LICENSE.txt",
     "static/media/dragon-fight-woodcut.d1deab1e.png": "/monstrous-initiative-tracker/static/media/dragon-fight-woodcut.d1deab1e.png",
     "static/media/knot-flourish.c17aea77.png": "/monstrous-initiative-tracker/static/media/knot-flourish.c17aea77.png",
@@ -27,7 +27,7 @@
   "entrypoints": [
     "static/js/runtime-main.db5b7061.js",
     "static/js/2.9dbd976c.chunk.js",
-    "static/css/main.45e24e21.chunk.css",
-    "static/js/main.1f361d08.chunk.js"
+    "static/css/main.9392d08c.chunk.css",
+    "static/js/main.0d8d23f5.chunk.js"
   ]
 }
