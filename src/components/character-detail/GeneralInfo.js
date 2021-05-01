@@ -75,7 +75,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         <CharacterTextArea name={"proficiencies"}
         value={formInputs.proficiencies}
         handleChange={handleChange}
-        width={"80%"} height={"1.5em"} />
+        width={"80%"} />
 
       </div>
 

@@ -25,7 +25,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Fixed issue with text box height getting larger with every typed character
 - Changed inputs to be part of a healthy and complete form, allowing players to tab through input fields
 - Formatting improvements for character sheets
-- TODO: Characters now have a static hitpoint value that can be switched to
+- Removed spellchecker from forms
 
 1.1.1
 - Added some additional security for spell links
