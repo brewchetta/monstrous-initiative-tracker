@@ -1,6 +1,6 @@
 # Monstrous D&D Initiative Tracker
 
-Version 1.1.1
+Version 1.1.2
 
 Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull in monster and spell stats. You can save "favorites" to local storage and retrieve them as need be. Additionally, you can create characters and use track their initiative as player characters.
 
@@ -19,6 +19,13 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Can alter a character's spell slots
 
 ## Changelog
+
+1.1.2
+- Refactoring of local storage
+- TODO: Characters now have a static hitpoint value that can be switched to
+- TODO: Fixed issue with text box height getting larger with every typed character
+- TODO: Changed boxes to be a proper form, allowing players to tab through input fields
+- TODO: Formatting improvements for character sheets
 
 1.1.1
 - Added some additional security for spell links
