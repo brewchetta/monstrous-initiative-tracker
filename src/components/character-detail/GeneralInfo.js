@@ -128,7 +128,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
       Languages: <CharacterTextInput name="languages"
         value={formInputs.languages}
         handleChange={handleChange}
-        width="20em" />
+        width="60%" />
 
     </div>
 
@@ -138,7 +138,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
       <CharacterTextArea name={"damage_immunities"}
       value={formInputs.damage_immunities}
       handleChange={handleChange}
-      width={"80%"} height={"1.5em"} />
+      width={"60%"} height={"1em"} />
 
     </div>
 
@@ -148,7 +148,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
       <CharacterTextArea name={"damage_resistances"}
       value={formInputs.damage_resistances}
       handleChange={handleChange}
-      width={"80%"} height={"1.5em"} />
+      width={"60%"} height={"1em"} />
 
     </div>
 
@@ -158,7 +158,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
       <CharacterTextArea name={"damage_vulnerabilities"}
       value={formInputs.damage_vulnerabilities}
       handleChange={handleChange}
-      width={"80%"} height={"1.5em"} />
+      width={"60%"} height={"1em"} />
 
     </div>
 
@@ -168,7 +168,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
       <CharacterTextArea name={"condition_immunities"}
       value={formInputs.condition_immunities}
       handleChange={handleChange}
-      width={"80%"} height={"1.5em"} />
+      width={"60%"} height={"1em"} />
 
     </div>
   </form>
