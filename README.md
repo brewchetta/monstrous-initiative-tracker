@@ -23,7 +23,8 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 1.1.2
 - Refactoring of local storage
 - TODO: Characters now have a static hitpoint value that can be switched to
-- TODO: Fixed issue with text box height getting larger with every typed character
+- Fixed issue with text box height getting larger with every typed character
+- TODO: Fixed issue with text box height not shrinking as text is deleted
 - TODO: Changed boxes to be a proper form, allowing players to tab through input fields
 - TODO: Formatting improvements for character sheets
 
