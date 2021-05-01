@@ -5,17 +5,10 @@ export default function Action({action, index, handleSubmit}) {
   // STATE //
 
   const [input, setInput] = useState(action.full_description)
-  const [focused, setFocused] = useState(false)
   const [height, setHeight] = useState("5px")
   const focusedInput = useRef(null)
 
-  useEffect(() => {
-    if (focused){
-      focusedInput.current.focus()
-      setHeight(focusedInput.current.scrollHeight + "px")
-      // setInput(input.replace("\u00a0","\n"))
-    }
-  }, [focused])
+  useEffect(() => setHeight(focusedInput.current.scrollHeight + "px"), [])
 
   // EVENT HANDLERS //
 
@@ -26,25 +19,23 @@ export default function Action({action, index, handleSubmit}) {
 
   const handleBlur = e => {
     handleSubmit(input.replace(/"\n","&nbsp"/), index)
-    setFocused(false)
+  }
+
+  const handleFocus = e => {
+
   }
 
   // RENDER //
 
-  const renderInput = () => (
+  return (
     <textarea className="action-input-textarea"
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       style={{height}}
       onChange={handleChange}
-      onBlur={handleBlur}
       value={input}
       placeholder={"add an action here..."}
       ref={focusedInput} />
-    )
-
-  const renderSpan = () => <span onClick={() => setFocused(true)}>{input || "+"}</span>
-
-  return (
-    focused ? renderInput() : renderSpan()
   )
 
 }
