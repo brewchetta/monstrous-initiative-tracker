@@ -116,7 +116,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   }
 
   return (
-    <div id="character-detail-form">
+    <div id="character-detail-form" spellCheck="false">
 
       <DetailImage charType={formInputs.type} />
 
