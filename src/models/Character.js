@@ -90,6 +90,15 @@ export default class Character {
       delete a.dc
       delete a.usage
     })
+    this.legendary_actions.forEach(a => {
+      a.full_description = a.full_description || `${a.name}: ${a.desc}`
+      delete a.desc
+      delete a.name
+      delete a.damage
+      delete a.attack_bonus
+      delete a.dc
+      delete a.usage
+    })
   }
 
   remapProficiencies = () => {
