@@ -52,16 +52,16 @@ export default class Character {
 
   remapObjectProperty = property => {
     if (this[property].constructor === Object) {
-      this[property] = Object.keys(this[property]).map(k => `${k}: ${this[property][k]}`).join(" | ")
+      this[property] = Object.keys(this[property]).map(k => `${k}: ${this[property][k]}`).join(", ")
     }
   }
 
   remapArrayProperty = property => {
-    this[property] = this[property] && this[property].constructor === Array ? this[property].join(" | ") : this[property]
+    this[property] = this[property] && this[property].constructor === Array ? this[property].join(", ") : this[property]
   }
 
   remapArrayOfObjectsProperty = property => {
-    this[property] = this[property] && this[property].constructor === Array ? this[property].map(p => p.name).join(" | ") : this[property]
+    this[property] = this[property] && this[property].constructor === Array ? this[property].map(p => p.name).join(", ") : this[property]
   }
 
   remapSpecialAbilities = () => {
@@ -94,7 +94,7 @@ export default class Character {
 
   remapProficiencies = () => {
     if (this.proficiencies.constructor === Array) {
-      this.proficiencies = this.proficiencies.map(p => `${p.proficiency.name} + ${p.value}`).join(' | ')
+      this.proficiencies = this.proficiencies.map(p => `${p.proficiency.name} + ${p.value}`).join(', ')
     }
   }
 
