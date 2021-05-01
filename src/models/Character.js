@@ -22,7 +22,8 @@ export default class Character {
     this.legendary_actions = this.legendary_actions || []
     this.special_abilities = this.special_abilities || []
 
-    this.remapActionAttributes()
+    this.remapActionAttributes(this.actions)
+    this.remapActionAttributes(this.legendary_actions)
     this.remapSpecialAbilities()
     this.remapProficiencies()
     this.remapArrayProperty("damage_immunities")
@@ -80,17 +81,8 @@ export default class Character {
     });
   }
 
-  remapActionAttributes = () => {
-    this.actions.forEach(a => {
-      a.full_description = a.full_description || `${a.name}: ${a.desc}`
-      delete a.desc
-      delete a.name
-      delete a.damage
-      delete a.attack_bonus
-      delete a.dc
-      delete a.usage
-    })
-    this.legendary_actions.forEach(a => {
+  remapActionAttributes = (actions) => {
+    actions.forEach(a => {
       a.full_description = a.full_description || `${a.name}: ${a.desc}`
       delete a.desc
       delete a.name
