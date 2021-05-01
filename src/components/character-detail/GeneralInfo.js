@@ -28,6 +28,13 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         Temporary HP: <CharacterNumberField name="tempHP"
           value={formInputs.tempHP}
           handleChange={handleChange} />
+        AC: <CharacterNumberField name="armor_class"
+          value={formInputs.armor_class}
+          handleChange={handleChange} />
+        Hit Dice: <CharacterTextInput name="hit_dice"
+          value={formInputs.hit_dice}
+          handleChange={handleChange}
+          width="4em" />
 
       </div>
 
@@ -37,12 +44,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
           value={formInputs.name}
           handleChange={handleChange}
           width="20em" />
-        AC: <CharacterNumberField name="armor_class"
-          value={formInputs.armor_class}
-          handleChange={handleChange} />
-        Initiative: <CharacterNumberField name="initiative"
-          value={formInputs.initiative}
-          handleChange={handleChange} />
 
       </div>
 
@@ -71,7 +72,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       <div className="detail-sub-container">
 
-        <label>Proficiencies: </label>
         <CharacterTextArea name={"proficiencies"}
         value={formInputs.proficiencies}
         handleChange={handleChange}
@@ -87,10 +87,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
           handleChange={handleChange}
           currentInput={formInputs.alignment} />
         </span>
-        Hit Dice: <CharacterTextInput name="hit_dice"
-          value={formInputs.hit_dice}
-          handleChange={handleChange}
-          width="4em" />
         Challenge Rating: <CharacterTextInput name="challenge_rating"
           value={formInputs.challenge_rating}
           handleChange={handleChange}
