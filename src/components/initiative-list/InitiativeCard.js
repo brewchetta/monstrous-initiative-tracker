@@ -1,6 +1,7 @@
 import { useContext, useState, useRef, useEffect } from 'react'
 import { DetailContext } from '../../context/detail-context'
 import { CharactersContext } from '../../context/characters-context'
+import StatusIcons from './StatusIcons'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
 
@@ -144,6 +145,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     <div className={renderClass()}
     style={{top: `${index * 50}px`}}>
       <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()}{renderTemporaryHitpoints()}♡ | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
+      <StatusIcons />
     </div>
   )
 

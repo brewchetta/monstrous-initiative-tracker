@@ -52,3 +52,21 @@ input[type=number] {
   border: none;
   border-bottom: solid white 1px;
 }
+
+/* Status Buttons */
+.status-button {
+  background: none;
+  border: none;
+  color: black;
+  max-height: 1em;
+}
+
+.status-button img {
+  height: 1em;
+}
+
+#status-selection {
+  height: default;
+  overflow-x: hidden;
+  transition: height 1s;
+}

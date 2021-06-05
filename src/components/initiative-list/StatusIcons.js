@@ -1,40 +1,51 @@
 import { useState } from 'react'
+import StatusSelection from './StatusSelection'
 
-const pngs = require.context('../../assets/attribute_icons', true, /\.png/)
+const pngs = require.context('../../assets/status-icons', true, /\.png/)
 
 // Status effect statuses for a character
 export default function StatusIcons({}) {
 
   const [statuses, setStatuses] = useState([])
+  const [selectionOpen, setSelectionOpen] = useState(false)
+
+  const removeStatus = status => setStatuses(statuses.filter(s => s !== status))
 
   const renderStatuses = () => {
-    const statusElements = statuses.map((icon, i) => (
-      <button className="status-icon" key={i} name={attr}>
-        <img src={pngs(attr) ? pngs(attr) : '?'} alt='' />
+    const statusElements = statuses.map(status => (
+      <button className="status-icon status-button" key={status} name={status}
+      onClick={() => removeStatus(status)}>
+        <img src={pngs(status) ? pngs(status) : '?'} alt='' />
       </button>
     ))
 
     if (statuses.length < 5) {
       statusElements.push(
-        <button className="attribute-button" key={-1} name={"add-status"}>
-          <img src={'http://pluspng.com/img-png/free-png-plus-sign-plus-icon-512.png'} style={{filter: "invert(1)"}} alt='stuff' />
+        <button className="status-button" key={-1} name={"add-status"}
+        onClick={() => setSelectionOpen(true)}>
+          <img src={'http://pluspng.com/img-png/free-png-plus-sign-plus-icon-512.png'} alt='stuff' />
         </button>
       )
     }
 
     if (!statuses.length) {
       statusElements.unshift(
-        <button className="attribute-button" style={{fontSize: "1.1em"}} key={0} name={"add-status-text"}>
+        <button className="status-button" style={{fontSize: "1.1em"}}
+        key={0} onClick={() => setSelectionOpen(true)}>
           <span>Status</span>
         </button>
       )
     }
+
+    return statusElements
   }
 
   return (
     <div id="status-list">
 
+      {renderStatuses()}
 
+      <StatusSelection isOpen={selectionOpen} setOpen={setSelectionOpen} statuses={statuses} />
 
     </div>
   )
