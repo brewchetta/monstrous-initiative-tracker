@@ -2,7 +2,7 @@ const pngs = require.context('../../assets/status-icons', true, /\.png/)
 const pngKeys = pngs.keys()
 
 // Selection modal for different status icons
-export default function StatusSelection({addStatus, isOpen, setOpen}) {
+export default function StatusSelection({addStatus, isOpen, setOpen, statuses}) {
 
   // Renders an attribute button
   const statusButton = status => {
@@ -21,7 +21,9 @@ export default function StatusSelection({addStatus, isOpen, setOpen}) {
   };
 
   const renderStatusButtons = () => {
-    return pngKeys.map(status => statusButton(status))
+    debugger
+    console.log({pngKeys, statuses});
+    return pngKeys.filter(png => !statuses.includes(png)).map(status => statusButton(status))
   }
 
   return (
