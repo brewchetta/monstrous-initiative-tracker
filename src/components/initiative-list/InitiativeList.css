@@ -69,9 +69,17 @@ input[type=number] {
 }
 
 .status-button img {
+  border-bottom: solid 1px #fff0;
+  border-radius: 3px;
+  cursor: pointer;
   height: 1.3em;
   filter: invert(1);
+  transition: border-color 0.3s;
   width: 1.3em;
+}
+
+.status-button img:hover {
+  border-color: #fffa;
 }
 
 /* Status Selection Modal */
