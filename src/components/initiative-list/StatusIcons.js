@@ -11,6 +11,8 @@ export default function StatusIcons({}) {
 
   const removeStatus = status => setStatuses(statuses.filter(s => s !== status))
 
+  const addStatus = status => setStatuses([...statuses, status])
+
   const renderStatuses = () => {
     const statusElements = statuses.map(status => (
       <button className="status-icon status-button" key={status} name={status}
@@ -45,7 +47,12 @@ export default function StatusIcons({}) {
 
       {renderStatuses()}
 
-      {selectionOpen && <StatusSelection isOpen={selectionOpen} setOpen={setSelectionOpen} statuses={statuses} />}
+      {selectionOpen ? (
+        <StatusSelection isOpen={selectionOpen}
+        setOpen={setSelectionOpen}
+        statuses={statuses}
+        addStatus={addStatus}/>)
+      : null }
 
     </div>
   )
