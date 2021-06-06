@@ -6,6 +6,8 @@ const pngs = require.context('../../assets/status-icons', true, /\.png/)
 // Status effect statuses for a character
 export default function StatusIcons({}) {
 
+  console.log(pngs('./lightning-storm.png'));
+
   const [statuses, setStatuses] = useState([])
   const [selectionOpen, setSelectionOpen] = useState(false)
 
@@ -17,7 +19,7 @@ export default function StatusIcons({}) {
     const statusElements = statuses.map(status => (
       <button className="status-icon status-button" key={status} name={status}
       onClick={() => removeStatus(status)}>
-        <img src={pngs(status) ? pngs(status) : '?'} alt='' />
+        <img src={pngs(status) ? pngs(status).default : '?'} alt={status} />
       </button>
     ))
 

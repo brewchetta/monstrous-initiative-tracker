@@ -15,8 +15,7 @@ export default function StatusSelection({addStatus, isOpen, setOpen}) {
           addStatus(status);
         }}
       >
-        <p>Button</p>
-        <img src={pngs(status) ? pngs(status) : '?'} alt='' />
+        <img src={pngs(status) ? pngs(status).default : '?'} alt={status} />
       </button>
     );
   };
