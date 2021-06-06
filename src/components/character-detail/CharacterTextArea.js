@@ -1,5 +1,3 @@
-import { useState, useRef, useEffect } from "react"
-
 export default function CharacterTextArea({name, value, handleChange, width, height}) {
 
   const handleKeyPress = (e) => e.key === "Enter" && e.target.blur()

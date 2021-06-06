@@ -1,5 +1,3 @@
-import { useState, useRef, useEffect } from "react"
-
 export default function CharacterNumberField({name, value, handleChange}) {
 
   return (

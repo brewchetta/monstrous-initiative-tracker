@@ -1,5 +1,3 @@
-import { useState, useRef, useEffect } from "react"
-
 export default function CharacterTextInput({name, value, handleChange, width}) {
 
   return <span style={{width}} className="character-detail-field text-input">
