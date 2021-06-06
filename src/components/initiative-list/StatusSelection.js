@@ -27,7 +27,7 @@ export default function StatusSelection({addStatus, isOpen, setOpen}) {
 
   return (
     <>
-      <div id="status-selection-modal-mask"/>
+      <div id="status-selection-modal-mask" onClick={() => setOpen(false)}/>
 
       <div id="status-selection" style={{height: isOpen ? null : "0px"}}>
 
