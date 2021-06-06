@@ -2,7 +2,7 @@ const pngs = require.context('../../assets/status-icons', true, /\.png/)
 const pngKeys = pngs.keys()
 
 // Selection modal for different status icons
-export default function StatusSelection({statuses, addStatus, isOpen, setOpen}) {
+export default function StatusSelection({addStatus, isOpen, setOpen}) {
 
   // Renders an attribute button
   const statusButton = status => {
@@ -26,13 +26,15 @@ export default function StatusSelection({statuses, addStatus, isOpen, setOpen}) 
   }
 
   return (
-    <div id="status-selection" style={{height: isOpen ? null : "0px"}}>
+    <>
+      <div id="status-selection-modal-mask"/>
 
-      <p>{isOpen ? "I'm open" : "Nah closed"}</p>
+      <div id="status-selection" style={{height: isOpen ? null : "0px"}}>
 
-      {renderStatusButtons()}
+        {renderStatusButtons()}
 
-    </div>
+      </div>
+    </>
   )
 
 }

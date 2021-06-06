@@ -45,7 +45,7 @@ export default function StatusIcons({}) {
 
       {renderStatuses()}
 
-      <StatusSelection isOpen={selectionOpen} setOpen={setSelectionOpen} statuses={statuses} />
+      {selectionOpen && <StatusSelection isOpen={selectionOpen} setOpen={setSelectionOpen} statuses={statuses} />}
 
     </div>
   )
