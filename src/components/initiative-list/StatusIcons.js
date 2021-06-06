@@ -5,9 +5,7 @@ import plus from '../../assets/plus.png'
 const pngs = require.context('../../assets/status-icons', true, /\.png/)
 
 // Status effect statuses for a character
-export default function StatusIcons({}) {
-
-  console.log(pngs('./lightning-storm.png'));
+export default function StatusIcons({hitpointPercentage}) {
 
   const [statuses, setStatuses] = useState([])
   const [selectionOpen, setSelectionOpen] = useState(false)
@@ -36,8 +34,13 @@ export default function StatusIcons({}) {
     return statusElements
   }
 
+  const renderBackgroundColor = () => {
+    return hitpointPercentage > 0.5 ? "#64994C"
+    : hitpointPercentage > 0 ? "#E4AC4C" : "#E4594C"
+  }
+
   return (
-    <div id="status-list">
+    <div id="status-list" style={{backgroundColor: renderBackgroundColor()}}>
 
       {renderStatuses()}
 

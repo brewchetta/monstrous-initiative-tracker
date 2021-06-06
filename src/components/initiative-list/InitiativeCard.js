@@ -30,6 +30,8 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     setCurrentTempHP(character.tempHP)
   }, [character]);
 
+  const hitpointPercentage = () => currentHitPoints / character.hit_points
+
   // EVENT HANDLERS //
 
   const handleRollInitiative = () => {
@@ -136,8 +138,8 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   const renderName = () => `${character.name || "Unknown"}${character.char_class ? ` the ${character.char_class}` : ""}`
 
   const renderClass = () => (
-    currentHitPoints > character.hit_points / 2 ? "initiative-card"
-    : currentHitPoints > 0 ? "initiative-card bloodied-character"
+    hitpointPercentage() > 0.5 ? "initiative-card"
+    : hitpointPercentage() > 0 ? "initiative-card bloodied-character"
     : "initiative-card dead-character"
   )
 
@@ -145,7 +147,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     <div className={renderClass()}
     style={{top: `${index * 50}px`}}>
       <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()}{renderTemporaryHitpoints()}♡ | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
-      <StatusIcons />
+      <StatusIcons hitpointPercentage={hitpointPercentage()} />
     </div>
   )
 

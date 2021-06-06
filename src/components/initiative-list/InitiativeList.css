@@ -10,7 +10,7 @@
   background-color: #cab49b77;
   border-bottom: solid 5px;
   /* border-right: solid 3px; */
-  border-bottom-color: green;
+  border-bottom-color: #64994C;
   border-radius: 0 0 5px 0;
   /* border-right-color: blue; */
   color: black;
@@ -32,18 +32,15 @@
 }
 
 .initiative-card.bloodied-character {
-  border-bottom-color: orange;
-  /* border-right-color: orange; */
+  border-bottom-color: #E4AC4C;
 }
 
 .initiative-card.dead-character {
-  /* background-color: #70421477; */
   background-color: #cab49b77;
   background-image: url("https://assets.stickpng.com/images/580b585b2edbce24c47b294f.png");
   background-position: center;
   background-size: cover;
-  border-bottom-color: red;
-  /* border-right-color: red; */
+  border-bottom-color: #E4594C;
 }
 
 input[type=number] {
@@ -53,7 +50,17 @@ input[type=number] {
   border-bottom: solid white 1px;
 }
 
-/* Status Buttons */
+/* Status Bar */
+
+#status-list {
+  border-radius: 0 5px 40px 0;
+  left: 0;
+  bottom: -1.5em;
+  position: absolute;
+  transition: background-color 1s;
+  z-index: 1;
+}
+
 .status-button {
   background: none;
   border: none;
@@ -62,10 +69,12 @@ input[type=number] {
 }
 
 .status-button img {
-  height: 1.5em;
+  height: 1.3em;
   filter: invert(1);
-  width: 1.5em;
+  width: 1.3em;
 }
+
+/* Status Selection Modal */
 
 #status-selection {
   background-color: #cab49bcc;
