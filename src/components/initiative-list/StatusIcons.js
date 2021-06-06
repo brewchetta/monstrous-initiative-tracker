@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import StatusSelection from './StatusSelection'
+import plus from '../../assets/plus.png'
 
 const pngs = require.context('../../assets/status-icons', true, /\.png/)
 
@@ -27,16 +28,7 @@ export default function StatusIcons({}) {
       statusElements.push(
         <button className="status-button" key={-1} name={"add-status"}
         onClick={() => setSelectionOpen(true)}>
-          <img src={'http://pluspng.com/img-png/free-png-plus-sign-plus-icon-512.png'} alt='stuff' />
-        </button>
-      )
-    }
-
-    if (!statuses.length) {
-      statusElements.unshift(
-        <button className="status-button" style={{fontSize: "1.1em"}}
-        key={0} onClick={() => setSelectionOpen(true)}>
-          <span>Status</span>
+          <img src={plus} alt='stuff' />
         </button>
       )
     }

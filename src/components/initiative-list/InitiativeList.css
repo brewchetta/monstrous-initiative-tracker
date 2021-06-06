@@ -62,7 +62,9 @@ input[type=number] {
 }
 
 .status-button img {
-  height: 1em;
+  height: 1.5em;
+  filter: invert(1);
+  width: 1.5em;
 }
 
 #status-selection {
