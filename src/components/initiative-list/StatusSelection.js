@@ -21,8 +21,6 @@ export default function StatusSelection({addStatus, isOpen, setOpen, statuses}) 
   };
 
   const renderStatusButtons = () => {
-    debugger
-    console.log({pngKeys, statuses});
     return pngKeys.filter(png => !statuses.includes(png)).map(status => statusButton(status))
   }
 
