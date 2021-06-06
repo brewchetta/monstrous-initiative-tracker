@@ -145,7 +145,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   return (
     <div className={renderClass()}
-    style={{top: `${index * 50}px`}}>
+    style={{top: `${index * 55}px`}}>
       <span onClick={handleOpenDetail}>{renderName()}</span> | {character.armor_class} 🛡️ | {renderInitiative()} | {renderHitPoints()}{renderTemporaryHitpoints()}♡ | <span onClick={handleOpenDetail}>📖 More</span> | <span onClick={handleRemove}>Delete</span>
       <StatusIcons hitpointPercentage={hitpointPercentage()} />
     </div>
