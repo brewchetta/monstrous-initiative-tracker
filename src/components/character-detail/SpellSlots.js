@@ -1,6 +1,6 @@
 export default function SpellSlots({spellSlots, addSlots, removeSlot, setSpellSlots}) {
   // recieves a slots prop (array) as well as an add and a remove slots prop
-  // additional prop to set the spell slots
+  // additional prop to set the spell slots and a prop for the level
   // example slots prop: [true, true, false, false] for two used slots
   // slots are per level
 

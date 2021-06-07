@@ -41,6 +41,11 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
     setFormInputs({...formInputs, ...{[event.target.name]: value}})
   }
 
+  const handleSetSpellSlots = (slots, level) => {
+    const newSlots = {...formInputs.spellSlots, [level]: slots.slice(0,6)}
+    setFormInputs(Object.assign(formInputs, newSlots))
+  }
+
   const handleNewSpell = newSpell => {
     setFormInputs(Object.assign(formInputs, { spells: [...formInputs.spells, newSpell] }))
     handleSubmit()
@@ -104,6 +109,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
           handleNewSpell={handleNewSpell}
           handleRemoveSpell={handleRemoveSpell}
           handleChange={handleChange}
+          handleSetSpellSlots={handleSetSpellSlots}
           spellNames={spellNames} />)
       case "legendary_actions":
         return (<ActionsList key="legendary actions mode"

@@ -2,9 +2,13 @@ import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 import CharacterNumberField from './CharacterNumberField'
 
-function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, handleChange, spellNames}) {
+function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, handleChange, spellNames, handleSetSpellSlots}) {
 
   // RENDER //
+
+  const buildSetSpellSlots = level => {
+    return (slots) => handleSetSpellSlots(slots, level)
+  }
 
   const renderSpellsByLevel = () => {
     const levelsArray = []
