@@ -1,9 +1,15 @@
 export default function SpellSlots({spellSlots, addSlots, removeSlot}) {
   // recieves a slots prop (array) as well as an add and a remove slots prop
+  // example slots prop: [true, true, false, false] for two used slots
+  // slots are per level
 
   return (
 
-    // conditionally render plus and minus buttons (up to six slots)
+    // conditionally render minus button (must already include spell slots)
+
+    // render spell slots with checkbox for each slot
+
+    // conditionally render plus button (up to six slots)
 
   )
 
