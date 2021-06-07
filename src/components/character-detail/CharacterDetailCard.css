@@ -158,6 +158,23 @@
   text-align: left;
 }
 
+.slot-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  opacity: 0.4;
+}
+
+.active.slot-button {
+  opacity: 1;
+}
+
+#character-detail-form input.slot-checkbox {
+  border: none;
+  background: red;
+}
+
 #character-detail-form #save-local-character-button {
   border: solid black 2px;
 }

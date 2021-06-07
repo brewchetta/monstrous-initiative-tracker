@@ -16,18 +16,20 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const renderSlots = () => {
     return spellSlots.map((spell, i) => (
-      <input type="checkbox" checked={spell} onChange={() => handleClickSpellSlot(spell, i)}/>
+      <input type="checkbox" className="slot-checkbox" checked={spell} onChange={() => handleClickSpellSlot(spell, i)}/>
     ))
   }
 
   return (
-    <div id="">
+    <div>
+
+      <span>Slots </span>
 
       <button class={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
 
-      {renderSlots()}
-
       <button class={spellSlots.length < 6 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
+
+      {renderSlots()}
 
     </div>
 
