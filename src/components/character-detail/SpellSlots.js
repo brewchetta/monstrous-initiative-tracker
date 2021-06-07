@@ -1,3 +1,5 @@
+import availabilityIcon from '../../assets/status-icons/book-cover.png'
+
 export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const handleClickSpellSlot = (spell, i) => {
@@ -16,7 +18,10 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const renderSlots = () => {
     return spellSlots.map((spell, i) => (
-      <input type="checkbox" className="slot-checkbox" checked={spell} onChange={() => handleClickSpellSlot(spell, i)}/>
+      <span className="slot-checkbox"
+      onClick={() => handleClickSpellSlot(spell, i)}>
+        {spell ? <img src={availabilityIcon} alt="O" /> : "•"}
+      </span>
     ))
   }
 
@@ -32,9 +37,6 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
       {renderSlots()}
 
     </div>
-
-
-
   )
 
 }

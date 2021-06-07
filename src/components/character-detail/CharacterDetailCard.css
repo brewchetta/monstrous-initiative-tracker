@@ -170,9 +170,13 @@
   opacity: 1;
 }
 
-#character-detail-form input.slot-checkbox {
-  border: none;
-  background: red;
+.slot-checkbox {
+  font-size: 1em;
+}
+
+.slot-checkbox img {
+  filter: invert(1);
+  height: 1em;
 }
 
 #character-detail-form #save-local-character-button {
