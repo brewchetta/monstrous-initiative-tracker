@@ -35,6 +35,7 @@ export default class Character {
     this.spell_dc = this.spell_dc || 0
     this.spell_modifier = this.spell_modifier || 0
     this.remapSpells()
+    this.remapSpellSlots()
     // add remap special abilities & abilities & legendary abilities
 
     this.subtype = this.subtype ? this.subtype : ""
@@ -112,6 +113,19 @@ export default class Character {
         }
       })
     }
+  }
+
+  remapSpellSlots = () => {
+    this.spell_slots = this.spell_slots || {}
+    Object.keys(this.spell_slots).forEach(level => {
+      if (typeof this.spell_slots[level] === 'number') {
+        const newSlots = []
+        for (let i = 0; i < this.spell_slots[level]; i++) {
+          newSlots.push(false)
+        }
+        this.spell_slots[level] = newSlots
+      }
+    })
   }
 
   // ATTRIBUTE MODIFIERS //
