@@ -42,8 +42,8 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   }
 
   const handleSetSpellSlots = (slots, level) => {
-    const newSlots = {...formInputs.spellSlots, [level]: slots.slice(0,6)}
-    setFormInputs(Object.assign(formInputs, newSlots))
+    const spell_slots = {...formInputs.spell_slots, [level]: slots.slice(0,6)}
+    setFormInputs({...formInputs, spell_slots})
   }
 
   const handleNewSpell = newSpell => {
