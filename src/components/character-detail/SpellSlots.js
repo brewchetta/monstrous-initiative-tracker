@@ -1,13 +1,17 @@
-export default function SpellSlots({spellSlots, addSlots, removeSlot, setSpellSlots}) {
-  // recieves a slots prop (array) as well as an add and a remove slots prop
-  // additional prop to set the spell slots and a prop for the level
-  // example slots prop: [true, true, false, false] for two used slots
-  // slots are per level
+export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const handleClickSpellSlot = (spell, i) => {
     const slots = [...spellSlots]
     slots[i] = !spell
     setSpellSlots(slots)
+  }
+
+  const handleAddSlot = () => {
+    spellSlots.length < 7 && setSpellSlots([...spellSlots, false])
+  }
+
+  const handleRemoveSlot = () => {
+    spellSlots.length > 0 && setSpellSlots(spellSlots.slice(0, spellSlots.length - 1))
   }
 
   const renderSlots = () => {
@@ -19,22 +23,16 @@ export default function SpellSlots({spellSlots, addSlots, removeSlot, setSpellSl
   return (
     <div id="">
 
-      // conditionally render minus button (must already include spell slots)
       <button class={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
 
-      // render spell slots with checkbox for each slot
       {renderSlots()}
 
-      // conditionally render plus button (up to six slots)
-      <button class={spellSlots.length < 6 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
+      <button class={spellSlots.length < 6 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
 
     </div>
 
 
 
   )
-
-  // has a minus on one end which removes the slots and a plus on the other that increases
-  // slots are checkboxes which persist for that character
 
 }

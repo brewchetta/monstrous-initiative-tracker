@@ -1,6 +1,7 @@
 import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 import CharacterNumberField from './CharacterNumberField'
+import SpellSlots from './SpellSlots'
 
 function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, handleChange, spellNames, handleSetSpellSlots}) {
 
@@ -20,7 +21,7 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
 
       levelSpells.length && levelsArray.push(
         <div className="spell-level-container" key={`level${i}spells`}>
-          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots && spell_slots[i] ? ` | Slots ${spell_slots[i]}` : null}</p>
+          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots[i] ? <SpellSlots spellSlots={spell_slots[i]} setSpellSlots={buildSetSpellSlots(i)} /> : null}</p>
           {levelSpells}
         </div>
       )
