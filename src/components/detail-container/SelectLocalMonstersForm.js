@@ -12,7 +12,9 @@ export default function SelectLocalMonstersForm() {
 
   const [getMonsters, setMonsters, clearMonsters] = useLocalStorage('monstrous-characters')
 
-  useEffect(() => { setLocals(getMonsters() || []) }, [getMonsters])
+  useEffect(() => {
+    !locals.length && setLocals(getMonsters() || [])
+  }, [getMonsters, locals])
 
   const addCharacter = character => {
     dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
