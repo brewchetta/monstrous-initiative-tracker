@@ -10,10 +10,13 @@ export default function OptionsMenu(props) {
   const [open, setOpen] = useState(false)
 
   const handleChangeHitpoints = () => {
-
+    options.randomHitpoints ? dispatchOptions({type: "TO_SET_HP"})
+    : dispatchOptions({type: "TO_RANDOM_HP"})
   }
 
   const handleChangeInitiative = () => {
+    options.preRolledInitiative ? dispatchOptions({type: "TO_ROLLED_INITIATIVE"})
+    : dispatchOptions({type: "TO_UNROLLED_INITIATIVE"})
 
   }
 
