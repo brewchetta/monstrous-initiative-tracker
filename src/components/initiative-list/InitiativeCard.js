@@ -22,6 +22,8 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   const focusedInput = useRef(null)
 
+  // EFFECTS //
+
   useEffect(() => {
     if (hitPointsOpen || initiativeOpen || tempHitPointsOpen) {
       focusedInput.current.focus();
@@ -31,6 +33,12 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   useEffect(() => {
     setCurrentTempHP(character.tempHP)
   }, [character]);
+
+  useEffect(() => {
+    options.preRolledInitiative && character.initiative <= -5 && handleRollInitiative()
+  }, [options.preRolledInitiative])
+
+  // CALCS //
 
   const hitPointMax = () => options.randomHitpoints ? character.hit_points : character.static_hitpoints
 
