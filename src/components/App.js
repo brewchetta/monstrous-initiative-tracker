@@ -5,6 +5,7 @@ import InitiativeList from './initiative-list'
 import DetailContainer from './detail-container'
 import HeaderMenu from "./header-menu"
 import Tooltip from "./tooltip"
+import OptionsMenu from "./options"
 // CONTEXT //
 import ContextProvider from "../context/main-context"
 // IMGS //
@@ -28,6 +29,7 @@ function App() {
         <DetailContainer />
         <InitiativeList />
         <Tooltip />
+        <OptionsMenu />
 
       </ContextProvider>
     </div>

@@ -1,0 +1,25 @@
+#options-button {
+  bottom: 0;
+  filter: invert(1);
+  height: 2em;
+  padding-right: 0.5em;
+  position: fixed;
+  right: -0.5em;
+}
+
+#options-modal {
+  background: white;
+  position: fixed;
+  right: 0;
+  top: 2em;
+  z-index: 1;
+}
+
+#options-modal-mask {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #0005;
+  top: 0;
+  left: 0;
+}

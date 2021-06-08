@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
-import OptionsSettingsContext from "../../context/options-settings-context"
-import gears from "../../assets/status-icons/gears"
+import {OptionsSettingsContext} from "../../context/options-settings-context"
+import gears from "../../assets/status-icons/gears.png"
 import "./style.css"
 
 export default function OptionsMenu(props) {
@@ -22,6 +22,8 @@ export default function OptionsMenu(props) {
 
   const optionsModal = (
     <>
+      <div id="options-modal-mask" onClick={() => setOpen(false)} />
+
       <div id="options-modal">
 
         <span>Random Hitpoints</span>
@@ -39,15 +41,13 @@ export default function OptionsMenu(props) {
         />
 
       </div>
-
-      <div id="options-modal-mask" onClick={() => setOpen(false)} />
     </>
   )
 
   return (
     <>
 
-      <img id="options-button" src={gears} alt="Options" onClick={() => setOpen(true)} />
+      <img id="options-button" src={gears} alt="Options" onClick={() => setOpen(!open)} />
 
       {open ? optionsModal : null}
 
