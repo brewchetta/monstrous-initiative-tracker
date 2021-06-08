@@ -62,7 +62,7 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
     <form id="search-form" onSubmit={handleSubmit}>
 
       <div id="search-inputs">
-      
+
         <label>Find a {mode}</label>
         <input type="text"
         list="monster-names"

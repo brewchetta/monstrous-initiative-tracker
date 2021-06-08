@@ -1,9 +1,15 @@
+import { useContext } from 'react'
+import { OptionsSettingsContext } from "../../context/options-settings-context"
 import CharacterNumberField from "./CharacterNumberField"
 import CharacterTextInput from "./CharacterTextInput"
 import CharacterTextArea from "./CharacterTextArea"
 import CharacterSelectField from "./CharacterSelectField"
 
 export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
+
+  // CONTEXT //
+
+  const options = useContext(OptionsSettingsContext)[0]
 
   // HELPERS //
 
@@ -22,9 +28,14 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       <div className="detail-sub-container">
 
-        Max HP: <CharacterNumberField name="hit_points"
+        Max HP: { options.randomHitPoints
+        ? (<CharacterNumberField name="hit_points"
           value={formInputs.hit_points}
-          handleChange={handleChange} />
+          handleChange={handleChange} />)
+        : (<CharacterNumberField name="static_hitpoints"
+          value={formInputs.static_hitpoints}
+          handleChange={handleChange} />)
+        }
         Temporary HP: <CharacterNumberField name="tempHP"
           value={formInputs.tempHP}
           handleChange={handleChange} />
