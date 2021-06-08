@@ -63,4 +63,5 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Initial release
 
 ## Known Issues
-- Text areas will not shrink when text is deleted from them
+- Some text is too large for certain text fields
+- Will occasionally render deleted actions
