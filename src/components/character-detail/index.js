@@ -42,7 +42,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   }
 
   const handleSetSpellSlots = (slots, level) => {
-    const spell_slots = {...formInputs.spell_slots, [level]: slots.slice(0,6)}
+    const spell_slots = {...formInputs.spell_slots, [level]: slots.slice(0,10)}
     setFormInputs({...formInputs, spell_slots})
   }
 

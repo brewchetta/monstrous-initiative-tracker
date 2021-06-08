@@ -171,11 +171,12 @@
 }
 
 .slot-checkbox {
-  text-align: center;
+  cursor: pointer;
+  display: inline-block;
   font-size: 1.2em;
   height: 20px;
+  text-align: center;
   width: 20px;
-  display: inline-block;
 }
 
 .slot-checkbox img {

@@ -10,11 +10,11 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
   }
 
   const handleAddSlot = () => {
-    spellSlots.length < 7 && setSpellSlots([...spellSlots, false])
+    spellSlots.length < 10 && setSpellSlots([...spellSlots, false])
   }
 
   const handleRemoveSlot = () => {
-    spellSlots.length > 0 && setSpellSlots(spellSlots.slice(0, spellSlots.length - 1))
+    spellSlots.length > 1 && setSpellSlots(spellSlots.slice(0, spellSlots.length - 1))
   }
 
   const renderSlots = () => {
@@ -27,17 +27,21 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
   }
 
   return (
-    <div>
+    <>
 
-
-      <button class={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
-
-      <span>Slots </span>
-      <button class={spellSlots.length < 6 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
+      <span>  </span>
 
       {renderSlots()}
 
-    </div>
+      <br/>
+
+      <span>Slots </span>
+
+      <button class={spellSlots.length > 1 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
+
+      <button class={spellSlots.length < 10 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
+
+    </>
   )
 
 }
