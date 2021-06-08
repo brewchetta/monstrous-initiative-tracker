@@ -1,14 +1,30 @@
+@keyframes fade-out {
+  0% {opacity: 1;}
+  50% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
 #options-button {
   bottom: 0;
+  position: fixed;
+  right: 0.5em;
+}
+
+#options-button-icon {
   filter: invert(1);
   height: 2em;
-  padding-right: 0.5em;
-  position: fixed;
-  right: -0.5em;
+}
+
+#options-label {
+  animation: fade-out 5s forwards;
 }
 
 #options-modal {
   background: white;
+  border-radius: 1em 0 0 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1em;
   position: fixed;
   right: 0;
   top: 2em;

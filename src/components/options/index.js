@@ -47,7 +47,14 @@ export default function OptionsMenu(props) {
   return (
     <>
 
-      <img id="options-button" src={gears} alt="Options" onClick={() => setOpen(!open)} />
+      <div id="options-button">
+
+        <span id="options-label">Options</span>
+
+        <img id="options-button-icon" src={gears} alt="Options" onClick={() => setOpen(!open)} />
+
+      </div>
+
 
       {open ? optionsModal : null}
 
