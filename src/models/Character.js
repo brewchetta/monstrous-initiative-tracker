@@ -7,7 +7,6 @@ export default class Character {
   static createTemplate = () => new Character(template)
 
   constructor(data, player = false, char_class = "") {
-    console.log(data);
 
     Object.keys(data).forEach(key => {
       this[key] = data[key]
