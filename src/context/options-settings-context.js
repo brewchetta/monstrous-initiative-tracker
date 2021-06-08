@@ -19,7 +19,7 @@ const hitpointsReducer = (state, action) => {
 }
 
 const OptionsSettingsProvider = ({children}) => {
-  const [hitpointsSetting, dispatch] = useReducer(hitpointsReducer, {type: "random"})
+  const [hitpointsSetting, dispatch] = useReducer(hitpointsReducer, {preRolledInitiative: false, randomHitpoints: true})
 
   return (
     <OptionsSettingsContext.Provider value={[hitpointsSetting, dispatch]}>

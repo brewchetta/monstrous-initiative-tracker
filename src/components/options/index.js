@@ -15,8 +15,8 @@ export default function OptionsMenu(props) {
   }
 
   const handleChangeInitiative = () => {
-    options.preRolledInitiative ? dispatchOptions({type: "TO_ROLLED_INITIATIVE"})
-    : dispatchOptions({type: "TO_UNROLLED_INITIATIVE"})
+    options.preRolledInitiative ? dispatchOptions({type: "TO_UNROLLED_INITIATIVE"})
+    : dispatchOptions({type: "TO_ROLLED_INITIATIVE"})
 
   }
 
