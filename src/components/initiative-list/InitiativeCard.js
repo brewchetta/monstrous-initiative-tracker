@@ -1,6 +1,7 @@
 import { useContext, useState, useRef, useEffect } from 'react'
 import { DetailContext } from '../../context/detail-context'
 import { CharactersContext } from '../../context/characters-context'
+import { OptionsSettingsContext } from '../../context/options-settings-context'
 import StatusIcons from './StatusIcons'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
@@ -9,6 +10,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   const [detail, dispatchDetail] = useContext(DetailContext)
   const dispatchCharacters = useContext(CharactersContext)[1]
+  const options = useContext(OptionsSettingsContext)[0]
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
   const [tempHitPointsOpen, setTempHitPointsOpen] = useState(false)
   const [currentHitPoints, setCurrentHitPoints] = useState(character.hit_points)
@@ -30,7 +32,9 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     setCurrentTempHP(character.tempHP)
   }, [character]);
 
-  const hitpointPercentage = () => currentHitPoints / character.hit_points
+  const hitPointMax = () => options.randomHitpoints ? character.hit_points : character.static_hitpoints
+
+  const hitpointPercentage = () => currentHitPoints / hitPointMax()
 
   // EVENT HANDLERS //
 
@@ -82,14 +86,14 @@ export default function InitiativeCard({character, index, updateCharacter}) {
           placeholder={"hit points"}
           onKeyUp={e => e.keyCode === 13 ? handleCloseHitPoints() : null}
           min={0}
-          max={character.hit_points}
+          max={hitPointMax()}
           ref={focusedInput}
           />
-          /{character.hit_points}
+          /{hitPointMax()}
         </span>
       )
     } else {
-      return (<span onClick={() => setHitPointsOpen(true)}>{currentHitPoints}/{character.hit_points}</span>)
+      return (<span onClick={() => setHitPointsOpen(true)}>{currentHitPoints}/{hitPointMax()}</span>)
     }
   }
 
