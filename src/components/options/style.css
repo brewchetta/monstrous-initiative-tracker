@@ -11,6 +11,7 @@
 }
 
 #options-button-icon {
+  cursor: pointer;
   filter: invert(1);
   height: 2em;
 }
@@ -20,7 +21,7 @@
 }
 
 #options-modal {
-  background: white;
+  background: #cab49b;
   border-radius: 1em 0 0 1em;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
