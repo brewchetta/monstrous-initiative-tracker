@@ -27,10 +27,6 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
     return memoizedSubmit()
   }, [memoizedSubmit])
 
-  useEffect(() => {
-    console.log(character)
-  }, [character])
-
   // EVENT HANDLERS
 
   const handleChange = event => {

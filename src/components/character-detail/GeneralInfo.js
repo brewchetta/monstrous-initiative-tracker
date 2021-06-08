@@ -23,8 +23,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
   // RENDER //
 
-  console.log(options);
-
   return (
     <form onSubmit={handleSubmit}>
 
