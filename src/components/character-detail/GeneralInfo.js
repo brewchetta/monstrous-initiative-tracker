@@ -23,12 +23,14 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
   // RENDER //
 
+  console.log(options);
+
   return (
     <form onSubmit={handleSubmit}>
 
       <div className="detail-sub-container">
 
-        Max HP: { options.randomHitPoints
+        Max HP: { options.randomHitpoints
         ? (<CharacterNumberField name="hit_points"
           value={formInputs.hit_points}
           handleChange={handleChange} />)
