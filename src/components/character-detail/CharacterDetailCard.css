@@ -50,6 +50,12 @@
   text-align: left;
 }
 
+.detail-textarea-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+}
+
 #character-detail-form textarea {
   background: none;
   border: solid 1px;

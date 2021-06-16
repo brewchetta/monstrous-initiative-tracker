@@ -126,62 +126,65 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       </div>
 
-      <div className="detail-sub-container">
+      <div className="detail-sub-container detail-textarea-container">
 
-        <label>Condition Immunities: </label>
+        <span>Condition Immunities: </span>
         <CharacterTextArea name={"condition_immunities"}
         value={formInputs.condition_immunities}
         handleChange={handleChange}
-        width={"60%"} height={"1em"} />
+        width={"70%"} />
 
       </div>
 
-      <div className="detail-sub-container">
+      <div className="detail-sub-container detail-textarea-container">
 
-        <label>Damage Resistances: </label>
+        <span>Damage Resistances: </span>
         <CharacterTextArea name={"damage_resistances"}
         value={formInputs.damage_resistances}
         handleChange={handleChange}
-        width={"60%"} height={"1em"} />
+        width={"70%"} />
 
       </div>
 
-      <div className="detail-sub-container">
+      <div className="detail-sub-container detail-textarea-container">
 
-        <label>Damage Immunities: </label>
+        <span>Damage Immunities: </span>
         <CharacterTextArea name={"damage_immunities"}
         value={formInputs.damage_immunities}
         handleChange={handleChange}
-        width={"60%"} height={"1em"} />
+        width={"70%"} height={"1em"} />
 
       </div>
 
-      <div className="detail-sub-container">
+      <div className="detail-sub-container detail-textarea-container">
 
-        <label>Damage Vulnerabilities: </label>
-        <CharacterTextArea name={"damage_vulnerabilities"}
+        <span>Damage Vulnerabilities: </span>
+        <CharacterTextArea name="damage_vulnerabilities"
         value={formInputs.damage_vulnerabilities}
         handleChange={handleChange}
-        width={"60%"} height={"1em"} />
+        width="70%" />
 
       </div>
 
-      <div className="detail-sub-container">
+      <div className="detail-sub-container detail-textarea-container">
 
-        Languages: <CharacterTextInput name="languages"
+        <span>Languages: </span>
+        <CharacterTextArea name="languages"
           value={formInputs.languages}
           handleChange={handleChange}
-          width="60%" />
+          width="70%" />
 
       </div>
 
       <div className="detail-sub-container">
 
-        Challenge Rating: <CharacterTextInput name="challenge_rating"
+        <span>Challenge Rating: </span>
+        <CharacterTextInput name="challenge_rating"
           value={formInputs.challenge_rating}
           handleChange={handleChange}
           width="3em" />
-        XP: <CharacterTextInput name="xp"
+        <span>XP: </span>
+        <CharacterTextInput name="xp"
           value={formInputs.xp}
           handleChange={handleChange}
           width="6em" />
