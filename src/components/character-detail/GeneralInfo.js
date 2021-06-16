@@ -123,29 +123,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       </div>
 
-
-      <div className="detail-sub-container">
-
-        Challenge Rating: <CharacterTextInput name="challenge_rating"
-          value={formInputs.challenge_rating}
-          handleChange={handleChange}
-          width="3em" />
-        XP: <CharacterTextInput name="xp"
-          value={formInputs.xp}
-          handleChange={handleChange}
-          width="6em" />
-
-      </div>
-
-      <div className="detail-sub-container">
-
-        Languages: <CharacterTextInput name="languages"
-          value={formInputs.languages}
-          handleChange={handleChange}
-          width="60%" />
-
-      </div>
-
       <div className="detail-sub-container">
 
         <label>Condition Immunities: </label>
@@ -183,6 +160,28 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         value={formInputs.damage_vulnerabilities}
         handleChange={handleChange}
         width={"60%"} height={"1em"} />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        Languages: <CharacterTextInput name="languages"
+          value={formInputs.languages}
+          handleChange={handleChange}
+          width="60%" />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        Challenge Rating: <CharacterTextInput name="challenge_rating"
+          value={formInputs.challenge_rating}
+          handleChange={handleChange}
+          width="3em" />
+        XP: <CharacterTextInput name="xp"
+          value={formInputs.xp}
+          handleChange={handleChange}
+          width="6em" />
 
       </div>
 
