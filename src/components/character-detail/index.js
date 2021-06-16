@@ -2,8 +2,8 @@
 import { useState, useEffect, useCallback } from "react"
 import useLocalStorageList from '../../services/localstorage'
 // COMPONENTS //
-import ActionsList from './ActionsList'
-import SpellsList from './SpellsList'
+import ActionsList from './ActionsList/'
+import SpellsList from './SpellsList/'
 import GeneralInfo from './GeneralInfo'
 import CharacterSelectField from './CharacterSelectField'
 import DetailImage from './DetailImage'

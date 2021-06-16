@@ -1,5 +1,5 @@
-import availabilityIcon from '../../assets/status-icons/fluffy-cloud.png'
-import unavailabilityIcon from '../../assets/status-icons/fireflake.png'
+import availabilityIcon from '../../../assets/status-icons/fluffy-cloud.png'
+import unavailabilityIcon from '../../../assets/status-icons/fireflake.png'
 
 export default function SpellSlots({spellSlots, setSpellSlots}) {
 
