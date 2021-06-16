@@ -55,7 +55,7 @@ input[type=number] {
 #status-list {
   border-radius: 0 5px 40px 0;
   left: 0;
-  bottom: -1.5em;
+  bottom: -1.6em;
   position: absolute;
   transition: background-color 1s;
   z-index: 1;
