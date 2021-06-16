@@ -1,6 +1,6 @@
 import { useState, useContext, useEffect } from "react"
 import useLocalStorage from "services/localstorage"
-import { CharactersContext } from "context/characters-context"
+import { useCharactersContext } from "context/characters-context"
 import Character from 'models/Character.js'
 import SelectLocalMonstersCard from './SelectLocalMonstersCard'
 
@@ -8,7 +8,7 @@ export default function SelectLocalMonstersForm() {
 
   // STATE //
   const [locals, setLocals] = useState([])
-  const dispatch = useContext(CharactersContext)[1]
+  const characters = useCharactersContext().add
 
   const [getMonsters, setMonsters, clearMonsters] = useLocalStorage('monstrous-characters')
 
@@ -17,7 +17,7 @@ export default function SelectLocalMonstersForm() {
   }, [getMonsters, locals])
 
   const addCharacter = character => {
-    dispatch({type: "ADD_CHARACTER", payload: new Character(character)})
+    characters.add(new Character(character))
   }
 
   const clearLocals = () => {

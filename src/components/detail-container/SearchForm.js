@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import Character from 'models/Character.js'
-import { CharactersContext } from "context/characters-context"
+import { useCharactersContext } from "context/characters-context"
 import { getMonster, getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from '../tooltip/SpellDetailsView'
 
@@ -10,16 +10,16 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
   const [mode, setMode] = useState("Monster")
   const [message, setMessage] = useState("")
   const [spellDetails, setSpellDetails] = useState({})
-  const dispatch = useContext(CharactersContext)[1]
+  const addCharacter = useCharactersContext().add
 
   const handleSubmitMonster = e => {
     e.preventDefault()
     const foundMonster = Object.values(additionalMonsters).find(m => m.name.toLowerCase() === input.toLowerCase())
-    foundMonster && dispatch({type: "ADD_CHARACTER", payload: new Character(foundMonster)})
+    foundMonster && addCharacter(new Character(foundMonster))
     foundMonster && setMessage(`Added ${foundMonster.name}`)
     !foundMonster && getMonster(input).then(data => {
       if (!data.error) {
-        dispatch({type: "ADD_CHARACTER", payload: new Character(data)})
+        addCharacter(new Character(data))
         setMessage(`Added ${data.name}!`)
       } else {
         setMessage("Couldn't find that in the monster manual")

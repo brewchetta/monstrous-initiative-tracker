@@ -1,6 +1,6 @@
 import { useContext, useState, useRef, useEffect } from 'react'
 import { DetailContext } from 'context/detail-context'
-import { CharactersContext } from 'context/characters-context'
+import { useCharactersContext } from 'context/characters-context'
 import { useOptionsSettings } from 'context/options-settings-context'
 import StatusIcons from './StatusIcons'
 
@@ -9,7 +9,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   // STATE //
 
   const [detail, dispatchDetail] = useContext(DetailContext)
-  const dispatchCharacters = useContext(CharactersContext)[1]
+  const removeCharacter = useCharactersContext().remove
   const {options} = useOptionsSettings()
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
   const [tempHitPointsOpen, setTempHitPointsOpen] = useState(false)
@@ -65,7 +65,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   }
 
   const handleRemove = () => {
-    dispatchCharacters({type: "REMOVE_CHARACTER", payload: character})
+    removeCharacter(character)
   }
 
   const handleCloseHitPoints = () => setHitPointsOpen(false)

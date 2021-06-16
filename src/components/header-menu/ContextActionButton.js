@@ -1,11 +1,9 @@
 import { useContext } from "react"
 
-export default function ContextActionButton({context, text, type}) {
-
-  const dispatch = useContext(context)[1]
+export default function ContextActionButton({text, action}) {
 
   return (
-    <button onClick={() => dispatch({type})}>
+    <button onClick={action}>
       {text}
     </button>
   )

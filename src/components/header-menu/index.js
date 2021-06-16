@@ -1,6 +1,5 @@
 // CONTEXT
-import { useContext } from 'react'
-import { CharactersContext } from 'context/characters-context'
+import { useCharactersContext } from 'context/characters-context'
 import { DetailContext } from 'context/detail-context'
 // COMPONENTS
 import ContextActionButton from "./ContextActionButton"
@@ -10,28 +9,30 @@ import "./HeaderMenu.css"
 
 export default function HeaderMenu() {
 
-  const [characters] = useContext(CharactersContext)
+  const characters = useCharactersContext()
 
-  const determineOpacity = () => characters.length ? ({opacity: 1}) : ({opacity: 0})
+  const determineOpacity = () => characters.all.length ? ({opacity: 1}) : ({opacity: 0})
 
   return (
     <div id="context-buttons">
 
       <div id="context-buttons-left" style={determineOpacity()}>
 
-        <ContextActionButton context={CharactersContext}
+      <p>I am here</p>
+
+        <ContextActionButton
         text={"Clear Characters"}
-        type={"CLEAR_CHARACTERS"} />
-        <ContextActionButton context={CharactersContext}
+        action={characters.clear} />
+        <ContextActionButton
         text={"Roll Unrolled Initiatives"}
-        type={"ROLL_UNROLLED_INITIATIVES"} />
-        <ContextActionButton context={CharactersContext}
+        action={characters.rollInitiatives} />
+        <ContextActionButton
         text={"Clear All Initiatives"}
-        type={"RESET_INITIATIVES"} />
+        action={characters.resetInitiatives} />
 
       </div>
 
-      <div id="context-buttons-right">
+      {/* <div id="context-buttons-right">
 
         <ContextActionButton context={DetailContext}
         text={"Search Monster Manual"}
@@ -41,7 +42,7 @@ export default function HeaderMenu() {
         text={"Saved Characters"}
         type={"LOCAL_CHARACTERS"} />
 
-      </div>
+      </div>} */}
 
 
     </div>

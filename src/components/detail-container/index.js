@@ -4,7 +4,7 @@ import { useContext, useState, useEffect } from "react"
 import "./DetailContainer.css"
 // CONEXT //
 import { DetailContext } from "context/detail-context"
-import { CharactersContext } from "context/characters-context"
+import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import CharacterDetailCard from "../character-detail"
 import SearchForm from "./SearchForm"
@@ -29,16 +29,14 @@ export default function DetailContainer(props) {
 
   // CONTEXT //
   const [detail, dispatchDetail] = useContext(DetailContext)
-  const dispatchCharacters = useContext(CharactersContext)[1]
+  const characters = useCharactersContext()
 
   // EVENT HANDLERS //
-
-  const updateCharacter = character => dispatchCharacters({type: "UPDATE_CHARACTER", payload: character})
 
   const clearDetail = () => dispatchDetail({type: "CLEAR_DETAIL"})
 
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={updateCharacter} spellNames={spellNames} />
+    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={characters.update} spellNames={spellNames} />
     : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} additionalMonsters={additionalMonsters} />
     : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
     : detail && detail.type === "locals" ? <SelectLocalMonstersForm />
