@@ -78,7 +78,10 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         Hit Dice: <CharacterTextInput name="hit_dice"
           value={formInputs.hit_dice}
           handleChange={handleChange}
-          width="4em" /> {formInputs.hit_dice.includes("d") && modifier("constitution") ? modifier("constitution", parseInt(formInputs.hit_dice.split("d")[0])) : null}
+          width="4em" />
+          <span style={{position: "relative", left: "-1em"}}>
+            {formInputs.hit_dice.match(/[0-9]d[0-9]/) && modifier("constitution") ? modifier("constitution", parseInt(formInputs.hit_dice.split("d")[0])) : null}
+          </span>
 
       </div>
 
