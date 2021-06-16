@@ -1,7 +1,7 @@
 import { useContext, useState, useRef, useEffect } from 'react'
 import { DetailContext } from 'context/detail-context'
 import { CharactersContext } from 'context/characters-context'
-import { OptionsSettingsContext } from 'context/options-settings-context'
+import { useOptionsSettings } from 'context/options-settings-context'
 import StatusIcons from './StatusIcons'
 
 export default function InitiativeCard({character, index, updateCharacter}) {
@@ -10,7 +10,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   const [detail, dispatchDetail] = useContext(DetailContext)
   const dispatchCharacters = useContext(CharactersContext)[1]
-  const options = useContext(OptionsSettingsContext)[0]
+  const {options} = useOptionsSettings()
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
   const [tempHitPointsOpen, setTempHitPointsOpen] = useState(false)
   const [currentHitPoints, setCurrentHitPoints] = useState(character.hit_points)

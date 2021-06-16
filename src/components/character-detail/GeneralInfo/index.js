@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { OptionsSettingsContext } from "context/options-settings-context"
+import { useOptionsSettings } from "context/options-settings-context"
 import CharacterNumberField from "../Inputs/CharacterNumberField"
 import CharacterTextInput from "../Inputs/CharacterTextInput"
 import CharacterTextArea from "../Inputs/CharacterTextArea"
@@ -9,7 +9,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
   // CONTEXT //
 
-  const options = useContext(OptionsSettingsContext)[0]
+  const {options} = useOptionsSettings()
 
   // HELPERS //
 

@@ -1,31 +1,15 @@
-import {createContext, useReducer} from "react"
+import {createContext, useContext, useState} from "react"
 
 const OptionsSettingsContext = createContext()
 
-const hitpointsReducer = (state, action) => {
-
-  switch (action.type) {
-    case "TO_RANDOM_HP":
-      return {...state, randomHitpoints: true}
-    case "TO_SET_HP":
-      return {...state, randomHitpoints: false}
-    case "TO_ROLLED_INITIATIVE":
-      return {...state, preRolledInitiative: true}
-    case "TO_UNROLLED_INITIATIVE":
-      return {...state, preRolledInitiative: false}
-    default:
-      throw new Error(`Incorrect use of hitpoint setting reducer: ${action.type}`)
-  }
-}
-
-const OptionsSettingsProvider = ({children}) => {
-  const [hitpointsSetting, dispatch] = useReducer(hitpointsReducer, {preRolledInitiative: false, randomHitpoints: true})
+export const OptionsSettingsProvider = ({children}) => {
+  const [options, setOptions] = useState({preRolledInitiative: false, randomHitpoints: true})
 
   return (
-    <OptionsSettingsContext.Provider value={[hitpointsSetting, dispatch]}>
+    <OptionsSettingsContext.Provider value={{options, setOptions}}>
       {children}
     </OptionsSettingsContext.Provider>
   )
 }
 
-export { OptionsSettingsProvider, OptionsSettingsContext }
+export const useOptionsSettings = () => useContext(OptionsSettingsContext)

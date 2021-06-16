@@ -1,23 +1,20 @@
 import { useState, useContext } from 'react'
-import {OptionsSettingsContext} from "context/options-settings-context"
+import { useOptionsSettings } from "context/options-settings-context"
 import gears from "assets/status-icons/gears.png"
 import "./style.css"
 
 export default function OptionsMenu(props) {
 
-  const [options, dispatchOptions] = useContext(OptionsSettingsContext)
+  const {options, setOptions} = useOptionsSettings()
 
   const [open, setOpen] = useState(false)
 
   const handleChangeHitpoints = () => {
-    options.randomHitpoints ? dispatchOptions({type: "TO_SET_HP"})
-    : dispatchOptions({type: "TO_RANDOM_HP"})
+    setOptions({...options, randomHitpoints: !options.randomHitpoints})
   }
 
   const handleChangeInitiative = () => {
-    options.preRolledInitiative ? dispatchOptions({type: "TO_UNROLLED_INITIATIVE"})
-    : dispatchOptions({type: "TO_ROLLED_INITIATIVE"})
-
+    setOptions({...options, preRolledInitiative: !options.preRolledInitiative})
   }
 
   const optionsModal = (
