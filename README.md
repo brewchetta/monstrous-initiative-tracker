@@ -70,3 +70,4 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Known Issues
 - Will occasionally render deleted actions
+- With static hit points the current hp is always random instead of set to the proper maximum
