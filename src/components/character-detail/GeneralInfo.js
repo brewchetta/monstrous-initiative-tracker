@@ -39,13 +39,17 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         Temporary HP: <CharacterNumberField name="tempHP"
           value={formInputs.tempHP}
           handleChange={handleChange} />
-        AC: <CharacterNumberField name="armor_class"
-          value={formInputs.armor_class}
-          handleChange={handleChange} />
         Hit Dice: <CharacterTextInput name="hit_dice"
           value={formInputs.hit_dice}
           handleChange={handleChange}
           width="4em" />
+        AC: <CharacterNumberField name="armor_class"
+        value={formInputs.armor_class}
+        handleChange={handleChange} />
+        Speed: <CharacterTextInput name="speed"
+          value={formInputs.speed}
+          handleChange={handleChange}
+          width="20em" />
 
       </div>
 
