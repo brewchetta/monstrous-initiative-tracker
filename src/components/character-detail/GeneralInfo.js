@@ -28,6 +28,42 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       <div className="detail-sub-container">
 
+        Name: <CharacterTextInput name="name"
+          value={formInputs.name}
+          handleChange={handleChange}
+          width="20em" />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        <CharacterSelectField name="size"
+          options={["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]}
+          handleChange={handleChange}
+          currentInput={formInputs.size} />
+
+        <CharacterSelectField name="type"
+          options={["aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead"]}
+          handleChange={handleChange}
+          currentInput={formInputs.type} />
+
+        <CharacterTextInput name="subtype"
+          value={formInputs.subtype}
+          handleChange={handleChange}
+          width="10em" />
+
+        <CharacterSelectField name="alignment"
+          options={["lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned"]}
+          handleChange={handleChange}
+          currentInput={formInputs.alignment} />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        AC: <CharacterNumberField name="armor_class"
+          value={formInputs.armor_class}
+          handleChange={handleChange} />
         Max HP: { options.randomHitpoints
         ? (<CharacterNumberField name="hit_points"
           value={formInputs.hit_points}
@@ -43,20 +79,13 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
           value={formInputs.hit_dice}
           handleChange={handleChange}
           width="4em" />
-        AC: <CharacterNumberField name="armor_class"
-        value={formInputs.armor_class}
-        handleChange={handleChange} />
-        Speed: <CharacterTextInput name="speed"
-          value={formInputs.speed}
-          handleChange={handleChange}
-          width="20em" />
 
       </div>
 
       <div className="detail-sub-container">
 
-        Name: <CharacterTextInput name="name"
-          value={formInputs.name}
+        Speed: <CharacterTextInput name="speed"
+          value={formInputs.speed}
           handleChange={handleChange}
           width="20em" />
 
@@ -97,11 +126,6 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       <div className="detail-sub-container">
 
-        <span>Alignment: <CharacterSelectField name="alignment"
-          options={["lawful evil", "lawful neutral", "lawful good", "neutral evil", "neutral", "neutral good", "chaotic evil", "chaotic neutral", "chaotic good", "unaligned"]}
-          handleChange={handleChange}
-          currentInput={formInputs.alignment} />
-        </span>
         Challenge Rating: <CharacterTextInput name="challenge_rating"
           value={formInputs.challenge_rating}
           handleChange={handleChange}
@@ -113,77 +137,56 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       </div>
 
-    <div className="detail-sub-container">
+      <div className="detail-sub-container">
 
-      <span>Type: <CharacterSelectField name="type"
-        options={["aberration", "beast", "celestial", "construct", "dragon", "elemental", "fey", "fiend", "giant", "humanoid", "monstrosity", "ooze", "plant", "undead"]}
+        Languages: <CharacterTextInput name="languages"
+          value={formInputs.languages}
+          handleChange={handleChange}
+          width="60%" />
+
+      </div>
+
+      <div className="detail-sub-container">
+
+        <label>Condition Immunities: </label>
+        <CharacterTextArea name={"condition_immunities"}
+        value={formInputs.condition_immunities}
         handleChange={handleChange}
-        currentInput={formInputs.type} />
-      </span>
+        width={"60%"} height={"1em"} />
 
-      Subtype: <CharacterTextInput name="subtype"
-        value={formInputs.subtype}
+      </div>
+
+      <div className="detail-sub-container">
+
+        <label>Damage Resistances: </label>
+        <CharacterTextArea name={"damage_resistances"}
+        value={formInputs.damage_resistances}
         handleChange={handleChange}
-        width="10em" />
+        width={"60%"} height={"1em"} />
 
-      <span>Size: <CharacterSelectField name="size"
-        options={["Tiny", "Small", "Medium", "Large", "Huge", "Gargantuan"]}
+      </div>
+
+      <div className="detail-sub-container">
+
+        <label>Damage Immunities: </label>
+        <CharacterTextArea name={"damage_immunities"}
+        value={formInputs.damage_immunities}
         handleChange={handleChange}
-        currentInput={formInputs.size} />
-      </span>
+        width={"60%"} height={"1em"} />
 
-    </div>
+      </div>
 
-    <div className="detail-sub-container">
+      <div className="detail-sub-container">
 
-      Languages: <CharacterTextInput name="languages"
-        value={formInputs.languages}
+        <label>Damage Vulnerabilities: </label>
+        <CharacterTextArea name={"damage_vulnerabilities"}
+        value={formInputs.damage_vulnerabilities}
         handleChange={handleChange}
-        width="60%" />
+        width={"60%"} height={"1em"} />
 
-    </div>
+      </div>
 
-    <div className="detail-sub-container">
-
-      <label>Condition Immunities: </label>
-      <CharacterTextArea name={"condition_immunities"}
-      value={formInputs.condition_immunities}
-      handleChange={handleChange}
-      width={"60%"} height={"1em"} />
-
-    </div>
-
-    <div className="detail-sub-container">
-
-      <label>Damage Resistances: </label>
-      <CharacterTextArea name={"damage_resistances"}
-      value={formInputs.damage_resistances}
-      handleChange={handleChange}
-      width={"60%"} height={"1em"} />
-
-    </div>
-
-    <div className="detail-sub-container">
-
-      <label>Damage Immunities: </label>
-      <CharacterTextArea name={"damage_immunities"}
-      value={formInputs.damage_immunities}
-      handleChange={handleChange}
-      width={"60%"} height={"1em"} />
-
-    </div>
-
-    <div className="detail-sub-container">
-
-      <label>Damage Vulnerabilities: </label>
-      <CharacterTextArea name={"damage_vulnerabilities"}
-      value={formInputs.damage_vulnerabilities}
-      handleChange={handleChange}
-      width={"60%"} height={"1em"} />
-
-    </div>
-
-  </form>
+    </form>
   )
 
 }
