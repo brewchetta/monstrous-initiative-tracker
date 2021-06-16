@@ -1,9 +1,9 @@
 import { useContext } from 'react'
-import { OptionsSettingsContext } from "../../context/options-settings-context"
-import CharacterNumberField from "./Inputs/CharacterNumberField"
-import CharacterTextInput from "./Inputs/CharacterTextInput"
-import CharacterTextArea from "./Inputs/CharacterTextArea"
-import CharacterSelectField from "./Inputs/CharacterSelectField"
+import { OptionsSettingsContext } from "context/options-settings-context"
+import CharacterNumberField from "../Inputs/CharacterNumberField"
+import CharacterTextInput from "../Inputs/CharacterTextInput"
+import CharacterTextArea from "../Inputs/CharacterTextArea"
+import CharacterSelectField from "../Inputs/CharacterSelectField"
 
 export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 

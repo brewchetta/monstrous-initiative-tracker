@@ -1,7 +1,7 @@
 import { useState, useContext } from "react"
-import Character from '../../models/Character.js'
-import { CharactersContext } from "../../context/characters-context"
-import { getMonster, getSpell } from "../../services/dnd-5e-api"
+import Character from 'models/Character.js'
+import { CharactersContext } from "context/characters-context"
+import { getMonster, getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from '../tooltip/SpellDetailsView'
 
 export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {

@@ -1,9 +1,9 @@
 import { useContext, useState, useEffect } from "react"
-import { getSpell } from "../../services/dnd-5e-api"
+import { getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from "./SpellDetailsView"
-import { TooltipContext } from "../../context/tooltip-context"
-import { SpellsContext } from "../../context/spells-context"
-import spellMoon from "../../images/thorn-image.png"
+import { TooltipContext } from "context/tooltip-context"
+import { SpellsContext } from "context/spells-context"
+import spellMoon from "images/thorn-image.png"
 import "./style.css"
 
 export default function Tooltip() {

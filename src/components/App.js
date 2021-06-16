@@ -7,10 +7,10 @@ import HeaderMenu from "./header-menu"
 import Tooltip from "./tooltip"
 import OptionsMenu from "./options"
 // CONTEXT //
-import ContextProvider from "../context/main-context"
+import ContextProvider from "context/main-context"
 // IMGS //
-import knotcorner from "../images/knot-flourish.png"
-import dragonfight from "../images/dragon-fight-woodcut.png"
+import knotcorner from "images/knot-flourish.png"
+import dragonfight from "images/dragon-fight-woodcut.png"
 
 function App() {
 

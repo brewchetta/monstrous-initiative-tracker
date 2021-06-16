@@ -1,15 +1,15 @@
 // REACT //
 import { useState, useEffect, useCallback } from "react"
-import useLocalStorageList from '../../services/localstorage'
+import useLocalStorageList from 'services/localstorage'
 // COMPONENTS //
 import ActionsList from './ActionsList/'
 import SpellsList from './SpellsList/'
-import GeneralInfo from './GeneralInfo'
+import GeneralInfo from './GeneralInfo/'
 import CharacterSelectField from './Inputs/CharacterSelectField'
 import DetailImage from './DetailImage'
 // STYLE //
 import "./CharacterDetailCard.css"
-import beyondIcon from "../../images/beyond-icon.png"
+import beyondIcon from "images/beyond-icon.png"
 
 export default function CharacterDetailCard({character, updateCharacter, spellNames}) {
 

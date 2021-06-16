@@ -1,4 +1,4 @@
-const pngs = require.context('../../assets/status-icons', true, /\.png/)
+const pngs = require.context('assets/status-icons', true, /\.png/)
 const pngKeys = pngs.keys()
 
 // Selection modal for different status icons

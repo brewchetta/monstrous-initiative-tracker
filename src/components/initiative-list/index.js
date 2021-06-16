@@ -1,6 +1,6 @@
 // CONTEXT
 import { useContext } from 'react'
-import { CharactersContext } from '../../context/characters-context'
+import { CharactersContext } from 'context/characters-context'
 // COMPONENTS //
 import InitiativeCard from './InitiativeCard'
 // STYLE //

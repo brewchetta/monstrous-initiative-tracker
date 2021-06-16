@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import StatusSelection from './StatusSelection'
-import plus from '../../assets/plus.png'
+import plus from 'assets/plus.png'
 
-const pngs = require.context('../../assets/status-icons', true, /\.png/)
+const pngs = require.context('assets/status-icons', true, /\.png/)
 
 // Status effect statuses for a character
 export default function StatusIcons({hitpointPercentage}) {

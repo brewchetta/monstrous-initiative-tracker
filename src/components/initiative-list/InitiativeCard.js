@@ -1,7 +1,7 @@
 import { useContext, useState, useRef, useEffect } from 'react'
-import { DetailContext } from '../../context/detail-context'
-import { CharactersContext } from '../../context/characters-context'
-import { OptionsSettingsContext } from '../../context/options-settings-context'
+import { DetailContext } from 'context/detail-context'
+import { CharactersContext } from 'context/characters-context'
+import { OptionsSettingsContext } from 'context/options-settings-context'
 import StatusIcons from './StatusIcons'
 
 export default function InitiativeCard({character, index, updateCharacter}) {

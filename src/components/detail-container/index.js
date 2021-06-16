@@ -3,16 +3,16 @@ import { useContext, useState, useEffect } from "react"
 // STYLE //
 import "./DetailContainer.css"
 // CONEXT //
-import { DetailContext } from "../../context/detail-context"
-import { CharactersContext } from "../../context/characters-context"
+import { DetailContext } from "context/detail-context"
+import { CharactersContext } from "context/characters-context"
 // COMPONENTS //
 import CharacterDetailCard from "../character-detail"
 import SearchForm from "./SearchForm"
 import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
 // SERVICES //
-import { getAllSpells, getAllMonsters } from "../../services/dnd-5e-api"
+import { getAllSpells, getAllMonsters } from "services/dnd-5e-api"
 // ADDITIONAL DATA //
-import * as additionalMonsters from '../../models/additional-monsters'
+import * as additionalMonsters from 'models/additional-monsters'
 
 export default function DetailContainer(props) {
 

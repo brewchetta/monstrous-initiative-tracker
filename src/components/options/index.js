@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react'
-import {OptionsSettingsContext} from "../../context/options-settings-context"
-import gears from "../../assets/status-icons/gears.png"
+import {OptionsSettingsContext} from "context/options-settings-context"
+import gears from "assets/status-icons/gears.png"
 import "./style.css"
 
 export default function OptionsMenu(props) {

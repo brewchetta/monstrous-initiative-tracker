@@ -1,7 +1,7 @@
 import { useContext } from "react"
-import { DetailContext } from "../../context/detail-context"
-import { CharactersContext } from "../../context/characters-context"
-import Character from '../../models/Character'
+import { DetailContext } from "context/detail-context"
+import { CharactersContext } from "context/characters-context"
+import Character from 'models/Character'
 
 export default function AddCharacterButton(props) {
 

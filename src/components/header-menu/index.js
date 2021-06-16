@@ -1,7 +1,7 @@
 // CONTEXT
 import { useContext } from 'react'
-import { CharactersContext } from '../../context/characters-context'
-import { DetailContext } from '../../context/detail-context'
+import { CharactersContext } from 'context/characters-context'
+import { DetailContext } from 'context/detail-context'
 // COMPONENTS
 import ContextActionButton from "./ContextActionButton"
 import AddCharacterButton from "./AddCharacterButton"
