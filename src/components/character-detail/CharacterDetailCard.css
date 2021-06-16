@@ -133,7 +133,7 @@
 #character-detail-image {
   position: absolute;
   opacity: 0.3;
-  left: 0.5em;
+  right: 0.5em;
   bottom: 0.5em;
   width: 100px;
 }
