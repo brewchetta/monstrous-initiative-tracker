@@ -13,8 +13,8 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
   // HELPERS //
 
-  const modifier = attribute => {
-    let mod = Math.floor((formInputs[attribute] - 10) / 2)
+  const modifier = (attribute, multiplier=1) => {
+    let mod = Math.floor((formInputs[attribute] - 10) / 2) * multiplier
     if (mod > 0) {
       return `+${mod}`
     }
@@ -78,7 +78,7 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
         Hit Dice: <CharacterTextInput name="hit_dice"
           value={formInputs.hit_dice}
           handleChange={handleChange}
-          width="4em" />
+          width="4em" /> {formInputs.hit_dice.includes("d") && modifier("constitution") ? modifier("constitution", parseInt(formInputs.hit_dice.split("d")[0])) : null}
 
       </div>
 
