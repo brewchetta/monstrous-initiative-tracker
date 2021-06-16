@@ -1,7 +1,7 @@
 import Spell from './Spell'
 import AddSpellForm from "./AddSpellForm"
 import SpellSlots from './SpellSlots'
-import CharacterNumberField from '../CharacterNumberField'
+import CharacterNumberField from '../Inputs/CharacterNumberField'
 
 function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpell, handleRemoveSpell, handleChange, spellNames, handleSetSpellSlots}) {
 

@@ -5,7 +5,7 @@ import useLocalStorageList from '../../services/localstorage'
 import ActionsList from './ActionsList/'
 import SpellsList from './SpellsList/'
 import GeneralInfo from './GeneralInfo'
-import CharacterSelectField from './CharacterSelectField'
+import CharacterSelectField from './Inputs/CharacterSelectField'
 import DetailImage from './DetailImage'
 // STYLE //
 import "./CharacterDetailCard.css"
