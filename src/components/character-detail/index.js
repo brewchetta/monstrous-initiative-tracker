@@ -9,7 +9,7 @@ import CharacterSelectField from './Inputs/CharacterSelectField'
 import DetailImage from './DetailImage'
 // STYLE //
 import "./CharacterDetailCard.css"
-import beyondIcon from "images/beyond-icon.png"
+import beyondIcon from "assets/images/beyond-icon.png"
 
 export default function CharacterDetailCard({character, updateCharacter, spellNames}) {
 
