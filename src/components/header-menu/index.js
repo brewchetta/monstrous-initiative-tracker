@@ -1,6 +1,6 @@
 // CONTEXT
 import { useCharactersContext } from 'context/characters-context'
-import { DetailContext } from 'context/detail-context'
+import { useDetailContext } from 'context/detail-context'
 // COMPONENTS
 import ContextActionButton from "./ContextActionButton"
 import AddCharacterButton from "./AddCharacterButton"
@@ -10,6 +10,7 @@ import "./HeaderMenu.css"
 export default function HeaderMenu() {
 
   const characters = useCharactersContext()
+  const detail = useDetailContext()
 
   const determineOpacity = () => characters.all.length ? ({opacity: 1}) : ({opacity: 0})
 
@@ -17,8 +18,6 @@ export default function HeaderMenu() {
     <div id="context-buttons">
 
       <div id="context-buttons-left" style={determineOpacity()}>
-
-      <p>I am here</p>
 
         <ContextActionButton
         text={"Clear Characters"}
@@ -32,17 +31,17 @@ export default function HeaderMenu() {
 
       </div>
 
-      {/* <div id="context-buttons-right">
+      <div id="context-buttons-right">
 
-        <ContextActionButton context={DetailContext}
+        <ContextActionButton
         text={"Search Monster Manual"}
-        type={"SEARCH"} />
+        action={detail.search} />
         <AddCharacterButton />
-        <ContextActionButton context={DetailContext}
+        <ContextActionButton
         text={"Saved Characters"}
-        type={"LOCAL_CHARACTERS"} />
+        action={detail.localCharacters} />
 
-      </div>} */}
+      </div>
 
 
     </div>

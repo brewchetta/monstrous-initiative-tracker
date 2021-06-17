@@ -1,33 +1,20 @@
-import {createContext, useReducer} from "react"
+import {createContext, useContext, useState} from "react"
 
 const DetailContext = createContext()
 
-const detailReducer = (state, action) => {
+export const DetailProvider = ({children}) => {
+  const [current, setDetail] = useState(null)
 
-  switch (action.type) {
-    case "CLEAR_DETAIL":
-      return null
-    case "INSPECT_CHARACTER":
-      return {type: "character", content: action.payload}
-    case "SEARCH":
-      return {type: "search"}
-    case "LOCAL_CHARACTERS":
-      return {type: "locals"}
-    case "INSPECT_SPELL":
-      return {type: "spell", content: action.payload}
-    default:
-      throw new Error(`Incorrect use of detail reducer: ${action.type}`)
-  }
-}
-
-const DetailProvider = ({children}) => {
-  const [detail, dispatch] = useReducer(detailReducer, null)
+  const clear = () => setDetail(null)
+  const inspectCharacter = character => setDetail({type: "character", content: character})
+  const search = () => setDetail({type: "search"})
+  const localCharacters = () => setDetail({type: "locals"})
 
   return (
-    <DetailContext.Provider value={[detail, dispatch]}>
+    <DetailContext.Provider value={{current, clear, inspectCharacter, search, localCharacters}}>
       {children}
     </DetailContext.Provider>
   )
 }
 
-export { DetailProvider, DetailContext }
+export const useDetailContext = () => useContext(DetailContext)

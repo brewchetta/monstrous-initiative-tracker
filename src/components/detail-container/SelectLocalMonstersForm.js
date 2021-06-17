@@ -8,7 +8,7 @@ export default function SelectLocalMonstersForm() {
 
   // STATE //
   const [locals, setLocals] = useState([])
-  const characters = useCharactersContext().add
+  const characters = useCharactersContext()
 
   const [getMonsters, setMonsters, clearMonsters] = useLocalStorage('monstrous-characters')
 

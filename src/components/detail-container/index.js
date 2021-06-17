@@ -3,7 +3,7 @@ import { useContext, useState, useEffect } from "react"
 // STYLE //
 import "./DetailContainer.css"
 // CONEXT //
-import { DetailContext } from "context/detail-context"
+import { useDetailContext } from "context/detail-context"
 import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import CharacterDetailCard from "../character-detail"
@@ -28,24 +28,21 @@ export default function DetailContainer(props) {
   }, [])
 
   // CONTEXT //
-  const [detail, dispatchDetail] = useContext(DetailContext)
-  const characters = useCharactersContext()
+  const detail = useDetailContext()
+  const updateCharacter = useCharactersContext().update
 
-  // EVENT HANDLERS //
-
-  const clearDetail = () => dispatchDetail({type: "CLEAR_DETAIL"})
+  // RENDERS //
 
   const renderDetail = () => {
-    return (detail && detail.type === "character" ? <CharacterDetailCard character={detail.content} updateCharacter={characters.update} spellNames={spellNames} />
-    : detail && detail.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} additionalMonsters={additionalMonsters} />
-    : detail && detail.type === "spell" ? <p>TODO: Build spell detail</p>
-    : detail && detail.type === "locals" ? <SelectLocalMonstersForm />
+    return (detail.current?.type === "character" ? <CharacterDetailCard character={detail.current.content} updateCharacter={updateCharacter} spellNames={spellNames} />
+    : detail.current?.type === "search" ? <SearchForm spellNames={spellNames} monsterNames={monsterNames} additionalMonsters={additionalMonsters} />
+    : detail.current?.type === "locals" ? <SelectLocalMonstersForm />
     : null)
   }
 
-  return detail && detail.type ? (
+  return detail.current?.type ? (
     <>
-      <div id="modal-mask" onClick={clearDetail} />
+      <div id="modal-mask" onClick={detail.clear} />
       <div id="detail-modal">
         {renderDetail()}
       </div>

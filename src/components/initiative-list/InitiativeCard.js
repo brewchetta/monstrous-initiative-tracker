@@ -1,5 +1,5 @@
 import { useContext, useState, useRef, useEffect } from 'react'
-import { DetailContext } from 'context/detail-context'
+import { useDetailContext } from 'context/detail-context'
 import { useCharactersContext } from 'context/characters-context'
 import { useOptionsSettings } from 'context/options-settings-context'
 import StatusIcons from './StatusIcons'
@@ -8,7 +8,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   // STATE //
 
-  const [detail, dispatchDetail] = useContext(DetailContext)
+  const detail = useDetailContext()
   const removeCharacter = useCharactersContext().remove
   const {options} = useOptionsSettings()
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
@@ -59,9 +59,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   }
 
   const handleOpenDetail = () => {
-    if (detail !== character) {
-      dispatchDetail({type: "INSPECT_CHARACTER", payload: character})
-    }
+    detail.inspectCharacter(character)
   }
 
   const handleRemove = () => {
