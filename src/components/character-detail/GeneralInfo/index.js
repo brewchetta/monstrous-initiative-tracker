@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import { useOptionsSettings } from "context/options-settings-context"
 import CharacterNumberField from "../Inputs/CharacterNumberField"
 import CharacterTextInput from "../Inputs/CharacterTextInput"

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { useTooltipContext } from "context/tooltip-context"
 
 export default function Spell({spell, removeSpell}) {
