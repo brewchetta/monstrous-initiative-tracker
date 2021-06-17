@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from "react"
 import { getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from "./SpellDetailsView"
-import { TooltipContext } from "context/tooltip-context"
+import { useTooltipContext } from "context/tooltip-context"
 import { useSpellsContext } from "context/spells-context"
 import spellMoon from "assets/images/thorn-image.png"
 import "./style.css"
@@ -9,7 +9,7 @@ import "./style.css"
 export default function Tooltip() {
 
   const [spellDetails, setSpellDetails] = useState({})
-  const [tooltip] = useContext(TooltipContext)
+  const {tooltip} = useTooltipContext()
   const spells = useSpellsContext()
 
   useEffect(() => {

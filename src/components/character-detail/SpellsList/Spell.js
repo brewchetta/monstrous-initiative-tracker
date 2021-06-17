@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { TooltipContext } from "context/tooltip-context"
+import { useTooltipContext } from "context/tooltip-context"
 
 export default function Spell({spell, removeSpell}) {
 
@@ -7,22 +7,22 @@ export default function Spell({spell, removeSpell}) {
 
   const [hovered, setHovered] = useState(false)
 
-  const dispatch = useContext(TooltipContext)[1]
+  const {inspectSpell, clearTooltip} = useTooltipContext()
 
   const handleRemoveSpell = () => {
     removeSpell(spell)
-    dispatch({type: "CLEAR_TOOLTIP"})
+    clearTooltip()
   }
 
   // EVENT HANDLERS //
 
   const handleMouseEnter = (e, spellName) => {
-    dispatch({type: "INSPECT_SPELL", payload: {spellName, x: e.clientX, y: e.clientY}})
+    inspectSpell({spellName})
     setHovered(true)
   }
 
   const handleMouseLeave = () => {
-    dispatch({type: "CLEAR_TOOLTIP"})
+    clearTooltip()
     setHovered(false)
   }
 

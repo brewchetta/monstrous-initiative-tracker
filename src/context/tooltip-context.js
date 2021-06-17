@@ -1,27 +1,18 @@
-import {createContext, useReducer} from "react"
+import {createContext, useContext, useState} from "react"
 
 const TooltipContext = createContext()
 
-const tooltipReducer = (state, action) => {
+export const TooltipProvider = ({children}) => {
+  const [tooltip, setTooltip] = useState({type: null})
 
-  switch (action.type) {
-    case "CLEAR_TOOLTIP":
-      return {...state, type: null}
-    case "INSPECT_SPELL":
-      return {type: "spell", content: action.payload.spellName, position: {x: action.payload.x, y: action.payload.y}}
-    default:
-      throw new Error(`Incorrect use of tooltip reducer: ${action.type}`)
-  }
-}
-
-const TooltipProvider = ({children}) => {
-  const [tooltip, dispatch] = useReducer(tooltipReducer, {type: null})
+  const clearTooltip = () => setTooltip({type: null})
+  const inspectSpell = payload => setTooltip({type: "spell", content: payload.spellName})
 
   return (
-    <TooltipContext.Provider value={[tooltip, dispatch]}>
+    <TooltipContext.Provider value={{tooltip, clearTooltip, inspectSpell}}>
       {children}
     </TooltipContext.Provider>
   )
 }
 
-export { TooltipProvider, TooltipContext }
+export const useTooltipContext = () => useContext(TooltipContext)
