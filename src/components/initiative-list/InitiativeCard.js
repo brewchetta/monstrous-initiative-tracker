@@ -1,4 +1,4 @@
-import { useContext, useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useDetailContext } from 'context/detail-context'
 import { useCharactersContext } from 'context/characters-context'
 import { useOptionsSettings } from 'context/options-settings-context'

@@ -1,5 +1,4 @@
 // CONTEXT
-import { useContext } from 'react'
 import { useCharactersContext } from 'context/characters-context'
 // COMPONENTS //
 import InitiativeCard from './InitiativeCard'

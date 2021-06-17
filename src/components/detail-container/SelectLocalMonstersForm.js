@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react"
+import { useState, useEffect } from "react"
 import useLocalStorage from "services/localstorage"
 import { useCharactersContext } from "context/characters-context"
 import Character from 'models/Character.js'

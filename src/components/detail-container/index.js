@@ -1,5 +1,5 @@
 // REACT //
-import { useContext, useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 // STYLE //
 import "./DetailContainer.css"
 // CONEXT //

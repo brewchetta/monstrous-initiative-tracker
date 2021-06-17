@@ -1,4 +1,3 @@
-import { useContext } from "react"
 import { useDetailContext } from "context/detail-context"
 import { useCharactersContext } from "context/characters-context"
 import Character from 'models/Character'
