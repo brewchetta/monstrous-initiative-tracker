@@ -49,15 +49,7 @@ export default class Character {
     this.type = this.type.replace(/[,]/g, "")
 
     // CLEANUP //
-    delete this.remapActionAttributes
-    delete this.remapSpecialAbilities
-    delete this.remapProficiencies
-    delete this.remapArrayProperty
-    delete this.remapArrayOfObjectsProperty
-    delete this.remapObjectProperty
-    delete this.remapSpells
-    delete this.remapSpellSlots
-    delete this.remapLegendaryActions
+    this.cleanup()
   }
 
   // CONSTRUCTOR HELPERS //
@@ -136,6 +128,19 @@ export default class Character {
         this.spell_slots[level] = newSlots
       }
     })
+  }
+
+  cleanup = () => {
+    delete this.remapActionAttributes
+    delete this.remapSpecialAbilities
+    delete this.remapProficiencies
+    delete this.remapArrayProperty
+    delete this.remapArrayOfObjectsProperty
+    delete this.remapObjectProperty
+    delete this.remapSpells
+    delete this.remapSpellSlots
+    delete this.remapLegendaryActions
+    delete this.cleanup
   }
 
   // ATTRIBUTE MODIFIERS //
