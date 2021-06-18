@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import Character from 'models/Character.js'
 import { useCharactersContext } from "context/characters-context"
 import { getMonster, getSpell } from "services/dnd-5e-api"
@@ -6,11 +6,20 @@ import SpellDetailsView from '../tooltip/SpellDetailsView'
 
 export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {
 
+  const inputField = useRef(null)
+
+  // STATE //
   const [input, setInput] = useState("")
   const [mode, setMode] = useState("Monster")
   const [message, setMessage] = useState("")
   const [spellDetails, setSpellDetails] = useState({})
   const addCharacter = useCharactersContext().add
+
+  // EFFECTS //
+
+  useEffect(() => {
+    inputField.current.focus()
+  }, [])
 
   const handleSubmitMonster = e => {
     e.preventDefault()
@@ -65,6 +74,7 @@ export default function SearchForm({monsterNames, spellNames, additionalMonsters
 
         <label>Find a {mode}</label>
         <input type="text"
+        ref={inputField}
         list="monster-names"
         onChange={(e) => setInput(e.target.value)}
         value={input}
