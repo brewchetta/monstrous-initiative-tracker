@@ -16,6 +16,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Shifted character input fields around for readability
 - Various styling changes to make character sheets easier to read
 - Characters should get added with their correct hit points when random hit points is off
+- Deleting actions should no longer cause odd behavior.
 
 1.1.5
 - Added an options button on the lower right
@@ -69,6 +70,3 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 1.0.0
 - Initial release
-
-## Known Issues
-- When deleting actions, will sometimes seem to delete unrelated actions
