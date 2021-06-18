@@ -125,6 +125,15 @@ export default function GeneralInfo({formInputs, handleChange, handleSubmit}) {
 
       </div>
 
+      <div className="detail-sub-container">
+
+        <CharacterTextArea name={"senses"}
+        value={formInputs.senses}
+        handleChange={handleChange}
+        width={"80%"} />
+
+      </div>
+
       <div className="detail-sub-container detail-textarea-container">
 
         <span>Condition Immunities: </span>
