@@ -145,7 +145,9 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     }
   }
 
-  const renderName = () => `${character.name || "Unknown"}${character.char_class ? ` the ${character.char_class}` : ""}`
+  console.log(character);
+
+  const renderName = () => `${character.name || "Unknown"}${character.player && character.char_class ? ` the ${character.char_class}` : ""}`
 
   const renderClass = () => (
     hitpointPercentage() > 0.5 ? "initiative-card"
