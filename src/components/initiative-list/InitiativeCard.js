@@ -13,7 +13,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
   const {options} = useOptionsSettings()
   const [hitPointsOpen, setHitPointsOpen] = useState(false)
   const [tempHitPointsOpen, setTempHitPointsOpen] = useState(false)
-  const [currentHitPoints, setCurrentHitPoints] = useState(character.hit_points)
+  const [currentHitPoints, setCurrentHitPoints] = useState(options.randomHitpoints ? character.hit_points : character.static_hitpoints)
   const [currentTempHP, setCurrentTempHP] = useState(character.tempHP)
   const [initiativeOpen, setInitiativeOpen] = useState(false)
   const [initiativeInput, setInitiativeInput] = useState(0)
@@ -36,7 +36,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   useEffect(() => {
     options.preRolledInitiative && character.initiative <= -5 && handleRollInitiative()
-  }, [options.preRolledInitiative])
+  }, [options.preRolledInitiative, character.initiative])
 
   // CALCS //
 
