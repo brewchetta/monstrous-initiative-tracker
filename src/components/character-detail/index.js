@@ -53,7 +53,8 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
   }
 
   const handleAddAction = () => {
-    setFormInputs(Object.assign(formInputs, { [detailMode]: [...formInputs[detailMode], {full_description: `Name: Description Here`}] }))
+    const actions = formInputs[detailMode]
+    setFormInputs(Object.assign(formInputs, { [detailMode]: [...actions, {id: actions[actions.length - 1].id + 1, full_description: `Name: Description Here`}] }))
     handleSubmit()
   }
 
@@ -66,17 +67,14 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
 
   const handleChangeDetailMode = e => setDetailMode(e.target.name)
 
-  const handleSubmitAction = (description, index) => {
-    const actions = {
-      [detailMode]: formInputs[detailMode].map((a, i) => {
-        if (i === index) {
-          return ({...a, full_description: description})
-        } else {
-          return a
-        }
-      }).filter(a => a.full_description)
-    }
-    setFormInputs({...formInputs, ...actions})
+  const handleSubmitAction = (description, action) => {
+    const actions = description.length ?
+    formInputs[detailMode].map(a => (
+      a === action ? {...a, full_description: description} : a
+    ))
+    :
+    formInputs[detailMode].filter(a => a !== action)
+    setFormInputs({...formInputs, actions})
     handleSubmit()
   }
 

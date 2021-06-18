@@ -71,4 +71,4 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Initial release
 
 ## Known Issues
-- Will occasionally render deleted actions
+- When deleting actions, will sometimes seem to delete unrelated actions

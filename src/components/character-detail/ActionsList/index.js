@@ -2,10 +2,11 @@ import Action from "./Action"
 
 export default function ActionsList({actions, handleSubmit, handleAdd}) {
 
+  console.log(actions);
 
-  const actionCards = actions.map((a, i) => (
-    <div className="action-card" key={a.name + i.toString()}>
-      <Action handleSubmit={handleSubmit} action={a} index={i} />
+  const actionCards = actions.map(a => (
+    <div className="action-card" key={a.id}>
+      <Action handleSubmit={handleSubmit} action={a} />
     </div>
   ))
 

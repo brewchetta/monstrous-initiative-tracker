@@ -69,24 +69,27 @@ export default class Character {
   }
 
   remapSpecialAbilities = () => {
-    this.special_abilities.forEach(a => {
+    this.special_abilities.forEach((a,i) => {
       a.full_description = a.full_description || `${a.name}: ${a.desc}`
+      a.id = i
       delete a.desc
       delete a.name
     });
   }
 
   remapLegendaryActions = () => {
-    this.legendary_actions.forEach(a => {
+    this.legendary_actions.forEach((a,i) => {
       a.full_description = a.full_description || `${a.name}: ${a.desc}`
+      a.id = i
       delete a.desc
       delete a.name
     });
   }
 
   remapActionAttributes = (actions) => {
-    actions.forEach(a => {
+    actions.forEach((a,i) => {
       a.full_description = a.full_description || `${a.name}: ${a.desc}`
+      a.id = i
       delete a.desc
       delete a.name
       delete a.damage

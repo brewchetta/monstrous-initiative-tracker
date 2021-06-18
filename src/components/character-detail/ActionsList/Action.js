@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-export default function Action({action, index, handleSubmit}) {
+export default function Action({action, handleSubmit}) {
 
   // STATE //
 
@@ -23,7 +23,7 @@ export default function Action({action, index, handleSubmit}) {
   }
 
   const handleBlur = e => {
-    handleSubmit(input.replace(/"\n","&nbsp"/), index)
+    handleSubmit(input.replace(/"\n","&nbsp"/), action)
   }
 
   // RENDER //
