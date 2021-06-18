@@ -1,6 +1,6 @@
 {
   "name": "monstrous-initiative-tracker",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "homepage": "http://brewchetta.github.io/monstrous-initiative-tracker/",
   "private": true,
   "dependencies": {
