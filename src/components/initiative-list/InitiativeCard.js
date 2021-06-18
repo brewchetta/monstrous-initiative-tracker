@@ -145,8 +145,6 @@ export default function InitiativeCard({character, index, updateCharacter}) {
     }
   }
 
-  console.log(character);
-
   const renderName = () => `${character.name || "Unknown"}${character.player && character.char_class ? ` the ${character.char_class}` : ""}`
 
   const renderClass = () => (

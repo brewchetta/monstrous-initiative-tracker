@@ -35,8 +35,11 @@ export default function HeaderMenu() {
 
         <ContextActionButton
         text={"Search Monster Manual"}
-        action={detail.search} />
+        action={detail.searchMonster} />
         <AddCharacterButton />
+        <ContextActionButton
+        text={"Search Spells"}
+        action={detail.searchSpell} />
         <ContextActionButton
         text={"Saved Characters"}
         action={detail.localCharacters} />

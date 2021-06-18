@@ -4,7 +4,7 @@ import { useCharactersContext } from "context/characters-context"
 import { getMonster, getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from '../tooltip/SpellDetailsView'
 
-export default function SearchForm({monsterNames, spellNames, additionalMonsters}) {
+export default function MonsterSearchForm({monsterNames, spellNames, additionalMonsters}) {
 
   const inputField = useRef(null)
 
