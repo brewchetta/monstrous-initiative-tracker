@@ -27,8 +27,8 @@ export default function Spell({spell, removeSpell}) {
   }
 
   const button = (
-    <button className="remove-spell-button" onClick={handleRemoveSpell}>
-      {hovered ? 'X' : ''}
+    <button className="remove-spell-button" style={{opacity: hovered ? null : "0"}} onClick={handleRemoveSpell}>
+      X
     </button>
   )
 

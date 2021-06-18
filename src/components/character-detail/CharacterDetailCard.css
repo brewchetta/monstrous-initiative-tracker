@@ -208,6 +208,7 @@
 .remove-spell-button {
   background: none;
   border: none;
+  cursor: pointer;
   color: red;
   opacity: 0.5;
   transition: opacity 0.5s;
