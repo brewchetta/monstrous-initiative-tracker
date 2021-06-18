@@ -47,6 +47,17 @@ export default class Character {
     this.initiative = -10
     this.tempHP = 0
     this.type = this.type.replace(/[,]/g, "")
+
+    // CLEANUP //
+    delete this.remapActionAttributes
+    delete this.remapSpecialAbilities
+    delete this.remapProficiencies
+    delete this.remapArrayProperty
+    delete this.remapArrayOfObjectsProperty
+    delete this.remapObjectProperty
+    delete this.remapSpells
+    delete this.remapSpellSlots
+    delete this.remapLegendaryActions
   }
 
   // CONSTRUCTOR HELPERS //
