@@ -12,6 +12,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 1.1.6
 - Added character speed to their sheets
+- Added character senses to their sheets
 - Shifted character input fields around for readability
 - Various styling changes to make character sheets easier to read
 
