@@ -53,7 +53,7 @@ export default class Character {
 
   remapObjectProperty = property => {
     if (this[property].constructor === Object) {
-      this[property] = Object.keys(this[property]).map(k => `${k}: ${this[property][k]}`).join(", ")
+      this[property] = Object.keys(this[property]).map(k => `${k}: ${this[property][k]}`.replace(/_/g, " ")).join(", ")
     }
   }
 
