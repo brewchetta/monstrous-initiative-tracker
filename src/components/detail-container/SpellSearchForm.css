@@ -1,0 +1,22 @@
+#spell-search-information {
+  background-color: #cab49b;
+  border: solid black 2px;
+  box-shadow: 1px 2px black;
+  height: 80vh;
+  padding: 0.5em;
+  position: fixed;
+  right: 1vw;
+  text-align: center;
+  top: 5em;
+  transition: top 1s;
+  width: 40vw;
+  overflow-y: auto;
+  z-index: 2;
+}
+#spell-search-information img {
+  left: 25%;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}

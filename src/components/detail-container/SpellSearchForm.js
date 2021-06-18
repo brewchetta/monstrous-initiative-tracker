@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react"
 import { getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from '../tooltip/SpellDetailsView'
+import spellMoon from "assets/images/thorn-image.png"
+import './SpellSearchForm.css'
 
 export default function SearchForm({spellNames}) {
 
@@ -54,8 +56,11 @@ export default function SearchForm({spellNames}) {
         value={"Search"}/>
 
       </div>
-      <div id="spell-search-information">
-          {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
+      <div id="spell-search-information" style={{top: spellDetails.name ? null : "100vh"}}>
+
+        <img src={spellMoon} alt={""} />
+        {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
+
       </div>
 
     </form>
