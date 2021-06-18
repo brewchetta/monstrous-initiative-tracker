@@ -39,6 +39,7 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 - Deleting actions should no longer cause odd behavior
 - Character classes no longer display if they're an NPC
 - Options persist in local storage
+- Added a separate tab for searching for spells
 
 1.1.5
 - Added an options button on the lower right
