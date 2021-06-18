@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from "react"
 import Character from 'models/Character.js'
 import { useCharactersContext } from "context/characters-context"
 import { getMonster } from "services/dnd-5e-api"
-import SpellDetailsView from '../tooltip/SpellDetailsView'
 
 export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
@@ -57,6 +56,8 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
         <input type="submit"
         value={"Search"}/>
+
+        {message ? <p>{message}</p> : null}
 
       </div>
 
