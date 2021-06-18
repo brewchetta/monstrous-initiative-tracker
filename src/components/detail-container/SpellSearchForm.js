@@ -54,8 +54,9 @@ export default function SearchForm({spellNames}) {
         value={"Search"}/>
 
       </div>
-
-      {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
+      <div id="spell-search-information">
+          {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
+      </div>
 
     </form>
   )
