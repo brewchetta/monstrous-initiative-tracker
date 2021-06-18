@@ -15,6 +15,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 - Added character senses to their sheets
 - Shifted character input fields around for readability
 - Various styling changes to make character sheets easier to read
+- Characters should get added with their correct hit points when random hit points is off
 
 1.1.5
 - Added an options button on the lower right
@@ -71,4 +72,3 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Known Issues
 - Will occasionally render deleted actions
-- With static hit points the current hp is always random instead of set to the proper maximum
