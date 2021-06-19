@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/monstrous-initiative-tracker/static/css/main.0e4771d8.chunk.css",
-    "main.js": "/monstrous-initiative-tracker/static/js/main.86fffb2d.chunk.js",
-    "main.js.map": "/monstrous-initiative-tracker/static/js/main.86fffb2d.chunk.js.map",
-    "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js",
-    "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.db5b7061.js.map",
-    "static/js/2.4c183013.chunk.js": "/monstrous-initiative-tracker/static/js/2.4c183013.chunk.js",
-    "static/js/2.4c183013.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.4c183013.chunk.js.map",
+    "main.css": "/monstrous-initiative-tracker/static/css/main.79bdba5f.chunk.css",
+    "main.js": "/monstrous-initiative-tracker/static/js/main.fe1ccf03.chunk.js",
+    "main.js.map": "/monstrous-initiative-tracker/static/js/main.fe1ccf03.chunk.js.map",
+    "runtime-main.js": "/monstrous-initiative-tracker/static/js/runtime-main.c8804300.js",
+    "runtime-main.js.map": "/monstrous-initiative-tracker/static/js/runtime-main.c8804300.js.map",
+    "static/js/2.c7b4c21c.chunk.js": "/monstrous-initiative-tracker/static/js/2.c7b4c21c.chunk.js",
+    "static/js/2.c7b4c21c.chunk.js.map": "/monstrous-initiative-tracker/static/js/2.c7b4c21c.chunk.js.map",
     "index.html": "/monstrous-initiative-tracker/index.html",
-    "static/css/main.0e4771d8.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.0e4771d8.chunk.css.map",
-    "static/js/2.4c183013.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.4c183013.chunk.js.LICENSE.txt",
+    "static/css/main.79bdba5f.chunk.css.map": "/monstrous-initiative-tracker/static/css/main.79bdba5f.chunk.css.map",
+    "static/js/2.c7b4c21c.chunk.js.LICENSE.txt": "/monstrous-initiative-tracker/static/js/2.c7b4c21c.chunk.js.LICENSE.txt",
     "static/media/anchor.png": "/monstrous-initiative-tracker/static/media/anchor.5760ca6e.png",
     "static/media/angel-wings.png": "/monstrous-initiative-tracker/static/media/angel-wings.e968640c.png",
     "static/media/blade-drag.png": "/monstrous-initiative-tracker/static/media/blade-drag.e785c467.png",
@@ -69,9 +69,9 @@
     "static/media/woodcut-style-man-moon.921588da.png": "/monstrous-initiative-tracker/static/media/woodcut-style-man-moon.921588da.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.db5b7061.js",
-    "static/js/2.4c183013.chunk.js",
-    "static/css/main.0e4771d8.chunk.css",
-    "static/js/main.86fffb2d.chunk.js"
+    "static/js/runtime-main.c8804300.js",
+    "static/js/2.c7b4c21c.chunk.js",
+    "static/css/main.79bdba5f.chunk.css",
+    "static/js/main.fe1ccf03.chunk.js"
   ]
 }
