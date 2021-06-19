@@ -19,7 +19,7 @@ const parseJSON = res => {
   }
 }
 
-const parseIndex = index => index.toLowerCase().replace(/[()']/g,"").replace(/[/ ]/g, '-')
+const parseIndex = index => index.toLowerCase().replace(/[()',]/g,"").replace(/ form/, "").replace(/[/ ]/g, '-')
 
 const getResource = url => {
   return (index) => fetch(url + parseIndex(index)).then(parseJSON).catch(console.warn)
