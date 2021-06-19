@@ -74,7 +74,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
     ))
     :
     formInputs[detailMode].filter(a => a !== action)
-    setFormInputs({...formInputs, actions})
+    setFormInputs({...formInputs, [detailMode]: actions})
     handleSubmit()
   }
 

@@ -32,6 +32,7 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 
 1.2.1
 - Fixes for lycanthropes for D&D 5E API and D&D Beyond links
+- Fixed special abilities and legendary abilities overwriting actions
 
 1.2.0
 - Added character speed to their sheets
