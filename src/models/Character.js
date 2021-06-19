@@ -173,7 +173,7 @@ export default class Character {
   }
 
   get formatted_index() {
-    return this.name.toLowerCase().replace(/ /g,"-").replace(/[()']/g, "")
+    return this.name.toLowerCase().replace(/ /g,"-").replace(/[()']/g, "").replace(/,-[a-z]*-form/, "")
   }
 
   get derivedHitPoints() {
