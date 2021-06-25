@@ -13,6 +13,13 @@ export default function AddMonster({additionalMonsters}) {
   const [mode, setMode] = useState('')
   const addCharacter = useCharactersContext().add
 
+  // EVENTS //
+
+  const handleClick = ({target: {name}}) => {
+    setMode(name)
+    setMessage('')
+  }
+
   // RENDER //
 
   const renderMode = () => {
@@ -30,9 +37,9 @@ export default function AddMonster({additionalMonsters}) {
 
   return (
     <div id='add-monster-container'>
-      <button onClick={() => setMode('search')}>Search Monster</button>
-      <button onClick={() => setMode('upload')}>Upload Monster</button>
-      <button onClick={() => setMode('saved')}>Saved Monsters</button>
+      <button name='search' onClick={handleClick}>Search Monster</button>
+      <button name='upload' onClick={handleClick}>Upload Monster</button>
+      <button name='saved' onClick={handleClick}>Saved Monsters</button>
       {renderMode()}
       {message ? <p id='add-monster-message'>{message}</p> : null}
     </div>
