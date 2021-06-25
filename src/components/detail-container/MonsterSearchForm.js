@@ -44,6 +44,8 @@ export default function MonsterSearchForm({additionalMonsters}) {
   const addCharacterFromFile = character => {
     addCharacter(character)
     setMessage(`Added ${character.name}`)
+    setMonsterNames([...monsterNames, character.name].sort())
+    console.log([...monsterNames, character.name]);
   }
 
   const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
