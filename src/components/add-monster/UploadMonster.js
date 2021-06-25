@@ -38,9 +38,8 @@ export default function UploadMonster({addCharacter, setMessage}) {
 
   return (
     <div id='file-uploader'>
-      <p>OR upload a monster from JSON</p>
+      <p>Upload a monster from JSON</p>
       <input type="file" ref={file} onChange={handleChange} accept=".json" />
-      <br/>
       {renderSubmitButton}
     </div>
   )

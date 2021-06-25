@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useCharactersContext } from "context/characters-context"
 import UploadMonster from './UploadMonster'
 import MonsterSearch from './MonsterSearch'
+import SelectLocalMonstersForm from './SelectLocalMonstersForm'
 
 export default function AddMonster({additionalMonsters}) {
 
@@ -20,7 +21,7 @@ export default function AddMonster({additionalMonsters}) {
       case 'upload':
         return <UploadMonster {...{setMessage, addCharacter}}/>
       case 'saved':
-        return <MonsterSearch {...{additionalMonsters, setMessage, addCharacter}}/>
+        return <SelectLocalMonstersForm {...{additionalMonsters, setMessage, addCharacter}}/>
       default:
         return null
     }
