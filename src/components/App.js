@@ -6,7 +6,6 @@ import DetailContainer from './detail-container'
 import HeaderMenu from "./header-menu"
 import Tooltip from "./tooltip"
 import OptionsMenu from "./options"
-import FileUploader from './file-uploader/'
 // CONTEXT //
 import ContextProvider from "context/main-context"
 // IMGS //
