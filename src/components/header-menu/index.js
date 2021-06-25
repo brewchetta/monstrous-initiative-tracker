@@ -5,7 +5,7 @@ import { useDetailContext } from 'context/detail-context'
 import ContextActionButton from "./ContextActionButton"
 import AddCharacterButton from "./AddCharacterButton"
 // STYLE
-import "./HeaderMenu.css"
+import "./style.css"
 
 export default function HeaderMenu() {
 
@@ -40,9 +40,6 @@ export default function HeaderMenu() {
         <ContextActionButton
         text={"Search Spells"}
         action={detail.searchSpell} />
-        <ContextActionButton
-        text={"Saved Characters"}
-        action={detail.localCharacters} />
 
       </div>
 
