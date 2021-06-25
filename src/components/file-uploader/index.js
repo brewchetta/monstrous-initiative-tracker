@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import './style.css'
 
 export default function FileUploader({addCharacter}) {
 
@@ -20,10 +21,16 @@ export default function FileUploader({addCharacter}) {
     uploadedMonster && addCharacter(uploadedMonster)
   }
 
+  const renderSubmitButton = uploadedMonster?.name ?
+  (<input type="button" onClick={handleSubmit} value={`Upload ${uploadedMonster.name}`} />)
+  : <input disabled type="button" value='Upload JSON' />
+
   return (
-    <>
+    <div id='file-uploader'>
+      <p>OR upload a monster from JSON</p>
       <input type="file" ref={file} onChange={handleChange} accept=".json" />
-      <input type="button" onClick={handleSubmit} value="Upload Monster" />
-    </>
+      <br/>
+      {renderSubmitButton}
+    </div>
   )
 }
