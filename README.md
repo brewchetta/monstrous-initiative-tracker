@@ -1,6 +1,6 @@
 # Monstrous D&D Initiative Tracker
 
-Version 1.2.1
+Version 1.2.2
 
 Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull in monster and spell stats. You can save "favorites" to local storage and retrieve them as need be. Additionally, you can create characters and use track their initiative as player characters.
 
@@ -29,6 +29,9 @@ D&D Beyond - [https://www.dndbeyond.com/](https://www.dndbeyond.com/)
 Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 
 ## Changelog
+
+1.2.2
+- TODO: Can upload a JSON file for monsters
 
 1.2.1
 - Fixes for lycanthropes for D&D 5E API and D&D Beyond links
