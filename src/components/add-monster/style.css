@@ -26,3 +26,8 @@
 #local-character-selection {
   text-align: right;
 }
+
+#add-monster-message {
+  color: green;
+  padding: 0.5em;
+}

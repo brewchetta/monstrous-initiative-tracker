@@ -34,7 +34,7 @@ export default function AddMonster({additionalMonsters}) {
       <button onClick={() => setMode('upload')}>Upload Monster</button>
       <button onClick={() => setMode('saved')}>Saved Monsters</button>
       {renderMode()}
-      {message ? <p>{message}</p> : null}
+      {message ? <p id='add-monster-message'>{message}</p> : null}
     </div>
   )
 
