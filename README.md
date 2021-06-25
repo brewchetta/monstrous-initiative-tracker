@@ -35,10 +35,10 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 ## Changelog
 
 1.2.2
-- Can upload a JSON file for monsters
-- Restyled the saved characters area
 - Clicking on `Search Monster Manual` now has a sub-menu for different options
+- Can upload a JSON file for monsters
 - Uploaded monsters can be searched and added like other monsters until the page is left
+- Restyled the saved characters area
 - Fix for infinite re-render when opening saved monsters list with no saved monsters
 
 1.2.1
