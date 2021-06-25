@@ -23,7 +23,6 @@
   padding: 0.3em;
 }
 
- #local-character-selection {
-   background-color: white;
-   text-align: right;
- }
+#local-character-selection {
+  text-align: right;
+}
