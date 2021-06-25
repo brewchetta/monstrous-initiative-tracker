@@ -38,6 +38,7 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 - Can upload a JSON file for monsters
 - Restyled the saved characters area
 - Clicking on `Search Monster Manual` now has a sub-menu for different options
+- Uploaded monsters can be searched and added like other monsters until the page is left
 
 1.2.1
 - Fixes for lycanthropes for D&D 5E API and D&D Beyond links
