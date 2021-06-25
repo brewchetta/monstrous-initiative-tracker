@@ -7,14 +7,14 @@ import SelectLocalMonstersCard from './SelectLocalMonstersCard'
 export default function SelectLocalMonstersForm() {
 
   // STATE //
-  const [locals, setLocals] = useState([])
+  const [locals, setLocals] = useState(null)
   const characters = useCharactersContext()
 
   const [getMonsters, setMonsters, clearMonsters] = useLocalStorage('monstrous-characters')
 
   useEffect(() => {
-    !locals.length && setLocals(getMonsters() || [])
-  }, [getMonsters, locals])
+    !locals && setLocals(getMonsters() || [])
+  }, [locals, getMonsters])
 
   const addCharacter = character => {
     characters.add(new Character(character))
@@ -36,7 +36,7 @@ export default function SelectLocalMonstersForm() {
   // RENDER //
 
   const renderLocalMonsters = () => {
-    return locals.map((char, i) => <SelectLocalMonstersCard key={i}
+    return locals?.map((char, i) => <SelectLocalMonstersCard key={i}
       character={char}
       removeLocalMonster={removeLocalMonster}
       addCharacter={addCharacter} />)
