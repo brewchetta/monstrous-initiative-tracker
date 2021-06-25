@@ -18,7 +18,6 @@ export default function MonsterSearchForm({additionalMonsters}) {
   // EFFECTS //
 
   useEffect(() => {
-    console.log(Character.uploadedCharacterNames);
     getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...Character.uploadedCharacterNames]))
   }, [])
 
@@ -28,7 +27,7 @@ export default function MonsterSearchForm({additionalMonsters}) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    const foundMonster = Object.values(additionalMonsters).find(m => m.name.toLowerCase() === input.toLowerCase())
+    const foundMonster = Character.uploadedCharacters.find(m => m.name.toLowerCase() === input.toLowerCase())
     foundMonster && addCharacter(new Character(foundMonster))
     foundMonster && setMessage(`Added ${foundMonster.name}`)
     !foundMonster && getMonster(input).then(data => {
@@ -45,7 +44,6 @@ export default function MonsterSearchForm({additionalMonsters}) {
     addCharacter(character)
     setMessage(`Added ${character.name}`)
     setMonsterNames([...monsterNames, character.name].sort())
-    console.log([...monsterNames, character.name]);
   }
 
   const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
