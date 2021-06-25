@@ -1,8 +1,7 @@
 import { useRef, useState } from 'react'
-import './style.css'
 import Character from '../../models/Character'
 
-export default function FileUploader({addCharacter, setMessage}) {
+export default function UploadMonster({addCharacter, setMessage}) {
 
   const file = useRef(null)
 
@@ -27,8 +26,9 @@ export default function FileUploader({addCharacter, setMessage}) {
     e.preventDefault()
     if (uploadedMonster) {
       addCharacter(uploadedMonster)
+      setMessage(`Added ${uploadedMonster.name}`)
       Character.addUploadedCharacter(uploadedFile)
-      setUploadedMonster(new Character(uploadedFile))  
+      setUploadedMonster(new Character(uploadedFile))
     }
   }
 
