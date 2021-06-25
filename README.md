@@ -2,15 +2,15 @@
 
 Version 1.2.2
 
-Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull in monster and spell stats. You can save "favorites" to local storage and retrieve them as need be. Additionally, you can create characters and use track their initiative as player characters.
+Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull in monster and spell stats. You can save "favorites" to local storage and retrieve them as need be. Additionally, you can new create characters either in the app or by utilizing a JSON file.
 
 ## Features
 
-To start, you can search for a specific monster by clicking the `Search Monster Manual` button which has a sub-menu for searching for a monster, adding one via a JSON file, or adding a saved monster. In addition, you can create a new character from scratch by clicking the `Create New Character` button. Once a character is created, they'll be entered into the initiative order on the left. Players can assign icons to them by clicking the plus near their name and edit their health and initiative directly from their card.
+To start, you can search for a specific monster by clicking the `Search Monster Manual` button which has a sub-menu for searching for a monster from the database, adding one via a JSON file, or adding a monster saved to local storage. In addition, you can create a new character from scratch by clicking the `Create New Character` button. Once a character is created, they'll be entered into the initiative order on the left. Players can assign icons to them by clicking the plus near their name or edit their health and initiative directly by clicking on those attributes.
 
 ## Character Sheets
 
-If you'd like to custom tailor a character, click on the `More` area of their initiative card and you'll have full access to the character sheet. For characters who were added via the search, the sheet includes a link to their entry in D&D Beyond.
+If you'd like to custom tailor a character, click on the `More` area of their initiative card and you'll have full access to the character sheet. For characters who were added via the D&D 5E API search, the sheet includes a link to their entry in D&D Beyond.
 
 All attributes of a character can be referenced or edited. This includes actions which can be added or else removed by deleting all the text in the entry.
 
@@ -20,7 +20,7 @@ This app also has a save feature that adds your characters to local storage. In 
 
 ## Importing Characters
 
-Characters and monsters can be imported via JSON files. You can find a few examples of these JSON files in the [additional monsters folder]("/example-monsters").
+Characters and monsters can be imported via JSON files. You can find a few examples of these JSON files in the [additional monsters folder](example-monsters).
 
 ## Options
 
@@ -29,7 +29,9 @@ Players can open the options menu by clicking the gear icon in the bottom right.
 ## Acknowledgements
 
 D&D 5E API - [http://www.dnd5eapi.co/](http://www.dnd5eapi.co/)
+
 D&D Beyond - [https://www.dndbeyond.com/](https://www.dndbeyond.com/)
+
 Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 
 ## Changelog
