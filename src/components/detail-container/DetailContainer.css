@@ -20,30 +20,6 @@
   z-index: 1;
 }
 
-.local-character-card {
-  text-align: right;
-}
-
-.local-character-card button:first-child {
-  border-bottom: solid black 1px;
-}
-
-.local-character-card button {
-  background: none;
-  border: none;
-  color: black;
-  font-size: 0.95em;
-  margin-top: 0.4em;
-}
-
-#remove-all-locals {
-  background: none;
-  border: none;
-  color: black;
-  margin-top: 0.4em;
-  padding: 0.3em;
-}
-
 #search-inputs {
   text-align: right;
 }

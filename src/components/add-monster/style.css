@@ -1,7 +1,6 @@
 #add-monster-container {
   text-align: right;
   padding-top: 0.25em;
-  /* border: solid black 2px; */
   margin-right: -2.5em;
 }
 
@@ -12,3 +11,19 @@
   color: black;
   font-size: 1.05em;
 }
+
+.local-character-card {
+  display: inline-block;
+  padding: 0.5em;
+}
+
+#remove-all-locals {
+  border: none;
+  color: black;
+  padding: 0.3em;
+}
+
+ #local-character-selection {
+   background-color: white;
+   text-align: right;
+ }

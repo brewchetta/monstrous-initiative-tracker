@@ -43,13 +43,15 @@ export default function SelectLocalMonstersForm() {
   }
 
   return (
-    <div id="local-character-selection">
+    <>
+    <div id="local-character-selection" dir='rtl'>
 
       {renderLocalMonsters()}
 
-      <button id="remove-all-locals" onClick={clearLocals}>Clear All</button>
-
     </div>
+
+    <button id="remove-all-locals" onClick={clearLocals}>Clear All</button>
+    </>
   )
 
 }
