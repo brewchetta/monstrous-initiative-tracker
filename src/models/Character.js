@@ -13,7 +13,6 @@ export default class Character {
     if (!match) {
       this.uploadedCharacters.push(character)
     }
-    console.log(this.uploadedCharacters);
   }
 
   constructor(data, player = false, char_class = "") {
