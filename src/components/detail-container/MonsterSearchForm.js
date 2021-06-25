@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react"
 import Character from 'models/Character.js'
 import { useCharactersContext } from "context/characters-context"
 import { getMonster } from "services/dnd-5e-api"
+import FileUploader from '../file-uploader'
 
 export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
@@ -33,6 +34,17 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
     })
   }
 
+  const addCharacterFromFile = addedChar => {
+    try {
+      const character = new Character(addedChar)
+      setMessage(`Added ${character.name}`)
+    } catch (error) {
+      setMessage('There was an error uploading!')
+      console.warn(error)
+    }
+
+  }
+
   const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
 
   return (
@@ -56,6 +68,8 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
         <input type="submit"
         value={"Search"}/>
+
+        <FileUploader addCharacter={addCharacterFromFile} />
 
         {message ? <p>{message}</p> : null}
 

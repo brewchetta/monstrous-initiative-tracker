@@ -32,8 +32,6 @@ function App() {
         <Tooltip />
         <OptionsMenu />
 
-        <FileUploader />
-
       </ContextProvider>
     </div>
   );
