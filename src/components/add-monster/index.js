@@ -5,7 +5,7 @@ import { getMonster } from "services/dnd-5e-api"
 import FileUploader from '../file-uploader'
 import { getAllMonsters } from "services/dnd-5e-api"
 
-export default function MonsterSearchForm({additionalMonsters}) {
+export default function AddMonster({additionalMonsters}) {
 
   const inputField = useRef(null)
 

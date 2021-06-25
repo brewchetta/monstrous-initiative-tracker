@@ -7,9 +7,9 @@ import { useDetailContext } from "context/detail-context"
 import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import CharacterDetailCard from "../character-detail"
-import MonsterSearchForm from "./MonsterSearchForm"
+import AddMonster from "../add-monster"
 import SpellSearchForm from "./SpellSearchForm"
-import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
+import SelectLocalMonstersForm from "../add-monster/SelectLocalMonstersForm"
 // SERVICES //
 import { getAllSpells } from "services/dnd-5e-api"
 
@@ -33,7 +33,7 @@ export default function DetailContainer(props) {
 
   const renderDetail = () => {
     return (detail.current?.type === "character" ? <CharacterDetailCard character={detail.current.content} updateCharacter={updateCharacter} spellNames={spellNames} />
-    : detail.current?.type === "search_monster" ? <MonsterSearchForm />
+    : detail.current?.type === "search_monster" ? <AddMonster />
     : detail.current?.type === "search_spell" ? <SpellSearchForm spellNames={spellNames} />
     : detail.current?.type === "locals" ? <SelectLocalMonstersForm />
     : null)
