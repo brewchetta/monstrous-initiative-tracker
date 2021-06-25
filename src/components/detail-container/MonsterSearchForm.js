@@ -18,10 +18,7 @@ export default function MonsterSearchForm({additionalMonsters}) {
   // EFFECTS //
 
   useEffect(() => {
-    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...Character.uploadedCharacterNames]))
-  }, [])
-
-  useEffect(() => {
+    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...Character.uploadedCharacterNames].sort()))
     inputField.current.focus()
   }, [])
 
