@@ -6,7 +6,7 @@ Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull i
 
 ## Features
 
-You can search for a specific monster by clicking the `Search Monster Manual` button or create your own character from scratch. Once a character is created, they'll be entered into the initiative order on the right. Players can assign icons to them by clicking the plus near their name and edit their health and initiative directly from their card.
+To start, you can search for a specific monster by clicking the `Search Monster Manual` button which has a sub-menu for searching for a monster, adding one via a JSON file, or adding a saved monster. In addition, you can create a new character from scratch by clicking the `Create New Character` button. Once a character is created, they'll be entered into the initiative order on the left. Players can assign icons to them by clicking the plus near their name and edit their health and initiative directly from their card.
 
 ## Character Sheets
 
@@ -17,6 +17,10 @@ All attributes of a character can be referenced or edited. This includes actions
 A character also has a spellbook from which you can reference that character's spells by hovering over them or clicking on them to go to their page on D&D beyond. Leveled spells for existing monsters also include a GUI for spell slots.
 
 This app also has a save feature that adds your characters to local storage. In order to save any character for later, click the `Save to Storage` button at the bottom of the character sheet.
+
+## Importing Characters
+
+Characters and monsters can be imported via JSON files. You can find a few examples of these JSON files in the [additional monsters folder]("/example-monsters").
 
 ## Options
 
@@ -31,7 +35,9 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 ## Changelog
 
 1.2.2
-- TODO: Can upload a JSON file for monsters
+- Can upload a JSON file for monsters
+- Restyled the saved characters area
+- Clicking on `Search Monster Manual` now has a sub-menu for different options
 
 1.2.1
 - Fixes for lycanthropes for D&D 5E API and D&D Beyond links
