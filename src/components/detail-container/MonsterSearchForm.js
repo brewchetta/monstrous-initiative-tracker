@@ -34,16 +34,9 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
     })
   }
 
-  const addCharacterFromFile = addedChar => {
-    try {
-      const character = new Character(addedChar)
-      addCharacter(character)
-      setMessage(`Added ${character.name}`)
-    } catch (error) {
-      setMessage('There was an error uploading!')
-      console.warn(error)
-    }
-
+  const addCharacterFromFile = character => {
+    addCharacter(character)
+    setMessage(`Added ${character.name}`)
   }
 
   const renderDatalistOptions = () => monsterNames.map(n => <option key={n} value={n} />)
@@ -72,7 +65,7 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
         <br/>
 
-        <FileUploader addCharacter={addCharacterFromFile} />
+        <FileUploader addCharacter={addCharacterFromFile} setMessage={setMessage} />
 
         {message ? <p>{message}</p> : null}
 

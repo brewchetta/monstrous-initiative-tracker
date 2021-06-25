@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import './style.css'
+import Character from '../../models/Character'
 
-export default function FileUploader({addCharacter}) {
+export default function FileUploader({addCharacter, setMessage}) {
 
   const file = useRef(null)
 
@@ -11,13 +12,17 @@ export default function FileUploader({addCharacter}) {
     const fileReader = new FileReader()
     fileReader.readAsText(e.target.files[0], "UTF-8");
     fileReader.onload = event => {
-      setUploadedMonster(JSON.parse(event.target.result))
+      try {
+        setUploadedMonster(new Character(JSON.parse(event.target.result)))
+      } catch (error) {
+        console.warn('Could not upload file: \n', error)
+        setMessage('Could not build a character from this file')
+      }
     };
   }
 
   const handleSubmit = e => {
     e.preventDefault()
-    console.log("Uploaded Monster: ", uploadedMonster)
     uploadedMonster && addCharacter(uploadedMonster)
   }
 
