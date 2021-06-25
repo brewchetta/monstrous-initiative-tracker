@@ -16,6 +16,7 @@ export default function FileUploader({addCharacter}) {
 
   const handleSubmit = e => {
     e.preventDefault()
+    console.log("Uploaded Monster: ", uploadedMonster)
     uploadedMonster && addCharacter(uploadedMonster)
   }
 

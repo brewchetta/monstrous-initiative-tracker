@@ -37,6 +37,7 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
   const addCharacterFromFile = addedChar => {
     try {
       const character = new Character(addedChar)
+      addCharacter(character)
       setMessage(`Added ${character.name}`)
     } catch (error) {
       setMessage('There was an error uploading!')
@@ -68,6 +69,8 @@ export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
 
         <input type="submit"
         value={"Search"}/>
+
+        <br/>
 
         <FileUploader addCharacter={addCharacterFromFile} />
 

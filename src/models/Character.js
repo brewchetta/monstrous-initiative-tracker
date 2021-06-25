@@ -12,6 +12,9 @@ export default class Character {
       this[key] = data[key]
     })
 
+    console.log("Newly Created Monster: ", this);
+    console.log("Uploaded Data: ", data);
+
     this._key = this.constructor.internalKey
     this.constructor.internalKey++
 
