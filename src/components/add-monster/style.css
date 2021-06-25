@@ -1,0 +1,14 @@
+#add-monster-container {
+  text-align: right;
+  padding-top: 0.25em;
+  /* border: solid black 2px; */
+  margin-right: -2.5em;
+}
+
+#add-monster-container button {
+  background: none;
+  border: none;
+  border-bottom: solid black 2px;
+  color: black;
+  font-size: 1.05em;
+}

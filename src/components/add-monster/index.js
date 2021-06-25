@@ -3,13 +3,14 @@ import { useCharactersContext } from "context/characters-context"
 import UploadMonster from './UploadMonster'
 import MonsterSearch from './MonsterSearch'
 import SelectLocalMonstersForm from './SelectLocalMonstersForm'
+import './style.css'
 
 export default function AddMonster({additionalMonsters}) {
 
   // STATE //
 
   const [message, setMessage] = useState('')
-  const [mode, setMode] = useState('search')
+  const [mode, setMode] = useState('')
   const addCharacter = useCharactersContext().add
 
   // RENDER //
@@ -28,7 +29,7 @@ export default function AddMonster({additionalMonsters}) {
   }
 
   return (
-    <div>
+    <div id='add-monster-container'>
       <button onClick={() => setMode('search')}>Search Monster</button>
       <button onClick={() => setMode('upload')}>Upload Monster</button>
       <button onClick={() => setMode('saved')}>Saved Monsters</button>
