@@ -27,7 +27,8 @@ export default function FileUploader({addCharacter, setMessage}) {
     e.preventDefault()
     if (uploadedMonster) {
       addCharacter(uploadedMonster)
-      Character.addUploadedCharacter(uploadedFile)      
+      Character.addUploadedCharacter(uploadedFile)
+      setUploadedMonster(new Character(uploadedFile))  
     }
   }
 
