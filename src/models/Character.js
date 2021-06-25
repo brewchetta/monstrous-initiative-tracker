@@ -17,6 +17,10 @@ export default class Character {
     }
   }
 
+  static get uploadedCharacterNames() {
+    return this.uploadedCharacters.map(c => c.name)
+  }
+
   // CONSTRUCTOR //
 
   constructor(data, player = false, char_class = "") {

@@ -3,17 +3,24 @@ import Character from 'models/Character.js'
 import { useCharactersContext } from "context/characters-context"
 import { getMonster } from "services/dnd-5e-api"
 import FileUploader from '../file-uploader'
+import { getAllMonsters } from "services/dnd-5e-api"
 
-export default function MonsterSearchForm({monsterNames, additionalMonsters}) {
+export default function MonsterSearchForm({additionalMonsters}) {
 
   const inputField = useRef(null)
 
   // STATE //
+  const [monsterNames, setMonsterNames] = useState([])
   const [input, setInput] = useState("")
   const [message, setMessage] = useState("")
   const addCharacter = useCharactersContext().add
 
   // EFFECTS //
+
+  useEffect(() => {
+    console.log(Character.uploadedCharacterNames);
+    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...Character.uploadedCharacterNames]))
+  }, [])
 
   useEffect(() => {
     inputField.current.focus()

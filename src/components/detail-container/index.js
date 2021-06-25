@@ -13,6 +13,7 @@ import SelectLocalMonstersForm from "./SelectLocalMonstersForm"
 // SERVICES //
 import { getAllSpells, getAllMonsters } from "services/dnd-5e-api"
 // ADDITIONAL DATA //
+import Character from '../../models/Character'
 import * as additionalMonsters from 'models/additional-monsters'
 
 export default function DetailContainer(props) {
@@ -23,8 +24,8 @@ export default function DetailContainer(props) {
   const [spellNames, setSpellNames] = useState([])
 
   useEffect(() => {
-    const mNames = Object.values(additionalMonsters).map(m => m.name)
-    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...mNames]))
+    console.log(Character.uploadedCharacterNames);
+    getAllMonsters().then(({results}) => setMonsterNames([...results.map(m => m.name), ...Character.uploadedCharacterNames]))
     getAllSpells().then(({results}) => setSpellNames(results.map(s => s.name)))
   }, [])
 
