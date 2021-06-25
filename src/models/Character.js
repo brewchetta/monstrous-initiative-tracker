@@ -6,6 +6,16 @@ export default class Character {
 
   static createTemplate = () => new Character(template)
 
+  static uploadedCharacters = []
+
+  static addUploadedCharacter = character => {
+    const match = this.uploadedCharacters.find(c => c.name === character.name && c.index === character.index)
+    if (!match) {
+      this.uploadedCharacters.push(character)
+    }
+    console.log(this.uploadedCharacters);
+  }
+
   constructor(data, player = false, char_class = "") {
 
     Object.keys(data).forEach(key => {

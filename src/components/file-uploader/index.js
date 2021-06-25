@@ -7,6 +7,7 @@ export default function FileUploader({addCharacter, setMessage}) {
   const file = useRef(null)
 
   const [uploadedMonster, setUploadedMonster] = useState(null)
+  const [uploadedFile, setUploadedFile] = useState(null)
 
   const handleChange = e => {
     const fileReader = new FileReader()
@@ -14,6 +15,7 @@ export default function FileUploader({addCharacter, setMessage}) {
     fileReader.onload = event => {
       try {
         setUploadedMonster(new Character(JSON.parse(event.target.result)))
+        setUploadedFile(JSON.parse(event.target.result))
       } catch (error) {
         console.warn('Could not upload file: \n', error)
         setMessage('Could not build a character from this file')
@@ -23,7 +25,10 @@ export default function FileUploader({addCharacter, setMessage}) {
 
   const handleSubmit = e => {
     e.preventDefault()
-    uploadedMonster && addCharacter(uploadedMonster)
+    if (uploadedMonster) {
+      addCharacter(uploadedMonster)
+      Character.addUploadedCharacter(uploadedFile)      
+    }
   }
 
   const renderSubmitButton = uploadedMonster?.name ?
