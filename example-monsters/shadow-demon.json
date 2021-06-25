@@ -15,7 +15,7 @@
   "intelligence": 14,
   "wisdom": 13,
   "charisma": 14,
-  "proficiencies": "Saving Throw: DEX +5 | Saving Throw: CHA +4 | Skill: Stealth +7",
+  "proficiencies": "Saving Throw: DEX +5, Saving Throw: CHA +4, Stealth +7",
   "damage_resistances": ["Acid","Fire","Necrotic","Thunder","Bludgeoning, Piercing, and Slashing from Nonmagical Attacks"],
   "damage_immunities": ["Cold", "Lightning", "Poison"],
   "damage_vulnerabilities": ["Radiant"],
