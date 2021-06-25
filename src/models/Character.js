@@ -82,7 +82,7 @@ export default class Character {
   }
 
   remapArrayOfObjectsProperty = property => {
-    if (typeof this[property][0] !== 'string') {
+    if (this[property] && typeof this[property][0] !== 'string') {
       this[property] = this[property] && this[property].constructor === Array ? this[property].map(p => p.name).join(", ") : this[property]
     } else {
       this.remapArrayProperty(property)
