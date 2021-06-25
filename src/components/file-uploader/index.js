@@ -20,9 +20,9 @@ export default function FileUploader({addCharacter}) {
   }
 
   return (
-    <form onSubmit={handleSubmit} encType="multipart/form-data">
+    <>
       <input type="file" ref={file} onChange={handleChange} accept=".json" />
-      <input type="submit" value="Upload Monster" />
-    </form>
+      <input type="button" onClick={handleSubmit} value="Upload Monster" />
+    </>
   )
 }
