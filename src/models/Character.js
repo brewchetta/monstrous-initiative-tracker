@@ -6,6 +6,8 @@ export default class Character {
 
   static createTemplate = () => new Character(template)
 
+  // UPLOADED CHARACTERS //
+
   static uploadedCharacters = []
 
   static addUploadedCharacter = character => {
@@ -14,6 +16,8 @@ export default class Character {
       this.uploadedCharacters.push(character)
     }
   }
+
+  // CONSTRUCTOR //
 
   constructor(data, player = false, char_class = "") {
 
