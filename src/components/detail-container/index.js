@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import "./DetailContainer.css"
 // CONEXT //
 import { useDetailContext } from "context/detail-context"
-import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import CharacterDetailCard from "../character-detail"
 import AddMonster from "../add-monster"
@@ -27,12 +26,11 @@ export default function DetailContainer(props) {
 
   // CONTEXT //
   const detail = useDetailContext()
-  const updateCharacter = useCharactersContext().update
 
   // RENDERS //
 
   const renderDetail = () => {
-    return (detail.current?.type === "character" ? <CharacterDetailCard character={detail.current.content} updateCharacter={updateCharacter} spellNames={spellNames} />
+    return (detail.current?.type === "character" ? <CharacterDetailCard character={detail.current.content} spellNames={spellNames} />
     : detail.current?.type === "search_monster" ? <AddMonster />
     : detail.current?.type === "search_spell" ? <SpellSearchForm spellNames={spellNames} />
     : detail.current?.type === "locals" ? <SelectLocalMonstersForm />

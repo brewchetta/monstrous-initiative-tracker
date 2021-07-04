@@ -1,6 +1,7 @@
 // REACT //
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect } from "react"
 import useLocalStorageList from 'services/localstorage'
+import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import ActionsList from './ActionsList/'
 import SpellsList from './SpellsList/'
@@ -12,21 +13,21 @@ import Download from './Download'
 import "./CharacterDetailCard.css"
 import beyondIcon from "assets/images/beyond-icon.png"
 
-export default function CharacterDetailCard({character, updateCharacter, spellNames}) {
+export default function CharacterDetailCard({character, spellNames}) {
 
   // STATE //
 
   const [formInputs, setFormInputs] = useState(character)
   const [detailMode, setDetailMode] = useState("general")
 
+  const updateCharacter = useCharactersContext().update
+
   const saveMonster = useLocalStorageList('monstrous-characters')[3]
 
-  const memoizedSubmit = useCallback(handleSubmit, [formInputs])
-
   useEffect(() => {
-    memoizedSubmit()
-    return memoizedSubmit()
-  }, [memoizedSubmit])
+    updateCharacter(formInputs)
+    return updateCharacter(formInputs)
+  }, [formInputs])
 
   // EVENT HANDLERS
 
