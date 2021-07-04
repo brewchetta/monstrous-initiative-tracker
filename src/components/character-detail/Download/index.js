@@ -4,7 +4,7 @@ export default function Download({character}) {
     var a = document.createElement("a");
     var file = new Blob([JSON.stringify(character)], {type: 'text/plain'})
     a.href = URL.createObjectURL(file);
-    a.download = `${character.name || 'monster'}.json`
+    a.download = `${character.name.replace(/[ ,.'"`]+/g, "-").toLowerCase() || 'monster'}.json`
     a.click();
     a.remove()
   }
