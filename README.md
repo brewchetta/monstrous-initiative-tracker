@@ -40,7 +40,9 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 
 1.2.4
 - Character spell slots can now be added and adjusted for any spellcaster
+- Changed icons for spell slots
 - Version number displayed in options
+- Bug fixes
 
 1.2.3
 - Added ability to download custom monsters as JSON
