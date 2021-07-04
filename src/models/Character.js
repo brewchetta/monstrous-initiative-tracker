@@ -67,7 +67,6 @@ export default class Character {
 
     // CLEANUP //
     this.cleanup()
-    console.log(this)
   }
 
   // CONSTRUCTOR HELPERS //
