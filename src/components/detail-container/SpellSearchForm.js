@@ -3,6 +3,7 @@ import { getSpell } from "services/dnd-5e-api"
 import SpellDetailsView from '../tooltip/SpellDetailsView'
 import spellMoon from "assets/images/thorn-image.png"
 import './SpellSearchForm.css'
+import { useSpellsContext } from 'context/spells-context'
 
 export default function SearchForm({spellNames}) {
 
@@ -12,6 +13,8 @@ export default function SearchForm({spellNames}) {
   const [input, setInput] = useState("")
   const [message, setMessage] = useState("")
   const [spellDetails, setSpellDetails] = useState({})
+
+  const { addSpell } = useSpellsContext()
 
   // EFFECTS //
 
@@ -25,6 +28,7 @@ export default function SearchForm({spellNames}) {
       if (!data.error) {
         setMessage("")
         setSpellDetails(data)
+        addSpell(data)
       } else {
         setMessage("Couldn't retrieve that spell")
       }
