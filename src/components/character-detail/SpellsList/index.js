@@ -12,22 +12,19 @@ function SpellsList({spells, spell_dc, spell_modifier, spell_slots, handleNewSpe
   }
 
   const renderSpellsByLevel = () => {
-    const levelsArray = []
-    for (var i = 0; i <= 9; i++) {
+    const spellsByLevel = {}
+    spells.forEach(sp => {
+      spellsByLevel[sp.level] ?
+      spellsByLevel[sp.level].push(<Spell spell={sp} key={sp.name} removeSpell={handleRemoveSpell} />)
+      : spellsByLevel[sp.level] = [<Spell spell={sp} key={sp.name} removeSpell={handleRemoveSpell} />]
+    });
 
-      const levelSpells = spells
-        .filter(sp => sp.level === i)
-        .map(sp => <Spell spell={sp} key={sp.name} removeSpell={handleRemoveSpell} />)
-
-      levelSpells.length && levelsArray.push(
-        <div className="spell-level-container" key={`level${i}spells`}>
-          <p>{i ? `Level ${i}` : 'Cantrips'}{i && spell_slots[i] ? <SpellSlots spellSlots={spell_slots[i]} setSpellSlots={buildSetSpellSlots(i)} /> : null}</p>
-          {levelSpells}
-        </div>
-      )
-
-    }
-    return levelsArray
+    return Object.keys(spellsByLevel).map(i => (
+      <div className="spell-level-container" key={`level${i}spells`}>
+        <p>{parseInt(i) ? `Level ${i}` : 'Cantrips'}{i && spell_slots[i] ? <SpellSlots spellSlots={spell_slots[i]} setSpellSlots={buildSetSpellSlots(i)} /> : null}</p>
+        {spellsByLevel[i]}
+      </div>
+    ))
   }
 
   return (
