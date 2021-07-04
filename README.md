@@ -1,6 +1,6 @@
 # Monstrous D&D Initiative Tracker
 
-Version 1.2.2
+Version 1.2.3
 
 Initiative tracker for D&D. Utilizes the 5th Edition API to automatically pull in monster and spell stats. You can save "favorites" to local storage and retrieve them as need be. Additionally, you can new create characters either in the app or by utilizing a JSON file.
 
@@ -22,6 +22,8 @@ This app also has a save feature that adds your characters to local storage. In 
 
 Characters and monsters can be imported via JSON files. You can find a few examples of these JSON files in the [additional monsters folder](example-monsters).
 
+In addition to importing monsters, they can also be downloaded as a JSON file. The button to download a monster is located at the bottom of their character sheet.
+
 ## Options
 
 Players can open the options menu by clicking the gear icon in the bottom right. Random hitpoints will roll and assign a random hit point maximum to all characters based on their hit dice. Autoroll initiative will automatically roll and assign initiative to all current and newly created characters.
@@ -35,6 +37,9 @@ D&D Beyond - [https://www.dndbeyond.com/](https://www.dndbeyond.com/)
 Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 
 ## Changelog
+
+1.2.3
+- Added ability to download custom monsters as JSON
 
 1.2.2
 - Clicking on `Search Monster Manual` now has a sub-menu for different options
