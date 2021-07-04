@@ -39,7 +39,8 @@ Game-icons.net - [https://game-icons.net/](https://game-icons.net/)
 ## Changelog
 
 1.2.4
-- Version number in options
+- Character spell slots can now be added and adjusted for any spellcaster
+- Version number displayed in options
 
 1.2.3
 - Added ability to download custom monsters as JSON
