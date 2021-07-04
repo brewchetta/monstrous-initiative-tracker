@@ -59,11 +59,14 @@ export default function SearchForm({spellNames}) {
         <input type="submit"
         value={"Search"}/>
 
+        <p>{message}</p>
+
       </div>
       <div id="spell-search-information" style={{top: spellDetails.name ? null : "100vh"}}>
 
         <img src={spellMoon} alt={""} />
-        {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : <p>{message}</p>}
+        {spellDetails.name ? <SpellDetailsView spellDetails={spellDetails} /> : null}
+
 
       </div>
 
