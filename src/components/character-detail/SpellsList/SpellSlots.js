@@ -37,9 +37,9 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
 
       <span>Slots </span>
 
-      <button class={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
+      <button className={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
 
-      <button class={spellSlots.length < 10 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
+      <button className={spellSlots.length < 10 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
 
     </>
   )
