@@ -196,7 +196,7 @@
   height: 0.8em;
 }
 
-#character-detail-form #save-local-character-button {
+#character-detail-form #save-local-character-button, #character-detail-form #download-json-button {
   border: solid black 2px;
 }
 

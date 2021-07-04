@@ -7,6 +7,7 @@ import SpellsList from './SpellsList/'
 import GeneralInfo from './GeneralInfo/'
 import CharacterSelectField from './Inputs/CharacterSelectField'
 import DetailImage from './DetailImage'
+import Download from './Download'
 // STYLE //
 import "./CharacterDetailCard.css"
 import beyondIcon from "assets/images/beyond-icon.png"
@@ -147,6 +148,7 @@ export default function CharacterDetailCard({character, updateCharacter, spellNa
       {renderDetailMode()}
 
       <input id="save-local-character-button" type="button" value="Save to Storage" onClick={handleSaveToStorage} />
+      <Download character={formInputs} />
 
     </div>
   )
