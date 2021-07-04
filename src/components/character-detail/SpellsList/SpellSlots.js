@@ -19,10 +19,10 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const renderSlots = () => {
     return spellSlots.map((spell, i) => (
-      <div className="slot-checkbox"
+      <span key={spell.name} className="slot-checkbox"
       onClick={() => handleClickSpellSlot(spell, i)}>
         {spell ? <img src={unavailabilityIcon} alt="X" /> : <img src={availabilityIcon} alt="O" />}
-      </div>
+      </span>
     ))
   }
 
