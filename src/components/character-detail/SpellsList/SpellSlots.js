@@ -14,7 +14,7 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
   }
 
   const handleRemoveSlot = () => {
-    spellSlots.length > 1 && setSpellSlots(spellSlots.slice(0, spellSlots.length - 1))
+    spellSlots.length > 0 && setSpellSlots(spellSlots.slice(0, spellSlots.length - 1))
   }
 
   const renderSlots = () => {
@@ -37,7 +37,7 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
 
       <span>Slots </span>
 
-      <button class={spellSlots.length > 1 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
+      <button class={spellSlots.length > 0 ? "active slot-button" : "slot-button"} onClick={handleRemoveSlot}>-</button>
 
       <button class={spellSlots.length < 10 ? "active slot-button" : "slot-button"} onClick={handleAddSlot}>+</button>
 
