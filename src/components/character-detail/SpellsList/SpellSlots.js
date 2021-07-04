@@ -1,6 +1,3 @@
-import availabilityIcon from 'assets/status-icons/fluffy-cloud.png'
-import unavailabilityIcon from 'assets/status-icons/fireflake.png'
-
 export default function SpellSlots({spellSlots, setSpellSlots}) {
 
   const handleClickSpellSlot = (spell, i) => {
@@ -21,7 +18,7 @@ export default function SpellSlots({spellSlots, setSpellSlots}) {
     return spellSlots.map((spell, i) => (
       <span key={`${spell.name}-${i}`} className="slot-checkbox"
       onClick={() => handleClickSpellSlot(spell, i)}>
-        {spell ? <img src={unavailabilityIcon} alt="X" /> : <img src={availabilityIcon} alt="O" />}
+        {spell ? "■" : "□"}
       </span>
     ))
   }
