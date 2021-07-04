@@ -67,6 +67,7 @@ export default class Character {
 
     // CLEANUP //
     this.cleanup()
+    console.log(this)
   }
 
   // CONSTRUCTOR HELPERS //
@@ -152,6 +153,11 @@ export default class Character {
         this.spell_slots[level] = newSlots
       }
     })
+    for (let i = 1; i < 10; i++) {
+      if (!this.spell_slots[i]) {
+        this.spell_slots[i] = []
+      }
+    }
   }
 
   cleanup = () => {
