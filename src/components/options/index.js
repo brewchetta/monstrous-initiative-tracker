@@ -37,7 +37,9 @@ export default function OptionsMenu(props) {
         checked={options.preRolledInitiative}
         />
 
+
       </div>
+      <span style={{fontSize: '0.8em'}}>Version 1.2.4</span>
     </>
   )
 
