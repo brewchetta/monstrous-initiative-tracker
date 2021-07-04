@@ -200,6 +200,11 @@
   border: solid black 2px;
 }
 
+#character-detail-form #save-local-character-button:active, #character-detail-form #download-json-button:active {
+  border-color: grey;
+  color: grey;
+}
+
 #beyond-icon {
   padding-left: 4em;
   width: 1em;
