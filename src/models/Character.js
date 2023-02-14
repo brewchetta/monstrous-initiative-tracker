@@ -38,6 +38,8 @@ export default class Character {
     this.legendary_actions = this.legendary_actions || []
     this.special_abilities = this.special_abilities || []
 
+    this.armor_class = this.armor_class[0]?.value ? this.armor_class[0].value : this.armor_class
+
     this.remapActionAttributes(this.actions)
     this.remapActionAttributes(this.legendary_actions)
     this.remapSpecialAbilities()
