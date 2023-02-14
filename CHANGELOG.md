@@ -1,5 +1,8 @@
 # Changelog
 
+230214
+- Fix for changes to API to correctly account for armor classes
+
 1.2.4
 - Character spell slots can now be added and adjusted for any spellcaster
 - Changed icons for spell slots
