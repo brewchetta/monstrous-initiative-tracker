@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useCharactersContext } from "context/characters-context"
 import UploadMonster from './UploadMonster'
 import MonsterSearch from './MonsterSearch'
-import SelectLocalMonstersForm from './SelectLocalMonstersForm'
+// import SelectLocalMonstersForm from './SelectLocalMonstersForm'
 import './style.css'
 
 export default function AddMonster({additionalMonsters}) {
@@ -28,8 +28,8 @@ export default function AddMonster({additionalMonsters}) {
         return <MonsterSearch {...{additionalMonsters, setMessage, addCharacter}}/>
       case 'upload':
         return <UploadMonster {...{setMessage, addCharacter}}/>
-      case 'saved':
-        return <SelectLocalMonstersForm {...{additionalMonsters, setMessage, addCharacter}}/>
+      // case 'saved':
+      //   return <SelectLocalMonstersForm {...{additionalMonsters, setMessage, addCharacter}}/>
       default:
         return null
     }
@@ -39,10 +39,11 @@ export default function AddMonster({additionalMonsters}) {
     <div id='add-monster-container'>
       <button name='search' onClick={handleClick}>Search Monster</button>
       <button name='upload' onClick={handleClick}>Upload Monster</button>
-      <button name='saved' onClick={handleClick}>Saved Monsters</button>
       {renderMode()}
       {message ? <p id='add-monster-message'>{message}</p> : null}
     </div>
   )
+  // removed this button for local monsters
+  // <button name='saved' onClick={handleClick}>Saved Monsters</button>
 
 }

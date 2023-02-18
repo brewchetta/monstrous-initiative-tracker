@@ -36,6 +36,7 @@ export default function InitiativeCard({character, index, updateCharacter}) {
 
   useEffect(() => {
     options.preRolledInitiative && character.initiative <= -5 && handleRollInitiative()
+    // eslint-disable-next-line
   }, [options.preRolledInitiative, character.initiative])
 
   // CALCS //

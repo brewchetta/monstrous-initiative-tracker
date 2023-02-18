@@ -1,6 +1,6 @@
 // REACT //
 import { useState, useEffect } from "react"
-import useLocalStorageList from 'services/localstorage'
+// import useLocalStorageList from 'services/localstorage'
 import { useCharactersContext } from "context/characters-context"
 // COMPONENTS //
 import ActionsList from './ActionsList/'
@@ -22,11 +22,12 @@ export default function CharacterDetailCard({character, spellNames}) {
 
   const updateCharacter = useCharactersContext().update
 
-  const saveMonster = useLocalStorageList('monstrous-characters')[3]
+  // const saveMonster = useLocalStorageList('monstrous-characters')[3]
 
   useEffect(() => {
     updateCharacter(formInputs)
     return updateCharacter(formInputs)
+    // eslint-disable-next-line
   }, [formInputs])
 
   // EVENT HANDLERS
@@ -65,7 +66,7 @@ export default function CharacterDetailCard({character, spellNames}) {
     updateCharacter(formInputs)
   }
 
-  const handleSaveToStorage = () => saveMonster(formInputs)
+  // const handleSaveToStorage = () => saveMonster(formInputs)
 
   const handleChangeDetailMode = e => setDetailMode(e.target.name)
 
@@ -148,7 +149,7 @@ export default function CharacterDetailCard({character, spellNames}) {
 
       {renderDetailMode()}
 
-      <input id="save-local-character-button" type="button" value="Save to Storage" onClick={handleSaveToStorage} />
+      { /* <input id="save-local-character-button" type="button" value="Save to Storage" onClick={handleSaveToStorage} /> */ }
       <Download character={formInputs} />
 
     </div>

@@ -39,7 +39,7 @@ export default function OptionsMenu(props) {
 
 
       </div>
-      <span style={{fontSize: '0.8em'}}>Version 1.2.4</span>
+      <span style={{fontSize: '0.8em'}}>Version 230218</span>
     </>
   )
 

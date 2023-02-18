@@ -1,5 +1,11 @@
 # Changelog
 
+230218
+- Fixed three warning messages
+- Changed text on 'search' from API to 'add monster' to make it clearer what will happen
+- Removed monsters for local storage
+- Removed ability to save monsters to local storage
+
 230214
 - Fix for changes to API to correctly account for armor classes
 
